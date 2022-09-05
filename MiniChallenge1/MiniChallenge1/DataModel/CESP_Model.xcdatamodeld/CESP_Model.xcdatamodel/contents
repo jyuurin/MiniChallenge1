@@ -5,7 +5,24 @@
         <attribute name="idModalidade" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nomeModalidade" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="EstruturaCentroEsportivo" representedClassName="EstruturaCentroEsportivo" syncable="YES" codeGenerationType="class">
+        <attribute name="idCentroEsportivo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idEstrutura" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nomeEstrutura" optional="YES" attributeType="String"/>
+        <attribute name="qtdEstrutura" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CentroEsportivo" representedClassName="CentroEsportivo" syncable="YES" codeGenerationType="class">
+        <attribute name="areaCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="enderecoCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="horarioCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="horarioFdsCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="idCentroEsportivo" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nomeCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="telefoneCentroEsportivo" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
+        <element name="CentroEsportivo" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="EstruturaCentroEsportivo" positionX="-54" positionY="-9" width="128" height="89"/>
         <element name="ModalidadeCentroEsportivo" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>
