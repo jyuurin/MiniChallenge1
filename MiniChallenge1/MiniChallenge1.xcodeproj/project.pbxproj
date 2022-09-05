@@ -11,6 +11,7 @@
 		1603790A28C67C3E00A81908 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603790928C67C3E00A81908 /* ContentView.swift */; };
 		1603790C28C67C4100A81908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790B28C67C4100A81908 /* Assets.xcassets */; };
 		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
+		1603791C28C6932F00A81908 /* CESP_Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1603791A28C6932F00A81908 /* CESP_Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1603790928C67C3E00A81908 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1603790B28C67C4100A81908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1603791B28C6932F00A81908 /* CESP_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CESP_Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				1603790728C67C3E00A81908 /* MiniChallenge1App.swift */,
 				1603790928C67C3E00A81908 /* ContentView.swift */,
 				1603790B28C67C4100A81908 /* Assets.xcassets */,
+				1603791928C6931F00A81908 /* DataModel */,
 				1603790D28C67C4100A81908 /* Preview Content */,
 			);
 			path = MiniChallenge1;
@@ -65,6 +68,14 @@
 				1603790E28C67C4100A81908 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1603791928C6931F00A81908 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1603791A28C6932F00A81908 /* CESP_Model.xcdatamodeld */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1603791C28C6932F00A81908 /* CESP_Model.xcdatamodeld in Sources */,
 				1603790A28C67C3E00A81908 /* ContentView.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
 			);
@@ -339,6 +351,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1603791A28C6932F00A81908 /* CESP_Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1603791B28C6932F00A81908 /* CESP_Model.xcdatamodel */,
+			);
+			currentVersion = 1603791B28C6932F00A81908 /* CESP_Model.xcdatamodel */;
+			path = CESP_Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 160378FC28C67C3E00A81908 /* Project object */;
 }
