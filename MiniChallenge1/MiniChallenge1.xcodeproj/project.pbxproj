@@ -7,26 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19D372E728BD39F300ED2BEE /* MiniChallenge1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D372E628BD39F300ED2BEE /* MiniChallenge1App.swift */; };
-		19D372E928BD39F300ED2BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D372E828BD39F300ED2BEE /* ContentView.swift */; };
-		19D372EB28BD39F700ED2BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D372EA28BD39F700ED2BEE /* Assets.xcassets */; };
-		19D372EE28BD39F700ED2BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D372ED28BD39F700ED2BEE /* Preview Assets.xcassets */; };
-		19D372F028BD39F700ED2BEE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D372EF28BD39F700ED2BEE /* Persistence.swift */; };
-		19D372F328BD39F700ED2BEE /* MiniChallenge1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19D372F128BD39F700ED2BEE /* MiniChallenge1.xcdatamodeld */; };
+		1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603790728C67C3E00A81908 /* MiniChallenge1App.swift */; };
+		1603790A28C67C3E00A81908 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603790928C67C3E00A81908 /* ContentView.swift */; };
+		1603790C28C67C4100A81908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790B28C67C4100A81908 /* Assets.xcassets */; };
+		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19D372E328BD39F300ED2BEE /* MiniChallenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		19D372E628BD39F300ED2BEE /* MiniChallenge1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge1App.swift; sourceTree = "<group>"; };
-		19D372E828BD39F300ED2BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		19D372EA28BD39F700ED2BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		19D372ED28BD39F700ED2BEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		19D372EF28BD39F700ED2BEE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		19D372F228BD39F700ED2BEE /* MiniChallenge1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MiniChallenge1.xcdatamodel; sourceTree = "<group>"; };
+		1603790428C67C3E00A81908 /* MiniChallenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1603790728C67C3E00A81908 /* MiniChallenge1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge1App.swift; sourceTree = "<group>"; };
+		1603790928C67C3E00A81908 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1603790B28C67C4100A81908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		19D372E028BD39F300ED2BEE /* Frameworks */ = {
+		1603790128C67C3E00A81908 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,39 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19D372DA28BD39F300ED2BEE = {
+		160378FB28C67C3E00A81908 = {
 			isa = PBXGroup;
 			children = (
-				19D372E528BD39F300ED2BEE /* MiniChallenge1 */,
-				19D372E428BD39F300ED2BEE /* Products */,
+				1603790628C67C3E00A81908 /* MiniChallenge1 */,
+				1603790528C67C3E00A81908 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		19D372E428BD39F300ED2BEE /* Products */ = {
+		1603790528C67C3E00A81908 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19D372E328BD39F300ED2BEE /* MiniChallenge1.app */,
+				1603790428C67C3E00A81908 /* MiniChallenge1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		19D372E528BD39F300ED2BEE /* MiniChallenge1 */ = {
+		1603790628C67C3E00A81908 /* MiniChallenge1 */ = {
 			isa = PBXGroup;
 			children = (
-				19D372E628BD39F300ED2BEE /* MiniChallenge1App.swift */,
-				19D372E828BD39F300ED2BEE /* ContentView.swift */,
-				19D372EA28BD39F700ED2BEE /* Assets.xcassets */,
-				19D372EF28BD39F700ED2BEE /* Persistence.swift */,
-				19D372F128BD39F700ED2BEE /* MiniChallenge1.xcdatamodeld */,
-				19D372EC28BD39F700ED2BEE /* Preview Content */,
+				1603790728C67C3E00A81908 /* MiniChallenge1App.swift */,
+				1603790928C67C3E00A81908 /* ContentView.swift */,
+				1603790B28C67C4100A81908 /* Assets.xcassets */,
+				1603790D28C67C4100A81908 /* Preview Content */,
 			);
 			path = MiniChallenge1;
 			sourceTree = "<group>";
 		};
-		19D372EC28BD39F700ED2BEE /* Preview Content */ = {
+		1603790D28C67C4100A81908 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				19D372ED28BD39F700ED2BEE /* Preview Assets.xcassets */,
+				1603790E28C67C4100A81908 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -76,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		19D372E228BD39F300ED2BEE /* MiniChallenge1 */ = {
+		1603790328C67C3E00A81908 /* MiniChallenge1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19D372F628BD39F700ED2BEE /* Build configuration list for PBXNativeTarget "MiniChallenge1" */;
+			buildConfigurationList = 1603791228C67C4100A81908 /* Build configuration list for PBXNativeTarget "MiniChallenge1" */;
 			buildPhases = (
-				19D372DF28BD39F300ED2BEE /* Sources */,
-				19D372E028BD39F300ED2BEE /* Frameworks */,
-				19D372E128BD39F300ED2BEE /* Resources */,
+				1603790028C67C3E00A81908 /* Sources */,
+				1603790128C67C3E00A81908 /* Frameworks */,
+				1603790228C67C3E00A81908 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,25 +84,25 @@
 			);
 			name = MiniChallenge1;
 			productName = MiniChallenge1;
-			productReference = 19D372E328BD39F300ED2BEE /* MiniChallenge1.app */;
+			productReference = 1603790428C67C3E00A81908 /* MiniChallenge1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		19D372DB28BD39F300ED2BEE /* Project object */ = {
+		160378FC28C67C3E00A81908 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					19D372E228BD39F300ED2BEE = {
-						CreatedOnToolsVersion = 13.2.1;
+					1603790328C67C3E00A81908 = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 19D372DE28BD39F300ED2BEE /* Build configuration list for PBXProject "MiniChallenge1" */;
+			buildConfigurationList = 160378FF28C67C3E00A81908 /* Build configuration list for PBXProject "MiniChallenge1" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,51 +110,48 @@
 				en,
 				Base,
 			);
-			mainGroup = 19D372DA28BD39F300ED2BEE;
-			productRefGroup = 19D372E428BD39F300ED2BEE /* Products */;
+			mainGroup = 160378FB28C67C3E00A81908;
+			productRefGroup = 1603790528C67C3E00A81908 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19D372E228BD39F300ED2BEE /* MiniChallenge1 */,
+				1603790328C67C3E00A81908 /* MiniChallenge1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		19D372E128BD39F300ED2BEE /* Resources */ = {
+		1603790228C67C3E00A81908 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19D372EE28BD39F700ED2BEE /* Preview Assets.xcassets in Resources */,
-				19D372EB28BD39F700ED2BEE /* Assets.xcassets in Resources */,
+				1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */,
+				1603790C28C67C4100A81908 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		19D372DF28BD39F300ED2BEE /* Sources */ = {
+		1603790028C67C3E00A81908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19D372F328BD39F700ED2BEE /* MiniChallenge1.xcdatamodeld in Sources */,
-				19D372F028BD39F700ED2BEE /* Persistence.swift in Sources */,
-				19D372E928BD39F300ED2BEE /* ContentView.swift in Sources */,
-				19D372E728BD39F300ED2BEE /* MiniChallenge1App.swift in Sources */,
+				1603790A28C67C3E00A81908 /* ContentView.swift in Sources */,
+				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		19D372F428BD39F700ED2BEE /* Debug */ = {
+		1603791028C67C4100A81908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -204,7 +195,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -214,14 +205,13 @@
 			};
 			name = Debug;
 		};
-		19D372F528BD39F700ED2BEE /* Release */ = {
+		1603791128C67C4100A81908 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -259,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -269,7 +259,7 @@
 			};
 			name = Release;
 		};
-		19D372F728BD39F700ED2BEE /* Debug */ = {
+		1603791328C67C4100A81908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -277,6 +267,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
+				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -289,7 +280,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com-julia.MiniChallenge1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pnimoveis.MiniChallenge1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,7 +288,7 @@
 			};
 			name = Debug;
 		};
-		19D372F828BD39F700ED2BEE /* Release */ = {
+		1603791428C67C4100A81908 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
+				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -317,7 +309,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com-julia.MiniChallenge1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pnimoveis.MiniChallenge1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,38 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19D372DE28BD39F300ED2BEE /* Build configuration list for PBXProject "MiniChallenge1" */ = {
+		160378FF28C67C3E00A81908 /* Build configuration list for PBXProject "MiniChallenge1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19D372F428BD39F700ED2BEE /* Debug */,
-				19D372F528BD39F700ED2BEE /* Release */,
+				1603791028C67C4100A81908 /* Debug */,
+				1603791128C67C4100A81908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19D372F628BD39F700ED2BEE /* Build configuration list for PBXNativeTarget "MiniChallenge1" */ = {
+		1603791228C67C4100A81908 /* Build configuration list for PBXNativeTarget "MiniChallenge1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19D372F728BD39F700ED2BEE /* Debug */,
-				19D372F828BD39F700ED2BEE /* Release */,
+				1603791328C67C4100A81908 /* Debug */,
+				1603791428C67C4100A81908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		19D372F128BD39F700ED2BEE /* MiniChallenge1.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				19D372F228BD39F700ED2BEE /* MiniChallenge1.xcdatamodel */,
-			);
-			currentVersion = 19D372F228BD39F700ED2BEE /* MiniChallenge1.xcdatamodel */;
-			path = MiniChallenge1.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 19D372DB28BD39F300ED2BEE /* Project object */;
+	rootObject = 160378FC28C67C3E00A81908 /* Project object */;
 }
