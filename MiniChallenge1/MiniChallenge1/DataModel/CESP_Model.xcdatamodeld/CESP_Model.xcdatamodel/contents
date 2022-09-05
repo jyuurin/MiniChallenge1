@@ -10,3 +10,17 @@
         <element name="EstruturaCentroEsportivo" positionX="-54" positionY="-9" width="128" height="89"/>
     </elements>
 </model>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CentroEsportivo" representedClassName="CentroEsportivo" syncable="YES" codeGenerationType="class">
+        <attribute name="areaCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="enderecoCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="horarioCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="horarioFdsCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="idCentroEsportivo" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nomeCentroEsportivo" optional="YES" attributeType="String"/>
+        <attribute name="telefoneCentroEsportivo" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CentroEsportivo" positionX="-63" positionY="-18" width="128" height="134"/>
+    </elements>
+</model>
