@@ -38,6 +38,90 @@
     
     ####A partir daqui####
     
+    {
+        "ceId": 1,
+        "ceNome": "C.E. JOSÉ BONIFÁCIO (JOSÉ BONIFÁCIO)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Ana Perena, 110, COHAB 2, São Paulo",
+        "ceTelefone":
+        [
+                "2521-3513"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "N\D",
+        "ceArea": "42.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Judô"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Malha"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Ginásios esportivos"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras poliesportivas cobertas"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Salas de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+        "Alongamento",
+        "Ginástica Geral",
+        "Ginástica Artística"
+        ]
+    },
+    
 ]
 
 
