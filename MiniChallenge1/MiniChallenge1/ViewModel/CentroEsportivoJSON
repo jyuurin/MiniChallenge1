@@ -45,7 +45,7 @@
         "ceEndereco": "Rua Ana Perena, 110, COHAB 2, São Paulo",
         "ceTelefone":
         [
-                "2521-3513"
+            "2521-3513"
         ],
         "horarioSemana" : "7h às 22h",
         "horarioFinalSemanaFeriado": "8h às 18h",
@@ -116,9 +116,124 @@
         ],
         "ceModalidades":
         [
-        "Alongamento",
-        "Ginástica Geral",
-        "Ginástica Artística"
+            "Alongamento",
+            "Ginástica Geral",
+            "Pilates"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 2,
+        "ceNome": "C.E. VICENTE ÍTALO FEOLA (VILA MANCHESTER)",
+        "ceZona": "zl",
+        "ceEndereco": "Praça Haroldo Daltro, São Paulo",
+        "ceTelefone":
+        [
+            "2295-2391"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "55.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Judô"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Espaço Pet"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio poliesportivo"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futebol Society"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Basquete 3x3"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Salas de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Teatro"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 8,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 18,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Salas de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Cozinhas/Copas"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Ballet",
+            "Capoeira",
+            "Dança Circular",
+            "Dança do Ventre/Cigana",
+            "Futebol",
+            "Futsal",
+            "Ginástica Artística",
+            "Ginástica Geral",
+            "Práticas Integrativas",
+            "Ritmos",
+            "Voleibol"
         ]
     },
     
