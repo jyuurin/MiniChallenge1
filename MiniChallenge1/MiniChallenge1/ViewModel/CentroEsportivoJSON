@@ -237,6 +237,862 @@
         ]
     },
     
+    {
+        "ceId": 3,
+        "ceNome": "MINI BALNEÁRIO JOSÉ MARIA WHITAKER (SÃO MATEUS)",
+        "ceZona": "zl",
+        "ceEndereco": "Avenida Satélite, 756, São Paulo",
+        "ceTelefone":
+        [
+            "2919-2653"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "2.650",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra adaptada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 7,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Área de churrasqueira"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Ballet",
+            "Ginástica Artística",
+            "Ginástica Geral",
+            "Karatê",
+            "Hidroginástica",
+            "Natação"
+        ]
+    },
+    
+    
+    {
+        "ceId": 4,
+        "ceNome": "CEL ANDRÉ VITAL RIBEIRO SOARES (TIRADENTES)",
+        "ceZona": "zl",
+        "ceEndereco": "Avenida dos Metalúrgicos, 2255, Tiradentes, São Paulo",
+        "ceTelefone":
+        [
+            "2282-0204"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 22h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "16.398",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Artística"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Leitura/Biblioteca"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 5,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Condicionamento Físico",
+            "Ginástica Localizada",
+            "Karatê"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 5,
+        "ceNome": "CEL TEOTÔNIO VILELA (SAPOPEMBA)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Carlo Clausetti, 19, Sapopemba, São Paulo",
+        "ceTelefone":
+        [
+            "2282-0204"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "N/D",
+        "ceArea": "11.839",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol Society"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Playgrounds Infantis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 8,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Condicionamento Físico",
+            "Ginástica Localizada",
+            "Karatê"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 6,
+        "ceNome": "C.E. JOSÉ ERMÍRIO DE MORAES (VILA CURUÇÁ)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Grapirá, 537, Itaim Paulista, São Paulo",
+        "ceTelefone":
+        [
+            "2581-2410"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "8h às 12h - 13h às 17h",
+        "ceArea": "60.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Auditório"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de areia"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra adaptada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de areia"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Artística"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Musculação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 6,
+                "nomeEstrutura": "Banheiro"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 11,
+                "nomeEstrutura": "Cozinhas/Copas"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Ginastica Artística",
+            "Ginástica Geral",
+            "Práticas Integrativas",
+            "Karatê",
+            "Tênis de Mesa"
+        ]
+    },
+    
+    
+    {
+        "ceId": 7,
+        "ceNome": "C.E. SALIM FARAH MALUF (MOOCA)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Taquari, 635, Mooca, São Paulo",
+        "ceTelefone":
+        [
+            "2694-7668"
+        ],
+        "horarioSemana" : "6h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "8h às 12h - 13h às 17h",
+        "ceArea": "67.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academira de Judô"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol Society"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Espaço Pet"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Skate"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Quadras de areia"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Futebol Society"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Quadras poliesportivas descobertas"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Musculação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Ginástica Artística",
+            "Ginástica Geral",
+            "Judô"
+        ]
+    },
+    
+    
+    
+    
+    {
+        "ceId": 8,
+        "ceNome": "CEL JOSÉ DE ANCHIETA (JOSÉ DE ANCHIETA)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua José Balangio, 188, COHAB 1, São Paulo",
+        "ceTelefone":
+        [
+            "2741-8960"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "N/D",
+        "ceArea": "21.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Musculação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Área de churrasqueira"
+            }
+        ],
+        "ceModalidades":
+        [
+        ]
+    },
+    
+    
+    {
+        "ceId": 9,
+        "ceNome": "C.E. LUIZ MARTINEZ (TIQUATIRA)",
+        "ceZona": "zl",
+        "ceEndereco": "Av. Governador Carvalho Pinto, 02, Tiquatira, São Paulo",
+        "ceTelefone":
+        [
+            "2958-9705"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "N/D",
+        "ceArea": "20.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Brinquedoteca"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de areia"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Bocha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Malha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de areia"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Salas de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Musculação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 10,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Estacionamentos"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Ballet",
+            "Dança de Salão",
+            "Ginástica Geral",
+            "Musculação",
+            "Pilates"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 10,
+        "ceNome": "CEL JUSCELINO KUBITSCHEK (JK)",
+        "ceZona": "zl",
+        "ceEndereco": "R. Inácio Monteiro, 55, Cidade Tiradentes, São Paulo",
+        "ceTelefone":
+        [
+            "2555-2533"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "N/D",
+        "ceArea": "5.309",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Judô"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Boxe"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Artística"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Leitura/Biblioteca"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Ginástica Artística",
+            "Ginástica Geral"
+        ]
+    },
+    
+    
+    {
+        "ceId": 11,
+        "ceNome": "C.E. ERMELINO MATARAZZO",
+        "ceZona": "zl",
+        "ceEndereco": "Rua João Euclides Pereira, 308, Jardim Matarazzo, São Paulo",
+        "ceTelefone":
+        [
+            "2541-4142"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol Society"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Skate"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Salas de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 6,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 7,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Ballet",
+            "Ginástica Geral",
+            "Liang Gong",
+            "Pilates",
+            "Jazz",
+            "Tênis de Mesa"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 12,
+        "ceNome": "CENTRO ESPORTIVO BRIGADEIRO EDUARDO GOMES (TATUAPÉ)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Apucarana, 233, Tatuapé, São Paulo",
+        "ceTelefone":
+        [
+            ""
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol aberto"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Espaço Pet"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Basquete 3x3"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Vestiário"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Ballet",
+            "Ginástica Geral",
+            "Liang Gong",
+            "Pilates",
+            "Jazz",
+            "Tênis de Mesa"
+        ]
+    },
 ]
 
 
