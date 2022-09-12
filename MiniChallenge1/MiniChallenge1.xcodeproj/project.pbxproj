@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603790728C67C3E00A81908 /* MiniChallenge1App.swift */; };
-		1603790A28C67C3E00A81908 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603790928C67C3E00A81908 /* ContentView.swift */; };
 		1603790C28C67C4100A81908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790B28C67C4100A81908 /* Assets.xcassets */; };
 		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		1603790428C67C3E00A81908 /* MiniChallenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1603790728C67C3E00A81908 /* MiniChallenge1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge1App.swift; sourceTree = "<group>"; };
-		1603790928C67C3E00A81908 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1603790B28C67C4100A81908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */ = {isa = PBXFileReference; lastKnownFileType = text; path = CentroEsportivoJSON; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				16C7199728CFC26A00D3684B /* PagHome */,
-				1603790928C67C3E00A81908 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1603790A28C67C3E00A81908 /* ContentView.swift in Sources */,
 				16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
 			);
