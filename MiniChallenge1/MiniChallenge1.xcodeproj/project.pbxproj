@@ -12,6 +12,7 @@
 		1603790C28C67C4100A81908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790B28C67C4100A81908 /* Assets.xcassets */; };
 		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */; };
+		16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199528CFC23900D3684B /* PaginaHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		1603790B28C67C4100A81908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */ = {isa = PBXFileReference; lastKnownFileType = text; path = CentroEsportivoJSON; sourceTree = "<group>"; };
+		16C7199528CFC23900D3684B /* PaginaHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		16C7199128CBBFC300D3684B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16C7199728CFC26A00D3684B /* PagHome */,
 				1603790928C67C3E00A81908 /* ContentView.swift */,
 			);
 			path = View;
@@ -92,6 +95,14 @@
 				16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		16C7199728CFC26A00D3684B /* PagHome */ = {
+			isa = PBXGroup;
+			children = (
+				16C7199528CFC23900D3684B /* PaginaHome.swift */,
+			);
+			path = PagHome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1603790A28C67C3E00A81908 /* ContentView.swift in Sources */,
+				16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
