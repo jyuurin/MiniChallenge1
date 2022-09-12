@@ -1,42 +1,4 @@
 [
-    {
-        "ceId": 1,
-        "ceNome": "C.E. JOERG BRUDER (SANTO AMARO)",
-        "ceZona": "zs",
-        "ceEndereco": "Avenida Padre José Maria, 555, Santo Amaro, São Paulo",
-        "ceTelefone": "5687-6340",
-        "horarioSemana" : "6h às 22h",
-        "horarioFinalSemanaFeriado": "6h às 22h",
-        "horarioPiscinas": "N\D",
-        "ceArea": "44.890",
-        "ceEstrutura":
-        [
-            {
-                "qtdEstrutura": 2,
-                "nomeEstrutura": "Academias ao ar livre"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Academia de Judô"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Academia de Boxe"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Campo de areia"
-            }
-        ],
-        "ceModalidades":
-        [
-        "Caminhada",
-        "Ginástica Geral",
-        "Ginástica Artística"
-        ]
-    },
-    
-    ####A partir daqui####
     
     {
         "ceId": 1,
@@ -49,7 +11,7 @@
         ],
         "horarioSemana" : "7h às 22h",
         "horarioFinalSemanaFeriado": "8h às 18h",
-        "horarioPiscinas": "N\D",
+        "horarioPiscinas": "N/D",
         "ceArea": "42.000",
         "ceEstrutura":
         [
@@ -2130,7 +2092,7 @@
             ],
             "ceModalidades":
             []
-    }
+    },
     
     {
         "ceId": 20,
