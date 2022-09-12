@@ -38,6 +38,786 @@
     
     ####A partir daqui####
     
+    
+[
+    {
+        "ceId": 32,
+        "ceNome": "C.E. THOMAZ MAZZONI (VILA MARIA)",
+        "ceZona": "zn",
+        "ceEndereco": "Praça Jânio da Silva Quadros, 150, Vila Maria",
+        "ceTelefone": ["5574-8760"],
+        "horarioSemana" : "6h às 22h",
+        "horarioFinalSemanaFeriado": "6h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "104.874",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Bocha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Atletismo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra adaptada"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadra de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Artística"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 8,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 11,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Estacionamentos"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Basquete",
+            "Futsal",
+            "Ginástica Geral",
+                    "Vôlei"
+        ]
+    },
+
+        {
+            "ceId": 33,
+            "ceNome": "MINI BALNEÁRIO IRMÃOS PAOLILLO (JARDIM CABUÇU)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua General Jerônimo Furtado, 751 – Jaçanã",
+            "ceTelefone": ["2241-0454"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "2.200",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina recreativa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva coberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Salas de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Futsal",
+                "Ginástica Geral",
+                "Tênis de mesa"
+            ]
+    },
+
+        {
+            "ceId": 34,
+            "ceNome": "MINI BALNEÁRIO GASTÃO MOUTINHO (MANDAQUI)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Coronel João da Silva Feijó, 80 - Mandaqui",
+            "ceTelefone": ["2231-4705"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "1.400",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia ao ar livre"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina de recreação"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva descoberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala multiusoa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Salas de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Natação"
+            ]
+    },
+        {
+            "ceId": 35,
+            "ceNome": "MINI BALNEÁRIO COMANDANTE GARCIA D'ÁVILA (CASA VERDE)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Armando Coelho e Silva, 775 – Parque Peruche",
+            "ceTelefone": ["2208-2755"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "5.300",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Ginásio esportivo"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina de recreação"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva coberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva descoberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 3,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Natação",
+                "Alongamento",
+                "Condicionamento Físico",
+                "Futsal",
+                "Ginástica Geral"
+            ]
+    },
+        {
+            "ceId": 36,
+            "ceNome": "C.E. OSWALDO BRANDÃO (BRASILÂNDIA)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Michihisa Murata, 120 – Vila Brasilândia",
+            "ceTelefone": ["3978-7591"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "7h às 18h",
+            "horarioPiscinas": "N/D",
+            "ceArea": "25.000",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia de Judô"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Auditório"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Campo de Futebol com arquibancada"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Ginásio esportivo"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Pista de Caminhada"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Quadras de Futsal"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva coberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Ginástica Geral"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Ginástica Artística"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Salas multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Teatro"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 10,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Futsal",
+                "Futevôlei",
+                "Tênis de Mesa",
+                "Vôlei Adaptado"
+            ]
+    },
+
+        {
+            "ceId": 37,
+            "ceNome": "C.E. AURÉLIO CAMPOS (FREGUESIA DO Ó)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Jacutiba,167 – Freguesia do Ó",
+            "ceTelefone": ["3975-7569"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "N/D",
+            "ceArea": "60.000",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia de Judô"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Campo de Futebol com arquibancada"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cancha de Bocha"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Playground"
+                    },
+                    {
+                            "qtdEstrutura": 3,
+                            "nomeEstrutura": "Quadras de Futsal"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva coberta"
+                    },
+                    {
+                            "qtdEstrutura": 3,
+                            "nomeEstrutura": "Quadras poliesportivas descobertas"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra de Tênis"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Ginástica Geral"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 5,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 3,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Ginástica Geral",
+                "Handebol",
+                "Lian Gong",
+                "Mat Pilates",
+                "Yoga"
+            ]
+    },
+
+
+        {
+            "ceId": 38,
+            "ceNome": "GINÁSIO DARCY REIS (VILA GUILHERME)",
+            "ceZona": "zn",
+            "ceEndereco": "Avenida Guilherme, 1819 – Vila Guilherme",
+            "ceTelefone": ["5574-8847"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "N/D",
+            "ceArea": "800",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Ginásio esportivo"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 5,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    }
+            ],
+            "ceModalidades":
+            []
+    },
+
+        {
+            "ceId": 39,
+            "ceNome": "BALNEÁRIO GERALDO ALONSO (SANTANA)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Santos Dumont, 1318 – Santana",
+            "ceTelefone": ["2221-5214"],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "8h às 12h - 13h às 17h",
+            "ceArea": "6.300",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia ao ar livre"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia de Judô"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia de Boxe"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Auditório"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Brinquedoteca"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina de recreação"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina semi ou olímpica"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Playground"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra adaptada"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra de Futsal"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra poliesportiva descoberta"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra de Tênis"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Sala de Ginástica Geral"
+                    },
+                    {
+                            "qtdEstrutura": 4,
+                            "nomeEstrutura": "Salas multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 5,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    },
+                    {
+                            "qtdEstrutura": 5,
+                            "nomeEstrutura": "Áreas de churrasqueira"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Alongamento",
+                "Balé",
+                "Ginástica Geral",
+                "Hidroginástica",
+                "Pilates",
+                "Ritmos"
+            ]
+    },
+    
+        {
+            "ceId": 40,
+            "ceNome": "C.E. ALFREDO INÁCIO TRINDADE (JARDIM SÃO PAULO)",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Viri, 425 – Jd. São Paulo",
+            "ceTelefone": ["2973-5390"],
+            "horarioSemana" : "6h às 22h",
+            "horarioFinalSemanaFeriado": "6h às 18h",
+            "horarioPiscinas": "8h às 12h - 13h às 17h",
+            "ceArea": "58.725",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia ao ar livre"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Academia de Judô"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Campo de Futebol aberto"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Cancha de Bocha"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Piscinas de recreação"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Piscina semi ou olímpica"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Pista de Caminhada"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra de Futsal"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Quadras poliesportivas descobertas"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Quadra de Tênis"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Sala de Ginástica Geral"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Musculação"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de avaliação médica"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 18,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de administração"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Recepção"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Cozinhas/Copas"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    }
+            ],
+            "ceModalidades":
+            [
+                "Alongamento",
+                "Condicionamento Físico Funcional",
+                "Corrida",
+                "Ginástica Funcional",
+                "Ginástica Geral",
+                "Musculação"
+            ]
+    },
+        {
+            "ceId": 41,
+            "ceNome": "C.E.L PERUS ",
+            "ceZona": "zn",
+            "ceEndereco": "Rua Mogeiro,1031, Vila Perus",
+            "ceTelefone": ["3917-2261"],
+            "horarioSemana" : "7h às 22h (Todos os dias)",
+            "horarioFinalSemanaFeriado": "N/D",
+            "horarioPiscinas": "N/D",
+            "ceArea": "N/D",
+            "ceEstrutura":
+            [
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Campo de futebol com arquibancada "
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Ginástica Geral"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala Multiuso"
+                    },
+                    {
+                            "qtdEstrutura": 4,
+                            "nomeEstrutura": "Vestiários"
+                    },
+                    {
+                            "qtdEstrutura": 5,
+                            "nomeEstrutura": "Banheiros"
+                    },
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Sala de Administração"
+                    },
+                    {
+                            "qtdEstrutura": 2,
+                            "nomeEstrutura": "Cozinha/Copa"
+                    },
+
+                    {
+                            "qtdEstrutura": 1,
+                            "nomeEstrutura": "Estacionamento"
+                    }
+            ],
+            "ceModalidades":
+            []
+    }
+  
+  
+  
+  
 ]
 
 
