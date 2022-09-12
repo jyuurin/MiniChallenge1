@@ -1093,6 +1093,267 @@
             "Tênis de Mesa"
         ]
     },
+    
+    
+    
+    {
+        "ceId": 13,
+        "ceNome": "CENTRO ESPORTIVO, RECREATIVO E EDUCATIVO DO TRABALHADOR  (CERET)",
+        "ceZona": "zl",
+        "ceEndereco": "Rua Canuto de Abreu, s/n°, Tatuapé, São Paulo",
+        "ceTelefone":
+        [
+            "2672-1240"
+        ],
+        "horarioSemana" : "6h às 22h",
+        "horarioFinalSemanaFeriado": "6h às 20h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Academias ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Boxe"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Beisebol"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Campos de Futebol abertos"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Canchas de Bocha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ciclovia"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Espaço Pet"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Paredão"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Atletismo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de areia"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Quadras poliesportivas descobertas"
+            },
+            {
+                "qtdEstrutura": 4,
+                "nomeEstrutura": "Quadras de Tênis"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Salas de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de ferromodelismo e autorama"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Leitura/Biblioteca"
+            },
+            {
+                "qtdEstrutura": 7,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 37,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            },
+            {
+                "qtdEstrutura": 8,
+                "nomeEstrutura": "Áreas de churrasqueira"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Rugby"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Espaço de Slackline"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Tênis saibro"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pipódromo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Horta com estufa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Galpão para manutenção"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Caminhada",
+            "Ginástica Geral",
+            "Voleibol",
+            "Boxe",
+            "Caminhada",
+            "Capoeira",
+            "Ginástica Geral",
+            "Jiu Jitsu",
+            "Patinação",
+            "GTai Chi Chuan"
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 14,
+        "ceNome": "CEE ARTHUR FRIEDENREICH (VILA PRUDENTE)",
+        "ceZona": "zl",
+        "ceEndereco": "Avenida Francisco Falconi, 83, Vila Alpina, São Paulo",
+        "ceTelefone":
+        [
+            "2672-1240"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Campos de Futebol abertos"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Softball"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Skate"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Vestiário"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+        ]
+    },
 ]
 
 
