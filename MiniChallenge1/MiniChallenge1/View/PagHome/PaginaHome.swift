@@ -10,7 +10,8 @@ import SwiftUI
 struct PaginaHome: View {
     var body: some View {
         ZStack {
-           
+            Text("OI.")
+            BottomSheet()
         }
     }
 
