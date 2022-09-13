@@ -1,42 +1,4 @@
 [
-    {
-        "ceId": 1,
-        "ceNome": "C.E. JOERG BRUDER (SANTO AMARO)",
-        "ceZona": "zs",
-        "ceEndereco": "Avenida Padre José Maria, 555, Santo Amaro, São Paulo",
-        "ceTelefone": "5687-6340",
-        "horarioSemana" : "6h às 22h",
-        "horarioFinalSemanaFeriado": "6h às 22h",
-        "horarioPiscinas": "N\D",
-        "ceArea": "44.890",
-        "ceEstrutura":
-        [
-            {
-                "qtdEstrutura": 2,
-                "nomeEstrutura": "Academias ao ar livre"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Academia de Judô"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Academia de Boxe"
-            },
-            {
-                "qtdEstrutura": 1,
-                "nomeEstrutura": "Campo de areia"
-            }
-        ],
-        "ceModalidades":
-        [
-        "Caminhada",
-        "Ginástica Geral",
-        "Ginástica Artística"
-        ]
-    },
-    
-    ####A partir daqui####
     
     {
         "ceId": 1,
@@ -49,7 +11,7 @@
         ],
         "horarioSemana" : "7h às 22h",
         "horarioFinalSemanaFeriado": "8h às 18h",
-        "horarioPiscinas": "N\D",
+        "horarioPiscinas": "N/D",
         "ceArea": "42.000",
         "ceEstrutura":
         [
@@ -1356,6 +1318,901 @@
     },
     
     {
+        "ceId": 15,
+        "ceNome": "MINI BALNEÁRIO MARECHAL ESPIRIDIÃO ROSAS (JAGUARÉ)",
+        "ceZona": "zo",
+        "ceEndereco": "Rua General Mac Arthur, 1304, Jaguaré, São Paulo",
+        "ceTelefone":
+        [
+            "3714-3196"
+        ],
+        "horarioSemana" : "6h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Brinquedoteca"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Salas de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Funcional",
+            "Ginástica Geral"
+        ]
+    },
+    
+    
+    
+    
+    {
+        "ceId": 16,
+        "ceNome": "C.E. SOLANGE NUNES BIBAS (Butantã)",
+        "ceZona": "zo",
+        "ceEndereco": "Rua Dr. Ernâni da Gama Corrêa, 367, Butantã, São Paulo",
+        "ceTelefone":
+        [
+            "3721-5711"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "30.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Judô"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Campos de Futebol aberto"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Bocha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Quadras de Gueitebol"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 6,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 5,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Áreas de churrasqueira"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala dos professores"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Caminhada",
+            "Condicionamento Físico",
+            "Ginástica Localizada",
+            "Pilates",
+            "Voleibol"
+        ]
+    },
+    
+    {
+            "ceId": 26,
+            "ceNome": "MINI BALNEÁRIO SINÉSIO ROCHA (CAMPO LIMPO)",
+            "ceZona": "zs",
+            "ceEndereco": "Rua Cibaúma,54, Campo Limpo, São Paulo",
+            "ceTelefone":
+            [
+                "5844-8822"
+            ],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "1.301",
+            "ceEstrutura":
+            [
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Academia ao ar livre"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Piscina Semi ou Olímpica"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Ginástica Geral"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala multiuso"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Leitura/Biblioteca"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Vestiários"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Banheiros"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de administração"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Recepção"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cozinha/Copa"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Área de churrasqueira"
+                }
+                
+            ],
+            "ceModalidades":
+            [
+            "Ginastica Geral"
+            ]
+        },
+        
+        {
+            "ceId": 27,
+            "ceNome": "BALNEÁRIO PRINCESA ISABEL (VILA CARIOCA)",
+            "ceZona": "zs",
+            "ceEndereco": "Rua Campante, 100, Vila Carioca, São Paulo",
+            "ceTelefone":
+            [
+                "2215-5299"
+            ],
+            "horarioSemana" : "8h às 18h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "4.000",
+            "ceEstrutura":
+            [
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cancha de Bocha"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Piscina semi ou olímpica"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Pista de Skate"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Futsal"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Basquete 3x3"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Ginástica Geral"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de avaliação médica"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Vestiários"
+                },
+                {
+                    "qtdEstrutura": 6,
+                    "nomeEstrutura": "Banheiros"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de administração"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Recepção"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cozinha/Copa"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Área de churrasqueira"
+                }
+                
+            ],
+            "ceModalidades":
+            [
+            "Não possui atividades no momento"
+            ]
+        },
+        
+        {
+            "ceId": 28,
+            "ceNome": "C.E. RIYUSO OGAWA (VILA GUARANI)",
+            "ceZona": "zs",
+            "ceEndereco": "Rua Lussanvira, 178, Vila Guarani, São Paulo",
+            "ceTelefone":
+            [
+                "5012-0150"
+            ],
+            "horarioSemana" : "7h às 22h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "56.000",
+            "ceEstrutura":
+            [
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Academia ao ar livre"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Academia de Judô"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Campo de Futebol com arquibancada"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Espaço Pet"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Piscinas de recreação"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Pista de Caminhada"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Pista de Patinação ou Hóquei"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Pista de Skate"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra adaptada"
+                },
+                {
+                    "qtdEstrutura": 3,
+                    "nomeEstrutura": "Quadras de Futsal"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra poliesportiva coberta"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Basquete 3x3"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Gatebol"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Salas de Ginástica Geral"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Musculação"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de avaliação médica"
+                },
+                {
+                    "qtdEstrutura": 6,
+                    "nomeEstrutura": "Vestiários"
+                },
+                {
+                    "qtdEstrutura": 4,
+                    "nomeEstrutura": "Banheiros"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Salas de administração"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Recepção"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cozinha/Copa"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Estacionamento"
+                }
+                
+            ],
+            "ceModalidades":
+            [
+            "Alongamento",
+            "Caminhada",
+            "Capoeira",
+            "Condicionamento Físico",
+            "Dança de Salão",
+            "Dança do Ventre",
+            "Futsal",
+            "Ginástica Geral",
+            "Handebol",
+            "Karatê",
+            "Musculação",
+            "Pilates",
+            "Vôlei ",
+            "Yoga"
+            ]
+        },
+        
+        {
+            "ceId": 29,
+            "ceNome": "CENTRO ESPORTIVO E DE LAZER MODELÓDROMO DO IBIRAPUERA",
+            "ceZona": "zs",
+            "ceEndereco": "Rua Curitiba, 290, Paraíso, São Paulo",
+            "ceTelefone":
+            [
+                "3051-2151"
+            ],
+            "horarioSemana" : "6h às 20h",
+            "horarioFinalSemanaFeriado": "6h às 20h",
+            "horarioPiscinas": "N/D",
+            "ceArea": "N/D",
+            "ceEstrutura":
+            [
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Academia ao ar livre"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Espaço Pet"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Pista de Aeromodelismo"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Playground"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Ferromodelismo"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Automodelismo"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Tanque do Nautimodelismo"
+                },
+                {
+                    "qtdEstrutura": 5,
+                    "nomeEstrutura": "Banheiros"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de administração"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cozinha/Copa"
+                }
+                
+            ],
+            "ceModalidades":
+            [
+            "Não possui atividades no momento"
+            ]
+        },
+        
+        {
+            "ceId": 30,
+            "ceNome": "C.E. NÁUTICO GUARAPIRANGA (Guarapiranga)",
+            "ceZona": "zs",
+            "ceEndereco": "Av. dos Funcionários Públicos, 2501, Jd. Horizonte Azul, São Paulo",
+            "ceTelefone":
+            [
+                "5051-5509"
+            ],
+            "horarioSemana" : "8h às 18h",
+            "horarioFinalSemanaFeriado": "8h às 18h",
+            "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+            "ceArea": "N/D",
+            "ceEstrutura":
+            [
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Campo de areia"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Campo de Futebol com arquibancada"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Campo de Futebol Society"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cancha de Bocha"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Paredão"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Piscina de recreação"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Piscina semi ou olímpica"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Playground"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Futsal"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Basquete 3x3"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Quadra de Tênis"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de Musculação"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala multiuso"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de avaliação médica"
+                },
+                {
+                    "qtdEstrutura": 2,
+                    "nomeEstrutura": "Vestiários"
+                },
+                {
+                    "qtdEstrutura": 16,
+                    "nomeEstrutura": "Banheiros"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Sala de administração"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Recepção"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Cozinha/Copa"
+                },
+                {
+                    "qtdEstrutura": 1,
+                    "nomeEstrutura": "Estacionamento"
+                },
+                {
+                    "qtdEstrutura": 70,
+                    "nomeEstrutura": "Áreas para churrasqueira"
+                }
+                
+            ],
+            "ceModalidades":
+            [
+            ]
+        },
+        
+        {
+            "ceId": 31,
+            "ceNome": "CENTRO OLÍMPICO DE TREINAMENTO E PESQUISA (COTP)",
+            "ceZona": "zs",
+            "ceEndereco": "Av. Ibirapuera, 1315, Vila Clementino, São Paulo",
+            "ceTelefone":
+            [
+                "3396-6452",
+                "3396-6468"
+            ],
+            "horarioSemana" : "",
+            "horarioFinalSemanaFeriado": "",
+            "horarioPiscinas": "",
+            "ceArea": "",
+            "ceEstrutura":
+            [
+            ],
+            "ceModalidades":
+            [
+            ]
+        },
+    
+    
+    
+    
+    {
+        "ceId": 17,
+        "ceNome": "C.E. GERALDO JOSÉ DE ALMEIDA (Pirituba)",
+        "ceZona": "zo",
+        "ceEndereco": "Av. Agenor Couto de Magalhães, 32, Pirituba, São Paulo",
+        "ceTelefone":
+        [
+            "3903-8178",
+            "3904-1154"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "8h às 18h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "71.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Judô"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia de Boxe"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol com arquibancada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cancha de Bocha"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Futsal"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva descoberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala multiuso"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de avaliação médica"
+            },
+            {
+                "qtdEstrutura": 9,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 16,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Área para churrasqueira"
+            }
+        ],
+        "ceModalidades":
+        [
+        ]
+    },
+    
+    
+    
+    {
+        "ceId": 18,
+        "ceNome": "C.E. EDSON ARANTES DO NASCIMENTO (LAPA)",
+        "ceZona": "zo",
+        "ceEndereco": "Rua Belmonte, 957, Alto da Lapa, São Paulo",
+        "ceTelefone":
+        [
+            "3834-0032"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "7h às 22h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "98.000",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Campo de Futebol aberto"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Ginásio esportivo"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Paredão"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Piscinas de recreação"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Pista de Caminhada"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Playground Infantil"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Quadras de areia"
+            },
+            {
+                "qtdEstrutura": 5,
+                "nomeEstrutura": "Quadras de Futsal"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Quadras de Tênis"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 6,
+                "nomeEstrutura": "Vestiários"
+            },
+            {
+                "qtdEstrutura": 5,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            }
+        ],
+        "ceModalidades":
+        [
+        ]
+    },
+
+
+    
+    {
+        "ceId": 19,
+        "ceNome": "BALNEÁRIO MÁRIO MORAES (JD. CELESTE)",
+        "ceZona": "zo",
+        "ceEndereco": "Rua Edward Carmilo, 840, Jardim Celestem, São Paulo",
+        "ceTelefone":
+        [
+            "3751-0314"
+        ],
+        "horarioSemana" : "7h às 22h",
+        "horarioFinalSemanaFeriado": "7h às 22h",
+        "horarioPiscinas": "Terça a Domingo: 8h às 12h - 13h às 17h",
+        "ceArea": "6.300",
+        "ceEstrutura":
+        [
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Academia ao ar livre"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Piscina semiolímpica"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Quadra poliesportiva coberta"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de Ginástica Geral"
+            },
+            {
+                "qtdEstrutura": 3,
+                "nomeEstrutura": "Salas multiuso"
+            },
+            {
+                "qtdEstrutura": 2,
+                "nomeEstrutura": "Banheiros"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Sala de administração"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Recepção"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Cozinha/Copa"
+            },
+            {
+                "qtdEstrutura": 1,
+                "nomeEstrutura": "Estacionamento"
+            }
+        ],
+        "ceModalidades":
+        [
+            "Alongamento",
+            "Dança circular",
+            "Ginástica geral",
+            "Ginástica localizada",
+            "Hidroginástica",
+            "Lian gong",
+            "Natação",
+            "Tênis de mesa",
+            "Yoga"
+        ]
+    },
+    
+    {
         "ceId": 32,
         "ceNome": "C.E. THOMAZ MAZZONI (VILA MARIA)",
         "ceZona": "zn",
@@ -2130,7 +2987,7 @@
             ],
             "ceModalidades":
             []
-    }
+    },
     
     {
         "ceId": 20,
