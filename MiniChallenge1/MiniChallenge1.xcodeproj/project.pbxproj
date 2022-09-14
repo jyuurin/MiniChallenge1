@@ -12,6 +12,10 @@
 		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */; };
 		16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199528CFC23900D3684B /* PaginaHome.swift */; };
+		D40D72D728D0F9E5007F812C /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D72D628D0F9E5007F812C /* NavigationBarView.swift */; };
+		D456EDE428D105FB0036B073 /* ConfiguracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */; };
+		D456EDE628D123430036B073 /* CentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE528D123430036B073 /* CentrosEsportivos.swift */; };
+		D456EDE828D1254E0036B073 /* Acessibilidade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE728D1254E0036B073 /* Acessibilidade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON */ = {isa = PBXFileReference; lastKnownFileType = text; path = CentroEsportivoJSON; sourceTree = "<group>"; };
 		16C7199528CFC23900D3684B /* PaginaHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaHome.swift; sourceTree = "<group>"; };
+		D40D72D628D0F9E5007F812C /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesView.swift; sourceTree = "<group>"; };
+		D456EDE528D123430036B073 /* CentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrosEsportivos.swift; sourceTree = "<group>"; };
+		D456EDE728D1254E0036B073 /* Acessibilidade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acessibilidade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		16C7199128CBBFC300D3684B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D40C21F328D2471E00744769 /* PagConfiguracao */,
 				16C7199728CFC26A00D3684B /* PagHome */,
 			);
 			path = View;
@@ -98,8 +107,19 @@
 			isa = PBXGroup;
 			children = (
 				16C7199528CFC23900D3684B /* PaginaHome.swift */,
+				D40D72D628D0F9E5007F812C /* NavigationBarView.swift */,
 			);
 			path = PagHome;
+			sourceTree = "<group>";
+		};
+		D40C21F328D2471E00744769 /* PagConfiguracao */ = {
+			isa = PBXGroup;
+			children = (
+				D456EDE528D123430036B073 /* CentrosEsportivos.swift */,
+				D456EDE728D1254E0036B073 /* Acessibilidade.swift */,
+				D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */,
+			);
+			path = PagConfiguracao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */,
+				D456EDE828D1254E0036B073 /* Acessibilidade.swift in Sources */,
+				D456EDE628D123430036B073 /* CentrosEsportivos.swift in Sources */,
+				D456EDE428D105FB0036B073 /* ConfiguracoesView.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
+				D40D72D728D0F9E5007F812C /* NavigationBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

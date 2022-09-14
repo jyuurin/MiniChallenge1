@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct PaginaHome: View {
+    
     var body: some View {
-        ZStack {
-           
-        }
+        
+        NavigationBarView()
+        
     }
-
 }
 
 struct PaginaHome_Previews: PreviewProvider {
     static var previews: some View {
-        PaginaHome()
+            PaginaHome()
+    
+        
     }
 }
 
 //FUNÇÕES
 
 extension PaginaHome{
-   
     
-
+    
+    
 }
