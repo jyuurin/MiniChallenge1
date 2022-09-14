@@ -32,26 +32,43 @@ struct BottomSheet: View {
                             .fill(.white)
                             .frame(width: 80, height: 4)
                             .padding(.top)
-                        HStack {
+                        VStack {
                             // Search Bar
-                            TextField("Search", text: $searchText)
+                            TextField("Abobrinha", text: $searchText)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
-                                .background(BlurView(style: .dark))
+                                .background(.white)
                                 .cornerRadius(10)
-                                .colorScheme(.dark)
-                                .padding(.top, 10)
+                            //.colorScheme(.dark)
+                            //.padding(.top, 10)
                             
-                            //Botão Filtro
-                            Button(action: {}, label: {
-                                Image(systemName: "chevron.left")
-                                Text("Filtro")
-                            })
+                            //MARK: botões de filtro
+                            HStack {
+                                Button(action: {}, label: {
+                                    Text("Modalidades")
+                                    Image(systemName: "chevron.down")
+                                })
+                                    .foregroundColor(.gray)
+                                    .padding(5)
+                                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                                .stroke(.gray, lineWidth: 1))
+                                    
+                                Button(action: {}, label: {
+                                    Text("Local")
+                                    Image(systemName: "chevron.down")
+                                })
+                                    .foregroundColor(.gray)
+                                    .padding(5)
+                                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                                .stroke(.gray, lineWidth: 1))
+                                Spacer()
+                            }
                         }
-                        // Conteudo da Sheet. Precisa ler os dados do JSON para fazer.
-                        //BottomContent()
-                        Text("Blablabla")
                         
+                        //Conteudo da bottomsheet
+                        ExibirCentrosEsportivos()
+                        
+                    
                     }
                     .padding(.horizontal)
                     //Define tamanho
@@ -89,7 +106,7 @@ struct BottomSheet: View {
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)
- 
+        
     }
     
     func onChange() {
@@ -99,8 +116,8 @@ struct BottomSheet: View {
     }
 }
 
-//struct BottomSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BottomSheet()
-//    }
-//}
+struct BottomSheet_Previews: PreviewProvider {
+    static var previews: some View {
+        BottomSheet()
+    }
+}

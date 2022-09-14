@@ -12,12 +12,13 @@
 		1603790F28C67C4100A81908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1603790E28C67C4100A81908 /* Preview Assets.xcassets */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */; };
 		16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199528CFC23900D3684B /* PaginaHome.swift */; };
-		195E5A9F28CFD33700CEEF77 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BottomView.swift */; };
-		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
-		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
 		16C7199E28CFD2B900D3684B /* CentrosEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199D28CFD2B900D3684B /* CentrosEsportivo.swift */; };
 		16C719A028CFD31400D3684B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199F28CFD31400D3684B /* DataLoader.swift */; };
 		16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */; };
+		195E5A9F28CFD33700CEEF77 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BottomView.swift */; };
+		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
+		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
+		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +28,13 @@
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CentroEsportivoJSON.json; sourceTree = "<group>"; };
 		16C7199528CFC23900D3684B /* PaginaHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaHome.swift; sourceTree = "<group>"; };
-		195E5A9E28CFD33700CEEF77 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
-		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
-		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		16C7199D28CFD2B900D3684B /* CentrosEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrosEsportivo.swift; sourceTree = "<group>"; };
 		16C7199F28CFD31400D3684B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstruturaCentroEsportivo.swift; sourceTree = "<group>"; };
+		195E5A9E28CFD33700CEEF77 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
+		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,16 +119,6 @@
 			path = PagHome;
 			sourceTree = "<group>";
 		};
-		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
-			isa = PBXGroup;
-			children = (
-				195E5A9E28CFD33700CEEF77 /* BottomView.swift */,
-				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
-				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
-			);
-			path = BottomSheetView;
-            sourceTree = "<group>";
-        };
 		16C7199C28CFD29C00D3684B /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +126,17 @@
 				16C7199F28CFD31400D3684B /* DataLoader.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				195E5A9E28CFD33700CEEF77 /* BottomView.swift */,
+				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
+				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
+				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
+			);
+			path = BottomSheetView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				195E5A9F28CFD33700CEEF77 /* BottomView.swift in Sources */,
+				19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */,
 				195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */,
 				16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
@@ -344,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = UFS93RKF34;
+				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -374,7 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = UFS93RKF34;
+				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

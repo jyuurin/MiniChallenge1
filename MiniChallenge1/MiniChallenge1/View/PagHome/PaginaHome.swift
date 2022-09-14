@@ -16,18 +16,17 @@ struct PaginaHome: View {
             Text("OI.")
             BottomSheet()
         
-            List {
-                ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
-                    Text(String(centroEsportivo.ceId) + centroEsportivo.ceNome)
-                }
-            }
+//            List {
+//                ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+//                    Text(String(centroEsportivo.ceId) + centroEsportivo.ceNome)
+//                }
+//            }
             
         }
-        .onAppear {
-            self.centrosEsportivos = DataLoader().centrosEsportivos
-        }
+//        .onAppear {
+//            self.centrosEsportivos = DataLoader().centrosEsportivos
+//        }
     }
-
 }
 
 struct PaginaHome_Previews: PreviewProvider {
