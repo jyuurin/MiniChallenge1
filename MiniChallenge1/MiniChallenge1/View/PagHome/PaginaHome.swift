@@ -12,7 +12,14 @@ struct PaginaHome: View {
     @State var centrosEsportivos = [CentroEsportivo]()
     
     var body: some View {
-        NavigationBarView()
+        
+        ZStack {
+            NavigationBarView()
+            Text("OI.")
+            BottomSheet()
+
+        }
+
     }
 }
 
