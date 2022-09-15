@@ -9,14 +9,6 @@ import SwiftUI
 
 struct ConfiguracoesView: View {
     
-    //    let screenWidth =  UIScreen.main.bounds.size.width
-    //    let screenHeight =  UIScreen.main.bounds.size.height
-    
-    //                    NavigationLink(destination: OpcoesTelaConfiguracao(opTela: .constant(configuracao))) {
-    //
-    //                        Text(String(configuracao))
-    //                    }
-    
     //Variáveis que decidem para qual página será redirecionado nas configurações
     @State private var acessibilidadeAtivo = false
     @State private var centrosEsportivosAtivo = false
@@ -49,10 +41,6 @@ struct ConfiguracoesView: View {
                 }
             } .navigationTitle("Configurações")
         }
-        //                .frame(height: screenHeight * 1.10)
-        //            Spacer()
-        
-        //        }
     }
 }
 
