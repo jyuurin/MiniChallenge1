@@ -6,21 +6,27 @@
 //
 
 import SwiftUI
+import MapKit
+import Combine
 
 struct PaginaHome: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
     
     var body: some View {
-        NavigationBarView()
+        NavigationView() {
+            ZStack {
+                MapaPaginaPrincipal()
+                NavigationBarView()
+            }
+        }
+        
     }
 }
 
 struct PaginaHome_Previews: PreviewProvider {
     static var previews: some View {
             PaginaHome()
-    
-        
     }
 }
 
