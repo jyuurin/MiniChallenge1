@@ -12,6 +12,7 @@ import Combine
 struct PaginaHome: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
+    @State var localizacoesCentrosEsportivos = [CoordenadaCentroEsportivo]()
     
     var body: some View {
         NavigationView() {
@@ -20,6 +21,9 @@ struct PaginaHome: View {
                 NavigationBarView()
                 BottomSheet()
             }
+        }
+        .onAppear {
+            localizacoesCentrosEsportivos = LocalizacaoCentroEsportivo().coordenadasCentrosEsportivos
         }
     }
 }
