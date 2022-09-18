@@ -33,7 +33,11 @@ struct MapaPaginaPrincipal: View {
                             )
                     )
                 ),
-            showsUserLocation: true
+            showsUserLocation: true,
+            annotationItems: DataLoader().centrosEsportivos,
+            annotationContent: { centroEsportivo in
+            MapMarker(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0))
+            }
         )
             .ignoresSafeArea()
             .onAppear {

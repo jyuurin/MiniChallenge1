@@ -15,7 +15,7 @@ struct ExibirCentrosEsportivos: View {
         ScrollView{
             VStack {
                 ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
-                    centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco)
+                    centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco)
                 }
             }
             .onAppear {
