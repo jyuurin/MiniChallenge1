@@ -14,49 +14,42 @@ struct ExibirCentrosEsportivos: View {
     @State private var exibeDetalhesSheet = false
     
     var body: some View {
-        // NavigationView {
         ScrollView {
             VStack {
                 ForEach(centrosEsportivos, id:\.ceId) { item in
                     //NavigationLink(destination: DetalhesSheet(),  ){
-                    
                     Button(action: {exibeDetalhesSheet.toggle()}, label: {
-                        centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco)
+                        centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco.endereco)
                     })
-                        .sheet(isPresented: $exibeDetalhesSheet){
-                            DetalhesSheet()
-                        }
+                    .sheet(isPresented: $exibeDetalhesSheet){
+                        DetalhesSheet()
+                    }
                     
                 }
-                
-            
-        
-            // }
+            }
+            .onAppear {
+                self.centrosEsportivos = DataLoader().centrosEsportivos
+                print(self.centrosEsportivos)
+            }
         }
     }
-    //}
-        .onAppear {
-            self.centrosEsportivos = DataLoader().centrosEsportivos
-        }
-        .padding(.top, 40)
     
-}
-func centroEsportivoDados(title: String, subTitle: String) -> some View {
-    HStack{
-        Rectangle()
-            .foregroundColor(Color.indigo)
-            .cornerRadius(10)
-            .frame(width: 100, height: 100)
-        VStack(alignment: .leading) {
-            Text(title)
-            Text(subTitle)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+    func centroEsportivoDados(title: String, subTitle: String) -> some View {
+        HStack{
+            Rectangle()
+                .foregroundColor(Color.gray)
+                .cornerRadius(10)
+                .frame(width: 100, height: 100)
+            VStack(alignment: .leading) {
+                Text(title)
+                Text(subTitle)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
         }
-        Spacer()
     }
-    .padding(.horizontal)
-}
+    
 }
 
 

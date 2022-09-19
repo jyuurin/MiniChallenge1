@@ -22,23 +22,27 @@ struct BottomSheet: View {
                 
                 ZStack {
                     
-                    BlurView(style: .systemMaterialLight)
+                    //Setando o estilo da sheetView
+                    BlurView(style: .light)
+                        .background(Color.white)
                         .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
+                        
                     
                     VStack {
                         
                         //Icone arredondado
                         Capsule()
-                            .fill(.white)
+                            .fill(Color.init(UIColor.systemGray4))
                             .frame(width: 80, height: 4)
                             .padding(.top)
                         VStack {
                             // Search Bar
-                            TextField("Abobrinha", text: $searchText)
+                            TextField("Exemplo: *Nome do CE*; Piscina; Futebol", text: $searchText)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
-                                .background(.white)
+                                .background(Color.init(UIColor.systemGray6))
                                 .cornerRadius(10)
+                                .padding(.top, 10)
                             //.colorScheme(.dark)
                             //.padding(.top, 10)
                             
@@ -48,21 +52,21 @@ struct BottomSheet: View {
                                     Text("Modalidades")
                                     Image(systemName: "chevron.down")
                                 })
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.blue)
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
-                                                .stroke(.gray, lineWidth: 1))
-                                    
+                                        .stroke(.blue, lineWidth: 1))
                                 Button(action: {}, label: {
                                     Text("Local")
                                     Image(systemName: "chevron.down")
                                 })
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.blue)
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
-                                                .stroke(.gray, lineWidth: 1))
+                                        .stroke(.blue, lineWidth: 1))
                                 Spacer()
                             }
+                            .padding(.vertical, 10)
                         }
                         
                         //Conteudo da bottomsheet
@@ -103,6 +107,7 @@ struct BottomSheet: View {
                         // guardando a ultima offset, pra ficar a ultima posicao
                         lastOffset = offset
                     }))
+                    
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)

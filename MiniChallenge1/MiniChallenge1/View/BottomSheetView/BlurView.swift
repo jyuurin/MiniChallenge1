@@ -13,7 +13,7 @@ struct BlurView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIVisualEffectView{
         
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: style))
+        let view = UIVisualEffectView(effect: nil)
         
         return view
     }

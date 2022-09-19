@@ -4,7 +4,11 @@
         "ceId": 1,
         "ceNome": "C.E. JOSÉ BONIFÁCIO (JOSÉ BONIFÁCIO)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Ana Perena, 110, COHAB 2, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Ana Perena, 110, COHAB 2, São Paulo",
+            "latitude": "-23.547103346334982",
+            "longitude": "-46.43679591621508"
+        },
         "ceTelefone":
         [
             "2521-3513"
@@ -78,9 +82,19 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Ginástica Geral",
-            "Pilates"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            }
+           
         ]
     },
     
@@ -90,7 +104,11 @@
         "ceId": 2,
         "ceNome": "C.E. VICENTE ÍTALO FEOLA (VILA MANCHESTER)",
         "ceZona": "zl",
-        "ceEndereco": "Praça Haroldo Daltro, São Paulo",
+        "ceEndereco": {
+            "endereco": "Praça Haroldo Daltro, São Paulo",
+            "latitude": "-23.547614824108233",
+            "longitude": "-46.53399774505128"
+        },
         "ceTelefone":
         [
             "2295-2391"
@@ -184,18 +202,55 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Ballet",
-            "Capoeira",
-            "Dança Circular",
-            "Dança do Ventre/Cigana",
-            "Futebol",
-            "Futsal",
-            "Ginástica Artística",
-            "Ginástica Geral",
-            "Práticas Integrativas",
-            "Ritmos",
-            "Voleibol"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ballet",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Capoeira",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Dança Circular",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Dança do Ventre/Cigana",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Futebol",
+                "categoria": "Futebol"
+            },
+            {
+                "modalidade": "Futsal",
+                "categoria": "Futebol"
+            },
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Práticas Integrativas",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Ritmos",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Voleibol",
+                "categoria": "Vôlei"
+            }
+    
         ]
     },
     
@@ -203,7 +258,11 @@
         "ceId": 3,
         "ceNome": "MINI BALNEÁRIO JOSÉ MARIA WHITAKER (SÃO MATEUS)",
         "ceZona": "zl",
-        "ceEndereco": "Avenida Satélite, 756, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida Satélite, 756, São Paulo",
+            "latitude": "-23.610666232003076",
+            "longitude": "-46.46469214504994"
+        },
         "ceTelefone":
         [
             "2919-2653"
@@ -273,12 +332,30 @@
         ],
         "ceModalidades":
         [
-            "Ballet",
-            "Ginástica Artística",
-            "Ginástica Geral",
-            "Karatê",
-            "Hidroginástica",
-            "Natação"
+            {
+                "modalidade": "Ballet",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquatico"
+            },
+            {
+                "modalidade": "Natação",
+                "categoria": "Aquatico"
+            }
         ]
     },
     
@@ -287,7 +364,11 @@
         "ceId": 4,
         "ceNome": "CEL ANDRÉ VITAL RIBEIRO SOARES (TIRADENTES)",
         "ceZona": "zl",
-        "ceEndereco": "Avenida dos Metalúrgicos, 2255, Tiradentes, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida dos Metalúrgicos, 2255, Tiradentes, São Paulo",
+            "latitude": "-23.598463289116374",
+            "longitude": "-46.4018557585419"
+        },
         "ceTelefone":
         [
             "2282-0204"
@@ -361,10 +442,22 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Condicionamento Físico",
-            "Ginástica Localizada",
-            "Karatê"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Condicionamento Físico",
+                "categoria": "Condicionamento Físico"
+            },
+            {
+                "modalidade": "Ginástica Localizada",
+                "categoria": "Ginástica Localizada"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            }
         ]
     },
     
@@ -374,7 +467,11 @@
         "ceId": 5,
         "ceNome": "CEL TEOTÔNIO VILELA (SAPOPEMBA)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Carlo Clausetti, 19, Sapopemba, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Carlo Clausetti, 19, Sapopemba, São Paulo",
+            "latitude": "-23.605235389353982",
+            "longitude": "-46.50281426039461"
+        },
         "ceTelefone":
         [
             "2282-0204"
@@ -432,10 +529,22 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Condicionamento Físico",
-            "Ginástica Localizada",
-            "Karatê"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Condicionamento Físico",
+                "categoria": "Condicionamento Físico"
+            },
+            {
+                "modalidade": "Ginástica Localizada",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            }
         ]
     },
     
@@ -445,7 +554,11 @@
         "ceId": 6,
         "ceNome": "C.E. JOSÉ ERMÍRIO DE MORAES (VILA CURUÇÁ)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Grapirá, 537, Itaim Paulista, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Grapirá, 537, Itaim Paulista, São Paulo",
+            "latitude": "-23.497289075239436",
+            "longitude": "-46.418881573888505"
+        },
         "ceTelefone":
         [
             "2581-2410"
@@ -531,11 +644,26 @@
         ],
         "ceModalidades":
         [
-            "Ginastica Artística",
-            "Ginástica Geral",
-            "Práticas Integrativas",
-            "Karatê",
-            "Tênis de Mesa"
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Práticas Integrativas",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Tênis de Mesa",
+                "categoria": "Tênis"
+            }
         ]
     },
     
@@ -544,7 +672,11 @@
         "ceId": 7,
         "ceNome": "C.E. SALIM FARAH MALUF (MOOCA)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Taquari, 635, Mooca, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Taquari, 635, Mooca, São Paulo",
+            "latitude": "-23.54983825089398",
+            "longitude": "-46.59689167388734"
+        },
         "ceTelefone":
         [
             "2694-7668"
@@ -650,10 +782,22 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Ginástica Artística",
-            "Ginástica Geral",
-            "Judô"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Judô",
+                "categoria": "Luta"
+            }
         ]
     },
     
@@ -664,7 +808,11 @@
         "ceId": 8,
         "ceNome": "CEL JOSÉ DE ANCHIETA (JOSÉ DE ANCHIETA)",
         "ceZona": "zl",
-        "ceEndereco": "Rua José Balangio, 188, COHAB 1, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua José Balangio, 188, COHAB 1, São Paulo",
+            "latitude": "-23.550365458509606",
+            "longitude": "-46.48483502970665"
+        },
         "ceTelefone":
         [
             "2741-8960"
@@ -738,7 +886,11 @@
         "ceId": 9,
         "ceNome": "C.E. LUIZ MARTINEZ (TIQUATIRA)",
         "ceZona": "zl",
-        "ceEndereco": "Av. Governador Carvalho Pinto, 02, Tiquatira, São Paulo",
+        "ceEndereco": {
+            "endereco": "Av. Governador Carvalho Pinto, 02, Tiquatira, São Paulo",
+            "latitude": "-23.51528098463075",
+            "longitude": "-46.54980703156041"
+        },
         "ceTelefone":
         [
             "2958-9705"
@@ -824,12 +976,30 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Ballet",
-            "Dança de Salão",
-            "Ginástica Geral",
-            "Musculação",
-            "Pilates"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ballet",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Dança de Salão",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Musculação",
+                "categoria": "Musculação"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            }
         ]
     },
     
@@ -839,7 +1009,11 @@
         "ceId": 10,
         "ceNome": "CEL JUSCELINO KUBITSCHEK (JK)",
         "ceZona": "zl",
-        "ceEndereco": "R. Inácio Monteiro, 55, Cidade Tiradentes, São Paulo",
+        "ceEndereco": {
+            "endereco": "R. Inácio Monteiro, 55, Cidade Tiradentes, São Paulo",
+            "latitude": "-23.564206782049453",
+            "longitude": "-46.40728576039554"
+        },
         "ceTelefone":
         [
             "2555-2533"
@@ -905,9 +1079,18 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Ginástica Artística",
-            "Ginástica Geral"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            }
         ]
     },
     
@@ -916,7 +1099,11 @@
         "ceId": 11,
         "ceNome": "C.E. ERMELINO MATARAZZO",
         "ceZona": "zl",
-        "ceEndereco": "Rua João Euclides Pereira, 308, Jardim Matarazzo, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua João Euclides Pereira, 308, Jardim Matarazzo, São Paulo",
+            "latitude": "-23.48821148531836",
+            "longitude": "-46.48116247388876"
+        },
         "ceTelefone":
         [
             "2541-4142"
@@ -982,12 +1169,30 @@
         ],
         "ceModalidades":
         [
-            "Ballet",
-            "Ginástica Geral",
-            "Liang Gong",
-            "Pilates",
-            "Jazz",
-            "Tênis de Mesa"
+            {
+                "modalidade": "Ballet",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Liang Gong",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Jazz",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Tênis de Mesa",
+                "categoria": "Tênis"
+            }
         ]
     },
     
@@ -997,7 +1202,11 @@
         "ceId": 12,
         "ceNome": "CENTRO ESPORTIVO BRIGADEIRO EDUARDO GOMES (TATUAPÉ)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Apucarana, 233, Tatuapé, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Apucarana, 233, Tatuapé, São Paulo",
+            "latitude": "-23.539964052664004",
+            "longitude": "-46.56481314505146"
+        },
         "ceTelefone":
         [
             ""
@@ -1047,12 +1256,31 @@
         ],
         "ceModalidades":
         [
-            "Ballet",
-            "Ginástica Geral",
-            "Liang Gong",
-            "Pilates",
-            "Jazz",
-            "Tênis de Mesa"
+            {
+                "modalidade": "Ballet",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Liang Gong",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Jazz",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Tênis de Mesa",
+                "categoria": "Tênis"
+            }
+            
         ]
     },
     
@@ -1062,7 +1290,11 @@
         "ceId": 13,
         "ceNome": "CENTRO ESPORTIVO, RECREATIVO E EDUCATIVO DO TRABALHADOR  (CERET)",
         "ceZona": "zl",
-        "ceEndereco": "Rua Canuto de Abreu, s/n°, Tatuapé, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Canuto de Abreu, s/n°, Tatuapé, São Paulo",
+            "latitude": "-23.555657714958926",
+            "longitude": "-46.559708602723454"
+        },
         "ceTelefone":
         [
             "2672-1240"
@@ -1220,27 +1452,58 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Caminhada",
-            "Ginástica Geral",
-            "Voleibol",
-            "Boxe",
-            "Caminhada",
-            "Capoeira",
-            "Ginástica Geral",
-            "Jiu Jitsu",
-            "Patinação",
-            "GTai Chi Chuan"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Caminhada",
+                "categoria": "Cardio"
+            },
+            {
+                "modalidade": "Voleibol",
+                "categoria": "Vôlei"
+            },
+            {
+                "modalidade": "Boxe",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Caminhada",
+                "categoria": "Cardio"
+            },
+            {
+                "modalidade": "Capoeira",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Jiu Jitsu",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Patinação",
+                "categoria": "Patinação"
+            },
+            {
+                "modalidade": "Tai Chi Chuan",
+                "categoria": "Luta"
+            }
         ]
     },
-    
-    
     
     {
         "ceId": 14,
         "ceNome": "CEE ARTHUR FRIEDENREICH (VILA PRUDENTE)",
         "ceZona": "zl",
-        "ceEndereco": "Avenida Francisco Falconi, 83, Vila Alpina, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida Francisco Falconi, 83, Vila Alpina, São Paulo",
+            "latitude": "-23.583654255502534",
+            "longitude": "-46.56858803155902"
+        },
         "ceTelefone":
         [
             "2672-1240"
@@ -1321,7 +1584,11 @@
         "ceId": 15,
         "ceNome": "MINI BALNEÁRIO MARECHAL ESPIRIDIÃO ROSAS (JAGUARÉ)",
         "ceZona": "zo",
-        "ceEndereco": "Rua General Mac Arthur, 1304, Jaguaré, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua General Mac Arthur, 1304, Jaguaré, São Paulo",
+            "latitude": "-23.55321843956604",
+            "longitude": "-46.75256393155959"
+        },
         "ceTelefone":
         [
             "3714-3196"
@@ -1379,9 +1646,18 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Funcional",
-            "Ginástica Geral"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Funcional",
+                "categoria": "Funcional"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            }
         ]
     },
     
@@ -1392,7 +1668,11 @@
         "ceId": 16,
         "ceNome": "C.E. SOLANGE NUNES BIBAS (Butantã)",
         "ceZona": "zo",
-        "ceEndereco": "Rua Dr. Ernâni da Gama Corrêa, 367, Butantã, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Dr. Ernâni da Gama Corrêa, 367, Butantã, São Paulo",
+            "latitude": "-23.574571283935068",
+            "longitude": "-46.723133018067685"
+        },
         "ceTelefone":
         [
             "3721-5711"
@@ -1482,12 +1762,30 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Caminhada",
-            "Condicionamento Físico",
-            "Ginástica Localizada",
-            "Pilates",
-            "Voleibol"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Caminhada",
+                "categoria": "Cardio"
+            },
+            {
+                "modalidade": "Condicionamento Físico",
+                "categoria": "Condicionamento Físico"
+            },
+            {
+                "modalidade": "Ginástica Localizada",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Voleibol",
+                "categoria": "Vôlei"
+            }
         ]
     },
     
@@ -1495,7 +1793,11 @@
             "ceId": 26,
             "ceNome": "MINI BALNEÁRIO SINÉSIO ROCHA (CAMPO LIMPO)",
             "ceZona": "zs",
-            "ceEndereco": "Rua Cibaúma,54, Campo Limpo, São Paulo",
+            "ceEndereco": {
+                "endereco": "Rua Cibaúma,54, Campo Limpo, São Paulo",
+                "latitude": "-23.62015064611364",
+                "longitude": "-46.75420394450867"
+            },
             "ceTelefone":
             [
                 "5844-8822"
@@ -1554,7 +1856,10 @@
             ],
             "ceModalidades":
             [
-            "Ginastica Geral"
+                {
+                    "modalidade": "Ginastica Geral",
+                    "categoria": "Ginastica"
+                }
             ]
         },
         
@@ -1562,7 +1867,11 @@
             "ceId": 27,
             "ceNome": "BALNEÁRIO PRINCESA ISABEL (VILA CARIOCA)",
             "ceZona": "zs",
-            "ceEndereco": "Rua Campante, 100, Vila Carioca, São Paulo",
+            "ceEndereco": {
+                "endereco": "Rua Campante, 100, Vila Carioca, São Paulo",
+                "latitude": "-23.595199557136127",
+                "longitude": "-46.59511106039486"
+            },
             "ceTelefone":
             [
                 "2215-5299"
@@ -1629,7 +1938,6 @@
             ],
             "ceModalidades":
             [
-            "Não possui atividades no momento"
             ]
         },
         
@@ -1637,7 +1945,11 @@
             "ceId": 28,
             "ceNome": "C.E. RIYUSO OGAWA (VILA GUARANI)",
             "ceZona": "zs",
-            "ceEndereco": "Rua Lussanvira, 178, Vila Guarani, São Paulo",
+            "ceEndereco": {
+                "endereco": "Rua Lussanvira, 178, Vila Guarani, São Paulo",
+                "latitude": "-23.640566042268773",
+                "longitude": "-46.63804414504935"
+            },
             "ceTelefone":
             [
                 "5012-0150"
@@ -1740,20 +2052,62 @@
             ],
             "ceModalidades":
             [
-            "Alongamento",
-            "Caminhada",
-            "Capoeira",
-            "Condicionamento Físico",
-            "Dança de Salão",
-            "Dança do Ventre",
-            "Futsal",
-            "Ginástica Geral",
-            "Handebol",
-            "Karatê",
-            "Musculação",
-            "Pilates",
-            "Vôlei ",
-            "Yoga"
+                {
+                    "modalidade": "Alongamento",
+                    "categoria": "Alongamento"
+                },
+                {
+                    "modalidade": "Caminhada",
+                    "categoria": "Cardio"
+                },
+                {
+                    "modalidade": "Capoeira",
+                    "categoria": "Luta"
+                },
+                {
+                    "modalidade": "Condicionamento Físico",
+                    "categoria": "Condicionamento Físico"
+                },
+                {
+                    "modalidade": "Dança de Salão",
+                    "categoria": "Dança"
+                },
+                {
+                    "modalidade": "Dança do Ventre",
+                    "categoria": "Dança"
+                },
+                {
+                    "modalidade": "Futsal",
+                    "categoria": "Futebol"
+                },
+                {
+                    "modalidade": "Ginastica Geral",
+                    "categoria": "Ginastica"
+                },
+                {
+                    "modalidade": "Handebol",
+                    "categoria": "Handebol"
+                },
+                {
+                    "modalidade": "Karatê",
+                    "categoria": "Luta"
+                },
+                {
+                    "modalidade": "Musculação",
+                    "categoria": "Musculação"
+                },
+                {
+                    "modalidade": "Pilates",
+                    "categoria": "Corpo e Mente"
+                },
+                {
+                    "modalidade": "Vôlei",
+                    "categoria": "Vôlei"
+                },
+                {
+                    "modalidade": "Yoga",
+                    "categoria": "Corpo e Mente"
+                }
             ]
         },
         
@@ -1761,7 +2115,11 @@
             "ceId": 29,
             "ceNome": "CENTRO ESPORTIVO E DE LAZER MODELÓDROMO DO IBIRAPUERA",
             "ceZona": "zs",
-            "ceEndereco": "Rua Curitiba, 290, Paraíso, São Paulo",
+            "ceEndereco": {
+                "endereco": "Rua Curitiba, 290, Paraíso, São Paulo",
+                "latitude": "-23.582539854918746",
+                "longitude": "-46.65307683155906"
+            },
             "ceTelefone":
             [
                 "3051-2151"
@@ -1816,7 +2174,6 @@
             ],
             "ceModalidades":
             [
-            "Não possui atividades no momento"
             ]
         },
         
@@ -1824,7 +2181,11 @@
             "ceId": 30,
             "ceNome": "C.E. NÁUTICO GUARAPIRANGA (Guarapiranga)",
             "ceZona": "zs",
-            "ceEndereco": "Av. dos Funcionários Públicos, 2501, Jd. Horizonte Azul, São Paulo",
+            "ceEndereco": {
+                "endereco": "Av. dos Funcionários Públicos, 2501, Jd. Horizonte Azul, São Paulo",
+                "latitude": "-23.745718320143745",
+                "longitude": "-46.7742662315555"
+            },
             "ceTelefone":
             [
                 "5051-5509"
@@ -1930,7 +2291,11 @@
             "ceId": 31,
             "ceNome": "CENTRO OLÍMPICO DE TREINAMENTO E PESQUISA (COTP)",
             "ceZona": "zs",
-            "ceEndereco": "Av. Ibirapuera, 1315, Vila Clementino, São Paulo",
+            "ceEndereco": {
+                "endereco": "Av. Ibirapuera, 1315, Vila Clementino, São Paulo",
+                "latitude": "-23.5984179580995",
+                "longitude": "-46.656212331558706"
+            },
             "ceTelefone":
             [
                 "3396-6452",
@@ -1955,7 +2320,11 @@
         "ceId": 17,
         "ceNome": "C.E. GERALDO JOSÉ DE ALMEIDA (Pirituba)",
         "ceZona": "zo",
-        "ceEndereco": "Av. Agenor Couto de Magalhães, 32, Pirituba, São Paulo",
+        "ceEndereco": {
+            "endereco": "Av. Agenor Couto de Magalhães, 32, Pirituba, São Paulo",
+            "latitude": "-23.484082143608518",
+            "longitude": "-46.740560660397094"
+        },
         "ceTelefone":
         [
             "3903-8178",
@@ -2071,7 +2440,11 @@
         "ceId": 18,
         "ceNome": "C.E. EDSON ARANTES DO NASCIMENTO (LAPA)",
         "ceZona": "zo",
-        "ceEndereco": "Rua Belmonte, 957, Alto da Lapa, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Belmonte, 957, Alto da Lapa, São Paulo",
+            "latitude": "-23.527513963048914",
+            "longitude": "-46.71953243156011"
+        },
         "ceTelefone":
         [
             "3834-0032"
@@ -2146,7 +2519,11 @@
         "ceId": 19,
         "ceNome": "BALNEÁRIO MÁRIO MORAES (JD. CELESTE)",
         "ceZona": "zo",
-        "ceEndereco": "Rua Edward Carmilo, 840, Jardim Celestem, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Edward Carmilo, 840, Jardim Celestem, São Paulo",
+            "latitude": "-23.597737162883107",
+            "longitude": "-46.754186473886314"
+        },
         "ceTelefone":
         [
             "3751-0314"
@@ -2200,15 +2577,42 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Dança circular",
-            "Ginástica geral",
-            "Ginástica localizada",
-            "Hidroginástica",
-            "Lian gong",
-            "Natação",
-            "Tênis de mesa",
-            "Yoga"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Dança circular",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica localizada",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Lian gong",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Natação",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Tênis de mesa",
+                "categoria": "Tênis"
+            },
+            {
+                "modalidade": "Yoga",
+                "categoria": "Corpo e Mente"
+            }
         ]
     },
     
@@ -2216,7 +2620,11 @@
         "ceId": 32,
         "ceNome": "C.E. THOMAZ MAZZONI (VILA MARIA)",
         "ceZona": "zn",
-        "ceEndereco": "Praça Jânio da Silva Quadros, 150, Vila Maria",
+        "ceEndereco": {
+            "endereco": "Praça Jânio da Silva Quadros, 150, Vila Maria",
+            "latitude": "-23.50069198997056",
+            "longitude": "-46.5801467738883"
+        },
         "ceTelefone": ["5574-8760"],
         "horarioSemana" : "6h às 22h",
         "horarioFinalSemanaFeriado": "6h às 18h",
@@ -2307,10 +2715,22 @@
         ],
         "ceModalidades":
         [
-            "Basquete",
-            "Futsal",
-            "Ginástica Geral",
-            "Vôlei"
+            {
+                "modalidade": "Basquete",
+                "categoria": "Basquete"
+            },
+            {
+                "modalidade": "Futsal",
+                "categoria": "Futebol"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica Geral"
+            },
+            {
+                "modalidade": "Vôlei",
+                "categoria": "Vôlei"
+            }
         ]
     },
 
@@ -2318,7 +2738,11 @@
             "ceId": 33,
             "ceNome": "MINI BALNEÁRIO IRMÃOS PAOLILLO (JARDIM CABUÇU)",
             "ceZona": "zn",
-            "ceEndereco": "Rua General Jerônimo Furtado, 751 – Jaçanã",
+            "ceEndereco": {
+                "endereco": "Rua General Jerônimo Furtado, 751 – Jaçanã",
+                "latitude": "-23.464173576364676",
+                "longitude": "-46.56913946039759"
+            },
             "ceTelefone": ["2241-0454"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2369,9 +2793,18 @@
             ],
             "ceModalidades":
             [
-                "Futsal",
-                "Ginástica Geral",
-                "Tênis de mesa"
+                {
+                    "modalidade": "Futsal",
+                    "categoria": "Futebol"
+                },
+                {
+                    "modalidade": "Ginástica Geral",
+                    "categoria": "Ginástica"
+                },
+                {
+                    "modalidade": "Tênis de mesa",
+                    "categoria": "Tênis"
+                }
             ]
     },
 
@@ -2379,7 +2812,11 @@
             "ceId": 34,
             "ceNome": "MINI BALNEÁRIO GASTÃO MOUTINHO (MANDAQUI)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Coronel João da Silva Feijó, 80 - Mandaqui",
+            "ceEndereco": {
+                "endereco": "Rua Coronel João da Silva Feijó, 80 - Mandaqui",
+                "latitude": "-23.468916536828274",
+                "longitude": "-46.63951198923364"
+            },
             "ceTelefone": ["2231-4705"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2430,14 +2867,21 @@
             ],
             "ceModalidades":
             [
-                "Natação"
+                {
+                    "modalidade": "Natação",
+                    "categoria": "Aquático"
+                }
             ]
     },
         {
             "ceId": 35,
             "ceNome": "MINI BALNEÁRIO COMANDANTE GARCIA D'ÁVILA (CASA VERDE)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Armando Coelho e Silva, 775 – Parque Peruche",
+            "ceEndereco": {
+                "endereco": "Rua Armando Coelho e Silva, 775 – Parque Peruche",
+                "latitude": "-23.49228388683612",
+                "longitude": "-46.6550132738887"
+            },
             "ceTelefone": ["2208-2755"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2492,18 +2936,37 @@
             ],
             "ceModalidades":
             [
-                "Natação",
-                "Alongamento",
-                "Condicionamento Físico",
-                "Futsal",
-                "Ginástica Geral"
+                {
+                    "modalidade": "Natação",
+                    "categoria": "Aquático"
+                },
+                {
+                    "modalidade": "Alongamento",
+                    "categoria": "Alongamento"
+                },
+                {
+                    "modalidade": "Condicionamento Físico",
+                    "categoria": "Condicionamento Físico"
+                },
+                {
+                    "modalidade": "Futsal",
+                    "categoria": "Futebol"
+                },
+                {
+                    "modalidade": "Ginástica Geral",
+                    "categoria": "Ginástica"
+                }
             ]
     },
         {
             "ceId": 36,
             "ceNome": "C.E. OSWALDO BRANDÃO (BRASILÂNDIA)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Michihisa Murata, 120 – Vila Brasilândia",
+            "ceEndereco": {
+                "endereco": "Rua Michihisa Murata, 120 – Vila Brasilândia",
+                "latitude": "-23.47581206227719",
+                "longitude": "-46.69734716039734"
+            },
             "ceTelefone": ["3978-7591"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "7h às 18h",
@@ -2586,10 +3049,22 @@
             ],
             "ceModalidades":
             [
-                "Futsal",
-                "Futevôlei",
-                "Tênis de Mesa",
-                "Vôlei Adaptado"
+                {
+                    "modalidade": "Futsal",
+                    "categoria": "Futebol"
+                },
+                {
+                    "modalidade": "Futevôlei",
+                    "categoria": "Vôlei"
+                },
+                {
+                    "modalidade": "Tênis de Mesa",
+                    "categoria": "Tênis de Mesa"
+                },
+                {
+                    "modalidade": "Vôlei Adaptado",
+                    "categoria": "Vôlei"
+                }
             ]
     },
 
@@ -2597,7 +3072,11 @@
             "ceId": 37,
             "ceNome": "C.E. AURÉLIO CAMPOS (FREGUESIA DO Ó)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Jacutiba,167 – Freguesia do Ó",
+            "ceEndereco": {
+                "endereco": "Rua Jacutiba,167 – Freguesia do Ó",
+                "latitude": "-23.483464283549374",
+                "longitude": "-46.69349603156104"
+            },
             "ceTelefone": ["3975-7569"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2672,11 +3151,26 @@
             ],
             "ceModalidades":
             [
-                "Ginástica Geral",
-                "Handebol",
-                "Lian Gong",
-                "Mat Pilates",
-                "Yoga"
+                {
+                    "modalidade": "Ginástica Geral",
+                    "categoria": "Ginástica"
+                },
+                {
+                    "modalidade": "Handebol",
+                    "categoria": "Handebol"
+                },
+                {
+                    "modalidade": "Lian Gong",
+                    "categoria": "Corpo e Mente"
+                },
+                {
+                    "modalidade": "Mat Pilates",
+                    "categoria": "Corpo e Mente"
+                },
+                {
+                    "modalidade": "Yoga",
+                    "categoria": "Corpo e Mente"
+                }
             ]
     },
 
@@ -2685,7 +3179,11 @@
             "ceId": 38,
             "ceNome": "GINÁSIO DARCY REIS (VILA GUILHERME)",
             "ceZona": "zn",
-            "ceEndereco": "Avenida Guilherme, 1819 – Vila Guilherme",
+            "ceEndereco": {
+                "endereco": "Avenida Guilherme, 1819 – Vila Guilherme",
+                "latitude": "-23.507889392654324",
+                "longitude": "-46.599918202724524"
+            },
             "ceTelefone": ["5574-8847"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2719,14 +3217,19 @@
                     }
             ],
             "ceModalidades":
-            []
+            [
+            ]
     },
 
         {
             "ceId": 39,
             "ceNome": "BALNEÁRIO GERALDO ALONSO (SANTANA)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Santos Dumont, 1318 – Santana",
+            "ceEndereco": {
+                "endereco": "Rua Santos Dumont, 1318 – Santana",
+                "latitude": "-23.516620858169876",
+                "longitude": "-46.629488773888056"
+            },
             "ceTelefone": ["2221-5214"],
             "horarioSemana" : "7h às 22h",
             "horarioFinalSemanaFeriado": "8h às 18h",
@@ -2825,12 +3328,30 @@
             ],
             "ceModalidades":
             [
-                "Alongamento",
-                "Balé",
-                "Ginástica Geral",
-                "Hidroginástica",
-                "Pilates",
-                "Ritmos"
+                {
+                    "modalidade": "Alongamento",
+                    "categoria": "Alongamento"
+                },
+                {
+                    "modalidade": "Balé",
+                    "categoria": "Dança"
+                },
+                {
+                    "modalidade": "Ginástica Geral",
+                    "categoria": "Ginástica"
+                },
+                {
+                    "modalidade": "Hidroginástica",
+                    "categoria": "Aquático"
+                },
+                {
+                    "modalidade": "Pilates",
+                    "categoria": "Corpo e Mente"
+                },
+                {
+                    "modalidade": "Ritmos",
+                    "categoria": "Dança"
+                }
             ]
     },
     
@@ -2838,7 +3359,11 @@
             "ceId": 40,
             "ceNome": "C.E. ALFREDO INÁCIO TRINDADE (JARDIM SÃO PAULO)",
             "ceZona": "zn",
-            "ceEndereco": "Rua Viri, 425 – Jd. São Paulo",
+            "ceEndereco": {
+                "endereco": "Rua Viri, 425 – Jd. São Paulo",
+                "latitude": "-23.494589366471416",
+                "longitude": "-46.61425053156087"
+            },
             "ceTelefone": ["2973-5390"],
             "horarioSemana" : "6h às 22h",
             "horarioFinalSemanaFeriado": "6h às 18h",
@@ -2929,12 +3454,30 @@
             ],
             "ceModalidades":
             [
-                "Alongamento",
-                "Condicionamento Físico Funcional",
-                "Corrida",
-                "Ginástica Funcional",
-                "Ginástica Geral",
-                "Musculação"
+                {
+                    "modalidade": "Alongamento",
+                    "categoria": "Alongamento"
+                },
+                {
+                    "modalidade": "Condicionamento Físico Funcional",
+                    "categoria": "Condicionamento Físico"
+                },
+                {
+                    "modalidade": "Corrida",
+                    "categoria": "Cardio"
+                },
+                {
+                    "modalidade": "Ginástica Funcional",
+                    "categoria": "Ginástica"
+                },
+                {
+                    "modalidade": "Ginástica Geral",
+                    "categoria": "Ginástica"
+                },
+                {
+                    "modalidade": "Musculação",
+                    "categoria": "Musculação"
+                }
             ]
     },
        
@@ -2943,7 +3486,11 @@
             "ceId": 41,
             "ceNome": "C.E.L PERUS ",
             "ceZona": "zn",
-            "ceEndereco": "Rua Mogeiro,1031, Vila Perus",
+            "ceEndereco": {
+                "endereco": "Rua Mogeiro,1031, Vila Perus",
+                "latitude": "-23.404031007865953",
+                "longitude": "-46.76169736039888"
+            },
             "ceTelefone": ["3917-2261"],
             "horarioSemana" : "7h às 22h (Todos os dias)",
             "horarioFinalSemanaFeriado": "N/D",
@@ -2986,14 +3533,19 @@
                     }
             ],
             "ceModalidades":
-            []
+            [
+            ]
     },
     
     {
         "ceId": 20,
         "ceNome": "C.E. JOERG BRUDER (SANTO AMARO)",
         "ceZona": "zs",
-        "ceEndereco": "Avenida Padre José Maria, 555, Santo Amaro, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida Padre José Maria, 555, Santo Amaro, São Paulo",
+            "latitude": "-23.655070629817942",
+            "longitude": "-46.710065831557486"
+        },
         "ceTelefone":
         [
             "5687-6340"
@@ -3092,13 +3644,34 @@
         ],
         "ceModalidades":
         [
-        "Caminhada",
-        "Ginástica Geral",
-        "Ginástica Artística",
-        "Ginástica Respiratória",
-        "Hidroginástica",
-        "Hidroginástica",
-        "Tênis"
+            {
+                "modalidade": "Caminhada",
+                "categoria": "Cardio"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Artística",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Respiratória",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Natação",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Tênis",
+                "categoria": "Tênis"
+            }
         ]
     },
     
@@ -3106,7 +3679,11 @@
         "ceId": 21,
         "ceNome": "C.E. MANÉ GARRINCHA (IBIRAPUERA)",
         "ceZona": "zs",
-        "ceEndereco": "Rua Pedro de Toledo, 1651, Vila Clementino, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Pedro de Toledo, 1651, Vila Clementino, São Paulo",
+            "latitude": "-23.598048063046075",
+            "longitude": "-46.65360630272248"
+        },
         "ceTelefone":
         [
             "3396-6495",
@@ -3175,11 +3752,26 @@
         ],
         "ceModalidades":
         [
-        "Alongamento",
-        "Ginástica Geral",
-        "Futsal",
-        "Natação",
-        "Patinação"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Futsal",
+                "categoria": "Futebol"
+            },
+            {
+                "modalidade":  "Natação",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Patinação",
+                "categoria": "Patinação"
+            }
         ]
     },
     
@@ -3187,7 +3779,11 @@
         "ceId": 22,
         "ceNome": "C.E. FLÁVIO CALABRESI CONTE (VILA INDEPENDÊNCIA)",
         "ceZona": "zs",
-        "ceEndereco": "Rua das Municipalidades, 10, Ipiranga, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua das Municipalidades, 10, Ipiranga, São Paulo",
+            "latitude": "-23.58779445492003",
+            "longitude": "-46.597080031558725"
+        },
         "ceTelefone":
         [
             "2060-0814"
@@ -3242,7 +3838,10 @@
         ],
         "ceModalidades":
         [
-        "Kung fu"
+            {
+                "modalidade": "Kung fu",
+                "categoria": "Luta"
+            }
         ]
     },
     
@@ -3250,7 +3849,11 @@
         "ceId": 23,
         "ceNome": "MINI BALNEÁRIO ANTONIO CARLOS DE ABREU SODRÉ (JARDIM SABARÁ)",
         "ceZona": "zs",
-        "ceEndereco": "Rua Cúria, 149, Jardim Sabará, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Cúria, 149, Jardim Sabará, São Paulo",
+            "latitude": "-23.68575313416511",
+            "longitude": "-46.682040702720776"
+        },
         "ceTelefone":
         [
             "5611-0915"
@@ -3301,11 +3904,26 @@
         ],
         "ceModalidades":
         [
-        "Dança de Salão",
-        "Ginástica Geral",
-        "Hidroginástica",
-        "Jiu Jitsu",
-        "Natação"
+            {
+                "modalidade": "Dança de Salão",
+                "categoria": "Dança"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Jiu Jitsu",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Natação",
+                "categoria": "Aquático"
+            }
         ]
     },
     
@@ -3313,7 +3931,11 @@
         "ceId": 24,
         "ceNome": "BALNEÁRIO CARLOS JOEL NELLI (IPIRANGA)",
         "ceZona": "zs",
-        "ceEndereco": "Praça Nami Jafet, 45, Ipiranga, São Paulo",
+        "ceEndereco": {
+            "endereco": "Praça Nami Jafet, 45, Ipiranga, São Paulo",
+            "latitude": "-23.580216219668163",
+            "longitude": "-46.60575276039527"
+        },
         "ceTelefone":
         [
             "2273-1302"
@@ -3368,14 +3990,38 @@
         ],
         "ceModalidades":
         [
-        "Alongamento",
-        "Ginástica Geral",
-        "Ginástica Localizada",
-        "Karatê",
-        "Kickboxing",
-        "Pilates",
-        "Hidroginástica",
-        "Volei adaptado"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Ginástica Localizada",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Kickboxing",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Vôlei adaptado",
+                "categoria": "Vôlei"
+            }
         ]
     },
     
@@ -3383,7 +4029,11 @@
         "ceId": 25,
         "ceNome": "BALNEÁRIO JALISCO (VILA SANTA CATARINA)",
         "ceZona": "zs",
-        "ceEndereco": "Rua Rodes, 112, Vila Santa Catarina, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Rodes, 112, Vila Santa Catarina, São Paulo",
+            "latitude": "-23.642428042966877",
+            "longitude": "-46.666648260393934"
+        },
         "ceTelefone":
         [
             "5031-6097"
@@ -3462,21 +4112,49 @@
         ],
         "ceModalidades":
         [
-        "Alongamento Ballet",
-        "Condicionamento Físico",
-        "Hidroginástica",
-        "Pilates",
-        "Capoeira",
-        "Karatê",
-        "Natação",
-        "Ginastica"
+            {
+                "modalidade": "Alongamento Ballet",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Condicionamento Físico",
+                "categoria": "Condicionamento Físico"
+            },
+            {
+                "modalidade": "Hidroginástica",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Pilates",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Capoeira",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Karatê",
+                "categoria": "Luta"
+            },
+            {
+                "modalidade": "Natação",
+                "categoria": "Aquático"
+            },
+            {
+                "modalidade": "Ginástica",
+                "categoria": "Ginástica"
+            }
         ]
     },
 {
         "ceId": 42,
         "ceNome": "C.E. RUBENS PECCE LORDELLO (Cambuci)",
         "ceZona": "zc",
-        "ceEndereco": "Avenida Lins de Vasconcelos, 804, Cambuci, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida Lins de Vasconcelos, 804, Cambuci, São Paulo",
+            "latitude": "-23.570328848522788",
+            "longitude": "-46.62247316039545"
+        },
         "ceTelefone":
         [
             "3209-0995"
@@ -3546,7 +4224,6 @@
         ],
         "ceModalidades":
         [
-            "Sem atividades no momento"
         ]
     },
     
@@ -3554,7 +4231,11 @@
         "ceId": 43,
         "ceNome": "C.E. RAUL TABAJARA (Barra Funda)",
         "ceZona": "zc",
-        "ceEndereco": "Rua Anhanguera, 484, Barra Funda, São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Anhanguera, 484, Barra Funda, São Paulo",
+            "latitude": "-23.52340689844349",
+            "longitude": "-46.653032573887934"
+        },
         "ceTelefone":
         [
             "3392-5592",
@@ -3629,19 +4310,41 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Condicionamento físico",
-            "Futsal",
-            "Ginástica Geral",
-            "Lian Gong",
-            "Tênis de Mesa"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade": "Condicionamento físico",
+                "categoria": "Condicionamento físico"
+            },
+            {
+                "modalidade": "Futsal",
+                "categoria": "Futebol"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            },
+            {
+                "modalidade": "Lian Gong",
+                "categoria": "Corpo e Mente"
+            },
+            {
+                "modalidade": "Tênis de Mesa",
+                "categoria": "Tênis de Mesa"
+            }
         ]
     },
     {
         "ceId": 44,
         "ceNome": "ESTÁDIO MUNICIPAL DE BEISEBOL MIE NISHI",
         "ceZona": "zc",
-        "ceEndereco": "Av. Presidente Castelo Branco, 5446, Bom Retiro, São Paulo",
+        "ceEndereco": {
+            "endereco": "Av. Presidente Castelo Branco, 5446, Bom Retiro, São Paulo",
+            "latitude": "-23.520744622584118",
+            "longitude": "-46.64203817388787"
+        },
         "ceTelefone":
         [
             "3221-5105"
@@ -3711,17 +4414,33 @@
         ],
         "ceModalidades":
         [
-            "Alongamento",
-            "Beisebol",
-            "Condicionamento Físico",
-            "Ginástica Geral"
+            {
+                "modalidade": "Alongamento",
+                "categoria": "Alongamento"
+            },
+            {
+                "modalidade":  "Beisebol",
+                "categoria":  "Beisebol"
+            },
+            {
+                "modalidade": "Condicionamento Físico",
+                "categoria": "Condicionamento Físico"
+            },
+            {
+                "modalidade": "Ginástica Geral",
+                "categoria": "Ginástica"
+            }
         ]
     },
     {
         "ceId": 45,
         "ceNome": "ESTÁDIO MUNICIPAL \"JACK MARIN\"",
         "ceZona": "zc",
-        "ceEndereco": "Rua Muniz de Souza,1119 (dentro do Parque da Aclimação), São Paulo",
+        "ceEndereco": {
+            "endereco": "Rua Muniz de Souza,1119 (dentro do Parque da Aclimação), São Paulo",
+            "latitude": "-23.57459718395241",
+            "longitude": "-46.62855130272294"
+        },
         "ceTelefone":
         [
             "3271-0932"
@@ -3783,14 +4502,17 @@
         ],
         "ceModalidades":
         [
-            "Sem atividades no momento"
         ]
     },
     {
         "ceId": 46,
         "ceNome": "C.E. TIETÊ",
         "ceZona": "zc",
-        "ceEndereco": "Avenida Santos Dumont, 843, Luz, São Paulo",
+        "ceEndereco": {
+            "endereco": "Avenida Santos Dumont, 843, Luz, São Paulo",
+            "latitude": "-23.520567985046668",
+            "longitude": "-46.631961831560304"
+        },
         "ceTelefone":
         [
             "3271-0932"
@@ -3876,15 +4598,24 @@
         ],
         "ceModalidades":
         [
-            "Vôlei",
-            "Vôlei Adaptado"
+            {
+                "modalidade": "Vôlei",
+                "categoria": "Vôlei"
+            },{
+                "modalidade": "Vôlei Adaptado",
+                "categoria": "Vôlei"
+            }
         ]
     },
     {
         "ceId": 47,
         "ceNome": "CENTRO DE ESPORTES RADICAIS",
         "ceZona": "zc",
-        "ceEndereco": "Av. castelo Branco, 5700, Bom Retiro, São Paulo",
+        "ceEndereco": {
+            "endereco": "Av. castelo Branco, 5700, Bom Retiro, São Paulo",
+            "latitude": "-23.52030203475211",
+            "longitude": "-46.64358384505201"
+        },
         "ceTelefone":
         [
             "3224-9159"
@@ -3934,7 +4665,6 @@
         ],
         "ceModalidades":
         [
-            "Sem atividades no momento"
         ]
     }
   
