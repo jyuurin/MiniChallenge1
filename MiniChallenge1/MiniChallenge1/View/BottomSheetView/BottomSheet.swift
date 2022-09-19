@@ -115,9 +115,9 @@ struct BottomSheet: View {
         }
     }
 }
-
-struct BottomSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomSheet()
-    }
-}
+//
+//struct BottomSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BottomSheet()
+//    }
+//}
