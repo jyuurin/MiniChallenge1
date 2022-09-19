@@ -21,7 +21,6 @@ struct ExibirCentrosEsportivos: View {
             .onAppear {
                 self.centrosEsportivos = DataLoader().centrosEsportivos
             }
-            .padding(.top, 40)
             
         }
     }
@@ -29,7 +28,7 @@ struct ExibirCentrosEsportivos: View {
     func centroEsportivoDados(title: String, subTitle: String) -> some View {
         HStack{
             Rectangle()
-                .foregroundColor(Color.indigo)
+                .foregroundColor(Color.gray)
                 .cornerRadius(10)
                 .frame(width: 100, height: 100)
             VStack(alignment: .leading) {
@@ -40,7 +39,6 @@ struct ExibirCentrosEsportivos: View {
             }
             Spacer()
         }
-        .padding(.horizontal)
     }
     
     

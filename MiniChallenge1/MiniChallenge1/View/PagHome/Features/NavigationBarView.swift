@@ -9,24 +9,37 @@ import SwiftUI
 
 struct NavigationBarView: View {
     
+    init() {
+        let coloredAppearance = UINavigationBarAppearance()
+          coloredAppearance.configureWithOpaqueBackground()
+          coloredAppearance.backgroundColor = .white
+          
+          UINavigationBar.appearance().standardAppearance = coloredAppearance
+          UINavigationBar.appearance().compactAppearance = coloredAppearance
+          UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    }
+    
     var body: some View {
-        
-            Text("")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Image(systemName: "location.fill")
-                    Text("Localização atual")
-                        .padding(.trailing, 150)
-                        
-                    NavigationLink(destination: ConfiguracoesView()) {
-                        Image(systemName: "gearshape")
-                    }
+       
+        Text("")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                
+                Image(systemName: "location.fill")
+                Text("Localização atual")
+                    .padding(.trailing, 150)
                     
+                NavigationLink(destination: ConfiguracoesView()) {
+                    Image(systemName: "gearshape")
                 }
+                
             }
-            .foregroundColor(.blue)
-            .background(Color.white)
+        }
+        .foregroundColor(.blue)
+        
             
+        
+      
             
         
         
