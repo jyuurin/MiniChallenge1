@@ -10,6 +10,7 @@ import SwiftUI
 struct ExibirCentrosEsportivos: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
+    @Binding var categoriasSelecionadas: [String]
     
     var body: some View {
         ScrollView{
@@ -19,7 +20,17 @@ struct ExibirCentrosEsportivos: View {
                 }
             }
             .onAppear {
-                self.centrosEsportivos = DataLoader().centrosEsportivos
+                
+                for centroEsportivo in DataLoader().centrosEsportivos {
+                    for modalidade in centroEsportivo.ceModalidades {
+                        if categoriasSelecionadas.contains(modalidade.categoria) {
+                            self.centrosEsportivos.append(centroEsportivo)
+                            break
+                        }
+                    }
+                }
+                
+                
             }
             
         }

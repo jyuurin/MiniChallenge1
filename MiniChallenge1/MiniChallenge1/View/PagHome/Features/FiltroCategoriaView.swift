@@ -24,92 +24,92 @@ struct FiltroCategoriaView: View {
     @State var idsSelecionadas = [Int]()
     
     //Setando todas caategorias contidas no json com seus respectivos icones
-    private var categorias: [Categoria] = [
+    var categorias: [Categoria] = [
         Categoria(
             idCategoria: 1,
             nomeCategoria: "Dança",
             nomePriImagem: "figure.dance",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.dance-seg"),
         Categoria(
             idCategoria: 2,
             nomeCategoria: "Tênis",
             nomePriImagem: "figure.tennis",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.tennis-seg"),
         Categoria(
             idCategoria: 3,
             nomeCategoria: "Vôlei",
             nomePriImagem: "figure.volleyball",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.volleyball-seg"),
         Categoria(
             idCategoria: 4,
             nomeCategoria: "Corpo e Mente",
             nomePriImagem: "figure.mind.and.body",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.mind.and.body-seg"),
         Categoria(
             idCategoria: 5,
             nomeCategoria: "Futebol",
             nomePriImagem: "figure.soccer",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.soccer-seg"),
         Categoria(
             idCategoria: 6,
             nomeCategoria: "Ginástica",
             nomePriImagem: "figure.gymnastics",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.gymnastics-seg"),
         Categoria(
             idCategoria: 7,
             nomeCategoria: "Luta",
             nomePriImagem: "figure.boxing",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.boxing-seg"),
         Categoria(
             idCategoria: 8,
             nomeCategoria: "Aquático",
             nomePriImagem: "figure.pool.swim",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.pool.swim-seg"),
         Categoria(
             idCategoria: 9,
             nomeCategoria: "Cárdio",
             nomePriImagem: "figure.run",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.run-seg"),
         Categoria(
             idCategoria: 10,
             nomeCategoria: "Patinação",
             nomePriImagem: "figure.roller.skate",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.roller.skate-seg"),
         Categoria(
             idCategoria: 11,
             nomeCategoria: "Condicionamento Físico",
             nomePriImagem: "figure.core.training",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.core.training-seg"),
         Categoria(
             idCategoria: 12,
             nomeCategoria: "Musculação",
             nomePriImagem: "figure.strengthtraining.traditional",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.strengthtraining.traditional-seg"),
         Categoria(
             idCategoria: 13,
             nomeCategoria: "Alongamento",
             nomePriImagem: "figure.flexibility",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.flexibility-seg"),
         Categoria(
             idCategoria: 14,
             nomeCategoria: "Handebol",
             nomePriImagem: "figure.handball",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.handball-seg"),
         Categoria(
             idCategoria: 15,
             nomeCategoria: "Beisebol",
             nomePriImagem: "figure.baseball",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.baseball-seg"),
         Categoria(
             idCategoria: 16,
             nomeCategoria: "Basquete",
             nomePriImagem: "figure.basketball",
-            nomeSegImagem: ""),
+            nomeSegImagem: "figure.basketball-seg"),
         Categoria(
             idCategoria: 17,
             nomeCategoria: "Funcional",
             nomePriImagem: "figure.strengthtraining.functional",
-            nomeSegImagem: "")
+            nomeSegImagem: "figure.strengthtraining.functional-seg")
     ]
     
     
@@ -121,6 +121,7 @@ struct FiltroCategoriaView: View {
                 //Adicionando botão para voltar a view anterior
                 Button(action: {
                     //Ativando a função que retorna a view anterior
+                    onDismiss?(arrayCategorias)
                     dismiss()
                 }, label: {
                     HStack {
@@ -138,6 +139,7 @@ struct FiltroCategoriaView: View {
                 
             }
             .padding()
+            .padding(.vertical)
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], content: {
                 ForEach(self.categorias, id: \.idCategoria) { categoria in
@@ -166,20 +168,19 @@ struct FiltroCategoriaView: View {
                         //Se essa categoria ja estiver selecionada, entra no primeiro if, se não, entra no segundo
                         if idsSelecionadas.contains(categoria.idCategoria) {
                             VStack {
-                                Image("\(categoria.nomePriImagem)")
+                                Image("\(categoria.nomeSegImagem)")
                                     .resizable()
-                                    .frame(width: 15, height: 18, alignment: .center)
+                                    .frame(width: 30, height: 30, alignment: .center)
                                     
                                 Text(categoria.nomeCategoria)
                                     .font(.system(size: 15))
                             }
                             .foregroundColor(Color(UIColor(red: 35/255, green: 126/255, blue: 169/255, alpha: 1)))
-                            .background(Color(UIColor(red: 35/255, green: 126/255, blue: 169/255, alpha: 1)))
                         } else {
                             VStack {
                                 Image("\(categoria.nomePriImagem)")
                                     .resizable()
-                                    .frame(width: 15, height: 18, alignment: .center)
+                                    .frame(width: 30, height: 30, alignment: .center)
                                     
                                 Text(categoria.nomeCategoria)
                                     .font(.system(size: 15))
@@ -195,11 +196,12 @@ struct FiltroCategoriaView: View {
         }
         
         
+        
     }
 }
 
 struct FiltroCategoriaView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltroCategoriaView()
+        FiltroCategoriaView(arrayCategorias: .constant([String]()))
     }
 }

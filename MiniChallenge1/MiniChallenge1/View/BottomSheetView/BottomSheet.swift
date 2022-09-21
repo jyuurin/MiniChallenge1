@@ -15,6 +15,9 @@ struct BottomSheet: View {
     @State var lastOffset : CGFloat = 0
     @State var mostraFiltroCategoria = false
     
+    @State var categoriasSelecionadas: [String] = []
+    
+    
     var body: some View {
         GeometryReader{proxy -> AnyView in
             let height = proxy.frame(in: .global).height
@@ -60,7 +63,7 @@ struct BottomSheet: View {
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(.blue, lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
-                                        FiltroCategoriaView()
+                                        FiltroCategoriaView(arrayCategorias: .constant(categoriasSelecionadas))
                                     })
                                 Button(action: {}, label: {
                                     Text("Local")
@@ -76,7 +79,7 @@ struct BottomSheet: View {
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos()
+                        ExibirCentrosEsportivos(categoriasSelecionadas: $categoriasSelecionadas)
                         
                     
                     }
@@ -115,6 +118,10 @@ struct BottomSheet: View {
                     }))
                     
             )
+        }
+        .onAppear {
+            print("oi")
+            print(categoriasSelecionadas)
         }
         .ignoresSafeArea(.all, edges: .bottom)
         
