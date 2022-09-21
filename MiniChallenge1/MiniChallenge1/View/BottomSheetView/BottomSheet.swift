@@ -13,6 +13,7 @@ struct BottomSheet: View {
     @State var searchText = ""
     @State var offset: CGFloat = 0
     @State var lastOffset : CGFloat = 0
+    @State var mostraFiltroCategoria = false
     
     var body: some View {
         GeometryReader{proxy -> AnyView in
@@ -48,14 +49,19 @@ struct BottomSheet: View {
                             
                             //MARK: botões de filtro
                             HStack {
-                                Button(action: {}, label: {
-                                    Text("Modalidades")
+                                Button(action: {
+                                    self.mostraFiltroCategoria.toggle()
+                                }, label: {
+                                    Text("Categorias")
                                     Image(systemName: "chevron.down")
                                 })
                                     .foregroundColor(.blue)
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(.blue, lineWidth: 1))
+                                    .sheet(isPresented: $mostraFiltroCategoria, content: {
+                                        FiltroCategoriaView()
+                                    })
                                 Button(action: {}, label: {
                                     Text("Local")
                                     Image(systemName: "chevron.down")
