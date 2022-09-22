@@ -60,6 +60,7 @@ struct DetalhesSheet: View {
                     Text("**Piscinas:** \(centroEsportivo.horarioPiscinas)")
                 }
                 Spacer()
+                    .frame(height: 3)
                 
                 
                 //Exibição de MODALIDADES do Centro Esportivo
@@ -94,7 +95,7 @@ struct DetalhesSheet: View {
                         .font(.title2.bold())
                     if(centroEsportivo.ceEstrutura.isEmpty == true)
                     {
-                        Text("As estruturas desta unidade não estão disponiveis. Entre em contato através do numero.")
+                        Text("Sem informações para esta unidade. Entre em contato através do número de telefone.")
                     }
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem(), GridItem()]) {
