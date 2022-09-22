@@ -16,7 +16,7 @@ struct Zona {
 struct FiltroZonaView: View {
     
     @State var zonas: [String] = ["Zona Sul", "Zona Norte", "Zona Leste", "Zona Oeste", "Região Central"]
-    @Binding var zonaSelecionada: [String]
+    @Binding var zonasSelecionadas: [String]
     var body: some View {
         
         ScrollView {
@@ -43,15 +43,43 @@ struct FiltroZonaView: View {
                                 GridItem(.flexible())]) {
                 ForEach(zonas, id: \.self) { zona in
                     Button {
+                        var permiteInsercao = true
                         
+                        if self.zonasSelecionadas.count > 0 {
+                            for i in 0...self.zonasSelecionadas.count-1 {
+                                if self.zonasSelecionadas[i] == zona {
+                                    self.zonasSelecionadas.remove(at: i)
+                                    permiteInsercao = false
+                                    break
+                                }
+                            }
+                        }
+                        
+                        if permiteInsercao {
+                            self.zonasSelecionadas.append(zona)
+                        }
                     } label: {
-                        Text(zona)
-                            .font(.system(size: 15))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
+                        if(self.zonasSelecionadas.contains(zona)) {
+                            Text(zona)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                        } else {
+                            Text(zona)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(.blue)
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.blue, lineWidth: 1))
+                        }
+                        
+                            
                     }
-                    .overlay(RoundedRectangle(cornerRadius: 10)
-                        .stroke(.blue, lineWidth: 1))
+                    
 
                     
                 }
@@ -67,6 +95,6 @@ struct FiltroZonaView: View {
 
 struct FiltroZonaView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltroZonaView(zonaSelecionada: .constant([String]()))
+        FiltroZonaView(zonasSelecionadas: .constant([String]()))
     }
 }

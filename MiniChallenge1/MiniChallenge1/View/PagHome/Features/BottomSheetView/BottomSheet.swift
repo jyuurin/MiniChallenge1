@@ -14,8 +14,10 @@ struct BottomSheet: View {
     @State var offset: CGFloat = 0
     @State var lastOffset : CGFloat = 0
     @State var mostraFiltroCategoria = false
+    @State var mostraFiltroZonas = false
     
     @State var categoriasSelecionadas: [String] = []
+    @State var zonasSelecionadas: [String] = []
     
     
     var body: some View {
@@ -84,7 +86,9 @@ struct BottomSheet: View {
                                 }
                                 
                                 
-                                Button(action: {}, label: {
+                                Button(action: {
+                                    self.mostraFiltroZonas = true
+                                }, label: {
                                     Text("Local")
                                     Image(systemName: "chevron.down")
                                 })
@@ -92,6 +96,9 @@ struct BottomSheet: View {
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(.blue, lineWidth: 1))
+                                    .sheet(isPresented: $mostraFiltroZonas, content: {
+                                        FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                    })
                                 Spacer()
                             }
                             .padding(.vertical, 10)
