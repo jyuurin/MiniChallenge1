@@ -16,9 +16,7 @@ struct Zona {
 struct FiltroZonaView: View {
     
     @State var zonas: [String] = ["Zona Sul", "Zona Norte", "Zona Leste", "Zona Oeste", "Região Central"]
-    @State var zonaSelecionada: [String] = []
-    @State private var zonaClicada = false // qndo n clica tá inativa
-    @State var color = Color(UIColor.systemGray)
+    @Binding var zonaSelecionada: [String]
     var body: some View {
         
         ScrollView {
@@ -34,7 +32,7 @@ struct FiltroZonaView: View {
                     .foregroundColor(.black)
                 Spacer()
                 Button(action: {}, label: {
-                    Text("Limpar Filtro")
+                    Text("Limpar")
                 })
             }
             .padding(.horizontal)
@@ -45,7 +43,7 @@ struct FiltroZonaView: View {
                                 GridItem(.flexible())]) {
                 ForEach(zonas, id: \.self) { zona in
                     Button {
-                        zonaClicada.toggle()
+                        
                     } label: {
                         Text(zona)
                             .font(.system(size: 15))
@@ -63,16 +61,12 @@ struct FiltroZonaView: View {
         }
         
     }
-//
-//    func filtrarZonas() {
-//        ForEach(filtedProspects)
-//    }
-//
+
 }
 
 
 struct FiltroZonaView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltroZonaView()
+        FiltroZonaView(zonaSelecionada: .constant([String]()))
     }
 }
