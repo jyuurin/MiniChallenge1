@@ -10,108 +10,153 @@
 import SwiftUI
 
 struct DetalhesSheet: View {
-
-    //    var centroEsportivoId: Int
-    //    var centroEsportivoNome: String
-    //    var centroEsportivoEndereco: String
-    //    var centroEsportivoHorario: [String]
-    //    var centroEsportivoModalidades: [String]
-    //    var centroEsportivoEstruturas: [String]
-    
-    var centroEsportivoId = 1
-    var centroEsportivoNome = "TesteNome"
-    var centroEsportivoEndereco = "Rua dos Bobos, 0"
-    var centroEsportivoHorario = ["10h40 as 40h35", "19h50 a 10h40", "50h34"]
-    var centroEsportivoModalidades = ["Bale", "Dança"]
-    var centroEsportivoEstruturas = ["Quadra com Piscina", "Cozinha"]
-    
-    
-    var body: some View {
-        
-        let buttons = [
-            Button(action: {}) {
-                Image(systemName: "map")
-            },
-            Button(action: {}) {
-                Image(systemName: "phone")
-            }
-        ]
-        ZStack {
-            NavigationView {
-                Text("")
-            }
-            .navigationBarHidden(true)
-            //Color.blue.edgesIgnoringSafeArea(.all)
-            NavigationViewPersonalizada(buttons: buttons)
-            InformacoesCentroEsportivo(centroEsportivoEndereco: centroEsportivoEndereco, centroEsportivoHorario: centroEsportivoHorario)
-            //        .onAppear {
-            //            self.centrosEsportivos = DataLoader().centrosEsportivos
-            //        }
-        }
-    }
-    
-}
-//centroEsportivoModalidades: centroEsportivoModalidades, centroEsportivoEstruturas: centroEsportivoEstruturas
-struct NavigationViewPersonalizada: View {
     
     @Environment(\.dismiss) var dismiss
     
-    var centroEsportivoNome = "TesteNome"
-    var buttons: [Button<Image>]
+    var centroEsportivo: CentroEsportivo
+    
+    
+    //    let buttons = [
+    //        Button(action: {
+    //            botaoLigar()
+    //        }) {
+    //            Image(systemName: "map")
+    //        },
+    //        Button(action: {}) {
+    //            Image(systemName: "phone")
+    //        }
+    //    ]
     
     var body: some View {
-        VStack(alignment: .leading ){
-//                NavigationLink {
-//                    ExibirCentrosEsportivos()
-//                } label: {
-//                    Label("Voltar", systemImage: "chevron.left")
-//                }
-//
-//            }
-            Button(action: {dismiss()}, label: {
-                Image(systemName: "chevron.left")
-                Text("Voltar")
-            })
-                .padding(.leading, 20)
+        ScrollView {
+            VStack(alignment: .leading ) {
+                Button(action: {dismiss()}, label: {
+                    Image(systemName: "chevron.left")
+                    Text("Voltar")
+                })
+                    .padding(3)
+                HStack{
+                    Text("\(centroEsportivo.ceNome)")
+                        .padding(.bottom, 20)
+                        .font(.title.bold())
+                        .lineLimit(3)
+                }
                 
-            HStack{
-                Text(centroEsportivoNome)
-                    .font(.system(size: 35, weight: .bold))
+                //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
+                Group {
+                    Button(action: {botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)}) {
+                        Text(centroEsportivo.ceEndereco.endereco)
+                            .multilineTextAlignment(.leading)
+                    }
+                    //
+                    Button(action: {botaoLigar(numeroTelefone: centroEsportivo.ceTelefone[0])}, label: {
+                        Text("**Telefone:** ")
+                            .foregroundColor(.black)
+                        Text(centroEsportivo.ceTelefone[0])
+                    })
+                    Spacer()
+                    Text("**Horário de Funcionamento:** \(centroEsportivo.horarioSemana)")
+                    Text("**Finais de Semana / Feriado:** \(centroEsportivo.horarioFinalSemanaFeriado )")
+                    Text("**Piscinas:** \(centroEsportivo.horarioPiscinas)")
+                }
                 Spacer()
-                ForEach(0..<buttons.count) { i in
-                    self.buttons[i]
-                        .foregroundColor(.blue)
-                        .padding(10)
-                        .font(.system(size: 20))
+                
+                
+                //Exibição de MODALIDADES do Centro Esportivo
+                Group{
+                    Text("Modalidades:")
+                        .font(.title2.bold())
+                    if(centroEsportivo.ceModalidades.isEmpty == true)
+                    {
+                        Text("A unidade não possui modalidades disponíveis no momento.")
+                    }
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(centroEsportivo.ceModalidades.indices) { item in
+                                VStack {
+                                    Image(systemName: "sportscourt")
+                                        .font(.system(size: 20))
+                                        .padding(.bottom, 2)
+                                    Text(centroEsportivo.ceModalidades[item].modalidade)
+                                        .font(.caption)
+                                        .lineLimit(2)
+                                        .frame(width: 100)
+                                        .multilineTextAlignment(.center)
+                                }
+                                Spacer()
+                            }
+                        }
+                    }
+                }
+                //Exibição de ESTRUTURAS do Centro Esportivo
+                Group{
+                    Text("Estrutura:")
+                        .font(.title2.bold())
+                    if(centroEsportivo.ceEstrutura.isEmpty == true)
+                    {
+                        Text("As estruturas desta unidade não estão disponiveis. Entre em contato através do numero.")
+                    }
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem(), GridItem()]) {
+                            ForEach(centroEsportivo.ceEstrutura.indices) { item in
+                                VStack {
+                                    Image(systemName: "sportscourt")
+                                        .font(.system(size: 20))
+                                        .padding(.bottom, 2)
+                                    Text(centroEsportivo.ceEstrutura[item].nomeEstrutura)
+                                        .font(.caption)
+                                        .lineLimit(2)
+                                        .frame(width: 100)
+                                        .multilineTextAlignment(.center)
+                                    
+                                }
+                                .frame(height: 120)
+                            }
+                        }
+                        Spacer()
+                    }
                 }
             }
-            .padding()
-            Spacer()
         }
-    }
-}
-
-struct InformacoesCentroEsportivo: View {
-    
-    var centroEsportivoEndereco : String
-    var centroEsportivoHorario : [String]
-    //var centroEsportivoModalidades : [String]
-    //var centroEsportivoEstruturas : [String]
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(centroEsportivoEndereco)
-            Text("Horário de Funcionamento: \(centroEsportivoHorario[0])")
-                .font(.system(size: 5, weight: .bold))
-            Text("Finais de Semana / Feriado: \(centroEsportivoHorario[1])")
-            Text("Piscinas: \(centroEsportivoHorario[2])")
-    }
-    
-    }
-}
-struct DetalhesSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        DetalhesSheet()
+        .padding()
         
     }
+    //função que direciona para o celular da pessoa. Não funciona pelo simulator, testar pelo tel de alguem
+    func botaoLigar(numeroTelefone: String) {
+        
+        let telefone = "tel://"
+        let telefoneFormatado = telefone + numeroTelefone
+        guard let url = URL(string: telefoneFormatado) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+        else {
+            print("nunda")
+        }
+        //Text(numeroTelefone)
+    }
+    
+    //função que direciona para o maps a partir das coordenadas do centro esportivo. O usuario precisa ativar a localizaçao pelo mapas.
+    func botaoAbrirMapas(latitudeJson: String, longitudeJson: String) {
+        
+        let latitude = latitudeJson
+        let longitude = longitudeJson
+        
+        let url = URL(string: "maps://?saddr=&daddr=\(latitude),\(longitude)")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+        
+    }
+    
+    
+    
 }
+
+//struct DetalhesSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetalhesSheet()
+//
+//    }
+//}

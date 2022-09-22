@@ -19,15 +19,11 @@
 		16C7199E28CFD2B900D3684B /* CentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */; };
 		16C719A028CFD31400D3684B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199F28CFD31400D3684B /* DataLoader.swift */; };
 		16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */; };
-		195E5A9F28CFD33700CEEF77 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BottomView.swift */; };
-		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
-		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
-		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
-		19DCD20228D39D200096FAF6 /* DetalhesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */; };
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
 		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
+		19DCD20228D39D200096FAF6 /* DetalhesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */; };
 		D40D72D728D0F9E5007F812C /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D72D628D0F9E5007F812C /* NavigationBarView.swift */; };
 		D456EDE428D105FB0036B073 /* ConfiguracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */; };
 		D456EDE628D123430036B073 /* CentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE528D123430036B073 /* CentrosEsportivos.swift */; };
@@ -48,15 +44,11 @@
 		16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentroEsportivo.swift; sourceTree = "<group>"; };
 		16C7199F28CFD31400D3684B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstruturaCentroEsportivo.swift; sourceTree = "<group>"; };
-		195E5A9E28CFD33700CEEF77 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
-		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
-		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
-		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
-		19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSheet.swift; sourceTree = "<group>"; };
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
+		19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSheet.swift; sourceTree = "<group>"; };
 		D40D72D628D0F9E5007F812C /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesView.swift; sourceTree = "<group>"; };
 		D456EDE528D123430036B073 /* CentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrosEsportivos.swift; sourceTree = "<group>"; };
@@ -180,7 +172,7 @@
 		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
 			isa = PBXGroup;
 			children = (
-				195E5A9E28CFD33700CEEF77 /* BottomView.swift */,
+				195E5A9E28CFD33700CEEF77 /* BlurView.swift */,
 				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
 				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
 				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
@@ -194,27 +186,6 @@
 				19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */,
 			);
 			path = DetalhesSheetView;
-			sourceTree = "<group>";
-		};
-		D40C21F328D2471E00744769 /* PagConfiguracao */ = {
-			isa = PBXGroup;
-			children = (
-				D456EDE528D123430036B073 /* CentrosEsportivos.swift */,
-				D456EDE728D1254E0036B073 /* Acessibilidade.swift */,
-				D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */,
-			);
-			path = PagConfiguracao;
-			sourceTree = "<group>";
-		};
-		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
-			isa = PBXGroup;
-			children = (
-				195E5A9E28CFD33700CEEF77 /* BlurView.swift */,
-				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
-				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
-				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
-			);
-			path = BottomSheetView;
 			sourceTree = "<group>";
 		};
 		D40C21F328D2471E00744769 /* PagConfiguracao */ = {
@@ -448,6 +419,7 @@
 				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge1/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,6 +451,7 @@
 				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge1/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
