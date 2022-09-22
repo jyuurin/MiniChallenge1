@@ -13,16 +13,50 @@ struct PaginaHome: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
     
-
+    init() {
+        let coloredAppearance = UINavigationBarAppearance()
+          coloredAppearance.configureWithOpaqueBackground()
+          coloredAppearance.backgroundColor = .white
+          
+          UINavigationBar.appearance().standardAppearance = coloredAppearance
+          UINavigationBar.appearance().compactAppearance = coloredAppearance
+          UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    }
     
     var body: some View {
-        NavigationView() {
+        NavigationView {
             ZStack {
                 MapaPaginaPrincipal()
-                NavigationBarView()
+//                NavigationBarView()
                 BottomSheet()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+
+                    Image(systemName: "location.fill")
+                        .padding(.vertical)
+                        .foregroundColor(.blue)
+                    
+                    Text("Localização atual")
+                        .padding(.trailing, 150)
+                        .padding(.vertical)
+                        .foregroundColor(.blue)
+
+                    NavigationLink(destination: ConfiguracoesView()) {
+                        Image(systemName: "gearshape")
+                    }
+                    .foregroundColor(.blue)
+                    .padding(.vertical)
+
+                }
+                
+                
+               
+            }
+            
         }
+        
     }
 }
 
