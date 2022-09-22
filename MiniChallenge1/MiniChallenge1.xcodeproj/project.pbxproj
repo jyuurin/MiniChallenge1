@@ -14,7 +14,6 @@
 		1659782328D2E24E002E4FF1 /* MapaPaginaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */; };
 		16832E9728D7C213003D729A /* EnderecoCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */; };
 		16832E9928D7C60E003D729A /* ModalidadeCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */; };
-		16A28E4828DA4935001CCF62 /* FiltroCategoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A28E4728DA4935001CCF62 /* FiltroCategoriaView.swift */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */; };
 		16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199528CFC23900D3684B /* PaginaHome.swift */; };
 		16C7199E28CFD2B900D3684B /* CentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */; };
@@ -24,6 +23,7 @@
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
 		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
+		19DCD20228D39D200096FAF6 /* DetalhesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */; };
 		D40D72D728D0F9E5007F812C /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D72D628D0F9E5007F812C /* NavigationBarView.swift */; };
 		D456EDE428D105FB0036B073 /* ConfiguracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */; };
 		D456EDE628D123430036B073 /* CentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456EDE528D123430036B073 /* CentrosEsportivos.swift */; };
@@ -39,7 +39,6 @@
 		1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaPaginaPrincipal.swift; sourceTree = "<group>"; };
 		16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCentroEsportivo.swift; sourceTree = "<group>"; };
 		16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalidadeCentroEsportivo.swift; sourceTree = "<group>"; };
-		16A28E4728DA4935001CCF62 /* FiltroCategoriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroCategoriaView.swift; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CentroEsportivoJSON.json; sourceTree = "<group>"; };
 		16C7199528CFC23900D3684B /* PaginaHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaHome.swift; sourceTree = "<group>"; };
 		16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentroEsportivo.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
+		19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSheet.swift; sourceTree = "<group>"; };
 		D40D72D628D0F9E5007F812C /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		D456EDE328D105FB0036B073 /* ConfiguracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesView.swift; sourceTree = "<group>"; };
 		D456EDE528D123430036B073 /* CentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentrosEsportivos.swift; sourceTree = "<group>"; };
@@ -114,37 +114,10 @@
 		1659782128D2E1F4002E4FF1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */,
-				16A28E4B28DC343E001CCF62 /* MapaENavigation */,
-				16A28E4A28DC342F001CCF62 /* Filtros */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		16A28E4928DC33DD001CCF62 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				195E5A9E28CFD33700CEEF77 /* BlurView.swift */,
-				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
-			);
-			path = BottomSheet;
-			sourceTree = "<group>";
-		};
-		16A28E4A28DC342F001CCF62 /* Filtros */ = {
-			isa = PBXGroup;
-			children = (
-				16A28E4728DA4935001CCF62 /* FiltroCategoriaView.swift */,
-			);
-			path = Filtros;
-			sourceTree = "<group>";
-		};
-		16A28E4B28DC343E001CCF62 /* MapaENavigation */ = {
-			isa = PBXGroup;
-			children = (
 				D40D72D628D0F9E5007F812C /* NavigationBarView.swift */,
 				1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */,
 			);
-			path = MapaENavigation;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		16C7199028CBBFB800D3684B /* Model */ = {
@@ -162,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				D40C21F328D2471E00744769 /* PagConfiguracao */,
+				195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */,
+				19DCD20028D39C830096FAF6 /* DetalhesSheetView */,
 				16C7199728CFC26A00D3684B /* PagHome */,
 			);
 			path = View;
@@ -170,7 +145,6 @@
 		16C7199228CBBFC900D3684B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				16A28E4928DC33DD001CCF62 /* BottomSheet */,
 				1659781E28D2DDE9002E4FF1 /* Location */,
 				16C7199C28CFD29C00D3684B /* JSON */,
 			);
@@ -198,10 +172,20 @@
 		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
 			isa = PBXGroup;
 			children = (
+				195E5A9E28CFD33700CEEF77 /* BlurView.swift */,
+				195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */,
 				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
 				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
 			);
 			path = BottomSheetView;
+			sourceTree = "<group>";
+		};
+		19DCD20028D39C830096FAF6 /* DetalhesSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				19DCD20128D39D200096FAF6 /* DetalhesSheet.swift */,
+			);
+			path = DetalhesSheetView;
 			sourceTree = "<group>";
 		};
 		D40C21F328D2471E00744769 /* PagConfiguracao */ = {
@@ -287,9 +271,9 @@
 			files = (
 				195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */,
 				19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */,
+				19DCD20228D39D200096FAF6 /* DetalhesSheet.swift in Sources */,
 				195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */,
 				1603790828C67C3E00A81908 /* MiniChallenge1App.swift in Sources */,
-				16A28E4828DA4935001CCF62 /* FiltroCategoriaView.swift in Sources */,
 				195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */,
 				16C719A028CFD31400D3684B /* DataLoader.swift in Sources */,
 				16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */,
@@ -435,6 +419,7 @@
 				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge1/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,6 +451,7 @@
 				DEVELOPMENT_TEAM = 5786D2SAT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiniChallenge1/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

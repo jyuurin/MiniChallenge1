@@ -11,3 +11,6 @@ struct ModalidadeCentroEsportivo: Codable {
     var modalidade: String
     var categoria: String
 }
+
+
+
