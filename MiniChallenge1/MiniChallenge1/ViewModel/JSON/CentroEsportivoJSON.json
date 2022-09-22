@@ -1458,7 +1458,7 @@
             },
             {
                 "modalidade": "Caminhada",
-                "categoria": "Cardio"
+                "categoria": "Cárdio"
             },
             {
                 "modalidade": "Voleibol",
@@ -1470,7 +1470,7 @@
             },
             {
                 "modalidade": "Caminhada",
-                "categoria": "Cardio"
+                "categoria": "Cárdio"
             },
             {
                 "modalidade": "Capoeira",
@@ -1768,7 +1768,7 @@
             },
             {
                 "modalidade": "Caminhada",
-                "categoria": "Cardio"
+                "categoria": "Cárdio"
             },
             {
                 "modalidade": "Condicionamento Físico",
@@ -2058,7 +2058,7 @@
                 },
                 {
                     "modalidade": "Caminhada",
-                    "categoria": "Cardio"
+                    "categoria": "Cárdio"
                 },
                 {
                     "modalidade": "Capoeira",
@@ -3464,7 +3464,7 @@
                 },
                 {
                     "modalidade": "Corrida",
-                    "categoria": "Cardio"
+                    "categoria": "Cárdio"
                 },
                 {
                     "modalidade": "Ginástica Funcional",
@@ -3646,7 +3646,7 @@
         [
             {
                 "modalidade": "Caminhada",
-                "categoria": "Cardio"
+                "categoria": "Cárdio"
             },
             {
                 "modalidade": "Ginástica Geral",

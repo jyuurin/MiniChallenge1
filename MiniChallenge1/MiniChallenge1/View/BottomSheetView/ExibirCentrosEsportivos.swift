@@ -19,20 +19,35 @@ struct ExibirCentrosEsportivos: View {
                     centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco)
                 }
             }
+            .onChange(of: self.categoriasSelecionadas, perform: { _ in
+                print("Ao mudar: \(categoriasSelecionadas)")
+                selecionaCentrosEsportivos()
+                print("Ja mudou: \(categoriasSelecionadas)")
+            })
             .onAppear {
-                
-                for centroEsportivo in DataLoader().centrosEsportivos {
-                    for modalidade in centroEsportivo.ceModalidades {
-                        if categoriasSelecionadas.contains(modalidade.categoria) {
-                            self.centrosEsportivos.append(centroEsportivo)
-                            break
-                        }
-                    }
-                }
-                
-                
+                selecionaCentrosEsportivos()
             }
             
+        }
+    }
+    
+    func selecionaCentrosEsportivos() {
+        
+        //Removendo os centros esportivos para setar os novos centros esportivos filtrados
+        self.centrosEsportivos.removeAll()
+        
+        print("Entrou ExebirCentros")
+        if(!categoriasSelecionadas.isEmpty) {
+            for centroEsportivo in DataLoader().centrosEsportivos {
+                for modalidade in centroEsportivo.ceModalidades {
+                    if categoriasSelecionadas.contains(modalidade.categoria) {
+                        self.centrosEsportivos.append(centroEsportivo)
+                        break
+                    }
+                }
+            }
+        } else {
+            self.centrosEsportivos = DataLoader().centrosEsportivos
         }
     }
     

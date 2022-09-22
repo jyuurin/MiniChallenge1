@@ -63,7 +63,7 @@ struct BottomSheet: View {
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(.blue, lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
-                                        FiltroCategoriaView(arrayCategorias: .constant(categoriasSelecionadas))
+                                        FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
                                 Button(action: {}, label: {
                                     Text("Local")

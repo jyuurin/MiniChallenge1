@@ -14,9 +14,10 @@ struct Categoria {
 }
 
 struct FiltroCategoriaView: View {
-    @Environment(\.dismiss) var dismiss  //váriável que aux a voltar pra página anterior
+//    @Environment(\.dismiss) var dismiss  //váriável que aux a voltar pra página anterior
+    @Environment(\.presentationMode) var presentationModel
     
-    var onDismiss: ((_ model: [String]) -> Void)?
+//    var onDismiss: ((_ model: [String]) -> Void)?
     
     @Binding var arrayCategorias: [String]
     
@@ -120,9 +121,7 @@ struct FiltroCategoriaView: View {
             HStack {
                 //Adicionando botão para voltar a view anterior
                 Button(action: {
-                    //Ativando a função que retorna a view anterior
-                    onDismiss?(arrayCategorias)
-                    dismiss()
+                    presentationModel.wrappedValue.dismiss()
                 }, label: {
                     HStack {
                         Image(systemName: "chevron.left")
@@ -133,7 +132,9 @@ struct FiltroCategoriaView: View {
                 Text("Filtros")
                     .foregroundColor(.black)
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: {
+                    limparFiltro()
+                }, label: {
                     Text("Limpar filtro")
                 })
                 
@@ -154,6 +155,7 @@ struct FiltroCategoriaView: View {
                             for i in 0...self.idsSelecionadas.count - 1 {
                                 if(self.idsSelecionadas[i] == categoria.idCategoria) {
                                     self.idsSelecionadas.remove(at: i)
+                                    self.arrayCategorias.remove(at: i)
                                     permiteInsercao = false
                                     break
                                 }
@@ -162,6 +164,7 @@ struct FiltroCategoriaView: View {
                         
                         if permiteInsercao {
                             self.idsSelecionadas.append(categoria.idCategoria)
+                            self.arrayCategorias.append(categoria.nomeCategoria)
                         }
                         
                     }, label: {
@@ -170,7 +173,7 @@ struct FiltroCategoriaView: View {
                             VStack {
                                 Image("\(categoria.nomeSegImagem)")
                                     .resizable()
-                                    .frame(width: 30, height: 30, alignment: .center)
+                                    .frame(width: 35, height: 35, alignment: .center)
                                     
                                 Text(categoria.nomeCategoria)
                                     .font(.system(size: 15))
@@ -180,7 +183,7 @@ struct FiltroCategoriaView: View {
                             VStack {
                                 Image("\(categoria.nomePriImagem)")
                                     .resizable()
-                                    .frame(width: 30, height: 30, alignment: .center)
+                                    .frame(width: 35, height: 35, alignment: .center)
                                     
                                 Text(categoria.nomeCategoria)
                                     .font(.system(size: 15))
@@ -194,9 +197,25 @@ struct FiltroCategoriaView: View {
             })
             
         }
+        .onAppear {
+            
+            //Implementando estrutura para pré-definir os filtros pré-existentes ja selecionados
+            for itemArrayCategoria in self.arrayCategorias {
+                for categoria in self.categorias {
+                    if itemArrayCategoria == categoria.nomeCategoria {
+                        self.idsSelecionadas.append(categoria.idCategoria)
+                    }
+                }
+            }
+        }
         
         
         
+    }
+    
+    func limparFiltro() {
+        self.idsSelecionadas.removeAll()
+        self.arrayCategorias.removeAll()
     }
 }
 
