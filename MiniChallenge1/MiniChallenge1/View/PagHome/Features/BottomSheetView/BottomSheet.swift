@@ -52,12 +52,14 @@ struct BottomSheet: View {
                             
                             //MARK: botões de filtro
                             HStack {
-                                Button(action: {
-                                    self.mostraFiltroCategoria.toggle()
-                                }, label: {
-                                    Text("Categorias")
-                                    Image(systemName: "chevron.down")
-                                })
+                                
+                                if self.categoriasSelecionadas.isEmpty {
+                                    Button(action: {
+                                        self.mostraFiltroCategoria.toggle()
+                                    }, label: {
+                                        Text("Categorias")
+                                        Image(systemName: "chevron.down")
+                                    })
                                     .foregroundColor(.blue)
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
@@ -65,6 +67,23 @@ struct BottomSheet: View {
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
+                                } else {
+                                    Button(action: {
+                                        self.mostraFiltroCategoria.toggle()
+                                    }, label: {
+                                        Text("Categorias")
+                                        Image(systemName: "chevron.down")
+                                    })
+                                    .padding(5)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(5)
+                                    .sheet(isPresented: $mostraFiltroCategoria, content: {
+                                        FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
+                                    })
+                                }
+                                
+                                
                                 Button(action: {}, label: {
                                     Text("Local")
                                     Image(systemName: "chevron.down")

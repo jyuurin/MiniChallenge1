@@ -14,17 +14,16 @@ struct Categoria {
 }
 
 struct FiltroCategoriaView: View {
-//    @Environment(\.dismiss) var dismiss  //váriável que aux a voltar pra página anterior
-    @Environment(\.presentationMode) var presentationModel
     
-//    var onDismiss: ((_ model: [String]) -> Void)?
+    //váriável que aux a voltar pra página anterior
+    @Environment(\.presentationMode) var presentationModel
     
     @Binding var arrayCategorias: [String]
     
     
     @State var idsSelecionadas = [Int]()
     
-    //Setando todas caategorias contidas no json com seus respectivos icones
+    //MARK: - Setando todas caategorias contidas no json com seus respectivos icones
     var categorias: [Categoria] = [
         Categoria(
             idCategoria: 1,
@@ -118,6 +117,7 @@ struct FiltroCategoriaView: View {
     var body: some View {
         ScrollView {
             
+            //MARK: - Criando navegação da página
             HStack {
                 //Adicionando botão para voltar a view anterior
                 Button(action: {
@@ -142,6 +142,7 @@ struct FiltroCategoriaView: View {
             .padding()
             .padding(.vertical)
             
+            //MARK: - Grade de categorias dos centros esportivos
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], content: {
                 ForEach(self.categorias, id: \.idCategoria) { categoria in
                     //Criando o botão que deixará as categorias selecionáveis
@@ -168,6 +169,7 @@ struct FiltroCategoriaView: View {
                         }
                         
                     }, label: {
+                        //MARK: - Lógica utilizada para deixar cada categoria selecionavel
                         //Se essa categoria ja estiver selecionada, entra no primeiro if, se não, entra no segundo
                         if idsSelecionadas.contains(categoria.idCategoria) {
                             VStack {
@@ -198,7 +200,6 @@ struct FiltroCategoriaView: View {
             
         }
         .onAppear {
-            
             //Implementando estrutura para pré-definir os filtros pré-existentes ja selecionados
             for itemArrayCategoria in self.arrayCategorias {
                 for categoria in self.categorias {
@@ -208,11 +209,9 @@ struct FiltroCategoriaView: View {
                 }
             }
         }
-        
-        
-        
     }
     
+    //MARK: - Função que limpa todas arrays necessárias para a filtragem
     func limparFiltro() {
         self.idsSelecionadas.removeAll()
         self.arrayCategorias.removeAll()
