@@ -13,8 +13,6 @@ struct ConfiguracoesView: View {
     @State private var acessibilidadeAtivo = false
     @State private var centrosEsportivosAtivo = false
     
-    
-    
     @State var configuracoes = ["Centros Esportivos", "Acessibilidade"]
     var body: some View {
         VStack() {

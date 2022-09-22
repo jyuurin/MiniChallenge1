@@ -13,6 +13,10 @@ struct BottomSheet: View {
     @State var searchText = ""
     @State var offset: CGFloat = 0
     @State var lastOffset : CGFloat = 0
+    @State var mostraFiltroCategoria = false
+    
+    @State var categoriasSelecionadas: [String] = []
+    
     
     var body: some View {
         GeometryReader{proxy -> AnyView in
@@ -48,14 +52,38 @@ struct BottomSheet: View {
                             
                             //MARK: botões de filtro
                             HStack {
-                                Button(action: {}, label: {
-                                    Text("Modalidades")
-                                    Image(systemName: "chevron.down")
-                                })
+                                
+                                if self.categoriasSelecionadas.isEmpty {
+                                    Button(action: {
+                                        self.mostraFiltroCategoria.toggle()
+                                    }, label: {
+                                        Text("Categorias")
+                                        Image(systemName: "chevron.down")
+                                    })
                                     .foregroundColor(.blue)
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(.blue, lineWidth: 1))
+                                    .sheet(isPresented: $mostraFiltroCategoria, content: {
+                                        FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
+                                    })
+                                } else {
+                                    Button(action: {
+                                        self.mostraFiltroCategoria.toggle()
+                                    }, label: {
+                                        Text("Categorias")
+                                        Image(systemName: "chevron.down")
+                                    })
+                                    .padding(5)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(5)
+                                    .sheet(isPresented: $mostraFiltroCategoria, content: {
+                                        FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
+                                    })
+                                }
+                                
+                                
                                 Button(action: {}, label: {
                                     Text("Local")
                                     Image(systemName: "chevron.down")
@@ -70,7 +98,7 @@ struct BottomSheet: View {
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos()
+                        ExibirCentrosEsportivos(categoriasSelecionadas: $categoriasSelecionadas)
                         
                     
                     }
@@ -110,10 +138,12 @@ struct BottomSheet: View {
                     
             )
         }
-        
+        .onAppear {
+            print("oi")
+            print(categoriasSelecionadas)
+        }
         .ignoresSafeArea(.all, edges: .bottom)
         
-    }
     
     func onChange() {
         DispatchQueue.main.async {
