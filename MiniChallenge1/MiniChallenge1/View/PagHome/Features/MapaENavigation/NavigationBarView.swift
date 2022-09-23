@@ -22,20 +22,7 @@ struct NavigationBarView: View {
     var body: some View {
        
         Text("")
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-
-                Image(systemName: "location.fill")
-                Text("Localização atual")
-                    .padding(.trailing, 150)
-
-                NavigationLink(destination: ConfiguracoesView()) {
-                    Image(systemName: "gearshape")
-                }
-
-            }
-        }
-        .foregroundColor(.blue)
+        
         
             
         

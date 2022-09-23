@@ -16,13 +16,38 @@ struct PaginaHome: View {
 
     
     var body: some View {
-        NavigationView() {
+        NavigationView {
             ZStack {
                 MapaPaginaPrincipal()
                 NavigationBarView()
                 BottomSheet()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+
+                    Image(systemName: "location.fill")
+                        .padding(.bottom)
+                        .foregroundColor(.blue)
+                    
+                    Text("Localização atual")
+                        .padding(.trailing, 150)
+                        .padding(.bottom)
+                        .foregroundColor(.blue)
+
+                    NavigationLink(destination: ConfiguracoesView()) {
+                        Image(systemName: "info.circle")
+                    }
+                    .padding(.bottom)
+                    .foregroundColor(.blue)
+
+                }
+            }
+            
+            
+            
         }
+        
     }
 }
 

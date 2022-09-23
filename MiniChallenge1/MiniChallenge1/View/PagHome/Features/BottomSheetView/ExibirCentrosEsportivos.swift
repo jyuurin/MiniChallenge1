@@ -12,12 +12,24 @@ struct ExibirCentrosEsportivos: View {
     @State var centrosEsportivos = [CentroEsportivo]()
     @Binding var categoriasSelecionadas: [String]
     
+    @State var centroEsportivoMostrando: CentroEsportivo?
+    
     var body: some View {
         ScrollView{
             VStack {
-                ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
-                    centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco)
+                
+                ForEach(centrosEsportivos, id:\.ceId) { item in
+                    //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
+                    Button(action: {centroEsportivoMostrando = item}, label: {
+                        centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco.endereco, zona: item.ceZona)
+                    })
+                    // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
+                    .sheet(item: $centroEsportivoMostrando){ CE in
+                        DetalhesSheet(centroEsportivo: CE)
+                        
+                    }
                 }
+                
             }
             .onChange(of: self.categoriasSelecionadas, perform: { _ in
                 print("Ao mudar: \(categoriasSelecionadas)")
@@ -51,18 +63,19 @@ struct ExibirCentrosEsportivos: View {
         }
     }
     
-    func centroEsportivoDados(title: String, subTitle: String) -> some View {
+    func centroEsportivoDados(title: String, subTitle: String, zona: String) -> some View {
         HStack{
-            Rectangle()
-                .foregroundColor(Color.gray)
-                .cornerRadius(10)
-                .frame(width: 100, height: 100)
+            Image(zona)
+                .resizable()
+                .frame(width: 60, height: 60)
             VStack(alignment: .leading) {
                 Text(title)
                 Text(subTitle)
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            .multilineTextAlignment(.leading)
+            .padding(5)
             Spacer()
         }
     }
