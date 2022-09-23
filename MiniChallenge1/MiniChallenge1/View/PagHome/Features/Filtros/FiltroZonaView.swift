@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-struct Zona {
-    var idZona: Int
-    var nomeZona: String
-    var identificadorZona: String
-}
-
 struct FiltroZonaView: View {
+    
+    @Environment(\.dismiss) var dismiss
     
     @State var zonas: [String] = ["Zona Sul", "Zona Norte", "Zona Leste", "Zona Oeste", "Região Central"]
     @Binding var zonasSelecionadas: [String]
@@ -22,7 +18,9 @@ struct FiltroZonaView: View {
         ScrollView {
             
             HStack {
-                Button(action: {}, label: {
+                Button(action: {
+                    dismiss()
+                }, label: {
                     Image(systemName: "chevron.left")
                     Text("Voltar")
                 })
@@ -31,7 +29,9 @@ struct FiltroZonaView: View {
                 Text("Filtros")
                     .foregroundColor(.black)
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: {
+                    limparFiltro()
+                }, label: {
                     Text("Limpar")
                 })
             }
@@ -88,6 +88,10 @@ struct FiltroZonaView: View {
                                 
         }
         
+    }
+    
+    func limparFiltro() {
+        self.zonasSelecionadas = []
     }
 
 }

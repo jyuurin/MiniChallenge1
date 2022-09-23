@@ -85,27 +85,52 @@ struct BottomSheet: View {
                                     })
                                 }
                                 
-                                
-                                Button(action: {
-                                    self.mostraFiltroZonas = true
-                                }, label: {
-                                    Text("Local")
-                                    Image(systemName: "chevron.down")
-                                })
-                                    .foregroundColor(.blue)
-                                    .padding(5)
-                                    .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.blue, lineWidth: 1))
-                                    .sheet(isPresented: $mostraFiltroZonas, content: {
-                                        FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                if !self.zonasSelecionadas.isEmpty {
+                                    Button(action: {
+                                        self.mostraFiltroZonas = true
+                                        
+                                        print(zonasSelecionadas)
+                                    }, label: {
+                                        
+                                        
+                                        Text("Local")
+                                        Image(systemName: "chevron.down")
                                     })
+                                        .padding(5)
+                                        .background(.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(5)
+                                        .sheet(isPresented: $mostraFiltroZonas, content: {
+                                            FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                        })
+                                
+                                } else {
+                                    Button(action: {
+                                        self.mostraFiltroZonas = true
+                                        
+                                        print(zonasSelecionadas)
+                                    }, label: {
+                                        
+                                        
+                                        Text("Local")
+                                        Image(systemName: "chevron.down")
+                                    })
+                                        .foregroundColor(.blue)
+                                        .padding(5)
+                                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.blue, lineWidth: 1))
+                                        .sheet(isPresented: $mostraFiltroZonas, content: {
+                                            FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                        })
+                                }
+                                
                                 Spacer()
                             }
                             .padding(.vertical, 10)
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos(categoriasSelecionadas: $categoriasSelecionadas)
+                        ExibirCentrosEsportivos(categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas)
                         
                     
                     }
