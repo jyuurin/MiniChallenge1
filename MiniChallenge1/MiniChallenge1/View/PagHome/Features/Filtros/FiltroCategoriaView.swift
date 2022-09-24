@@ -129,13 +129,17 @@ struct FiltroCategoriaView: View {
                     }
                 })
                 Spacer()
+                
+                //Titulo
                 Text("Filtros")
                     .foregroundColor(.black)
                 Spacer()
+                
+                //Setando botão de limpar filtros por categoria
                 Button(action: {
                     limparFiltro()
                 }, label: {
-                    Text("Limpar filtro")
+                    Text("Limpar")
                 })
                 
             }
@@ -163,6 +167,7 @@ struct FiltroCategoriaView: View {
                             }
                         }
                         
+                        //Caso permiteInsercao não tenha sido desativado, os comando de dentro da estrutura serão ativados
                         if permiteInsercao {
                             self.idsSelecionadas.append(categoria.idCategoria)
                             self.arrayCategorias.append(categoria.nomeCategoria)
