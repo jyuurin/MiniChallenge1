@@ -105,7 +105,7 @@ struct BottomSheet: View {
                                         FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
                                     })
                                 
-                                } else {
+                                } else { 
                                     Button(action: {
                                         self.mostraFiltroZonas = true
                                     }, label: {
