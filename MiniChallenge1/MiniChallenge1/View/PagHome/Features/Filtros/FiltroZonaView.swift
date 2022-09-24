@@ -12,12 +12,16 @@ struct FiltroZonaView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var zonas: [String] = ["Zona Sul", "Zona Norte", "Zona Leste", "Zona Oeste", "Região Central"]
+    
     @Binding var zonasSelecionadas: [String]
+    
     var body: some View {
         
         ScrollView {
             
+            //MARK: - Criando navegação da página
             HStack {
+                //Adicionando botão para voltar a view anterior
                 Button(action: {
                     dismiss()
                 }, label: {
@@ -26,9 +30,13 @@ struct FiltroZonaView: View {
                 })
                 
                 Spacer()
+                
+                //Titulo
                 Text("Filtros")
                     .foregroundColor(.black)
                 Spacer()
+                
+                //Setando botão de limpar filtros por categoria
                 Button(action: {
                     limparFiltro()
                 }, label: {
@@ -38,13 +46,18 @@ struct FiltroZonaView: View {
             .padding(.horizontal)
             .padding(.bottom)
 
+            //MARK: - Grade de zonas dos centros esportivos
             LazyVGrid(columns: [GridItem(.flexible()),
                                 GridItem(.flexible()),
                                 GridItem(.flexible())]) {
                 ForEach(zonas, id: \.self) { zona in
+                    //Criando o botão que deixará as zonas selecionáveis
                     Button {
+                        
+                        //Criando variável que vai participar da estrutura condicional pra adicionar um novo item à lista de selecionados
                         var permiteInsercao = true
                         
+                        //Se o id da zona ja estiver dentro da array de selecionados, esse item será removido da lista e a permiçao para inserir um item será negada
                         if self.zonasSelecionadas.count > 0 {
                             for i in 0...self.zonasSelecionadas.count-1 {
                                 if self.zonasSelecionadas[i] == zona {
@@ -55,10 +68,13 @@ struct FiltroZonaView: View {
                             }
                         }
                         
+                        //Caso permiteInsercao não tenha sido desativado, os comando de dentro da estrutura serão ativados
                         if permiteInsercao {
                             self.zonasSelecionadas.append(zona)
                         }
                     } label: {
+                        //MARK: - Lógica utilizada para deixar cada zona selecionavel
+                        //Se essa zona ja estiver selecionada, entra no primeiro if, se não, entra no segundo
                         if(self.zonasSelecionadas.contains(zona)) {
                             Text(zona)
                                 .font(.system(size: 15))
@@ -90,6 +106,7 @@ struct FiltroZonaView: View {
         
     }
     
+    //MARK: - Função que limpa todas arrays necessárias para a filtragem
     func limparFiltro() {
         self.zonasSelecionadas = []
     }

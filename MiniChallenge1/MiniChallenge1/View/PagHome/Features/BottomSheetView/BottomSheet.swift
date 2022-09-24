@@ -30,32 +30,32 @@ struct BottomSheet: View {
                     
                     //Setando o estilo da sheetView
                     BlurView(style: .light)
-                        .background(Color.white)
-                        .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
+                    .background(Color.white)
+                    .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
                         
                     
                     VStack {
                         
                         //Icone arredondado
                         Capsule()
-                            .fill(Color.init(UIColor.systemGray4))
-                            .frame(width: 80, height: 4)
-                            .padding(.top)
+                        .fill(Color.init(UIColor.systemGray4))
+                        .frame(width: 80, height: 4)
+                        .padding(.top)
+                        
                         VStack {
                             // Search Bar
                             TextField("Exemplo: *Nome do CE*; Piscina; Futebol", text: $searchText)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal)
-                                .background(Color.init(UIColor.systemGray6))
-                                .cornerRadius(10)
-                                .padding(.top, 10)
-                            //.colorScheme(.dark)
-                            //.padding(.top, 10)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal)
+                            .background(Color.init(UIColor.systemGray6))
+                            .cornerRadius(10)
+                            .padding(.top, 10)
                             
                             //MARK: botões de filtro
                             HStack {
                                 
                                 if self.categoriasSelecionadas.isEmpty {
+                                    
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
                                     }, label: {
@@ -69,7 +69,9 @@ struct BottomSheet: View {
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
+                                    
                                 } else {
+                                    
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
                                     }, label: {
@@ -83,45 +85,42 @@ struct BottomSheet: View {
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
+                                    
                                 }
                                 
                                 if !self.zonasSelecionadas.isEmpty {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
-                                        
-                                        print(zonasSelecionadas)
                                     }, label: {
                                         
                                         
                                         Text("Local")
                                         Image(systemName: "chevron.down")
                                     })
-                                        .padding(5)
-                                        .background(.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(5)
-                                        .sheet(isPresented: $mostraFiltroZonas, content: {
-                                            FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
-                                        })
+                                    .padding(5)
+                                    .background(.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(5)
+                                    .sheet(isPresented: $mostraFiltroZonas, content: {
+                                        FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                    })
                                 
                                 } else {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
-                                        
-                                        print(zonasSelecionadas)
                                     }, label: {
                                         
                                         
                                         Text("Local")
                                         Image(systemName: "chevron.down")
                                     })
-                                        .foregroundColor(.blue)
-                                        .padding(5)
-                                        .overlay(RoundedRectangle(cornerRadius: 5)
-                                            .stroke(.blue, lineWidth: 1))
-                                        .sheet(isPresented: $mostraFiltroZonas, content: {
-                                            FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
-                                        })
+                                    .foregroundColor(.blue)
+                                    .padding(5)
+                                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                        .stroke(.blue, lineWidth: 1))
+                                    .sheet(isPresented: $mostraFiltroZonas, content: {
+                                        FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                    })
                                 }
                                 
                                 Spacer()
@@ -139,40 +138,37 @@ struct BottomSheet: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                 }
                 //Offset desloca o visual do objeto
-                    .offset(y: height - 100)
+                .offset(y: height - 100)
                 // conta doida pra fazer a sheet travar em baixo, não fica solta.
-                    .offset(y: -offset > 0 ? -offset <= (height - 100) ? offset : -(height - 100) : 0)
-                    .gesture(DragGesture().updating($gestureOffset, body: {
-                        value, out, _ in
-                        
-                        out = value.translation.height
-                        onChange()
-                    }).onEnded({ value in
-                        //Função que executa quando o usuario deixa de arrastar
-                        let maxHeight = height - 100
-                        withAnimation{
-                            // condicoes para mover
-                            // cima baixo ou meio
-                            if -offset > 100 && -offset < maxHeight / 2 {
-                                // meio
-                                offset = -(maxHeight / 3)
-                            }
-                            else if -offset > maxHeight / 2 {
-                                offset = -maxHeight
-                            }
-                            else {
-                                offset = 0
-                            }
+                .offset(y: -offset > 0 ? -offset <= (height - 100) ? offset : -(height - 100) : 0)
+                .gesture(DragGesture().updating($gestureOffset, body: {
+                    value, out, _ in
+                    
+                    out = value.translation.height
+                    onChange()
+                }).onEnded({ value in
+                    //Função que executa quando o usuario deixa de arrastar
+                    let maxHeight = height - 100
+                    
+                    withAnimation{
+                        // condicoes para mover
+                        // cima baixo ou meio
+                        if -offset > 100 && -offset < maxHeight / 2 {
+                            // meio
+                            offset = -(maxHeight / 3)
                         }
-                        // guardando a ultima offset, pra ficar a ultima posicao
-                        lastOffset = offset
-                    }))
+                        else if -offset > maxHeight / 2 {
+                            offset = -maxHeight
+                        }
+                        else {
+                            offset = 0
+                        }
+                    }
+                    // guardando a ultima offset, pra ficar a ultima posicao
+                    lastOffset = offset
+                }))
                     
             )
-        }
-        .onAppear {
-            print("oi")
-            print(categoriasSelecionadas)
         }
         .ignoresSafeArea(.all, edges: .bottom)
         

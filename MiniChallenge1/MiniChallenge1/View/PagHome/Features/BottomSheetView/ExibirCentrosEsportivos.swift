@@ -18,16 +18,19 @@ struct ExibirCentrosEsportivos: View {
     var body: some View {
         ScrollView{
             VStack {
+                
+                //ForEach que apresenta a lista de centros esportivos para o usuário
                 ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+                    //Chamando a função que representa a estrutura de cada célula contida na lista
                     centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco)
                 }
             }
             .onChange(of: self.categoriasSelecionadas) { _ in
-                print("Ao mudar: \(categoriasSelecionadas)")
+                //Caso o usuário use filtro por categorias, essa função será ativada
                 selecionaCentrosEsportivos()
-                print("Ja mudou: \(categoriasSelecionadas)")
             }
             .onChange(of: self.zonasSelecionadas) { _ in
+                //Caso o usuário use filtro por zonas, essa função será ativada
                 selecionaCentrosEsportivos()
             }
             .onAppear {
@@ -39,17 +42,12 @@ struct ExibirCentrosEsportivos: View {
     
     func selecionaCentrosEsportivos() {
         
-        if(self.centrosEsportivos.isEmpty) {
-            self.centrosEsportivos = DataLoader().centrosEsportivos
-        }
+        self.centrosEsportivos = DataLoader().centrosEsportivos
         
-
         filtraPorCategoria()
         
         //Chamando formataZonas para utilizar zonasFormatadas como variável auxiliar no filtro dos centros esportivos
         formataZonas()
-        
-        print(zonasFormatadas)
         
         filtraPorZonas()
         
@@ -58,49 +56,38 @@ struct ExibirCentrosEsportivos: View {
     func filtraPorCategoria() {
         if(!self.categoriasSelecionadas.isEmpty) {
             
+            //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
             var centrosEsportivosAux = [CentroEsportivo]()
-            var apagaTudo = true
             
+            //Se o centro esportivo tiver alguma categoria contida na array de categorias selecionadas
             for centroEsportivo in self.centrosEsportivos {
                 for modalidade in centroEsportivo.ceModalidades {
                     if categoriasSelecionadas.contains(modalidade.categoria) {
                         centrosEsportivosAux.append(centroEsportivo)
-                        
                         break
                     }
                 }
             }
+            //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
+            self.centrosEsportivos = centrosEsportivosAux
             
-//            if apagaTudo {
-//                self.centrosEsportivos = []
-//            }
-            
-            print(centrosEsportivosAux)
-            if !centrosEsportivosAux.isEmpty {
-                self.centrosEsportivos = centrosEsportivosAux
-            }
-            
-        } else {
-            self.centrosEsportivos = DataLoader().centrosEsportivos
         }
     }
     
     func filtraPorZonas() {
         if(!self.zonasFormatadas.isEmpty) {
             
+            //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
             var centrosEsportivosAux = [CentroEsportivo]()
             
+            //Se o centro esportivo for da zona contida na array de zonas selecionadas
             for centroEsportivo in self.centrosEsportivos {
                 if self.zonasFormatadas.contains(centroEsportivo.ceZona) {
                     centrosEsportivosAux.append(centroEsportivo)
                 }
             }
-            
-            print(centrosEsportivosAux)
-            
-            if !centrosEsportivosAux.isEmpty {
-                self.centrosEsportivos = centrosEsportivosAux
-            }
+            //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
+            self.centrosEsportivos = centrosEsportivosAux
         }
     }
     
