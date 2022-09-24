@@ -188,6 +188,7 @@ struct ExibirCentrosEsportivos: View {
                 .frame(width: 60, height: 60)
             VStack(alignment: .leading) {
                 Text(title)
+                    .foregroundColor(.black)
                 Text(subTitle)
                     .font(.subheadline)
                     .foregroundColor(.gray)
