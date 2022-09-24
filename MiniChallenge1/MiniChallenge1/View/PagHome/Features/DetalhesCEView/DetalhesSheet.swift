@@ -30,7 +30,10 @@ struct DetalhesSheet: View {
                 
                 //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
                 Group {
-                    Button(action: {botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)}) {
+                    Button(action: {
+                        botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
+                        
+                    }) {
                         Text(centroEsportivo.ceEndereco.endereco)
                             .multilineTextAlignment(.leading)
                     }

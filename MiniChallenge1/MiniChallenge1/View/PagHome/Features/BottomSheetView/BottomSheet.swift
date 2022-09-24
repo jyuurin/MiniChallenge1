@@ -10,7 +10,6 @@ import SwiftUI
 struct BottomSheet: View {
     
     @GestureState var gestureOffset: CGFloat = 0
-    @State var searchText = ""
     @State var offset: CGFloat = 0
     @State var lastOffset : CGFloat = 0
     @State var mostraFiltroCategoria = false
@@ -18,6 +17,7 @@ struct BottomSheet: View {
     
     @State var categoriasSelecionadas: [String] = []
     @State var zonasSelecionadas: [String] = []
+    @State var buscaSolictada: String = ""
     
     
     var body: some View {
@@ -43,15 +43,16 @@ struct BottomSheet: View {
                         .padding(.top)
                         
                         VStack {
-                            // Search Bar
-                            TextField("Exemplo: *Nome do CE*; Piscina; Futebol", text: $searchText)
+                            //MARK: - Search Bar
+                            TextField("Exemplo: *Nome do CE*; Piscina; Futebol", text: $buscaSolictada)
                             .padding(.vertical, 10)
                             .padding(.horizontal)
                             .background(Color.init(UIColor.systemGray6))
                             .cornerRadius(10)
                             .padding(.top, 10)
                             
-                            //MARK: botões de filtro
+                            
+                            //MARK: - botões de filtro
                             HStack {
                                 
                                 if self.categoriasSelecionadas.isEmpty {
@@ -129,7 +130,7 @@ struct BottomSheet: View {
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos(categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas)
+                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas)
                         
                     
                     }

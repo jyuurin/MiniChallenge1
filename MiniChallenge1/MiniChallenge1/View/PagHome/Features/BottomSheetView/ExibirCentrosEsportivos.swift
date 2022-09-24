@@ -10,26 +10,32 @@ import SwiftUI
 struct ExibirCentrosEsportivos: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
+    
+    @Binding var buscaSolicitada: String
     @Binding var categoriasSelecionadas: [String]
     @Binding var zonasSelecionadas: [String]
     
     @State var zonasFormatadas: [String] = []
-    
     @State var centroEsportivoMostrando: CentroEsportivo?
     
     var body: some View {
         ScrollView{
             VStack {
-                ForEach(centrosEsportivos, id:\.ceId) { item in
-                    //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
-                    Button(action: {centroEsportivoMostrando = item}, label: {
-                        centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco.endereco, zona: item.ceZona)
-                    })
-                    // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
-                    .sheet(item: $centroEsportivoMostrando){ CE in
-                        DetalhesSheet(centroEsportivo: CE)
+                if !centrosEsportivos.isEmpty {
+                    ForEach(centrosEsportivos, id:\.ceId) { item in
+                        //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
+                        Button(action: {centroEsportivoMostrando = item}, label: {
+                            centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco.endereco, zona: item.ceZona)
+                        })
+                        // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
+                        .sheet(item: $centroEsportivoMostrando){ CE in
+                            DetalhesSheet(centroEsportivo: CE)
+                        }
                     }
+                } else {
+                    Text("Não há Centros Esportivos disponíveis com essas informações.")
                 }
+                
             }
             .onChange(of: self.categoriasSelecionadas) { _ in
                 //Caso o usuário use filtro por categorias, essa função será ativada
@@ -37,6 +43,10 @@ struct ExibirCentrosEsportivos: View {
             }
             .onChange(of: self.zonasSelecionadas) { _ in
                 //Caso o usuário use filtro por zonas, essa função será ativada
+                selecionaCentrosEsportivos()
+            }
+            .onChange(of: self.buscaSolicitada) { _ in
+                //Caso o usuário faca alguma busca na searchbar, essa função será ativada
                 selecionaCentrosEsportivos()
             }
             .onAppear {
@@ -56,6 +66,7 @@ struct ExibirCentrosEsportivos: View {
         
         filtraPorZonas()
         
+        filtraPorBusca()
     }
     
     func filtraPorCategoria() {
@@ -89,6 +100,54 @@ struct ExibirCentrosEsportivos: View {
             for centroEsportivo in self.centrosEsportivos {
                 if self.zonasFormatadas.contains(centroEsportivo.ceZona) {
                     centrosEsportivosAux.append(centroEsportivo)
+                }
+            }
+            //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
+            self.centrosEsportivos = centrosEsportivosAux
+        }
+    }
+    
+    func filtraPorBusca() {
+        if(self.buscaSolicitada != "") {
+            
+            //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
+            var centrosEsportivosAux = [CentroEsportivo]()
+            
+            //Fazendo a verificação dos itens do centro esportivos que tem relação com o que o usuário digitou
+            for centroEsportivo in self.centrosEsportivos {
+                
+                //Criando a variável auxiliar para permitir que continue fazendo a filtragem caso ainda não tenha achado nada com relação ao centro esportivo
+                var continuaFiltragem = true
+                
+                //Verificando pelas modalidades
+                for modalidade in centroEsportivo.ceModalidades {
+                    if (modalidade.modalidade.contains(self.buscaSolicitada) || modalidade.categoria.contains(self.buscaSolicitada)) && continuaFiltragem  {
+                        
+                        centrosEsportivosAux.append(centroEsportivo)
+                        continuaFiltragem = false
+                        
+                        print("\n\n\nModalidade: \(modalidade.modalidade)\n\nCategoria: \(modalidade.categoria)")
+                        break
+                        
+                    }
+                }
+                
+                //Verificando pelas estruturas
+                for estrutura in centroEsportivo.ceEstrutura {
+                    if estrutura.nomeEstrutura.contains(self.buscaSolicitada) && continuaFiltragem {
+                        
+                        centrosEsportivosAux.append(centroEsportivo)
+                        continuaFiltragem = false
+                        break
+                        
+                    }
+                }
+                
+                //Verificando pelo nome e endereço do centro esportivo
+                if (centroEsportivo.ceNome.contains(self.buscaSolicitada)
+                    || centroEsportivo.ceEndereco.endereco.contains(self.buscaSolicitada)) && continuaFiltragem {
+                    centrosEsportivosAux.append(centroEsportivo)
+                    continuaFiltragem = false
                 }
             }
             //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
