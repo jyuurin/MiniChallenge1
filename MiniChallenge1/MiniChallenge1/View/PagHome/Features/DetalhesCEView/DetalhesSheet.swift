@@ -14,101 +14,114 @@ struct DetalhesSheet: View {
     var centroEsportivo: CentroEsportivo
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading ) {
-                Button(action: {dismiss()}, label: {
-                    Image(systemName: "chevron.left")
-                    Text("Voltar")
-                })
-                    .padding(3)
-                HStack{
-                    Text("\(centroEsportivo.ceNome)")
-                        .padding(.bottom, 20)
-                        .font(.title.bold())
-                        .lineLimit(3)
-                }
-                
-                //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
-                Group {
-                    Button(action: {
-                        botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading) {
                         
-                    }) {
-                        Text(centroEsportivo.ceEndereco.endereco)
+                    Text("\(centroEsportivo.ceNome)")
+                    .padding(.bottom, 20)
+                    .font(.title.bold())
+                    .lineLimit(3)
+                    
+                    //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
+                    Group {
+                        Button(action: {
+                            botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
+                        }) {
+                            Text(centroEsportivo.ceEndereco.endereco)
                             .multilineTextAlignment(.leading)
-                    }
-                    //
-                    Button(action: {botaoLigar(numeroTelefone: centroEsportivo.ceTelefone[0])}, label: {
-                        Text("**Telefone:** ")
-                            .foregroundColor(.black)
-                        Text(centroEsportivo.ceTelefone[0])
-                    })
-                    Spacer()
-                    Text("**Horário de Funcionamento:** \(centroEsportivo.horarioSemana)")
-                    Text("**Finais de Semana / Feriado:** \(centroEsportivo.horarioFinalSemanaFeriado )")
-                    Text("**Piscinas:** \(centroEsportivo.horarioPiscinas)")
-                }
-                Spacer()
-                    .frame(height: 3)
-                
-                
-                //Exibição de MODALIDADES do Centro Esportivo
-                Group{
-                    Text("Modalidades:")
-                        .font(.title2.bold())
-                    if(centroEsportivo.ceModalidades.isEmpty == true)
-                    {
-                        Text("A unidade não possui modalidades disponíveis no momento.")
-                    }
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(centroEsportivo.ceModalidades.indices) { item in
-                                VStack {
-                                    Image(systemName: "sportscourt")
-                                        .font(.system(size: 20))
-                                        .padding(.bottom, 2)
-                                    Text(centroEsportivo.ceModalidades[item].modalidade)
-                                        .font(.caption)
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .multilineTextAlignment(.center)
-                                }
-                                Spacer()
-                            }
+                            .foregroundColor(CoresApp.corPrincipal.cor())
                         }
+                        .padding(.bottom, 5)
+                        
+                        Button(action: {
+                            botaoLigar(numeroTelefone: centroEsportivo.ceTelefone[0])
+                        }, label: {
+                            Text("**Telefone:** ")
+                                .foregroundColor(.black)
+                            Text(centroEsportivo.ceTelefone[0])
+                                .foregroundColor(CoresApp.corPrincipal.cor())
+                        })
+                        .padding(.bottom, 10)
+                        
+                        Text("**Horário de Funcionamento:** \(centroEsportivo.horarioSemana)")
+                        Text("**Finais de Semana / Feriado:** \(centroEsportivo.horarioFinalSemanaFeriado )")
+                        Text("**Piscinas:** \(centroEsportivo.horarioPiscinas)")
                     }
-                }
-                //Exibição de ESTRUTURAS do Centro Esportivo
-                Group{
-                    Text("Estrutura:")
+                    
+                    //MARK: - Exibição de MODALIDADES do Centro Esportivo
+                    Group {
+                        
+                        Text("Modalidades:")
                         .font(.title2.bold())
-                    if(centroEsportivo.ceEstrutura.isEmpty == true)
-                    {
-                        Text("Sem informações para esta unidade. Entre em contato através do número de telefone.")
+                        .padding(.top, 10)
+                        
+                        if(centroEsportivo.ceModalidades.isEmpty == true) {
+                            Text("A unidade não possui modalidades disponíveis até o momento.")
+                            .padding(.vertical, 5)
+                        }
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
+                           
+                            ForEach(centroEsportivo.ceModalidades.indices) { indiceModalidade in
+                          
+                                Text(centroEsportivo.ceModalidades[indiceModalidade].modalidade)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(CoresApp.corSecundaria.cor())
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(CoresApp.corSecundaria.cor(), lineWidth: 1))
+                                
+                            }
+                            
+                        })
                     }
-                    ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem(), GridItem()]) {
+                    //MARK: - Exibição de ESTRUTURAS do Centro Esportivo
+                    Group {
+                        Text("Estrutura:")
+                            .font(.title2.bold())
+                        if(centroEsportivo.ceEstrutura.isEmpty == true)
+                        {
+                            Text("Sem informações para esta unidade. Entre em contato através do número de telefone.")
+                            .padding(.vertical, 5)
+                        }
+                        
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
                             ForEach(centroEsportivo.ceEstrutura.indices) { item in
-                                VStack {
-                                    Image(systemName: "sportscourt")
-                                        .font(.system(size: 20))
-                                        .padding(.bottom, 2)
-                                    Text(centroEsportivo.ceEstrutura[item].nomeEstrutura)
-                                        .font(.caption)
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .multilineTextAlignment(.center)
+                                
+                             
+                                Text(centroEsportivo.ceEstrutura[item].nomeEstrutura)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(CoresApp.corSecundaria.cor())
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(CoresApp.corSecundaria.cor(), lineWidth: 1))
                                     
-                                }
-                                .frame(height: 120)
+                               
                             }
-                        }
-                        Spacer()
+                        })
+                        
                     }
                 }
             }
+            .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                        Text("Voltar")
+                    })
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                }
+            }
+            .edgesIgnoringSafeArea(.leading)
+            .edgesIgnoringSafeArea(.trailing)
+            .edgesIgnoringSafeArea(.bottom)
         }
-        .padding()
         
     }
     //função que direciona para o celular da pessoa. Não funciona pelo simulator, testar pelo tel de alguem

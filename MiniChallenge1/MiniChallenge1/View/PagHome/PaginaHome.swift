@@ -11,15 +11,22 @@ import Combine
 
 struct PaginaHome: View {
     
-    @State var centrosEsportivos = [CentroEsportivo]()
+    init() {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithOpaqueBackground()
+        coloredAppearance.backgroundColor = .white
+          
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    }
     
-
+    @State var centrosEsportivos = [CentroEsportivo]()
     
     var body: some View {
         NavigationView {
             ZStack {
                 MapaPaginaPrincipal()
-                NavigationBarView()
                 BottomSheet()
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -27,21 +34,19 @@ struct PaginaHome: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
 
                     Image(systemName: "location.fill")
-                        .padding(.bottom)
-                        .foregroundColor(.blue)
+                    .foregroundColor(CoresApp.corPrincipal.cor())
                     
                     Text("Localização atual")
-                        .padding(.trailing, 150)
-                        .padding(.bottom)
-                        .foregroundColor(.blue)
-
+                    .padding(.trailing, 150)
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing, content: {
                     NavigationLink(destination: ConfiguracoesView()) {
                         Image(systemName: "info.circle")
                     }
-                    .padding(.bottom)
-                    .foregroundColor(.blue)
-
-                }
+                    .foregroundColor(CoresApp.corPlatinum.cor())
+                })
             }
             
             
@@ -57,10 +62,4 @@ struct PaginaHome_Previews: PreviewProvider {
     }
 }
 
-//FUNÇÕES
 
-extension PaginaHome{
-    
-    
-    
-}

@@ -31,7 +31,7 @@ struct BottomSheet: View {
                     //Setando o estilo da sheetView
                     BlurView(style: .light)
                     .background(Color.white)
-                    .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 30))
+                    .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 10))
                         
                     
                     VStack {
@@ -39,8 +39,8 @@ struct BottomSheet: View {
                         //Icone arredondado
                         Capsule()
                         .fill(Color.init(UIColor.systemGray4))
-                        .frame(width: 80, height: 4)
-                        .padding(.top)
+                        .frame(width: 50, height: 4)
+                        .padding(.top, 10)
                         
                         VStack {
                             //MARK: - Search Bar
@@ -49,8 +49,6 @@ struct BottomSheet: View {
                             .padding(.horizontal)
                             .background(Color.init(UIColor.systemGray6))
                             .cornerRadius(10)
-                            .padding(.top, 10)
-                            
                             
                             //MARK: - botões de filtro
                             HStack {
@@ -63,10 +61,10 @@ struct BottomSheet: View {
                                         Text("Categorias")
                                         Image(systemName: "chevron.down")
                                     })
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(CoresApp.corPrincipal.cor())
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.blue, lineWidth: 1))
+                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
@@ -80,7 +78,7 @@ struct BottomSheet: View {
                                         Image(systemName: "chevron.down")
                                     })
                                     .padding(5)
-                                    .background(Color.blue)
+                                    .background(CoresApp.corPrincipal.cor())
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
@@ -93,13 +91,11 @@ struct BottomSheet: View {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
                                     }, label: {
-                                        
-                                        
                                         Text("Local")
                                         Image(systemName: "chevron.down")
                                     })
                                     .padding(5)
-                                    .background(.blue)
+                                    .background(CoresApp.corPrincipal.cor())
                                     .foregroundColor(.white)
                                     .cornerRadius(5)
                                     .sheet(isPresented: $mostraFiltroZonas, content: {
@@ -115,10 +111,10 @@ struct BottomSheet: View {
                                         Text("Local")
                                         Image(systemName: "chevron.down")
                                     })
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(CoresApp.corPrincipal.cor())
                                     .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.blue, lineWidth: 1))
+                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroZonas, content: {
                                         FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
                                     })
@@ -126,7 +122,7 @@ struct BottomSheet: View {
                                 
                                 Spacer()
                             }
-                            .padding(.vertical, 10)
+                            .padding(.vertical, 5)
                         }
                         
                         //Conteudo da bottomsheet

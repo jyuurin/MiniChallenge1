@@ -16,7 +16,7 @@ struct Categoria {
 struct FiltroCategoriaView: View {
     
     //váriável que aux a voltar pra página anterior
-    @Environment(\.presentationMode) var presentationModel
+    @Environment(\.dismiss) var dismiss
     
     @Binding var arrayCategorias: [String]
     
@@ -115,105 +115,103 @@ struct FiltroCategoriaView: View {
     
     
     var body: some View {
-        ScrollView {
-            
-            //MARK: - Criando navegação da página
-            HStack {
-                //Adicionando botão para voltar a view anterior
-                Button(action: {
-                    presentationModel.wrappedValue.dismiss()
-                }, label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Voltar")
-                    }
-                })
-                Spacer()
-                
-                //Titulo
-                Text("Filtros")
-                    .foregroundColor(.black)
-                Spacer()
-                
-                //Setando botão de limpar filtros por categoria
-                Button(action: {
-                    limparFiltro()
-                }, label: {
-                    Text("Limpar")
-                })
-                
-            }
-            .padding()
-            .padding(.vertical)
-            
-            //MARK: - Grade de categorias dos centros esportivos
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], content: {
-                ForEach(self.categorias, id: \.idCategoria) { categoria in
-                    //Criando o botão que deixará as categorias selecionáveis
-                    Button(action: {
-                    
-                        //Criando variável que vai participar da estrutura condicional pr adicionar um novo item à lista de selecionados
-                        var permiteInsercao = true
+        
+        NavigationView {
+            ScrollView {
+                //MARK: - Grade de categorias dos centros esportivos
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], content: {
+                    ForEach(self.categorias, id: \.idCategoria) { categoria in
+                        //Criando o botão que deixará as categorias selecionáveis
+                        Button(action: {
                         
-                        //Se o id da categoria ja estiver dentro da array de selecionados, esse item será removido da lista e a permiçao para inserir um item será negada
-                        if(self.idsSelecionadas.count > 0) {
-                            for i in 0...self.idsSelecionadas.count - 1 {
-                                if(self.idsSelecionadas[i] == categoria.idCategoria) {
-                                    self.idsSelecionadas.remove(at: i)
-                                    self.arrayCategorias.remove(at: i)
-                                    permiteInsercao = false
-                                    break
+                            //Criando variável que vai participar da estrutura condicional pr adicionar um novo item à lista de selecionados
+                            var permiteInsercao = true
+                            
+                            //Se o id da categoria ja estiver dentro da array de selecionados, esse item será removido da lista e a permiçao para inserir um item será negada
+                            if(self.idsSelecionadas.count > 0) {
+                                for i in 0...self.idsSelecionadas.count - 1 {
+                                    if(self.idsSelecionadas[i] == categoria.idCategoria) {
+                                        self.idsSelecionadas.remove(at: i)
+                                        self.arrayCategorias.remove(at: i)
+                                        permiteInsercao = false
+                                        break
+                                    }
                                 }
                             }
-                        }
-                        
-                        //Caso permiteInsercao não tenha sido desativado, os comando de dentro da estrutura serão ativados
-                        if permiteInsercao {
-                            self.idsSelecionadas.append(categoria.idCategoria)
-                            self.arrayCategorias.append(categoria.nomeCategoria)
-                        }
-                        
+                            
+                            //Caso permiteInsercao não tenha sido desativado, os comando de dentro da estrutura serão ativados
+                            if permiteInsercao {
+                                self.idsSelecionadas.append(categoria.idCategoria)
+                                self.arrayCategorias.append(categoria.nomeCategoria)
+                            }
+                            
+                        }, label: {
+                            //MARK: - Lógica utilizada para deixar cada categoria selecionavel
+                            //Se essa categoria ja estiver selecionada, entra no primeiro if, se não, entra no segundo
+                            if idsSelecionadas.contains(categoria.idCategoria) {
+                                VStack {
+                                    Image("\(categoria.nomeSegImagem)")
+                                        .resizable()
+                                        .frame(width: 35, height: 35, alignment: .center)
+                                        
+                                    Text(categoria.nomeCategoria)
+                                        .font(.system(size: 15))
+                                }
+                            } else {
+                                VStack {
+                                    Image("\(categoria.nomePriImagem)")
+                                        .resizable()
+                                        .frame(width: 35, height: 35, alignment: .center)
+                                        
+                                    Text(categoria.nomeCategoria)
+                                        .font(.system(size: 15))
+                                }
+                            }
+                        })
+                        .foregroundColor(CoresApp.corSecundaria.cor())
+                    }
+                })
+                .padding(.top)
+                
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("Filtrar")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    //Adicionando botão para voltar a view anterior
+                    Button(action: {
+                        dismiss()
                     }, label: {
-                        //MARK: - Lógica utilizada para deixar cada categoria selecionavel
-                        //Se essa categoria ja estiver selecionada, entra no primeiro if, se não, entra no segundo
-                        if idsSelecionadas.contains(categoria.idCategoria) {
-                            VStack {
-                                Image("\(categoria.nomeSegImagem)")
-                                    .resizable()
-                                    .frame(width: 35, height: 35, alignment: .center)
-                                    
-                                Text(categoria.nomeCategoria)
-                                    .font(.system(size: 15))
-                            }
-                            .foregroundColor(Color(UIColor(red: 35/255, green: 126/255, blue: 169/255, alpha: 1)))
-                        } else {
-                            VStack {
-                                Image("\(categoria.nomePriImagem)")
-                                    .resizable()
-                                    .frame(width: 35, height: 35, alignment: .center)
-                                    
-                                Text(categoria.nomeCategoria)
-                                    .font(.system(size: 15))
-                            }
-                            .foregroundColor(Color(UIColor(red: 35/255, green: 126/255, blue: 169/255, alpha: 1)))
+                        HStack {
+                            Image(systemName: "chevron.left")
+                            Text("Voltar")
                         }
-                        
                     })
-                    
-                }
-            })
-            
-        }
-        .onAppear {
-            //Implementando estrutura para pré-definir os filtros pré-existentes ja selecionados
-            for itemArrayCategoria in self.arrayCategorias {
-                for categoria in self.categorias {
-                    if itemArrayCategoria == categoria.nomeCategoria {
-                        self.idsSelecionadas.append(categoria.idCategoria)
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                })
+                
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    //Setando botão de limpar filtros por categoria
+                    Button(action: {
+                        limparFiltro()
+                    }, label: {
+                        Text("Limpar")
+                    })
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                })
+            }
+            .onAppear {
+                //Implementando estrutura para pré-definir os filtros pré-existentes ja selecionados
+                for itemArrayCategoria in self.arrayCategorias {
+                    for categoria in self.categorias {
+                        if itemArrayCategoria == categoria.nomeCategoria {
+                            self.idsSelecionadas.append(categoria.idCategoria)
+                        }
                     }
                 }
             }
         }
+        
     }
     
     //MARK: - Função que limpa todas arrays necessárias para a filtragem
