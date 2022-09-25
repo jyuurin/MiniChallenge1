@@ -36,8 +36,9 @@ struct MapaPaginaPrincipal: View {
                 observarLocalizacaoRecusada()
                 locationManager.requisitarAtualizacaoDLocalizacao()
             }, label: {
-                Image("icnCompas")
+                Image(systemName: "location.fill")
                 .frame(width: 35, height: 35, alignment: .center)
+                .foregroundColor(CoresApp.corPrincipal.cor())
             })
             .padding(5)
             .background(Color.white)
