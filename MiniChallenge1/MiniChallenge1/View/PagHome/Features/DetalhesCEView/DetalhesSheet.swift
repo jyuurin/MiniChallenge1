@@ -68,9 +68,9 @@ struct DetalhesSheet: View {
                                 .font(.system(size: 15))
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 5)
-                                .foregroundColor(CoresApp.corSecundaria.cor())
+                                .foregroundColor(CoresApp.corPlatinum.cor())
                                 .overlay(RoundedRectangle(cornerRadius: 10)
-                                    .stroke(CoresApp.corSecundaria.cor(), lineWidth: 1))
+                                    .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
                                 
                             }
                             
@@ -94,9 +94,9 @@ struct DetalhesSheet: View {
                                 .font(.system(size: 15))
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 5)
-                                .foregroundColor(CoresApp.corSecundaria.cor())
+                                .foregroundColor(CoresApp.corPlatinum.cor())
                                 .overlay(RoundedRectangle(cornerRadius: 10)
-                                    .stroke(CoresApp.corSecundaria.cor(), lineWidth: 1))
+                                    .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
                                     
                                
                             }

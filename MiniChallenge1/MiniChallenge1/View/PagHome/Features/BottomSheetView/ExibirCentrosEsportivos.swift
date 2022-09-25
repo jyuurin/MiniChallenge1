@@ -22,10 +22,11 @@ struct ExibirCentrosEsportivos: View {
         ScrollView{
             VStack {
                 if !centrosEsportivos.isEmpty {
-                    ForEach(centrosEsportivos, id:\.ceId) { item in
+                    ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+                        
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
-                        Button(action: {centroEsportivoMostrando = item}, label: {
-                            centroEsportivoDados(title: item.ceNome, subTitle: item.ceEndereco.endereco, zona: item.ceZona)
+                        Button(action: {centroEsportivoMostrando = centroEsportivo}, label: {
+                            centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco, zona: centroEsportivo.ceZona)
                         })
                         // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
                         .sheet(item: $centroEsportivoMostrando){ CE in
@@ -184,14 +185,16 @@ struct ExibirCentrosEsportivos: View {
     func centroEsportivoDados(title: String, subTitle: String, zona: String) -> some View {
         HStack{
             Image(zona)
-                .resizable()
-                .frame(width: 60, height: 60)
+            .resizable()
+            .frame(width: 60, height: 60)
+            
             VStack(alignment: .leading) {
                 Text(title)
-                    .foregroundColor(.black)
+                .foregroundColor(.black)
+                
                 Text(subTitle)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                .font(.subheadline)
+                .foregroundColor(.gray)
             }
             .multilineTextAlignment(.leading)
             .padding(5)

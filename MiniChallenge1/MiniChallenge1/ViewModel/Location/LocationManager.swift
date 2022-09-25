@@ -18,10 +18,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         super.init()
     }
     
-    
-    //Variável que permite a classe ser do tipo Singleton
-    static let shared = LocationManager()
-    
     //Variável que armazenará a localização do usuário
     private lazy var locManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -39,10 +35,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
             locManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse, .authorizedAlways:
             locManager.startUpdatingLocation()
-        
         default:
             localizacaoRecusadaPublisher.send()
-        
         }
     }
     
