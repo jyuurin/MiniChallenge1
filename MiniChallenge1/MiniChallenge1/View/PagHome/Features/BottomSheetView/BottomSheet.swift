@@ -168,7 +168,6 @@ struct BottomSheet: View {
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)
-        
     }
     
     func onChange() {

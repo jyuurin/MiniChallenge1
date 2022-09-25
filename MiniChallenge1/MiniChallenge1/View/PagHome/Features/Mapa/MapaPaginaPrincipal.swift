@@ -18,7 +18,7 @@ struct MapaPaginaPrincipal: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             
             
             Map(coordinateRegion: $region,
@@ -36,11 +36,18 @@ struct MapaPaginaPrincipal: View {
                 observarLocalizacaoRecusada()
                 locationManager.requisitarAtualizacaoDLocalizacao()
             }, label: {
-                Text("Atualiza aqui")
+                Image("icnCompas")
+                .frame(width: 35, height: 35, alignment: .center)
             })
-            .position(x: 40, y: 100)
+            .padding(5)
+            .background(Color.white)
+            .cornerRadius(10)
+            .padding(.top, 5)
+            .padding(.trailing, 5)
         }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.trailing)
+        .edgesIgnoringSafeArea(.leading)
+        .edgesIgnoringSafeArea(.bottom)
         .onAppear {
             observarAtualizacoesCoordenadas()
             observarLocalizacaoRecusada()

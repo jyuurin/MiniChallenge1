@@ -34,6 +34,7 @@ struct PaginaHome: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
 
                     Image(systemName: "location.fill")
+                    .frame(width: 35, height: 35, alignment: .center)
                     .foregroundColor(CoresApp.corPrincipal.cor())
                     
                     Text("Localização atual")
@@ -45,6 +46,7 @@ struct PaginaHome: View {
                     NavigationLink(destination: ConfiguracoesView()) {
                         Image(systemName: "info.circle")
                     }
+                    .frame(width: 35, height: 35, alignment: .center)
                     .foregroundColor(CoresApp.corPlatinum.cor())
                 })
             }
