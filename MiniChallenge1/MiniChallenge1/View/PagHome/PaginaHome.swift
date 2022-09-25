@@ -43,7 +43,7 @@ struct PaginaHome: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                    NavigationLink(destination: ConfiguracoesView()) {
+                    NavigationLink(destination: PaginaDInformacoes()) {
                         Image(systemName: "info.circle")
                     }
                     .frame(width: 35, height: 35, alignment: .center)
