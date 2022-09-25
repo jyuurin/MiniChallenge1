@@ -30,6 +30,7 @@ struct MapaPaginaPrincipal: View {
                 
                 })
             
+            //MARK: - Botão para centralizar a localização do usuário no mapa
             Button(action: {
                 locationManager = LocationManager()
                 observarAtualizacoesCoordenadas()
@@ -67,7 +68,7 @@ struct MapaPaginaPrincipal: View {
                     print(error)
                 }
             } receiveValue: { coordenada in
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordenada.latitude, longitude: coordenada.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordenada.latitude, longitude: coordenada.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             }
             .store(in: &tokens)
     }
