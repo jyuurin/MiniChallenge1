@@ -19,7 +19,6 @@ struct BottomSheet: View {
     @State var zonasSelecionadas: [String] = []
     @State var buscaSolictada: String = ""
     
-    
     var body: some View {
         GeometryReader{proxy -> AnyView in
             let height = proxy.frame(in: .global).height
@@ -57,14 +56,26 @@ struct BottomSheet: View {
                                     
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
+                                        //Função que executa quando o usuario deixa de arrastar
+//                                        let maxHeight = height - 100
+//
+//                                        print(height)
+//
+//                                        withAnimation{
+//                                            offset = -maxHeight
+//                                        }
+//                                        // guardando a ultima offset, pra ficar a ultima posicao
+//                                        lastOffset = offset
                                     }, label: {
-                                        Text("Categorias")
-                                        Image(systemName: "chevron.down")
+                                        HStack {
+                                            Text("Categorias")
+                                            Image(systemName: "chevron.down")
+                                        }
+                                        .foregroundColor(CoresApp.corPrincipal.cor())
+                                        .padding(5)
+                                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     })
-                                    .foregroundColor(CoresApp.corPrincipal.cor())
-                                    .padding(5)
-                                    .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
@@ -74,13 +85,16 @@ struct BottomSheet: View {
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
                                     }, label: {
-                                        Text("Categorias")
-                                        Image(systemName: "chevron.down")
+                                        HStack {
+                                            Text("Categorias")
+                                            Image(systemName: "chevron.down")
+                                        }
+                                        .padding(5)
+                                        .background(CoresApp.corPrincipal.cor())
+                                        .foregroundColor(.white)
+                                        .cornerRadius(5)
                                     })
-                                    .padding(5)
-                                    .background(CoresApp.corPrincipal.cor())
-                                    .foregroundColor(.white)
-                                    .cornerRadius(5)
+                                    
                                     .sheet(isPresented: $mostraFiltroCategoria, content: {
                                         FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
                                     })
@@ -91,13 +105,16 @@ struct BottomSheet: View {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
                                     }, label: {
-                                        Text("Local")
-                                        Image(systemName: "chevron.down")
+                                        HStack {
+                                            Text("Local")
+                                            Image(systemName: "chevron.down")
+                                        }
+                                        .padding(5)
+                                        .background(CoresApp.corPrincipal.cor())
+                                        .foregroundColor(.white)
+                                        .cornerRadius(5)
+                                        
                                     })
-                                    .padding(5)
-                                    .background(CoresApp.corPrincipal.cor())
-                                    .foregroundColor(.white)
-                                    .cornerRadius(5)
                                     .sheet(isPresented: $mostraFiltroZonas, content: {
                                         FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
                                     })
@@ -106,15 +123,15 @@ struct BottomSheet: View {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
                                     }, label: {
-                                        
-                                        
-                                        Text("Local")
-                                        Image(systemName: "chevron.down")
+                                        HStack {
+                                            Text("Local")
+                                            Image(systemName: "chevron.down")
+                                        }
+                                        .foregroundColor(CoresApp.corPrincipal.cor())
+                                        .padding(5)
+                                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     })
-                                    .foregroundColor(CoresApp.corPrincipal.cor())
-                                    .padding(5)
-                                    .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                                     .sheet(isPresented: $mostraFiltroZonas, content: {
                                         FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
                                     })
@@ -152,9 +169,11 @@ struct BottomSheet: View {
                         // cima baixo ou meio
                         if -offset > 100 && -offset < maxHeight / 2 {
                             // meio
+                            print("meio")
                             offset = -(maxHeight / 3)
                         }
                         else if -offset > maxHeight / 2 {
+                            print("grande")
                             offset = -maxHeight
                         }
                         else {
@@ -164,7 +183,6 @@ struct BottomSheet: View {
                     // guardando a ultima offset, pra ficar a ultima posicao
                     lastOffset = offset
                 }))
-                    
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)
@@ -175,6 +193,8 @@ struct BottomSheet: View {
             self.offset = gestureOffset + lastOffset
         }
     }
+    
+    
 }
 
 struct BottomSheet_Previews: PreviewProvider {

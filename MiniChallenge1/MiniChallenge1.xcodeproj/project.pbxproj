@@ -460,7 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = 5786D2SAT2;
+				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";
@@ -491,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MiniChallenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = 5786D2SAT2;
+				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso a sua localização.";

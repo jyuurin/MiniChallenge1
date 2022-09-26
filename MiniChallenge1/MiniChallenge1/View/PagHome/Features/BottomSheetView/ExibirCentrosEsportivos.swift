@@ -126,8 +126,6 @@ struct ExibirCentrosEsportivos: View {
                         
                         centrosEsportivosAux.append(centroEsportivo)
                         continuaFiltragem = false
-                        
-                        print("\n\n\nModalidade: \(modalidade.modalidade)\n\nCategoria: \(modalidade.categoria)")
                         break
                         
                     }

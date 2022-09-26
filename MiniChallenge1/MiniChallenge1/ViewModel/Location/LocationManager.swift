@@ -31,7 +31,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     //Função que verifica o status de permissão do usuário com base na sua localização
     func requisitarAtualizacaoDLocalizacao() {
         switch locManager.authorizationStatus {
-        case .notDetermined:
+        case .notDetermined, .denied:
             locManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse, .authorizedAlways:
             locManager.startUpdatingLocation()
