@@ -105,6 +105,9 @@ struct DetalhesSheet: View {
                     }
                 }
             }
+            .edgesIgnoringSafeArea(.leading)
+            .edgesIgnoringSafeArea(.trailing)
+            .edgesIgnoringSafeArea(.bottom)
             .padding()
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -118,9 +121,8 @@ struct DetalhesSheet: View {
                     .foregroundColor(CoresApp.corPrincipal.cor())
                 }
             }
-            .edgesIgnoringSafeArea(.leading)
-            .edgesIgnoringSafeArea(.trailing)
-            .edgesIgnoringSafeArea(.bottom)
+            
+            
         }
         
     }

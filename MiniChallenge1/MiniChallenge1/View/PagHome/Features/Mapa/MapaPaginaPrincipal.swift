@@ -26,8 +26,11 @@ struct MapaPaginaPrincipal: View {
                 annotationItems: DataLoader().centrosEsportivos,
                 annotationContent: { centroEsportivo in
                 
-                    MapMarker(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0))
-                
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
+                        Image("mapMarker")
+                            .resizable()
+                            .frame(width: 40.0, height: 50.0)
+                    })
                 })
             
             //MARK: - Botão para centralizar a localização do usuário no mapa
