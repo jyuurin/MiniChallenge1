@@ -23,6 +23,9 @@ struct MapaPaginaPrincipal: View {
     //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
     @State var primeiraAtualizacaoMapa = true
     
+    //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
+    @State var centroEsportivoMostrando = false
+    
     @State var latitude = -23.561370844718464
     @State var longitude = -46.6186872906356062
     
@@ -36,10 +39,18 @@ struct MapaPaginaPrincipal: View {
                 annotationItems: DataLoader().centrosEsportivos,
                 annotationContent: { centroEsportivo in
                 
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
-                        Image("mapMarker")
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
+                        Button(action: {
+                            self.centroEsportivoMostrando = true
+                        }, label: {
+                            Image("mapMarker")
                             .resizable()
                             .frame(width: 40.0, height: 50.0)
+                        })
+                        .sheet(isPresented: $centroEsportivoMostrando, content: {
+                            DetalhesSheet(centroEsportivo: centroEsportivo)
+                        })
+                        
                     })
                 })
             
