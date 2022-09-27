@@ -25,7 +25,10 @@ struct ExibirCentrosEsportivos: View {
                     ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
                         
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
-                        Button(action: {centroEsportivoMostrando = centroEsportivo}, label: {
+                        Button(action: {
+                            centroEsportivoMostrando = centroEsportivo
+                            self.endEditing()
+                        }, label: {
                             centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco, zona: centroEsportivo.ceZona)
                         })
                         // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
@@ -198,6 +201,11 @@ struct ExibirCentrosEsportivos: View {
             .padding(5)
             Spacer()
         }
+    }
+    
+    //Função utilizada para esconder o keyboard do dispositivo
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

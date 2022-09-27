@@ -56,6 +56,8 @@ struct BottomSheet: View {
                                     
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
+                                        
+                                        
                                    
                                     }, label: {
                                         HStack {
@@ -75,6 +77,7 @@ struct BottomSheet: View {
                                     
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
+                                        self.endEditing()
                                     }, label: {
                                         HStack {
                                             Text("Categorias")
@@ -95,6 +98,7 @@ struct BottomSheet: View {
                                 if !self.zonasSelecionadas.isEmpty {
                                     Button(action: {
                                         self.mostraFiltroZonas = true
+                                        self.endEditing()
                                     }, label: {
                                         HStack {
                                             Text("Local")
@@ -113,6 +117,7 @@ struct BottomSheet: View {
                                 } else { 
                                     Button(action: {
                                         self.mostraFiltroZonas = true
+                                        self.endEditing()
                                     }, label: {
                                         HStack {
                                             Text("Local")
@@ -159,6 +164,7 @@ struct BottomSheet: View {
                         // condicoes para mover
                         // cima baixo ou meio
                         if -offset > 100 && -offset < maxHeight / 2 {
+                            self.endEditing()
                             // meio
                             offset = -(maxHeight / 3)
                         }
@@ -166,6 +172,7 @@ struct BottomSheet: View {
                             offset = -maxHeight
                         }
                         else {
+                            self.endEditing()
                             offset = 0
                         }
                     }
@@ -173,10 +180,10 @@ struct BottomSheet: View {
                     lastOffset = offset
                 }))
                 .onAppear {
+                    
                     NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { _ in
-//                        Função que executa quando o usuario deixa de arrastar
+                        // Função que executa quando o usuario deixa de arrastar
                         let maxHeight = 753.0 - 100.0
-                        
                         withAnimation{
                             offset = -maxHeight
                         }
@@ -198,7 +205,10 @@ struct BottomSheet: View {
         }
     }
     
-    
+    //Função utilizada para esconder o keyboard do dispositivo
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
     
     
 }
