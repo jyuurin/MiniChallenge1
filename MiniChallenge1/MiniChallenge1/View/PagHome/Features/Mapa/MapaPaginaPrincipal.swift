@@ -20,6 +20,12 @@ struct MapaPaginaPrincipal: View {
     @Binding var localizacaoPermitida: Bool
     @State var mostraAlertaDLocalizacao = false
     
+    //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
+    @State var primeiraAtualizacaoMapa = true
+    
+    @State var latitude = -23.561370844718464
+    @State var longitude = -46.6186872906356062
+    
     var body: some View {
         
         ZStack(alignment: .topTrailing) {
@@ -44,7 +50,12 @@ struct MapaPaginaPrincipal: View {
                 observarLocalizacaoRecusada()
                 locationManager.requisitarAtualizacaoDLocalizacao()
                 
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                
+                
+                //Atribuindo valor booleano ao alerta, caso for verdadeiro, será mostrado um alerta com instruções para permitir a localizacao
                 self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
+                
             }, label: {
                 Image(systemName: "location.fill")
                 .frame(width: 35, height: 35, alignment: .center)
@@ -62,12 +73,16 @@ struct MapaPaginaPrincipal: View {
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.leading)
         .edgesIgnoringSafeArea(.bottom)
+        .onChange(of: primeiraAtualizacaoMapa) { _ in
+            //Esse onChange só vai rodar quando primeiraAtualizacaoMapa for modificado, e isso só acontece uma vez
+            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        }
         .onAppear {
             observarAtualizacoesCoordenadas()
             observarLocalizacaoRecusada()
             locationManager.requisitarAtualizacaoDLocalizacao()
-            print(locationManager.mostraAlerta)
             
+            //Verificação de acesso a localização para mandar para tela principal
             if locationManager.mostraAlerta {
                 self.localizacaoPermitida = false
             }
@@ -86,7 +101,14 @@ struct MapaPaginaPrincipal: View {
                     print(error)
                 }
             } receiveValue: { coordenada in
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordenada.latitude, longitude: coordenada.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                self.latitude = coordenada.latitude
+                self.longitude = coordenada.longitude
+                
+                //Modificando variável que permite que atualize automaticamente
+                if primeiraAtualizacaoMapa != false {
+                    self.primeiraAtualizacaoMapa = false
+                }
+                
             }
             .store(in: &tokens)
     }

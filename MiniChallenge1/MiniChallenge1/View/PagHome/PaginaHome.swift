@@ -21,7 +21,7 @@ struct PaginaHome: View {
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
     
-    @State var localizacaoPermitida = false
+    @State var localizacaoPermitida = true
     
     @State var centrosEsportivos = [CentroEsportivo]()
     
@@ -58,11 +58,16 @@ struct PaginaHome: View {
                     .foregroundColor(CoresApp.corPlatinum.cor())
                 })
             }
+            .onTapGesture {
+                self.endEditing()
+            }
             
             
             
         }
-        
+    }
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
