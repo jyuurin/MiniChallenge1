@@ -176,9 +176,7 @@ struct BottomSheet: View {
                     NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { _ in
 //                        Função que executa quando o usuario deixa de arrastar
                         let maxHeight = 753.0 - 100.0
-
-                        print(height)
-
+                        
                         withAnimation{
                             offset = -maxHeight
                         }

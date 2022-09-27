@@ -41,11 +41,9 @@ struct PaginaHome: View {
                     
                     if localizacaoPermitida {
                         Text("Localização atual")
-                        .padding(.trailing, 150)
                         .foregroundColor(CoresApp.corPrincipal.cor())
                     } else {
-                        Text("São Paulo")
-                        .padding(.trailing, 150)
+                        Text("Localização indefinida")
                         .foregroundColor(CoresApp.corPrincipal.cor())
                     }
                         
