@@ -21,12 +21,14 @@ struct PaginaHome: View {
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
     
+    @State var localizacaoPermitida = false
+    
     @State var centrosEsportivos = [CentroEsportivo]()
     
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal()
+                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida)
                 BottomSheet()
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -37,9 +39,17 @@ struct PaginaHome: View {
                     .frame(width: 35, height: 35, alignment: .center)
                     .foregroundColor(CoresApp.corPrincipal.cor())
                     
-                    Text("Localização atual")
-                    .padding(.trailing, 150)
-                    .foregroundColor(CoresApp.corPrincipal.cor())
+                    if localizacaoPermitida {
+                        Text("Localização atual")
+                        .padding(.trailing, 150)
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                    } else {
+                        Text("São Paulo")
+                        .padding(.trailing, 150)
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                    }
+                        
+                    
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing, content: {

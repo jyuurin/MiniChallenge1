@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import MapKit
+import CoreLocation
 
 struct MapaPaginaPrincipal: View {
     
@@ -15,6 +16,9 @@ struct MapaPaginaPrincipal: View {
     
     @State var tokens: Set<AnyCancellable> = []
     @State var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -23.561370844718464, longitude: -46.618687290635606), span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+    
+    @Binding var localizacaoPermitida: Bool
+    @State var mostraAlertaDLocalizacao = false
     
     var body: some View {
         
@@ -39,6 +43,8 @@ struct MapaPaginaPrincipal: View {
                 observarAtualizacoesCoordenadas()
                 observarLocalizacaoRecusada()
                 locationManager.requisitarAtualizacaoDLocalizacao()
+                
+                self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
             }, label: {
                 Image(systemName: "location.fill")
                 .frame(width: 35, height: 35, alignment: .center)
@@ -49,6 +55,9 @@ struct MapaPaginaPrincipal: View {
             .cornerRadius(10)
             .padding(.top, 5)
             .padding(.trailing, 5)
+            .alert(isPresented: $mostraAlertaDLocalizacao) {
+                Alert(title: Text("Ative sua configuração de localização no SPorts"), message: Text("Vá até suas configurações e altere a permissão de localização do SPorts."), dismissButton: .default(Text("OK")))
+            }
         }
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.leading)
@@ -57,6 +66,12 @@ struct MapaPaginaPrincipal: View {
             observarAtualizacoesCoordenadas()
             observarLocalizacaoRecusada()
             locationManager.requisitarAtualizacaoDLocalizacao()
+            print(locationManager.mostraAlerta)
+            
+            if locationManager.mostraAlerta {
+                self.localizacaoPermitida = false
+            }
+            
         }
         
     }
@@ -91,6 +106,6 @@ struct MapaPaginaPrincipal: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal()
+        MapaPaginaPrincipal(localizacaoPermitida: .constant(false))
     }
 }

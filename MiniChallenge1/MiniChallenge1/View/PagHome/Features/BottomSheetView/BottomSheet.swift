@@ -56,16 +56,7 @@ struct BottomSheet: View {
                                     
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
-                                        //Função que executa quando o usuario deixa de arrastar
-//                                        let maxHeight = height - 100
-//
-//                                        print(height)
-//
-//                                        withAnimation{
-//                                            offset = -maxHeight
-//                                        }
-//                                        // guardando a ultima offset, pra ficar a ultima posicao
-//                                        lastOffset = offset
+                                   
                                     }, label: {
                                         HStack {
                                             Text("Categorias")
@@ -169,11 +160,9 @@ struct BottomSheet: View {
                         // cima baixo ou meio
                         if -offset > 100 && -offset < maxHeight / 2 {
                             // meio
-                            print("meio")
                             offset = -(maxHeight / 3)
                         }
                         else if -offset > maxHeight / 2 {
-                            print("grande")
                             offset = -maxHeight
                         }
                         else {
@@ -183,6 +172,23 @@ struct BottomSheet: View {
                     // guardando a ultima offset, pra ficar a ultima posicao
                     lastOffset = offset
                 }))
+                .onAppear {
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { _ in
+//                        Função que executa quando o usuario deixa de arrastar
+                        let maxHeight = 753.0 - 100.0
+
+                        print(height)
+
+                        withAnimation{
+                            offset = -maxHeight
+                        }
+                        // guardando a ultima offset, pra ficar a ultima posicao
+                        lastOffset = offset
+                        
+                    })
+                    
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { _ in })
+                }
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)

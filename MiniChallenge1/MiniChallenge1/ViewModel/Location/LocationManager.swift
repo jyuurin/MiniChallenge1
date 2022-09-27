@@ -7,12 +7,15 @@
 
 import Combine
 import CoreLocation
+import SwiftUI
 
 class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var coordenadasPublisher = PassthroughSubject<CLLocationCoordinate2D, Error>()
     
     var localizacaoRecusadaPublisher = PassthroughSubject<Void, Never>()
+    
+    var mostraAlerta = false
     
     override init() {
         super.init()
@@ -31,7 +34,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     //Função que verifica o status de permissão do usuário com base na sua localização
     func requisitarAtualizacaoDLocalizacao() {
         switch locManager.authorizationStatus {
-        case .notDetermined, .denied:
+        case .denied, .restricted:
+            self.mostraAlerta = true
+        case .notDetermined:
             locManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse, .authorizedAlways:
             locManager.startUpdatingLocation()
