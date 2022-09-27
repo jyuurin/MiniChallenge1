@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MiniChallenge1App: App {
+struct SPorts: App {
     var body: some Scene {
         WindowGroup {
             SplashScreen()

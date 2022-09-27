@@ -33,13 +33,10 @@ struct PaginaDInformacoes: View {
                     
                 }
             }
-            Button(action: {
-                
-            }, label: {
-                Text("Políticas de privacidade SPorts")
+            
+            Link("Políticas de privacidade SPorts", destination: URL(string: "https://github.com/pedrohemmel/politicas-privacidade-sports/tree/main")!)
                 .font(.system(size: 15))
                 .foregroundColor(CoresApp.corPlatinum.cor())
-            })
             
         }
         .padding()
