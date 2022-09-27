@@ -125,7 +125,7 @@ struct ExibirCentrosEsportivos: View {
                 
                 //Verificando pelas modalidades
                 for modalidade in centroEsportivo.ceModalidades {
-                    if (modalidade.modalidade.contains(self.buscaSolicitada) || modalidade.categoria.contains(self.buscaSolicitada)) && continuaFiltragem  {
+                    if (modalidade.modalidade.lowercased().contains(self.buscaSolicitada.lowercased()) || modalidade.categoria.lowercased().contains(self.buscaSolicitada.lowercased())) && continuaFiltragem  {
                         
                         centrosEsportivosAux.append(centroEsportivo)
                         continuaFiltragem = false
@@ -136,7 +136,7 @@ struct ExibirCentrosEsportivos: View {
                 
                 //Verificando pelas estruturas
                 for estrutura in centroEsportivo.ceEstrutura {
-                    if estrutura.nomeEstrutura.contains(self.buscaSolicitada) && continuaFiltragem {
+                    if estrutura.nomeEstrutura.lowercased().contains(self.buscaSolicitada.lowercased()) && continuaFiltragem {
                         
                         centrosEsportivosAux.append(centroEsportivo)
                         continuaFiltragem = false
@@ -146,8 +146,8 @@ struct ExibirCentrosEsportivos: View {
                 }
                 
                 //Verificando pelo nome e endereço do centro esportivo
-                if (centroEsportivo.ceNome.contains(self.buscaSolicitada)
-                    || centroEsportivo.ceEndereco.endereco.contains(self.buscaSolicitada)) && continuaFiltragem {
+                if (centroEsportivo.ceNome.lowercased().contains(self.buscaSolicitada.lowercased())
+                    || centroEsportivo.ceEndereco.endereco.lowercased().contains(self.buscaSolicitada.lowercased())) && continuaFiltragem {
                     centrosEsportivosAux.append(centroEsportivo)
                     continuaFiltragem = false
                 }
