@@ -29,6 +29,8 @@ struct MapaPaginaPrincipal: View {
     @State var latitude = -23.561370844718464
     @State var longitude = -46.6186872906356062
     
+    @Binding var centrosEsportivos: [CentroEsportivo]
+    
     var body: some View {
         
         ZStack(alignment: .topTrailing) {
@@ -36,7 +38,7 @@ struct MapaPaginaPrincipal: View {
             
             Map(coordinateRegion: $region,
                 showsUserLocation: true,
-                annotationItems: DataLoader().centrosEsportivos,
+                annotationItems: centrosEsportivos,
                 annotationContent: { centroEsportivo in
                 
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
@@ -139,6 +141,6 @@ struct MapaPaginaPrincipal: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal(localizacaoPermitida: .constant(false))
+        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), centrosEsportivos: .constant([CentroEsportivo]()))
     }
 }

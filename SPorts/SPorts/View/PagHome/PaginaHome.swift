@@ -28,8 +28,8 @@ struct PaginaHome: View {
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida)
-                BottomSheet()
+                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, centrosEsportivos: $centrosEsportivos)
+                BottomSheet(centrosEsportivos: $centrosEsportivos)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

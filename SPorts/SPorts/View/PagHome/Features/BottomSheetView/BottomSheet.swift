@@ -19,6 +19,8 @@ struct BottomSheet: View {
     @State var zonasSelecionadas: [String] = []
     @State var buscaSolictada: String = ""
     
+    @Binding var centrosEsportivos: [CentroEsportivo]
+    
     var body: some View {
         GeometryReader{proxy -> AnyView in
             let height = proxy.frame(in: .global).height
@@ -139,7 +141,7 @@ struct BottomSheet: View {
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas)
+                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos)
                         
                     
                     }
@@ -215,6 +217,6 @@ struct BottomSheet: View {
 
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheet()
+        BottomSheet(centrosEsportivos: .constant([CentroEsportivo]()))
     }
 }

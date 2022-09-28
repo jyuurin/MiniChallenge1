@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ExibirCentrosEsportivos: View {
     
-    @State var centrosEsportivos = [CentroEsportivo]()
-    
     @Binding var buscaSolicitada: String
     @Binding var categoriasSelecionadas: [String]
     @Binding var zonasSelecionadas: [String]
     
     @State var zonasFormatadas: [String] = []
     @State var centroEsportivoMostrando: CentroEsportivo?
+    
+    @Binding var centrosEsportivos: [CentroEsportivo]
     
     var body: some View {
         ScrollView{
