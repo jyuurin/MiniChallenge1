@@ -45,7 +45,7 @@ struct BottomSheet: View {
                         
                         VStack {
                             //MARK: - Search Bar
-                            TextField("Exemplo: *Nome do CE*; Piscina; Futebol", text: $buscaSolictada)
+                            TextField("Nome do Centro Esportivo; Piscina; Futebol", text: $buscaSolictada)
                             .padding(.vertical, 10)
                             .padding(.horizontal)
                             .background(Color.init(UIColor.systemGray6))
@@ -143,11 +143,29 @@ struct BottomSheet: View {
                         //Conteudo da bottomsheet
                         ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos)
                         
+                        
                     
                     }
                     .padding(.horizontal)
                     //Define tamanho
                     .frame(maxHeight: .infinity, alignment: .top)
+                }
+                .onAppear {
+                    offset = -((753 - 100)/3)
+                    lastOffset = offset
+                    
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { _ in
+                        // Função que executa quando o usuario deixa de arrastar
+                        let maxHeight = 753 - 100.0
+                        withAnimation{
+                            offset = -maxHeight
+                        }
+                        // guardando a ultima offset, pra ficar a ultima posicao
+                        lastOffset = offset
+                        
+                    })
+                    
+                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { _ in })
                 }
                 //Offset desloca o visual do objeto
                 .offset(y: height - 100)
@@ -181,21 +199,7 @@ struct BottomSheet: View {
                     // guardando a ultima offset, pra ficar a ultima posicao
                     lastOffset = offset
                 }))
-                .onAppear {
-                    
-                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { _ in
-                        // Função que executa quando o usuario deixa de arrastar
-                        let maxHeight = 753.0 - 100.0
-                        withAnimation{
-                            offset = -maxHeight
-                        }
-                        // guardando a ultima offset, pra ficar a ultima posicao
-                        lastOffset = offset
-                        
-                    })
-                    
-                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { _ in })
-                }
+                
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)

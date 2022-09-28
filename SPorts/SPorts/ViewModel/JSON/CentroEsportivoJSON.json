@@ -6,8 +6,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Ana Perena, 110, COHAB 2, São Paulo",
-            "latitude": "-23.547103346334982",
-            "longitude": "-46.43679591621508"
+            "latitude": "-23.547289614640494",
+            "longitude": "-46.43688033023841"
         },
         "ceTelefone":
         [
@@ -106,8 +106,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Praça Haroldo Daltro, São Paulo",
-            "latitude": "-23.547614824108233",
-            "longitude": "-46.53399774505128"
+            "latitude": "-23.547752348577408",
+            "longitude": "-46.533968710974136"
         },
         "ceTelefone":
         [
@@ -260,8 +260,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Avenida Satélite, 756, São Paulo",
-            "latitude": "-23.610666232003076",
-            "longitude": "-46.46469214504994"
+            "latitude": "-23.610884931590256",
+            "longitude": "-46.46483610269012"
         },
         "ceTelefone":
         [
@@ -366,8 +366,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Avenida dos Metalúrgicos, 2255, Tiradentes, São Paulo",
-            "latitude": "-23.598463289116374",
-            "longitude": "-46.4018557585419"
+            "latitude": "-23.59872076635494",
+            "longitude": "-46.40216329420279"
         },
         "ceTelefone":
         [
@@ -469,8 +469,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Carlo Clausetti, 19, Sapopemba, São Paulo",
-            "latitude": "-23.605235389353982",
-            "longitude": "-46.50281426039461"
+            "latitude": "-23.605871169590042",
+            "longitude": "-46.50289177048874"
         },
         "ceTelefone":
         [
@@ -556,8 +556,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Grapirá, 537, Itaim Paulista, São Paulo",
-            "latitude": "-23.497289075239436",
-            "longitude": "-46.418881573888505"
+            "latitude": "-23.497407059173295",
+            "longitude": "-46.41889281882081"
         },
         "ceTelefone":
         [
@@ -674,8 +674,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Taquari, 635, Mooca, São Paulo",
-            "latitude": "-23.54983825089398",
-            "longitude": "-46.59689167388734"
+            "latitude": "-23.550179867438118",
+            "longitude": "-46.59689981535748"
         },
         "ceTelefone":
         [
@@ -810,8 +810,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua José Balangio, 188, COHAB 1, São Paulo",
-            "latitude": "-23.550365458509606",
-            "longitude": "-46.48483502970665"
+            "latitude": "-23.55049926084463",
+            "longitude": "-46.48491671269139"
         },
         "ceTelefone":
         [
@@ -887,9 +887,9 @@
         "ceNome": "C.E. LUIZ MARTINEZ (TIQUATIRA)",
         "ceZona": "zl",
         "ceEndereco": {
-            "endereco": "Av. Governador Carvalho Pinto, 02, Tiquatira, São Paulo",
-            "latitude": "-23.51528098463075",
-            "longitude": "-46.54980703156041"
+            "endereco": "Av. Governador Carvalho Pinto, 2 - Vila Sao Geraldo, São Paulo",
+            "latitude": "-23.514335157093107",
+            "longitude": "-46.52805990377761"
         },
         "ceTelefone":
         [
@@ -1011,8 +1011,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "R. Inácio Monteiro, 55, Cidade Tiradentes, São Paulo",
-            "latitude": "-23.564206782049453",
-            "longitude": "-46.40728576039554"
+            "latitude": "-23.564256173427943",
+            "longitude": "-46.40743129760843"
         },
         "ceTelefone":
         [
@@ -1101,8 +1101,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua João Euclides Pereira, 308, Jardim Matarazzo, São Paulo",
-            "latitude": "-23.48821148531836",
-            "longitude": "-46.48116247388876"
+            "latitude": "-23.48826172209639",
+            "longitude": "-46.48117428387931"
         },
         "ceTelefone":
         [
@@ -1204,8 +1204,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Apucarana, 233, Tatuapé, São Paulo",
-            "latitude": "-23.539964052664004",
-            "longitude": "-46.56481314505146"
+            "latitude": "-23.540058495707992",
+            "longitude": "-46.564728245711834"
         },
         "ceTelefone":
         [
@@ -1292,8 +1292,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Rua Canuto de Abreu, s/n°, Tatuapé, São Paulo",
-            "latitude": "-23.555657714958926",
-            "longitude": "-46.559708602723454"
+            "latitude": "-23.5583145868334",
+            "longitude": "-46.55682558987998"
         },
         "ceTelefone":
         [
@@ -1501,8 +1501,8 @@
         "ceZona": "zl",
         "ceEndereco": {
             "endereco": "Avenida Francisco Falconi, 83, Vila Alpina, São Paulo",
-            "latitude": "-23.583654255502534",
-            "longitude": "-46.56858803155902"
+            "latitude": "-23.583758932116684",
+            "longitude": "-46.568526006363086"
         },
         "ceTelefone":
         [
@@ -1586,8 +1586,8 @@
         "ceZona": "zo",
         "ceEndereco": {
             "endereco": "Rua General Mac Arthur, 1304, Jaguaré, São Paulo",
-            "latitude": "-23.55321843956604",
-            "longitude": "-46.75256393155959"
+            "latitude": "-23.553310459320002",
+            "longitude": "-46.75259179624535"
         },
         "ceTelefone":
         [
@@ -1670,8 +1670,8 @@
         "ceZona": "zo",
         "ceEndereco": {
             "endereco": "Rua Dr. Ernâni da Gama Corrêa, 367, Butantã, São Paulo",
-            "latitude": "-23.574571283935068",
-            "longitude": "-46.723133018067685"
+            "latitude": "-23.57466591642847",
+            "longitude": "-46.723101538519444"
         },
         "ceTelefone":
         [
@@ -1795,8 +1795,8 @@
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Rua Cibaúma,54, Campo Limpo, São Paulo",
-                "latitude": "-23.62015064611364",
-                "longitude": "-46.75420394450867"
+                "latitude": "-23.62027043918624",
+                "longitude": "-46.75418032575766"
             },
             "ceTelefone":
             [
@@ -1865,12 +1865,12 @@
         
         {
             "ceId": 27,
-            "ceNome": "BALNEÁRIO PRINCESA ISABEL (VILA CARIOCA)",
+            "ceNome": "",
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Rua Campante, 100, Vila Carioca, São Paulo",
-                "latitude": "-23.595199557136127",
-                "longitude": "-46.59511106039486"
+                "latitude": "-23.595235575070465",
+                "longitude": "-46.59509080852874"
             },
             "ceTelefone":
             [
@@ -1947,8 +1947,8 @@
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Rua Lussanvira, 178, Vila Guarani, São Paulo",
-                "latitude": "-23.640566042268773",
-                "longitude": "-46.63804414504935"
+                "latitude": "-23.640621441930406",
+                "longitude": "-46.63807417298554"
             },
             "ceTelefone":
             [
@@ -2117,8 +2117,8 @@
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Rua Curitiba, 290, Paraíso, São Paulo",
-                "latitude": "-23.582539854918746",
-                "longitude": "-46.65307683155906"
+                "latitude": "-23.58261638068495",
+                "longitude": "-46.6530737303273"
             },
             "ceTelefone":
             [
@@ -2183,8 +2183,8 @@
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Av. dos Funcionários Públicos, 2501, Jd. Horizonte Azul, São Paulo",
-                "latitude": "-23.745718320143745",
-                "longitude": "-46.7742662315555"
+                "latitude": "-23.745819547842483",
+                "longitude": "-46.774269180992235"
             },
             "ceTelefone":
             [
@@ -2293,8 +2293,8 @@
             "ceZona": "zs",
             "ceEndereco": {
                 "endereco": "Av. Ibirapuera, 1315, Vila Clementino, São Paulo",
-                "latitude": "-23.5984179580995",
-                "longitude": "-46.656212331558706"
+                "latitude": "-23.598476754866702",
+                "longitude": "-46.65619222366542"
             },
             "ceTelefone":
             [
@@ -2322,8 +2322,8 @@
         "ceZona": "zo",
         "ceEndereco": {
             "endereco": "Av. Agenor Couto de Magalhães, 32, Pirituba, São Paulo",
-            "latitude": "-23.484082143608518",
-            "longitude": "-46.740560660397094"
+            "latitude": "-23.484148341304017",
+            "longitude": "-46.74052285263245"
         },
         "ceTelefone":
         [
@@ -2442,8 +2442,8 @@
         "ceZona": "zo",
         "ceEndereco": {
             "endereco": "Rua Belmonte, 957, Alto da Lapa, São Paulo",
-            "latitude": "-23.527513963048914",
-            "longitude": "-46.71953243156011"
+            "latitude": "-23.527593320759916",
+            "longitude": "-46.71953429525283"
         },
         "ceTelefone":
         [
@@ -2520,9 +2520,9 @@
         "ceNome": "BALNEÁRIO MÁRIO MORAES (JD. CELESTE)",
         "ceZona": "zo",
         "ceEndereco": {
-            "endereco": "Rua Edward Carmilo, 840, Jardim Celestem, São Paulo",
-            "latitude": "-23.597737162883107",
-            "longitude": "-46.754186473886314"
+            "endereco": "Rua Edvard Carmilo, 840 - Jardim Celeste, São Paulo - SP",
+            "latitude": "-23.59780010783224",
+            "longitude": "-46.75427390600018"
         },
         "ceTelefone":
         [
@@ -2622,8 +2622,8 @@
         "ceZona": "zn",
         "ceEndereco": {
             "endereco": "Praça Jânio da Silva Quadros, 150, Vila Maria",
-            "latitude": "-23.50069198997056",
-            "longitude": "-46.5801467738883"
+            "latitude": "-23.500729653369323",
+            "longitude": "-46.580150305615426"
         },
         "ceTelefone": ["5574-8760"],
         "horarioSemana" : "6h às 22h",
@@ -2740,8 +2740,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua General Jerônimo Furtado, 751 – Jaçanã",
-                "latitude": "-23.464173576364676",
-                "longitude": "-46.56913946039759"
+                "latitude": "-23.464298750351066",
+                "longitude": "-46.569072088887566"
             },
             "ceTelefone": ["2241-0454"],
             "horarioSemana" : "7h às 22h",
@@ -2814,8 +2814,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Coronel João da Silva Feijó, 80 - Mandaqui",
-                "latitude": "-23.468916536828274",
-                "longitude": "-46.63951198923364"
+                "latitude": "-23.468965119359797",
+                "longitude": "-46.63948450915588"
             },
             "ceTelefone": ["2231-4705"],
             "horarioSemana" : "7h às 22h",
@@ -2879,8 +2879,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Armando Coelho e Silva, 775 – Parque Peruche",
-                "latitude": "-23.49228388683612",
-                "longitude": "-46.6550132738887"
+                "latitude": "-23.492345833271028",
+                "longitude": "-46.65503155531362"
             },
             "ceTelefone": ["2208-2755"],
             "horarioSemana" : "7h às 22h",
@@ -2964,8 +2964,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Michihisa Murata, 120 – Vila Brasilândia",
-                "latitude": "-23.47581206227719",
-                "longitude": "-46.69734716039734"
+                "latitude": "-23.475836387153056",
+                "longitude": "-46.69732740742154"
             },
             "ceTelefone": ["3978-7591"],
             "horarioSemana" : "7h às 22h",
@@ -3074,8 +3074,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Jacutiba,167 – Freguesia do Ó",
-                "latitude": "-23.483464283549374",
-                "longitude": "-46.69349603156104"
+                "latitude": "-23.48351814489374",
+                "longitude": "-46.6935119327598"
             },
             "ceTelefone": ["3975-7569"],
             "horarioSemana" : "7h às 22h",
@@ -3181,8 +3181,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Avenida Guilherme, 1819 – Vila Guilherme",
-                "latitude": "-23.507889392654324",
-                "longitude": "-46.599918202724524"
+                "latitude": "-23.507924888745382",
+                "longitude": "-46.59988270982216"
             },
             "ceTelefone": ["5574-8847"],
             "horarioSemana" : "7h às 22h",
@@ -3227,8 +3227,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Santos Dumont, 1318 – Santana",
-                "latitude": "-23.516620858169876",
-                "longitude": "-46.629488773888056"
+                "latitude": "-23.51667533666064",
+                "longitude": "-46.629500024630694"
             },
             "ceTelefone": ["2221-5214"],
             "horarioSemana" : "7h às 22h",
@@ -3361,8 +3361,8 @@
             "ceZona": "zn",
             "ceEndereco": {
                 "endereco": "Rua Viri, 425 – Jd. São Paulo",
-                "latitude": "-23.494589366471416",
-                "longitude": "-46.61425053156087"
+                "latitude": "-23.494592670768135",
+                "longitude": "-46.614175594482866"
             },
             "ceTelefone": ["2973-5390"],
             "horarioSemana" : "6h às 22h",
@@ -3484,12 +3484,12 @@
 
 	{
             "ceId": 41,
-            "ceNome": "C.E.L PERUS ",
+            "ceNome": "C.E.L PERUS",
             "ceZona": "zn",
             "ceEndereco": {
-                "endereco": "Rua Mogeiro,1031, Vila Perus",
-                "latitude": "-23.404031007865953",
-                "longitude": "-46.76169736039888"
+                "endereco": "Rua Mogeiro, 1031, Vila Perus",
+                "latitude": "-23.404172648215646",
+                "longitude": "-46.76168384138184"
             },
             "ceTelefone": ["3917-2261"],
             "horarioSemana" : "7h às 22h (Todos os dias)",
@@ -3543,8 +3543,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Avenida Padre José Maria, 555, Santo Amaro, São Paulo",
-            "latitude": "-23.655070629817942",
-            "longitude": "-46.710065831557486"
+            "latitude": "-23.655171076092603",
+            "longitude": "-46.71007855852497"
         },
         "ceTelefone":
         [
@@ -3681,8 +3681,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Rua Pedro de Toledo, 1651, Vila Clementino, São Paulo",
-            "latitude": "-23.598048063046075",
-            "longitude": "-46.65360630272248"
+            "latitude": "-23.598090906515335",
+            "longitude": "-46.65362580533646"
         },
         "ceTelefone":
         [
@@ -3781,8 +3781,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Rua das Municipalidades, 10, Ipiranga, São Paulo",
-            "latitude": "-23.58779445492003",
-            "longitude": "-46.597080031558725"
+            "latitude": "-23.58785081804596",
+            "longitude": "-46.597050060725486"
         },
         "ceTelefone":
         [
@@ -3851,8 +3851,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Rua Cúria, 149, Jardim Sabará, São Paulo",
-            "latitude": "-23.68575313416511",
-            "longitude": "-46.682040702720776"
+            "latitude": "-23.685806619129174",
+            "longitude": "-46.68204901288532"
         },
         "ceTelefone":
         [
@@ -3933,8 +3933,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Praça Nami Jafet, 45, Ipiranga, São Paulo",
-            "latitude": "-23.580216219668163",
-            "longitude": "-46.60575276039527"
+            "latitude": "-23.580258858426514",
+            "longitude": "-46.60573573069271"
         },
         "ceTelefone":
         [
@@ -4031,8 +4031,8 @@
         "ceZona": "zs",
         "ceEndereco": {
             "endereco": "Rua Rodes, 112, Vila Santa Catarina, São Paulo",
-            "latitude": "-23.642428042966877",
-            "longitude": "-46.666648260393934"
+            "latitude": "-23.642473406356874",
+            "longitude": "-46.66663049352553"
         },
         "ceTelefone":
         [
@@ -4152,8 +4152,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Avenida Lins de Vasconcelos, 804, Cambuci, São Paulo",
-            "latitude": "-23.570328848522788",
-            "longitude": "-46.62247316039545"
+            "latitude": "-23.570402382158807",
+            "longitude": "-46.62243653305599"
         },
         "ceTelefone":
         [
@@ -4233,8 +4233,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Rua Anhanguera, 484, Barra Funda, São Paulo",
-            "latitude": "-23.52340689844349",
-            "longitude": "-46.653032573887934"
+            "latitude": "-23.523460911275283",
+            "longitude": "-46.65305167628664"
         },
         "ceTelefone":
         [
@@ -4342,8 +4342,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Av. Presidente Castelo Branco, 5446, Bom Retiro, São Paulo",
-            "latitude": "-23.520744622584118",
-            "longitude": "-46.64203817388787"
+            "latitude": "-23.520763495774613",
+            "longitude": "-46.642095916204916"
         },
         "ceTelefone":
         [
@@ -4438,8 +4438,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Rua Muniz de Souza,1119 (dentro do Parque da Aclimação), São Paulo",
-            "latitude": "-23.57459718395241",
-            "longitude": "-46.62855130272294"
+            "latitude": "-23.57295499449904",
+            "longitude": "-46.627714453406476"
         },
         "ceTelefone":
         [
@@ -4510,8 +4510,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Avenida Santos Dumont, 843, Luz, São Paulo",
-            "latitude": "-23.520567985046668",
-            "longitude": "-46.631961831560304"
+            "latitude": "-23.520656522141596",
+            "longitude": "-46.63198328910517"
         },
         "ceTelefone":
         [
@@ -4613,8 +4613,8 @@
         "ceZona": "zc",
         "ceEndereco": {
             "endereco": "Av. castelo Branco, 5700, Bom Retiro, São Paulo",
-            "latitude": "-23.52030203475211",
-            "longitude": "-46.64358384505201"
+            "latitude": "-23.51982154617437",
+            "longitude": "-46.644725139715646"
         },
         "ceTelefone":
         [
