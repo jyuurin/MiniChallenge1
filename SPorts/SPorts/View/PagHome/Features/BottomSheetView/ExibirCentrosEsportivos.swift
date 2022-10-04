@@ -14,27 +14,28 @@ struct ExibirCentrosEsportivos: View {
     @Binding var zonasSelecionadas: [String]
     
     @State var zonasFormatadas: [String] = []
-    @State var centroEsportivoMostrando: CentroEsportivo?
+    @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
+    @State var centroEsportivoMostrando = false
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     
     var body: some View {
         ScrollView{
             VStack {
+                
+                //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
+                NavigationLink(destination: DetalhesSheet(centroEsportivo: self.centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
+                
                 if !centrosEsportivos.isEmpty {
                     ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
-                        
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
                         Button(action: {
-                            centroEsportivoMostrando = centroEsportivo
+                            self.centroEsportivoMostrando = true
+                            self.centroEsportivoAtual = centroEsportivo
                             self.endEditing()
                         }, label: {
                             centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco, zona: centroEsportivo.ceZona)
                         })
-                        // se tem um item ele vai exibir uma sheet passando os dados dos centros esportivos para a DetalhesSheet.
-                        .sheet(item: $centroEsportivoMostrando){ CE in
-                            DetalhesSheet(centroEsportivo: CE)
-                        }
                     }
                 } else {
                     Text("Não há Centros Esportivos disponíveis com essas informações.")
