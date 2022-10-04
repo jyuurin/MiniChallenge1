@@ -23,13 +23,16 @@ struct PaginaHome: View {
     
     @State var localizacaoPermitida = true
     
+    @State var latitude = -23.561370844718464
+    @State var longitude = -46.6186872906356062
+    
     @State var centrosEsportivos = [CentroEsportivo]()
     
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, centrosEsportivos: $centrosEsportivos)
-                BottomSheet(centrosEsportivos: $centrosEsportivos)
+                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, latitude: $latitude, longitude: $longitude, centrosEsportivos: $centrosEsportivos)
+                BottomSheet(centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

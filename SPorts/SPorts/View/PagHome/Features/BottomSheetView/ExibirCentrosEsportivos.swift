@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ExibirCentrosEsportivos: View {
     
@@ -18,6 +19,9 @@ struct ExibirCentrosEsportivos: View {
     @State var centroEsportivoMostrando = false
     
     @Binding var centrosEsportivos: [CentroEsportivo]
+    
+    @Binding var latitude: Double
+    @Binding var longitude: Double
     
     var body: some View {
         ScrollView{
@@ -34,7 +38,23 @@ struct ExibirCentrosEsportivos: View {
                             self.centroEsportivoAtual = centroEsportivo
                             self.endEditing()
                         }, label: {
-                            centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco, zona: centroEsportivo.ceZona)
+                            
+                            centroEsportivoDados(
+                                title: centroEsportivo.ceNome,
+                                subTitle: centroEsportivo.ceEndereco.endereco,
+                                zona: centroEsportivo.ceZona,
+                                distancia: Double(
+                                    (
+                                        CLLocation(
+                                            latitude: latitude,
+                                            longitude: longitude).distance(
+                                                from: CLLocation(
+                                                    latitude: Double(centroEsportivo.ceEndereco.latitude)!,
+                                                    longitude: Double(centroEsportivo.ceEndereco.longitude)!)
+                                            ) / 1000 //convertendo para km
+                                    )
+                                )
+                            )
                         })
                     }
                 } else {
@@ -184,14 +204,14 @@ struct ExibirCentrosEsportivos: View {
         
     }
     
-    func centroEsportivoDados(title: String, subTitle: String, zona: String) -> some View {
+    func centroEsportivoDados(title: String, subTitle: String, zona: String, distancia: Double) -> some View {
         HStack{
             Image(zona)
             .resizable()
             .frame(width: 60, height: 60)
             
             VStack(alignment: .leading) {
-                Text(title)
+                Text(String(format: "%.2f", distancia))
                 .foregroundColor(.black)
                 
                 Text(subTitle)

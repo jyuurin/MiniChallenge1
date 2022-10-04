@@ -27,8 +27,8 @@ struct MapaPaginaPrincipal: View {
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
     
-    @State var latitude = -23.561370844718464
-    @State var longitude = -46.6186872906356062
+    @Binding var latitude: Double
+    @Binding var longitude: Double
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     
@@ -143,6 +143,6 @@ struct MapaPaginaPrincipal: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), centrosEsportivos: .constant([CentroEsportivo]()))
+        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), latitude: .constant(0.0), longitude: .constant(0.0), centrosEsportivos: .constant([CentroEsportivo]()))
     }
 }
