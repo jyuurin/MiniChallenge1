@@ -35,20 +35,18 @@ struct PaginaHome: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
 
-                    Button {
-                        
-                    } label: {
-                        if localizacaoPermitida {
-                            Text("Localização atual")
-                            .foregroundColor(CoresApp.corPrincipal.cor())
-                        } else {
-                            Text("Localização indefinida")
-                            .foregroundColor(CoresApp.corPrincipal.cor())
-                        }
-                            
+                    Image(systemName: "location.fill")
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                    
+                    if localizacaoPermitida {
+                        Text("Localização atual")
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                    } else {
+                        Text("Localização indefinida")
+                        .foregroundColor(CoresApp.corPrincipal.cor())
                     }
-                    .padding(.bottom, 10)
-                    .buttonStyle(.bordered)
+                        
                     
                 }
                 
@@ -56,7 +54,6 @@ struct PaginaHome: View {
                     NavigationLink(destination: PaginaDInformacoes()) {
                         Image(systemName: "info.circle")
                     }
-                    .padding(.bottom, 10)
                     .frame(width: 35, height: 35, alignment: .center)
                     .foregroundColor(CoresApp.corPlatinum.cor())
                 })
