@@ -8,18 +8,24 @@
 import SwiftUI
 import MapKit
 
+struct CentroEsportivoCDistancia {
+    var centroEsportivo: CentroEsportivo
+    var distancia: Double
+}
+
 struct ExibirCentrosEsportivos: View {
     
     @Binding var buscaSolicitada: String
     @Binding var categoriasSelecionadas: [String]
     @Binding var zonasSelecionadas: [String]
     
+    //Variáveis auxiliares das funções dessa struct
     @State var zonasFormatadas: [String] = []
     @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
     @State var centroEsportivoMostrando = false
+    @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
     
     @Binding var centrosEsportivos: [CentroEsportivo]
-    
     @Binding var latitude: Double
     @Binding var longitude: Double
     
@@ -31,30 +37,20 @@ struct ExibirCentrosEsportivos: View {
                 NavigationLink(destination: DetalhesSheet(centroEsportivo: self.centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
                 
                 if !centrosEsportivos.isEmpty {
-                    ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+                    ForEach(centroEsportivoCDistancia, id:\.centroEsportivo.ceId) { centroEsportivoCDistancia in
                         Divider()
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
                         Button(action: {
                             self.centroEsportivoMostrando = true
-                            self.centroEsportivoAtual = centroEsportivo
+                            self.centroEsportivoAtual = centroEsportivoCDistancia.centroEsportivo
                             self.endEditing()
                         }, label: {
                             centroEsportivoDados(
-                                title: centroEsportivo.ceNome,
-                                subTitle: centroEsportivo.ceEndereco.endereco,
-                                zona: centroEsportivo.ceZona,
-                                distancia: Double(
-                                    (
-                                        CLLocation(
-                                            latitude: latitude,
-                                            longitude: longitude).distance(
-                                                from: CLLocation(
-                                                    latitude: Double(centroEsportivo.ceEndereco.latitude)!,
-                                                    longitude: Double(centroEsportivo.ceEndereco.longitude)!)
-                                            ) / 1000 //convertendo para km
-                                    )
+                                title: centroEsportivoCDistancia.centroEsportivo.ceNome,
+                                subTitle: centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco,
+                                zona: centroEsportivoCDistancia.centroEsportivo.ceZona,
+                                distancia: centroEsportivoCDistancia.distancia / 1000
                                 )
-                            )
                         })
                         
                     }
@@ -62,6 +58,9 @@ struct ExibirCentrosEsportivos: View {
                     Text("Não há Centros Esportivos disponíveis com essas informações.")
                 }
                 
+            }
+            .onChange(of: self.latitude) { _ in
+                selecionaCentrosEsportivos()
             }
             .onChange(of: self.categoriasSelecionadas) { _ in
                 //Caso o usuário use filtro por categorias, essa função será ativada
@@ -83,7 +82,29 @@ struct ExibirCentrosEsportivos: View {
     }
     
     func selecionaCentrosEsportivos() {
-        self.centrosEsportivos = DataLoader().centrosEsportivos
+        
+        
+        //Zerando todos itens dentro dessas arrays para que não ocorra duplicidade
+        self.centroEsportivoCDistancia = []
+        self.centrosEsportivos = []
+        
+        for centroEsportivo in DataLoader().centrosEsportivos {
+            self.centrosEsportivos.append(centroEsportivo)
+            
+            //Adicionando centro esportivo e distancia à variável tuple
+            let distancia = CLLocation(
+                latitude: self.latitude,
+                longitude: self.longitude).distance(
+                    from: CLLocation(
+                        latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                        longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                    )
+                )
+            
+            print("centroEsportivo: \(centroEsportivo.ceNome), distancia: \(distancia/1000)\n\n")
+            self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+        }
+        
         
         filtraPorCategoria()
         
@@ -93,25 +114,48 @@ struct ExibirCentrosEsportivos: View {
         filtraPorZonas()
         
         filtraPorBusca()
+        
+        ordenaCentrosEsportivosPDistancia()
     }
     
     func filtraPorCategoria() {
         if(!self.categoriasSelecionadas.isEmpty) {
             
-            //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
+            //Criando uma array auxiliar de centros esportivos com distancias
+            var centrosEsportivosCDistanciaAux = [CentroEsportivoCDistancia]()
             var centrosEsportivosAux = [CentroEsportivo]()
             
             //Se o centro esportivo tiver alguma categoria contida na array de categorias selecionadas
             for centroEsportivo in self.centrosEsportivos {
                 for modalidade in centroEsportivo.ceModalidades {
                     if categoriasSelecionadas.contains(modalidade.categoria) {
+                        
+                        
                         centrosEsportivosAux.append(centroEsportivo)
+                        
+                        //Adicionando centro esportivo e distancia à variável tuple
+                        let distancia = CLLocation(
+                            latitude: self.latitude,
+                            longitude: self.longitude).distance(
+                                from: CLLocation(
+                                    latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                                    longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                                )
+                            )
+                        print("centroEsportivo: \(centroEsportivo.ceNome), distancia: \(distancia/1000)\n\n")
+                        self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+                        
+                        centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+                        
                         break
+                        
                     }
                 }
             }
+            
             //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
             self.centrosEsportivos = centrosEsportivosAux
+            self.centroEsportivoCDistancia = centrosEsportivosCDistanciaAux
             
         }
     }
@@ -120,16 +164,30 @@ struct ExibirCentrosEsportivos: View {
         if(!self.zonasFormatadas.isEmpty) {
             
             //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
+            var centrosEsportivosCDistanciaAux = [CentroEsportivoCDistancia]()
             var centrosEsportivosAux = [CentroEsportivo]()
             
             //Se o centro esportivo for da zona contida na array de zonas selecionadas
             for centroEsportivo in self.centrosEsportivos {
                 if self.zonasFormatadas.contains(centroEsportivo.ceZona) {
+                    
                     centrosEsportivosAux.append(centroEsportivo)
+                    
+                    //Adicionando centro esportivo e distancia à variável tuple
+                    let distancia = CLLocation(
+                        latitude: self.latitude,
+                        longitude: self.longitude).distance(
+                            from: CLLocation(
+                                latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                                longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                            )
+                        )
+                    centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
                 }
             }
             //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
             self.centrosEsportivos = centrosEsportivosAux
+            self.centroEsportivoCDistancia = centrosEsportivosCDistanciaAux
         }
     }
     
@@ -138,6 +196,7 @@ struct ExibirCentrosEsportivos: View {
             
             //Criando uma array auxiliar de centros esportivos para ajudar na filtragem
             var centrosEsportivosAux = [CentroEsportivo]()
+            var centrosEsportivosCDistanciaAux = [CentroEsportivoCDistancia]()
             
             //Fazendo a verificação dos itens do centro esportivos que tem relação com o que o usuário digitou
             for centroEsportivo in self.centrosEsportivos {
@@ -150,6 +209,18 @@ struct ExibirCentrosEsportivos: View {
                     if (modalidade.modalidade.lowercased().contains(self.buscaSolicitada.lowercased()) || modalidade.categoria.lowercased().contains(self.buscaSolicitada.lowercased())) && continuaFiltragem  {
                         
                         centrosEsportivosAux.append(centroEsportivo)
+                        
+                        //Adicionando centro esportivo e distancia à variável tuple
+                        let distancia = CLLocation(
+                            latitude: self.latitude,
+                            longitude: self.longitude).distance(
+                                from: CLLocation(
+                                    latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                                    longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                                )
+                            )
+                        centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+                        
                         continuaFiltragem = false
                         break
                         
@@ -161,6 +232,18 @@ struct ExibirCentrosEsportivos: View {
                     if estrutura.nomeEstrutura.lowercased().contains(self.buscaSolicitada.lowercased()) && continuaFiltragem {
                         
                         centrosEsportivosAux.append(centroEsportivo)
+                        
+                        //Adicionando centro esportivo e distancia à variável tuple
+                        let distancia = CLLocation(
+                            latitude: self.latitude,
+                            longitude: self.longitude).distance(
+                                from: CLLocation(
+                                    latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                                    longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                                )
+                            )
+                        centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+                        
                         continuaFiltragem = false
                         break
                         
@@ -170,13 +253,31 @@ struct ExibirCentrosEsportivos: View {
                 //Verificando pelo nome e endereço do centro esportivo
                 if (centroEsportivo.ceNome.lowercased().contains(self.buscaSolicitada.lowercased())
                     || centroEsportivo.ceEndereco.endereco.lowercased().contains(self.buscaSolicitada.lowercased())) && continuaFiltragem {
+                    
                     centrosEsportivosAux.append(centroEsportivo)
+                    
+                    //Adicionando centro esportivo e distancia à variável tuple
+                    let distancia = CLLocation(
+                        latitude: self.latitude,
+                        longitude: self.longitude).distance(
+                            from: CLLocation(
+                                latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0,
+                                longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
+                            )
+                        )
+                    centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+                    
                     continuaFiltragem = false
                 }
             }
             //Atribuindo a array de centros esportivos filtrados a array principal de centros esportivos
             self.centrosEsportivos = centrosEsportivosAux
+            self.centroEsportivoCDistancia = centrosEsportivosCDistanciaAux
         }
+    }
+    
+    func ordenaCentrosEsportivosPDistancia() {
+        self.centroEsportivoCDistancia = self.centroEsportivoCDistancia.sorted(by: { $0.distancia < $1.distancia })
     }
     
     func formataZonas() {
@@ -219,14 +320,14 @@ struct ExibirCentrosEsportivos: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             }
-            .frame(minHeight: 80, maxHeight: 80, alignment: .center)
+            .frame(minHeight: 90, maxHeight: 90, alignment: .center)
             .multilineTextAlignment(.leading)
             .padding(5)
             Spacer()
             Divider()
                .frame(height: 70)
                .padding(.trailing)
-            VStack{
+            VStack {
                 Text(String(format: "%.1f", distancia))
                     .foregroundColor(.gray)
                     .font(.system(size: 23))
@@ -234,6 +335,7 @@ struct ExibirCentrosEsportivos: View {
                     .foregroundColor(.gray)
                     .font(.system(size: 24))
             }
+            .frame(maxWidth: 50)
             
         }
     }
