@@ -22,6 +22,10 @@ struct PaginaHome: View {
     }
     
     @State var localizacaoPermitida = true
+    @State var coordenadaLocalizacao = CLLocation(latitude: 0.0, longitude: 0.0)
+    @State var nomeLocalizacao = "Minha Localização"
+    
+    @State var inserirNovoEnderecoMostrando = false
     
     @State var latitude = -23.561370844718464
     @State var longitude = -46.6186872906356062
@@ -31,7 +35,7 @@ struct PaginaHome: View {
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, latitude: $latitude, longitude: $longitude, centrosEsportivos: $centrosEsportivos)
+                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, nomeLocalizacao: $nomeLocalizacao, latitude: $latitude, longitude: $longitude, centrosEsportivos: $centrosEsportivos)
                 BottomSheet(centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -39,19 +43,22 @@ struct PaginaHome: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
 
                     Button {
-                        
+                        inserirNovoEnderecoMostrando = true
                     } label: {
                         if localizacaoPermitida {
-                            Text("Localização atual")
+                            Text(nomeLocalizacao)
                             .foregroundColor(CoresApp.corPrincipal.cor())
                         } else {
-                            Text("Localização indefinida")
+                            Text(nomeLocalizacao)
                             .foregroundColor(CoresApp.corPrincipal.cor())
                         }
                             
                     }
                     .padding(.bottom, 10)
                     .buttonStyle(.bordered)
+                    .sheet(isPresented: $inserirNovoEnderecoMostrando, content: {
+                        InserirNovaLocalizacao()
+                    })
                     
                 }
                 

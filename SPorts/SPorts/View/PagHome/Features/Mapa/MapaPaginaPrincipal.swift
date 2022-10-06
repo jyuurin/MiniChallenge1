@@ -22,6 +22,7 @@ struct MapaPaginaPrincipal: View {
     
     //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
     @State var primeiraAtualizacaoMapa = true
+    @Binding var nomeLocalizacao: String
     
     //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
     @State var centroEsportivoMostrando = false
@@ -99,6 +100,9 @@ struct MapaPaginaPrincipal: View {
             
             //Verificação de acesso a localização para mandar para tela principal
             if locationManager.mostraAlerta {
+                
+                
+                self.nomeLocalizacao = "Localização indefinida"
                 self.localizacaoPermitida = false
             }
             
@@ -143,6 +147,6 @@ struct MapaPaginaPrincipal: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), latitude: .constant(0.0), longitude: .constant(0.0), centrosEsportivos: .constant([CentroEsportivo]()))
+        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), nomeLocalizacao: .constant(""), latitude: .constant(0.0), longitude: .constant(0.0), centrosEsportivos: .constant([CentroEsportivo]()))
     }
 }

@@ -122,7 +122,7 @@ struct BottomSheet: View {
                                         self.endEditing()
                                     }, label: {
                                         HStack {
-                                            Text("Local")
+                                            Text("Zonas")
                                             Image(systemName: "chevron.down")
                                         }
                                         .foregroundColor(CoresApp.corPrincipal.cor())
