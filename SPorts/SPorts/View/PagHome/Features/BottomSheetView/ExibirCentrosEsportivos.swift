@@ -32,13 +32,13 @@ struct ExibirCentrosEsportivos: View {
                 
                 if !centrosEsportivos.isEmpty {
                     ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+                        Divider()
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
                         Button(action: {
                             self.centroEsportivoMostrando = true
                             self.centroEsportivoAtual = centroEsportivo
                             self.endEditing()
                         }, label: {
-                            
                             centroEsportivoDados(
                                 title: centroEsportivo.ceNome,
                                 subTitle: centroEsportivo.ceEndereco.endereco,
@@ -56,6 +56,7 @@ struct ExibirCentrosEsportivos: View {
                                 )
                             )
                         })
+                        
                     }
                 } else {
                     Text("Não há Centros Esportivos disponíveis com essas informações.")
@@ -211,16 +212,29 @@ struct ExibirCentrosEsportivos: View {
             .frame(width: 60, height: 60)
             
             VStack(alignment: .leading) {
-                Text(String(format: "%.2f", distancia))
+                Text(title)
                 .foregroundColor(.black)
                 
                 Text(subTitle)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             }
+            .frame(minHeight: 80, maxHeight: 80, alignment: .center)
             .multilineTextAlignment(.leading)
             .padding(5)
             Spacer()
+            Divider()
+               .frame(height: 70)
+               .padding(.trailing)
+            VStack{
+                Text(String(format: "%.1f", distancia))
+                    .foregroundColor(.gray)
+                    .font(.system(size: 23))
+                Text("km")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 24))
+            }
+            
         }
     }
     
