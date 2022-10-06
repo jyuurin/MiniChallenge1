@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ExibirCentrosEsportivos: View {
     
@@ -19,6 +20,9 @@ struct ExibirCentrosEsportivos: View {
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     
+    @Binding var latitude: Double
+    @Binding var longitude: Double
+    
     var body: some View {
         ScrollView{
             VStack {
@@ -28,14 +32,31 @@ struct ExibirCentrosEsportivos: View {
                 
                 if !centrosEsportivos.isEmpty {
                     ForEach(centrosEsportivos, id:\.ceId) { centroEsportivo in
+                        Divider()
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
                         Button(action: {
                             self.centroEsportivoMostrando = true
                             self.centroEsportivoAtual = centroEsportivo
                             self.endEditing()
                         }, label: {
-                            centroEsportivoDados(title: centroEsportivo.ceNome, subTitle: centroEsportivo.ceEndereco.endereco, zona: centroEsportivo.ceZona)
+                            centroEsportivoDados(
+                                title: centroEsportivo.ceNome,
+                                subTitle: centroEsportivo.ceEndereco.endereco,
+                                zona: centroEsportivo.ceZona,
+                                distancia: Double(
+                                    (
+                                        CLLocation(
+                                            latitude: latitude,
+                                            longitude: longitude).distance(
+                                                from: CLLocation(
+                                                    latitude: Double(centroEsportivo.ceEndereco.latitude)!,
+                                                    longitude: Double(centroEsportivo.ceEndereco.longitude)!)
+                                            ) / 1000 //convertendo para km
+                                    )
+                                )
+                            )
                         })
+                        
                     }
                 } else {
                     Text("Não há Centros Esportivos disponíveis com essas informações.")
@@ -184,7 +205,7 @@ struct ExibirCentrosEsportivos: View {
         
     }
     
-    func centroEsportivoDados(title: String, subTitle: String, zona: String) -> some View {
+    func centroEsportivoDados(title: String, subTitle: String, zona: String, distancia: Double) -> some View {
         HStack{
             Image(zona)
             .resizable()
@@ -198,9 +219,22 @@ struct ExibirCentrosEsportivos: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
             }
+            .frame(minHeight: 80, maxHeight: 80, alignment: .center)
             .multilineTextAlignment(.leading)
             .padding(5)
             Spacer()
+            Divider()
+               .frame(height: 70)
+               .padding(.trailing)
+            VStack{
+                Text(String(format: "%.1f", distancia))
+                    .foregroundColor(.gray)
+                    .font(.system(size: 23))
+                Text("km")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 24))
+            }
+            
         }
     }
     

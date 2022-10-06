@@ -21,6 +21,9 @@ struct BottomSheet: View {
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     
+    @Binding var latitude: Double
+    @Binding var longitude: Double
+    
     var body: some View {
         GeometryReader{proxy -> AnyView in
             let height = proxy.frame(in: .global).height
@@ -58,9 +61,6 @@ struct BottomSheet: View {
                                     
                                     Button(action: {
                                         self.mostraFiltroCategoria.toggle()
-                                        
-                                        
-                                   
                                     }, label: {
                                         HStack {
                                             Text("Categorias")
@@ -141,7 +141,7 @@ struct BottomSheet: View {
                         }
                         
                         //Conteudo da bottomsheet
-                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos)
+                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
                         
                         
                     
@@ -221,6 +221,6 @@ struct BottomSheet: View {
 
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheet(centrosEsportivos: .constant([CentroEsportivo]()))
+        BottomSheet(centrosEsportivos: .constant([CentroEsportivo]()), latitude: .constant(0.0), longitude: .constant(0.0))
     }
 }
