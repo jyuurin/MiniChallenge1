@@ -22,21 +22,39 @@ struct PaginaHome: View {
     }
     
     @State var localizacaoPermitida = true
+    @State var localizacaoEnderecoSetado = false
+    @State var identificaMudancaEndereco = false
     @State var coordenadaLocalizacao = CLLocation(latitude: 0.0, longitude: 0.0)
     @State var nomeLocalizacao = "Minha Localização"
     
     @State var inserirNovoEnderecoMostrando = false
     
-    @State var latitude = -23.561370844718464
-    @State var longitude = -46.6186872906356062
+    @State var latitude = 0.0
+    @State var longitude = 0.0
     
     @State var centrosEsportivos = [CentroEsportivo]()
+    
+    @State var identificaMudancaAbaixarBottomSheet = false
     
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal(localizacaoPermitida: $localizacaoPermitida, nomeLocalizacao: $nomeLocalizacao, latitude: $latitude, longitude: $longitude, centrosEsportivos: $centrosEsportivos)
-                BottomSheet(centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
+                MapaPaginaPrincipal(
+                    localizacaoPermitida: $localizacaoPermitida,
+                    nomeLocalizacao: $nomeLocalizacao,
+                    latitude: $latitude,
+                    longitude: $longitude,
+                    localizacaoSetada: $coordenadaLocalizacao,
+                    centrosEsportivos: $centrosEsportivos,
+                    localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
+                    identificaMudancaEndereco: $identificaMudancaEndereco
+                )
+                BottomSheet(
+                    centrosEsportivos: $centrosEsportivos,
+                    latitude: $latitude,
+                    longitude: $longitude,
+                    identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
+                )
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -57,7 +75,12 @@ struct PaginaHome: View {
                     .padding(.bottom, 10)
                     .buttonStyle(.bordered)
                     .sheet(isPresented: $inserirNovoEnderecoMostrando, content: {
-                        InserirNovaLocalizacao()
+                        InserirNovaLocalizacao(
+                            localizacaoSetada: $coordenadaLocalizacao,
+                            nomeLocalizacao: $nomeLocalizacao,
+                            localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
+                            identificaMudancaEndereco: $identificaMudancaEndereco,
+                            identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet)
                     })
                     
                 }
@@ -70,6 +93,10 @@ struct PaginaHome: View {
                     .frame(width: 35, height: 35, alignment: .center)
                     .foregroundColor(CoresApp.corPlatinum.cor())
                 })
+            }
+            .onChange(of: self.identificaMudancaEndereco) { _ in
+                self.latitude = coordenadaLocalizacao.coordinate.latitude
+                self.longitude = coordenadaLocalizacao.coordinate.longitude
             }
             .onTapGesture {
                 self.endEditing()

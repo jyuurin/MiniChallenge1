@@ -32,7 +32,6 @@ struct ExibirCentrosEsportivos: View {
     var body: some View {
         ScrollView{
             VStack {
-                
                 //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
                 NavigationLink(destination: DetalhesSheet(centroEsportivo: self.centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
                 
@@ -101,7 +100,6 @@ struct ExibirCentrosEsportivos: View {
                     )
                 )
             
-            print("centroEsportivo: \(centroEsportivo.ceNome), distancia: \(distancia/1000)\n\n")
             self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
         }
         
@@ -307,38 +305,39 @@ struct ExibirCentrosEsportivos: View {
     }
     
     func centroEsportivoDados(title: String, subTitle: String, zona: String, distancia: Double) -> some View {
-        HStack{
-            Image(zona)
-            .resizable()
-            .frame(width: 60, height: 60)
-            
-            VStack(alignment: .leading) {
-                Text(title)
-                .foregroundColor(.black)
+            HStack{
+                Image(zona)
+                .resizable()
+                .frame(width: 60, height: 60)
                 
-                Text(subTitle)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+                VStack(alignment: .leading) {
+                    Text(title)
+                    .foregroundColor(.black)
+                    .font(.system(.headline , design: .rounded)) //MARK: ALTERACÃO FEITA
+                    
+                    Text(subTitle)
+                        .font(.system(.subheadline, design: .rounded))  //MARK: ALTERACÃO FEITA
+                        .foregroundColor(.gray)
+                }
+                .frame(minHeight: 90, maxHeight: 90, alignment: .center)
+                .multilineTextAlignment(.leading)
+                .padding(5)
+                Spacer()
+                Divider()
+                   .frame(height: 70)
+                   .padding(.trailing)
+                VStack {
+                    Text(String(format: "%.1f", distancia))
+                        .foregroundColor(.gray)
+                        .font(.system(size: 23, weight: .regular, design: .rounded))  //MARK: ALTERACÃO FEITA
+                    Text("km")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 24, weight: .regular, design: .rounded))  //MARK: ALTERACÃO FEITA
+                }
+                .frame(maxWidth: 50)
+                
             }
-            .frame(minHeight: 90, maxHeight: 90, alignment: .center)
-            .multilineTextAlignment(.leading)
-            .padding(5)
-            Spacer()
-            Divider()
-               .frame(height: 70)
-               .padding(.trailing)
-            VStack {
-                Text(String(format: "%.1f", distancia))
-                    .foregroundColor(.gray)
-                    .font(.system(size: 23))
-                Text("km")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 24))
-            }
-            .frame(maxWidth: 50)
-            
         }
-    }
     
     //Função utilizada para esconder o keyboard do dispositivo
     private func endEditing() {

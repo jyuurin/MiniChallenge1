@@ -10,6 +10,12 @@ import Combine
 import MapKit
 import CoreLocation
 
+struct CentroEsportivoCNomeImagem: Identifiable {
+    var id: UUID
+    var centroEsportivo: CentroEsportivo
+    var nomeImagem: String
+}
+
 struct MapaPaginaPrincipal: View {
     
     @State var locationManager = LocationManager()
@@ -27,11 +33,16 @@ struct MapaPaginaPrincipal: View {
     //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
+    @State var centroEsportivoCNomeImagem = [CentroEsportivoCNomeImagem]()
+    
+    @State var adicionouPinEnderecoSetado = true
     
     @Binding var latitude: Double
     @Binding var longitude: Double
-    
+    @Binding var localizacaoSetada: CLLocation
     @Binding var centrosEsportivos: [CentroEsportivo]
+    @Binding var localizacaoEnderecoSetado: Bool
+    @Binding var identificaMudancaEndereco: Bool
     
     var body: some View {
         
@@ -40,37 +51,70 @@ struct MapaPaginaPrincipal: View {
             //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
             NavigationLink(destination: DetalhesSheet(centroEsportivo: centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
             
-            Map(coordinateRegion: $region,
-                showsUserLocation: true,
-                annotationItems: centrosEsportivos,
-                annotationContent: { centroEsportivo in
-                
-                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
-                        Button(action: {
-                            self.centroEsportivoMostrando = true
-                            self.centroEsportivoAtual = centroEsportivo
+            if localizacaoEnderecoSetado {
+                Map(coordinateRegion: $region,
+                    annotationItems: centroEsportivoCNomeImagem,
+                    annotationContent: { centroEsportivo in
+                    
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
                             
-                        }, label: {
-                            Image("mapMarker")
+                        if centroEsportivo.nomeImagem == "mapMarker" {
+                            Button(action: {
+                                self.centroEsportivoMostrando = true
+                                self.centroEsportivoAtual = centroEsportivo.centroEsportivo
+                                
+                            }, label: {
+                                
+                                Image("mapMarker")
+                                .resizable()
+                                .frame(width: 40.0, height: 50.0)
+                            })
+                        } else {
+                            Image(systemName: centroEsportivo.nomeImagem)
                             .resizable()
-                            .frame(width: 40.0, height: 50.0)
+                            .frame(width: 35.0, height: 35.0)
+                            .foregroundColor(CoresApp.corPrincipal.cor())
+                            
+                        }
+                            
+                            
                         })
-                        
                     })
-                })
-            
+            } else {
+                Map(coordinateRegion: $region,
+                    showsUserLocation: true,
+                    annotationItems: centrosEsportivos,
+                    annotationContent: { centroEsportivo in
+                    
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
+                            Button(action: {
+                                self.centroEsportivoMostrando = true
+                                self.centroEsportivoAtual = centroEsportivo
+                                
+                            }, label: {
+                                Image("mapMarker")
+                                .resizable()
+                                .frame(width: 40.0, height: 50.0)
+                            })
+                            
+                        })
+                    })
+            }
             //MARK: - Botão para centralizar a localização do usuário no mapa
             Button(action: {
-                locationManager = LocationManager()
-                observarAtualizacoesCoordenadas()
-                observarLocalizacaoRecusada()
-                locationManager.requisitarAtualizacaoDLocalizacao()
+                
+                if !self.localizacaoEnderecoSetado {
+                    locationManager = LocationManager()
+                    observarAtualizacoesCoordenadas()
+                    observarLocalizacaoRecusada()
+                    locationManager.requisitarAtualizacaoDLocalizacao()
+                    
+                    //Atribuindo valor booleano ao alerta, caso for verdadeiro, será mostrado um alerta com instruções para permitir a localizacao
+                    self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
+                }
                 
                 region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                 
-                
-                //Atribuindo valor booleano ao alerta, caso for verdadeiro, será mostrado um alerta com instruções para permitir a localizacao
-                self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
                 
             }, label: {
                 Image(systemName: "location.fill")
@@ -89,22 +133,51 @@ struct MapaPaginaPrincipal: View {
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.leading)
         .edgesIgnoringSafeArea(.bottom)
-        .onChange(of: primeiraAtualizacaoMapa) { _ in
+        .onChange(of: self.primeiraAtualizacaoMapa) { _ in
             //Esse onChange só vai rodar quando primeiraAtualizacaoMapa for modificado, e isso só acontece uma vez
             region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         }
-        .onAppear {
-            observarAtualizacoesCoordenadas()
-            observarLocalizacaoRecusada()
-            locationManager.requisitarAtualizacaoDLocalizacao()
+        .onChange(of: self.identificaMudancaEndereco) { _ in
             
-            //Verificação de acesso a localização para mandar para tela principal
-            if locationManager.mostraAlerta {
+            if self.localizacaoEnderecoSetado {
+                //Setando essa variável para true novamente para que quando o usuário selecionar Minha localizacao novamente, atualizar automaticamente a regiao do mapa
+                self.primeiraAtualizacaoMapa = true
                 
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                 
-                self.nomeLocalizacao = "Localização indefinida"
-                self.localizacaoPermitida = false
+                buscaETrataCentrosEsportivos()
+            } else {
+                self.primeiraAtualizacaoMapa = true
+                locationManager = LocationManager()
+                observarAtualizacoesCoordenadas()
+                observarLocalizacaoRecusada()
+                locationManager.requisitarAtualizacaoDLocalizacao()
             }
+        }
+        .onAppear {
+            
+            self.centroEsportivoCNomeImagem = []
+            
+            if !self.localizacaoEnderecoSetado {
+                observarAtualizacoesCoordenadas()
+                observarLocalizacaoRecusada()
+                locationManager.requisitarAtualizacaoDLocalizacao()
+                
+                //Verificação de acesso a localização para mandar para tela principal
+                if locationManager.mostraAlerta {
+                    self.nomeLocalizacao = "Localização Indefinida"
+                    self.localizacaoPermitida = false
+                }
+                
+            } else {
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            }
+            
+            buscaETrataCentrosEsportivos()
+            
+            
+            
+            
             
         }
         
@@ -120,11 +193,15 @@ struct MapaPaginaPrincipal: View {
                     print(error)
                 }
             } receiveValue: { coordenada in
-                self.latitude = coordenada.latitude
-                self.longitude = coordenada.longitude
+                
+                print(localizacaoEnderecoSetado)
+                if !self.localizacaoEnderecoSetado {
+                    self.latitude = coordenada.latitude
+                    self.longitude = coordenada.longitude
+                }
                 
                 //Modificando variável que permite que atualize automaticamente
-                if primeiraAtualizacaoMapa != false {
+                if self.primeiraAtualizacaoMapa != false {
                     self.primeiraAtualizacaoMapa = false
                 }
                 
@@ -142,11 +219,40 @@ struct MapaPaginaPrincipal: View {
             .store(in: &tokens)
     }
     
+    func buscaETrataCentrosEsportivos() {
+        
+        //Inicializa array de centroEsportivoCImagem
+        self.centroEsportivoCNomeImagem = []
+        
+        for centroEsportivo in centrosEsportivos {
+            self.centroEsportivoCNomeImagem.append(CentroEsportivoCNomeImagem(id: UUID(), centroEsportivo: centroEsportivo, nomeImagem: "mapMarker"))
+        }
+        
+        self.centroEsportivoCNomeImagem.append(
+            CentroEsportivoCNomeImagem(
+                id: UUID(),
+                centroEsportivo: CentroEsportivo(
+                            ceId: 0,
+                            ceNome: "",
+                            ceZona: "",
+                            ceEndereco: EnderecoCentroEsportivo(endereco: "", latitude: String(self.latitude), longitude: String(self.longitude)),
+                            ceTelefone: [""],
+                            horarioSemana: "",
+                            horarioFinalSemanaFeriado: "",
+                            horarioPiscinas: "",
+                            ceArea: "",
+                            ceEstrutura: [],
+                            ceModalidades: []),
+                            nomeImagem: "mappin.circle.fill"
+                )
+        )
+    }
+    
     
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), nomeLocalizacao: .constant(""), latitude: .constant(0.0), longitude: .constant(0.0), centrosEsportivos: .constant([CentroEsportivo]()))
+        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), nomeLocalizacao: .constant(""), latitude: .constant(0.0), longitude: .constant(0.0), localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), centrosEsportivos: .constant([CentroEsportivo]()), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false))
     }
 }

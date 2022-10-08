@@ -24,6 +24,8 @@ struct BottomSheet: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
     
+    @Binding var identificaMudancaAbaixarBottomSheet: Bool
+    
     var body: some View {
         GeometryReader{proxy -> AnyView in
             let height = proxy.frame(in: .global).height
@@ -199,6 +201,11 @@ struct BottomSheet: View {
                     // guardando a ultima offset, pra ficar a ultima posicao
                     lastOffset = offset
                 }))
+                .onChange(of: self.identificaMudancaAbaixarBottomSheet) { _ in
+                    withAnimation {
+                        offset = -((753 - 100)/3)
+                    }
+                }
                 
             )
         }
@@ -221,6 +228,6 @@ struct BottomSheet: View {
 
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheet(centrosEsportivos: .constant([CentroEsportivo]()), latitude: .constant(0.0), longitude: .constant(0.0))
+        BottomSheet(centrosEsportivos: .constant([CentroEsportivo]()), latitude: .constant(0.0), longitude: .constant(0.0), identificaMudancaAbaixarBottomSheet: .constant(false))
     }
 }
