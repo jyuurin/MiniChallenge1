@@ -52,11 +52,11 @@ struct TabBarView: View {
                 Image(systemName: "list.bullet")
                 Text("Lista D/Centros Esportivos")
             }
-            BottomSheet(
+            ExibicaoListaCEs(
                 centrosEsportivos: $centrosEsportivos,
                 latitude: $latitude,
-                longitude: $longitude,
-                identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
+                longitude: $longitude
+                //identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
             )
             .tabItem {
                 Image(systemName: "map")
