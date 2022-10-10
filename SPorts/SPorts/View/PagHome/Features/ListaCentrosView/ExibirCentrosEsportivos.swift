@@ -25,6 +25,8 @@ struct ExibirCentrosEsportivos: View {
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
     
+    @State var categoriasSelecionadasPMiniaturas: [String] = []
+    
     @Binding var centrosEsportivos: [CentroEsportivo]
     @Binding var latitude: Double
     @Binding var longitude: Double
@@ -318,6 +320,13 @@ struct ExibirCentrosEsportivos: View {
                     Text(subTitle)
                         .font(.system(.subheadline, design: .rounded))  //MARK: ALTERACÃO FEITA
                         .foregroundColor(.gray)
+                    
+                    //Implementando miniaturas de categorias como pré-visualização
+                    HStack {
+                        ForEach(CategoriasCE.categorias.categoriasCE, id: \.idCategoria) { modalidade in
+                        }
+                    }
+                    
                 }
                 .frame(minHeight: 90, maxHeight: 90, alignment: .center)
                 .multilineTextAlignment(.leading)
