@@ -22,7 +22,7 @@ struct InserirNovaLocalizacao: View {
     @Binding var localizacaoEnderecoSetado: Bool
     @Binding var identificaMudancaEndereco: Bool
     
-    @Binding var identificaMudancaAbaixarBottomSheet: Bool
+    //@Binding var identificaMudancaAbaixarBottomSheet: Bool
     
     var body: some View {
         VStack {
@@ -44,7 +44,7 @@ struct InserirNovaLocalizacao: View {
                     Button(action: {
                         self.localizacaoEnderecoSetado = false
                         self.identificaMudancaEndereco.toggle()
-                        self.identificaMudancaAbaixarBottomSheet.toggle()
+                        //self.identificaMudancaAbaixarBottomSheet.toggle()
                         self.nomeLocalizacao = "Minha Localização"
                         dismiss()
                     }, label: {
@@ -63,7 +63,7 @@ struct InserirNovaLocalizacao: View {
                             Button(action: {
                                 self.nomeLocalizacao = endereco
                                 self.identificaMudancaEndereco.toggle()
-                                self.identificaMudancaAbaixarBottomSheet.toggle()
+                                //self.identificaMudancaAbaixarBottomSheet.toggle()
                                 self.localizacaoEnderecoSetado = true
                                 dismiss()
                             }, label: {
@@ -103,6 +103,6 @@ struct InserirNovaLocalizacao: View {
 
 struct InserirNovaLocalizacao_Previews: PreviewProvider {
     static var previews: some View {
-        InserirNovaLocalizacao(localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), nomeLocalizacao: .constant(""), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false), identificaMudancaAbaixarBottomSheet: .constant(false))
+        InserirNovaLocalizacao(localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), nomeLocalizacao: .constant(""), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false))
     }
 }
