@@ -23,13 +23,11 @@
 		16A7EAC528E0CDEB00907D2F /* PaginaDInformacoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7EAC428E0CDEB00907D2F /* PaginaDInformacoes.swift */; };
 		16C0D9B128F490A900DEACEC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0D9B028F490A900DEACEC /* TabBarView.swift */; };
 		16C7199428CBBFFE00D3684B /* CentroEsportivoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */; };
-		16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199528CFC23900D3684B /* PaginaHome.swift */; };
 		16C7199E28CFD2B900D3684B /* CentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */; };
 		16C719A028CFD31400D3684B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199F28CFD31400D3684B /* DataLoader.swift */; };
 		16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */; };
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
-		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
 		1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */; };
 		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
 		D47FE7DD28D907DA00EE89BC /* FiltroZonaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FE7DC28D907DA00EE89BC /* FiltroZonaView.swift */; };
@@ -53,13 +51,11 @@
 		16A7EAC428E0CDEB00907D2F /* PaginaDInformacoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaDInformacoes.swift; sourceTree = "<group>"; };
 		16C0D9B028F490A900DEACEC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		16C7199328CBBFFE00D3684B /* CentroEsportivoJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CentroEsportivoJSON.json; sourceTree = "<group>"; };
-		16C7199528CFC23900D3684B /* PaginaHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaHome.swift; sourceTree = "<group>"; };
 		16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentroEsportivo.swift; sourceTree = "<group>"; };
 		16C7199F28CFD31400D3684B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstruturaCentroEsportivo.swift; sourceTree = "<group>"; };
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
-		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibicaoListaCEs.swift; sourceTree = "<group>"; };
 		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
 		D47FE7DC28D907DA00EE89BC /* FiltroZonaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroZonaView.swift; sourceTree = "<group>"; };
@@ -128,7 +124,6 @@
 				16C0D9AF28F4906100DEACEC /* BottomTabBar */,
 				16A28E4C28DE2402001CCF62 /* DetalhesCEView */,
 				1967415028F4910C006F35B7 /* ListaCentrosView */,
-				195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */,
 				16A28E4B28DC343E001CCF62 /* Mapa */,
 				16A28E4A28DC342F001CCF62 /* Filtros */,
 			);
@@ -230,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				1659782128D2E1F4002E4FF1 /* Features */,
-				16C7199528CFC23900D3684B /* PaginaHome.swift */,
 			);
 			path = PagHome;
 			sourceTree = "<group>";
@@ -244,18 +238,10 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */ = {
-			isa = PBXGroup;
-			children = (
-				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
-				195E5AA228D0353900CEEF77 /* BottomSheet.swift */,
-			);
-			path = BottomSheetView;
-			sourceTree = "<group>";
-		};
 		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
 			isa = PBXGroup;
 			children = (
+				19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */,
 				1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */,
 			);
 			path = ListaCentrosView;
@@ -344,7 +330,6 @@
 				169C743428EF4C140096A202 /* InserirNovaLocalizacao.swift in Sources */,
 				1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */,
 				19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */,
-				195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */,
 				1603790828C67C3E00A81908 /* SPorts.swift in Sources */,
 				16A7EAC028DFCC7200907D2F /* CoresApp.swift in Sources */,
 				16A7EAC528E0CDEB00907D2F /* PaginaDInformacoes.swift in Sources */,
@@ -359,7 +344,6 @@
 				16832E9728D7C213003D729A /* EnderecoCentroEsportivo.swift in Sources */,
 				169C743828EF4EE90096A202 /* EncontraLocalizacao.swift in Sources */,
 				16832E9928D7C60E003D729A /* ModalidadeCentroEsportivo.swift in Sources */,
-				16C7199628CFC23900D3684B /* PaginaHome.swift in Sources */,
 				16C0D9B128F490A900DEACEC /* TabBarView.swift in Sources */,
 				D47FE7DD28D907DA00EE89BC /* FiltroZonaView.swift in Sources */,
 				1603790828C67C3E00A81908 /* SPorts.swift in Sources */,
@@ -500,8 +484,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,8 +515,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

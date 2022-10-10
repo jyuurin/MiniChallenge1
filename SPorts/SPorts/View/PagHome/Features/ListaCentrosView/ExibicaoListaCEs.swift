@@ -128,6 +128,8 @@ struct ExibicaoListaCEs: View {
                     
         }
         .padding()
+        .edgesIgnoringSafeArea(.bottom)
+        
 
         
         
@@ -141,8 +143,3 @@ struct ExibicaoListaCEs: View {
     
 }
 
-//struct ExibicaoListaCEs_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExibicaoListaCEs(centrosEsportivos: .constant([CentroEsportivo]()), latitude: .constant(0.0), longitude: .constant(0.0))
-//    }
-//}

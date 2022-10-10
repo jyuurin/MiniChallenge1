@@ -18,16 +18,16 @@ struct CentroEsportivoCNomeImagem: Identifiable {
 
 struct MapaPaginaPrincipal: View {
     
-    @State var locationManager = LocationManager()
-    
-    @State var tokens: Set<AnyCancellable> = []
-    @State var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -23.561370844718464, longitude: -46.618687290635606), span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+    //A variável locationManager vai receber valor da view principal, TabBarView
+    @Binding var locationManager: LocationManager
+    @Binding var tokens: Set<AnyCancellable>
+    @Binding var region: MKCoordinateRegion
     
     @Binding var localizacaoPermitida: Bool
     @State var mostraAlertaDLocalizacao = false
     
     //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
-    @State var primeiraAtualizacaoMapa = true
+    @Binding var primeiraAtualizacaoMapa: Bool
     @Binding var nomeLocalizacao: String
     
     //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
@@ -171,16 +171,12 @@ struct MapaPaginaPrincipal: View {
             } else {
                 region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             }
-            
             buscaETrataCentrosEsportivos()
-            
-            
-            
-            
-            
         }
         
     }
+    
+    //MARK: - Funções de localização
     
     //Função responsável por setar e atualizar a localização do usuário requisitando do arquivo LocationManager
     func observarAtualizacoesCoordenadas() {
@@ -252,6 +248,19 @@ struct MapaPaginaPrincipal: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MapaPaginaPrincipal(localizacaoPermitida: .constant(false), nomeLocalizacao: .constant(""), latitude: .constant(0.0), longitude: .constant(0.0), localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), centrosEsportivos: .constant([CentroEsportivo]()), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false))
+        MapaPaginaPrincipal(
+            locationManager: .constant(LocationManager()),
+            tokens: .constant([]),
+            region: .constant(MKCoordinateRegion()),
+            localizacaoPermitida: .constant(false),
+            primeiraAtualizacaoMapa: .constant(false),
+            nomeLocalizacao: .constant(""),
+            latitude: .constant(0.0),
+            longitude: .constant(0.0),
+            localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)),
+            centrosEsportivos: .constant([CentroEsportivo]()),
+            localizacaoEnderecoSetado: .constant(false),
+            identificaMudancaEndereco: .constant(false)
+        )
     }
 }
