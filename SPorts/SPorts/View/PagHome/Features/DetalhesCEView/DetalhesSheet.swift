@@ -24,14 +24,22 @@ struct DetalhesSheet: View {
                 
                 //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
                 Group {
-                    Button(action: {
-                        botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
-                    }) {
+                    HStack {
                         Text(centroEsportivo.ceEndereco.endereco)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(CoresApp.corPrincipal.cor())
+                        
+                        Button(action: {
+                            botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
+                        }) {
+                            Image(systemName: "arrowshape.turn.up.right.circle")
+                                .resizable()
+                                .frame(width: 20, height: 20, alignment: .center)
+                                .foregroundColor(CoresApp.corPrincipal.cor())
+                        }
                     }
                     .padding(.bottom, 5)
+                    
                     
                     Button(action: {
                         botaoLigar(numeroTelefone: centroEsportivo.ceTelefone[0])
