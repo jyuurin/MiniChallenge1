@@ -29,6 +29,7 @@
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA228D0353900CEEF77 /* BottomSheet.swift */; };
+		1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */; };
 		19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */; };
 		D47FE7DD28D907DA00EE89BC /* FiltroZonaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FE7DC28D907DA00EE89BC /* FiltroZonaView.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		195E5AA228D0353900CEEF77 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibicaoListaCEs.swift; sourceTree = "<group>"; };
 		19DCD1FD28D249430096FAF6 /* ExibirCentrosEsportivos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirCentrosEsportivos.swift; sourceTree = "<group>"; };
 		D47FE7DC28D907DA00EE89BC /* FiltroZonaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroZonaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				16A28E4C28DE2402001CCF62 /* DetalhesCEView */,
+				1967415028F4910C006F35B7 /* ListaCentrosView */,
 				195E5A9D28CFD2FB00CEEF77 /* BottomSheetView */,
 				16A28E4B28DC343E001CCF62 /* Mapa */,
 				16A28E4A28DC342F001CCF62 /* Filtros */,
@@ -239,6 +242,14 @@
 			path = BottomSheetView;
 			sourceTree = "<group>";
 		};
+		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
+			isa = PBXGroup;
+			children = (
+				1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */,
+			);
+			path = ListaCentrosView;
+			sourceTree = "<group>";
+		};
 		D40C21F328D2471E00744769 /* PagDInformacoes */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +331,7 @@
 			files = (
 				195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */,
 				169C743428EF4C140096A202 /* InserirNovaLocalizacao.swift in Sources */,
+				1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */,
 				19DCD1FE28D249430096FAF6 /* ExibirCentrosEsportivos.swift in Sources */,
 				195E5AA328D0353900CEEF77 /* BottomSheet.swift in Sources */,
 				1603790828C67C3E00A81908 /* SPorts.swift in Sources */,

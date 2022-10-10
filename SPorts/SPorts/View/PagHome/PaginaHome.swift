@@ -34,26 +34,26 @@ struct PaginaHome: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
     
-    @State var identificaMudancaAbaixarBottomSheet = false
+   // @State var identificaMudancaAbaixarBottomSheet = false
     
     var body: some View {
         NavigationView {
             ZStack {
-                MapaPaginaPrincipal(
-                    localizacaoPermitida: $localizacaoPermitida,
-                    nomeLocalizacao: $nomeLocalizacao,
-                    latitude: $latitude,
-                    longitude: $longitude,
-                    localizacaoSetada: $coordenadaLocalizacao,
+//                MapaPaginaPrincipal(
+//                    localizacaoPermitida: $localizacaoPermitida,
+//                    nomeLocalizacao: $nomeLocalizacao,
+//                    latitude: $latitude,
+//                    longitude: $longitude,
+//                    localizacaoSetada: $coordenadaLocalizacao,
+//                    centrosEsportivos: $centrosEsportivos,
+//                    localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
+//                    identificaMudancaEndereco: $identificaMudancaEndereco
+//                )
+                ExibicaoListaCEs(
                     centrosEsportivos: $centrosEsportivos,
-                    localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
-                    identificaMudancaEndereco: $identificaMudancaEndereco
-                )
-                BottomSheet(
-                    centrosEsportivos: $centrosEsportivos,
                     latitude: $latitude,
-                    longitude: $longitude,
-                    identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
+                    longitude: $longitude
+                    //identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
                 )
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -79,8 +79,9 @@ struct PaginaHome: View {
                             localizacaoSetada: $coordenadaLocalizacao,
                             nomeLocalizacao: $nomeLocalizacao,
                             localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
-                            identificaMudancaEndereco: $identificaMudancaEndereco,
-                            identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet)
+                            identificaMudancaEndereco: $identificaMudancaEndereco
+//                            identificaMudancaAbaixarBottomSheet: $identificaMudancaAbaixarBottomSheet
+                        )
                     })
                     
                 }
