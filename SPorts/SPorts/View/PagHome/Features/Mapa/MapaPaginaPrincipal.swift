@@ -132,7 +132,6 @@ struct MapaPaginaPrincipal: View {
         }
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.leading)
-        .edgesIgnoringSafeArea(.bottom)
         .onChange(of: self.primeiraAtualizacaoMapa) { _ in
             //Esse onChange só vai rodar quando primeiraAtualizacaoMapa for modificado, e isso só acontece uma vez
             region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))

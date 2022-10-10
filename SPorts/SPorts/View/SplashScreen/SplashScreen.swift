@@ -15,7 +15,7 @@ struct SplashScreen: View {
     
     var body: some View {
         if mostraPaginaPrincipal {
-            PaginaHome()
+            TabBarView()
         } else {
             ZStack {
                 ZStack {
