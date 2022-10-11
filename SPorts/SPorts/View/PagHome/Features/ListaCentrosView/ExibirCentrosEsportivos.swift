@@ -25,8 +25,6 @@ struct ExibirCentrosEsportivos: View {
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
     
-    @State var categoriasSelecionadasPMiniaturas: [String] = []
-    
     @Binding var centrosEsportivos: [CentroEsportivo]
     @Binding var latitude: Double
     @Binding var longitude: Double
@@ -50,6 +48,7 @@ struct ExibirCentrosEsportivos: View {
                                 title: centroEsportivoCDistancia.centroEsportivo.ceNome,
                                 subTitle: centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco,
                                 zona: centroEsportivoCDistancia.centroEsportivo.ceZona,
+                                modalidades: selecionaCategoriasDeposito(modalidades: centroEsportivoCDistancia.centroEsportivo.ceModalidades),
                                 distancia: centroEsportivoCDistancia.distancia / 1000
                                 )
                         })
@@ -276,6 +275,26 @@ struct ExibirCentrosEsportivos: View {
         }
     }
     
+    //Variável criada para selecionar as categorias que vão aparecer como pré-visualização de cada centro esportivo
+    func selecionaCategoriasDeposito(modalidades: [ModalidadeCentroEsportivo]) -> [String] {
+        var categoriasSelecionadasPMiniaturas: [String] = []
+        
+        var cont = 0
+        
+        for modalidade in modalidades {
+            categoriasSelecionadasPMiniaturas.append(modalidade.categoria)
+            
+            if cont > 6 {
+                break
+            }
+            cont = cont + 1
+        }
+        
+        print(categoriasSelecionadasPMiniaturas)
+        
+        return categoriasSelecionadasPMiniaturas
+    }
+    
     func ordenaCentrosEsportivosPDistancia() {
         self.centroEsportivoCDistancia = self.centroEsportivoCDistancia.sorted(by: { $0.distancia < $1.distancia })
     }
@@ -306,7 +325,7 @@ struct ExibirCentrosEsportivos: View {
         
     }
     
-    func centroEsportivoDados(title: String, subTitle: String, zona: String, distancia: Double) -> some View {
+    func centroEsportivoDados(title: String, subTitle: String, zona: String, modalidades: [String], distancia: Double) -> some View {
             HStack{
                 Image(zona)
                 .resizable()
@@ -323,10 +342,15 @@ struct ExibirCentrosEsportivos: View {
                     
                     //Implementando miniaturas de categorias como pré-visualização
                     HStack {
-                        ForEach(CategoriasCE.categorias.categoriasCE, id: \.idCategoria) { modalidade in
+                        ForEach(CategoriasCE.categorias.categoriasCE, id: \.idCategoria) { categoria in
+                            if modalidades.contains(categoria.nomeCategoria) {
+                                Image("\(categoria.nomePriImagem)")
+                                    .resizable()
+                                    .frame(width: 20, height: 20, alignment: .center)
+                            }
                         }
                     }
-                    
+                    .frame(alignment: .leading)
                 }
                 .frame(minHeight: 90, maxHeight: 90, alignment: .center)
                 .multilineTextAlignment(.leading)

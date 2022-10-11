@@ -127,8 +127,7 @@ struct ExibicaoListaCEs: View {
                     }
                     
         }
-        .padding()
-        .edgesIgnoringSafeArea(.bottom)
+        .padding([.leading, .trailing, .top])
         
 
         
