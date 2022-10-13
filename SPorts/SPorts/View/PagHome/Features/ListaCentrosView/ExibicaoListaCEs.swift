@@ -17,7 +17,10 @@ struct ExibicaoListaCEs: View {
     @State var zonasSelecionadas: [String] = []
     @State var buscaSolictada: String = ""
     
+    @Binding var atualizacaoDistancia: Bool
+    
     @Binding var centrosEsportivos: [CentroEsportivo]
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
     
     @Binding var latitude: Double
     @Binding var longitude: Double
@@ -121,7 +124,7 @@ struct ExibicaoListaCEs: View {
             }
             
                     ScrollView {
-                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
+                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centroEsportivoCDistancia: $centroEsportivoCDistancia,atualizacaoDistancia: $atualizacaoDistancia, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
                         
                         
                     }

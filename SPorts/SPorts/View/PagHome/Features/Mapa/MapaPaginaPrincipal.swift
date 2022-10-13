@@ -28,12 +28,14 @@ struct MapaPaginaPrincipal: View {
     
     //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
     @Binding var primeiraAtualizacaoMapa: Bool
+    @Binding var atualizacaoDistancia: Bool
     @Binding var nomeLocalizacao: String
     
     //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
     @State var centroEsportivoCNomeImagem = [CentroEsportivoCNomeImagem]()
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
     
     @State var adicionouPinEnderecoSetado = true
     
@@ -113,7 +115,13 @@ struct MapaPaginaPrincipal: View {
                     self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
                 }
                 
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                let menorDistancia = centroEsportivoCDistancia[0].distancia
+                print(menorDistancia)
+                
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2)
+                
+                
+//                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                 
                 
             }, label: {
@@ -134,17 +142,49 @@ struct MapaPaginaPrincipal: View {
         .edgesIgnoringSafeArea(.leading)
         .onChange(of: self.primeiraAtualizacaoMapa) { _ in
             //Esse onChange só vai rodar quando primeiraAtualizacaoMapa for modificado, e isso só acontece uma vez
-            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            
+            //__________________
+            let menorDistancia = centroEsportivoCDistancia[0].distancia
+            print("\(menorDistancia)")
+
+            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2)
+            
+            
+            //-----------------
+
+//            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+
+        }
+        .onChange(of: centroEsportivoCDistancia[0].distancia) { _ in
+            if self.atualizacaoDistancia {
+                self.atualizacaoDistancia = false
+                
+                let menorDistancia = centroEsportivoCDistancia[0].distancia
+                print("oi\(menorDistancia)")
+
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2)
+                
+                print("Acabou de atualizar essa merda")
+            }
         }
         .onChange(of: self.identificaMudancaEndereco) { _ in
             
             if self.localizacaoEnderecoSetado {
+
                 //Setando essa variável para true novamente para que quando o usuário selecionar Minha localizacao novamente, atualizar automaticamente a regiao do mapa
                 self.primeiraAtualizacaoMapa = true
+                  
+//                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                 
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                //__________________
+                let menorDistancia = centroEsportivoCDistancia[0].distancia
+                print(menorDistancia)
+                
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2)
+                //-----------------
                 
                 buscaETrataCentrosEsportivos()
+                                            
             } else {
                 self.primeiraAtualizacaoMapa = true
                 locationManager = LocationManager()
@@ -157,6 +197,7 @@ struct MapaPaginaPrincipal: View {
             
             self.centroEsportivoCNomeImagem = []
             
+            
             if !self.localizacaoEnderecoSetado {
                 observarAtualizacoesCoordenadas()
                 observarLocalizacaoRecusada()
@@ -168,8 +209,19 @@ struct MapaPaginaPrincipal: View {
                     self.localizacaoPermitida = false
                 }
                 
+                let menorDistancia = centroEsportivoCDistancia[0].distancia
+                print("oi\(menorDistancia)")
+
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: menorDistancia / 15000, longitudeDelta: menorDistancia / 15000))
+                
+//            latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2
+                
             } else {
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            
+                let menorDistancia = centroEsportivoCDistancia[0].distancia
+                print("oi\(menorDistancia)")
+
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), latitudinalMeters: menorDistancia, longitudinalMeters: menorDistancia * 2)
             }
             buscaETrataCentrosEsportivos()
         }
@@ -254,8 +306,8 @@ struct SwiftUIView_Previews: PreviewProvider {
             region: .constant(MKCoordinateRegion()),
             localizacaoPermitida: .constant(false),
             primeiraAtualizacaoMapa: .constant(false),
-            nomeLocalizacao: .constant(""),
-            latitude: .constant(0.0),
+            atualizacaoDistancia: .constant(true), nomeLocalizacao: .constant(""),
+            centroEsportivoCDistancia: .constant([CentroEsportivoCDistancia]()), latitude: .constant(0.0),
             longitude: .constant(0.0),
             localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)),
             centrosEsportivos: .constant([CentroEsportivo]()),

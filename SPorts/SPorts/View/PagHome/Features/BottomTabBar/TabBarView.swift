@@ -9,6 +9,11 @@ import SwiftUI
 import MapKit
 import Combine
 
+struct CentroEsportivoCDistancia {
+    var centroEsportivo: CentroEsportivo
+    var distancia: Double
+}
+
 struct TabBarView: View {
     
     init() {
@@ -33,6 +38,7 @@ struct TabBarView: View {
     
     //Quando for false, a atualização do mapa não vai mais acontecer automaticamente, e sim quando o usuário clicar no botão de atualizar
     @State var primeiraAtualizacaoMapa = true
+    @State var atualizacaoDistancia = true
     @State var nomeLocalizacao = "Minha Localização"
     
     @State var localizacaoPermitida = true
@@ -46,16 +52,33 @@ struct TabBarView: View {
     @State var longitude = 0.0
     
     @State var centrosEsportivos = [CentroEsportivo]()
-    
-    @State var identificaMudancaAbaixarBottomSheet = false
-    
+    @State var centroEsportivoCDistancia = [
+        CentroEsportivoCDistancia(centroEsportivo:
+                                    CentroEsportivo(
+                                        ceId: 0,
+                                        ceNome: "",
+                                        ceZona: "",
+                                        ceEndereco: EnderecoCentroEsportivo(
+                                            endereco: "",
+                                            latitude: "",
+                                            longitude: ""),
+                                        ceTelefone: [],
+                                        horarioSemana: "",
+                                        horarioFinalSemanaFeriado: "",
+                                        horarioPiscinas: "",
+                                        ceArea: "",
+                                        ceEstrutura: [],
+                                        ceModalidades: []),
+                                  distancia: 0.0
+                                 )
+    ]
     var body: some View {
         NavigationView {
             TabView {
                 
                 ExibicaoListaCEs(
-                    centrosEsportivos: $centrosEsportivos,
-                    latitude: $latitude,
+                    atualizacaoDistancia: $atualizacaoDistancia, centrosEsportivos: $centrosEsportivos,
+                    centroEsportivoCDistancia: $centroEsportivoCDistancia, latitude: $latitude,
                     longitude: $longitude
                 )
                 .tabItem {
@@ -68,8 +91,10 @@ struct TabBarView: View {
                     tokens: $tokens,
                     region: $region,
                     localizacaoPermitida: $localizacaoPermitida,
-                    primeiraAtualizacaoMapa: $primeiraAtualizacaoMapa, nomeLocalizacao: $nomeLocalizacao,
-                    latitude: $latitude,
+                    primeiraAtualizacaoMapa: $primeiraAtualizacaoMapa,
+                    atualizacaoDistancia: $atualizacaoDistancia,
+                    nomeLocalizacao: $nomeLocalizacao,
+                    centroEsportivoCDistancia: $centroEsportivoCDistancia, latitude: $latitude,
                     longitude: $longitude,
                     localizacaoSetada: $coordenadaLocalizacao,
                     centrosEsportivos: $centrosEsportivos,
@@ -105,7 +130,8 @@ struct TabBarView: View {
                             localizacaoSetada: $coordenadaLocalizacao,
                             nomeLocalizacao: $nomeLocalizacao,
                             localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
-                            identificaMudancaEndereco: $identificaMudancaEndereco)
+                            identificaMudancaEndereco: $identificaMudancaEndereco,
+                            atualizacaoDistancia: $atualizacaoDistancia)
                     })
 
                 }

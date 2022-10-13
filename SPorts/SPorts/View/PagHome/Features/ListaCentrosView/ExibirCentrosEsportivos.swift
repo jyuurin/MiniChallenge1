@@ -8,11 +8,6 @@
 import SwiftUI
 import MapKit
 
-struct CentroEsportivoCDistancia {
-    var centroEsportivo: CentroEsportivo
-    var distancia: Double
-}
-
 struct ExibirCentrosEsportivos: View {
     
     @Binding var buscaSolicitada: String
@@ -23,7 +18,11 @@ struct ExibirCentrosEsportivos: View {
     @State var zonasFormatadas: [String] = []
     @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
     @State var centroEsportivoMostrando = false
-    @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
+    @State var mudouPrimeiroIndice = false
+    
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
+    
+    @Binding var atualizacaoDistancia: Bool
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     @Binding var latitude: Double
@@ -83,9 +82,30 @@ struct ExibirCentrosEsportivos: View {
     
     func selecionaCentrosEsportivos() {
         
-        
+        mudouPrimeiroIndice = false
+        print("oi")
         //Zerando todos itens dentro dessas arrays para que não ocorra duplicidade
-        self.centroEsportivoCDistancia = []
+        self.centroEsportivoCDistancia = [
+            CentroEsportivoCDistancia(centroEsportivo:
+                                        CentroEsportivo(
+                                            ceId: 0,
+                                            ceNome: "",
+                                            ceZona: "",
+                                            ceEndereco: EnderecoCentroEsportivo(
+                                                endereco: "",
+                                                latitude: "",
+                                                longitude: ""),
+                                            ceTelefone: [],
+                                            horarioSemana: "",
+                                            horarioFinalSemanaFeriado: "",
+                                            horarioPiscinas: "",
+                                            ceArea: "",
+                                            ceEstrutura: [],
+                                            ceModalidades: []),
+                                      distancia: 0.0
+                                     )
+        ]
+        
         self.centrosEsportivos = []
         
         for centroEsportivo in DataLoader().centrosEsportivos {
@@ -101,7 +121,15 @@ struct ExibirCentrosEsportivos: View {
                     )
                 )
             
-            self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+            print(distancia)
+            
+            if !self.mudouPrimeiroIndice {
+                self.centroEsportivoCDistancia[0] = CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia))
+                self.mudouPrimeiroIndice = true
+            } else {
+                self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
+            }
+            
         }
         
         
@@ -115,6 +143,8 @@ struct ExibirCentrosEsportivos: View {
         filtraPorBusca()
         
         ordenaCentrosEsportivosPDistancia()
+        
+        self.atualizacaoDistancia = true
     }
     
     func filtraPorCategoria() {
@@ -141,7 +171,6 @@ struct ExibirCentrosEsportivos: View {
                                     longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
                                 )
                             )
-                        print("centroEsportivo: \(centroEsportivo.ceNome), distancia: \(distancia/1000)\n\n")
                         self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
                         
                         centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
@@ -218,6 +247,8 @@ struct ExibirCentrosEsportivos: View {
                                     longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
                                 )
                             )
+                        
+                        
                         centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
                         
                         continuaFiltragem = false
@@ -290,7 +321,6 @@ struct ExibirCentrosEsportivos: View {
             cont = cont + 1
         }
         
-        print(categoriasSelecionadasPMiniaturas)
         
         return categoriasSelecionadasPMiniaturas
     }

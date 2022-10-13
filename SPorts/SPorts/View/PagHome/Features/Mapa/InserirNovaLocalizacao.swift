@@ -22,6 +22,8 @@ struct InserirNovaLocalizacao: View {
     @Binding var localizacaoEnderecoSetado: Bool
     @Binding var identificaMudancaEndereco: Bool
     
+    @Binding var atualizacaoDistancia: Bool
+    
     //@Binding var identificaMudancaAbaixarBottomSheet: Bool
     
     var body: some View {
@@ -46,6 +48,8 @@ struct InserirNovaLocalizacao: View {
                         self.identificaMudancaEndereco.toggle()
                         //self.identificaMudancaAbaixarBottomSheet.toggle()
                         self.nomeLocalizacao = "Minha Localização"
+                        
+                        self.atualizacaoDistancia = true
                         dismiss()
                     }, label: {
                         HStack(alignment: .center) {
@@ -65,6 +69,8 @@ struct InserirNovaLocalizacao: View {
                                 self.identificaMudancaEndereco.toggle()
                                 //self.identificaMudancaAbaixarBottomSheet.toggle()
                                 self.localizacaoEnderecoSetado = true
+                                
+                                self.atualizacaoDistancia = true
                                 dismiss()
                             }, label: {
                                 Text("\(endereco)")
@@ -103,6 +109,6 @@ struct InserirNovaLocalizacao: View {
 
 struct InserirNovaLocalizacao_Previews: PreviewProvider {
     static var previews: some View {
-        InserirNovaLocalizacao(localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), nomeLocalizacao: .constant(""), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false))
+        InserirNovaLocalizacao(localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), nomeLocalizacao: .constant(""), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false), atualizacaoDistancia: .constant(true))
     }
 }
