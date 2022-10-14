@@ -36,7 +36,7 @@ struct InserirNovaLocalizacao: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     //MARK: - Search Bar
-                    TextField("Digite aqui o endereço desejado", text: $txtFieldEndereco)
+                    TextField("Digite aqui o endereço e o número", text: $txtFieldEndereco)
                     .padding(.vertical, 10)
                     .padding(.horizontal)
                     .background(Color.init(UIColor.systemGray6))

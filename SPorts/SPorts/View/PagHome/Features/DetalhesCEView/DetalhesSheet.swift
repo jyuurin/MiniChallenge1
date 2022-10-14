@@ -69,8 +69,8 @@ struct DetalhesSheet: View {
                     }
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
                        
-                        ForEach(centroEsportivo.ceModalidades.indices) { indiceModalidade in
-                      
+                        ForEach(centroEsportivo.ceModalidades.indices, id: \.self) { indiceModalidade in
+
                             Text(centroEsportivo.ceModalidades[indiceModalidade].modalidade)
                             .font(.system(size: 15))
                             .padding(.horizontal, 10)
@@ -78,7 +78,7 @@ struct DetalhesSheet: View {
                             .foregroundColor(CoresApp.corPlatinum.cor())
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
-                            
+
                         }
                         
                     })
