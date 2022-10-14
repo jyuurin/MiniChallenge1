@@ -141,7 +141,6 @@ struct ExibirCentrosEsportivos: View {
                                     longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0
                                 )
                             )
-                        print("centroEsportivo: \(centroEsportivo.ceNome), distancia: \(distancia/1000)\n\n")
                         self.centroEsportivoCDistancia.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
                         
                         centrosEsportivosCDistanciaAux.append(CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: Double(distancia)))
@@ -289,8 +288,6 @@ struct ExibirCentrosEsportivos: View {
             }
             cont = cont + 1
         }
-        
-        print(categoriasSelecionadasPMiniaturas)
         
         return categoriasSelecionadasPMiniaturas
     }

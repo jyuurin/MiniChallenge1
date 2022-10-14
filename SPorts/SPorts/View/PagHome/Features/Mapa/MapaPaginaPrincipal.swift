@@ -62,7 +62,6 @@ struct MapaPaginaPrincipal: View {
                             Button(action: {
                                 self.centroEsportivoMostrando = true
                                 self.centroEsportivoAtual = centroEsportivo.centroEsportivo
-                                
                             }, label: {
                                 
                                 Image("mapMarker")

@@ -15,7 +15,8 @@ struct InserirNovaLocalizacao: View {
     @State var txtFieldEndereco = ""
     @State var opcoesEndereco = [String]()
     @State var mostraEndereco = true
-    @State var cont = 0
+    
+    @StateObject var mapAPI = MapAPI()
     
     @Binding var localizacaoSetada: CLLocation
     @Binding var nomeLocalizacao: String
@@ -42,37 +43,54 @@ struct InserirNovaLocalizacao: View {
                     .cornerRadius(10)
                     
                     Button(action: {
+                        //Variáveis para auxiliar no manuseio do endereço escolhido
+                        self.identificaMudancaEndereco.toggle()
+                        self.localizacaoEnderecoSetado = true
                         self.localizacaoEnderecoSetado = false
                         self.identificaMudancaEndereco.toggle()
-                        //self.identificaMudancaAbaixarBottomSheet.toggle()
+                        
                         self.nomeLocalizacao = "Minha Localização"
+                        
                         dismiss()
                     }, label: {
                         HStack(alignment: .center) {
+                            
                             Image(systemName: "location.fill")
                             .frame(width: 35, height: 35, alignment: .center)
                             .foregroundColor(CoresApp.corPrincipal.cor())
+                            
                             Text("Minha Localização")
-                                .foregroundColor(.black)
+                            .foregroundColor(.black)
                         }
-                        
                     })
-                    Divider()
+                    
                     if mostraEndereco {
-                        ForEach(opcoesEndereco, id: \.self) { endereco in
+                        ForEach(mapAPI.locations.data, id: \.self) { endereco in
+                            Divider()
                             Button(action: {
-                                self.nomeLocalizacao = endereco
+                                //Setando dados do endereço selecionado
+                                self.localizacaoSetada = CLLocation(latitude: endereco.latitude, longitude: endereco.longitude)
+                                self.nomeLocalizacao = endereco.name ?? ""
+                                
+                                //Variáveis para auxiliar no manuseio do endereço escolhido
                                 self.identificaMudancaEndereco.toggle()
-                                //self.identificaMudancaAbaixarBottomSheet.toggle()
                                 self.localizacaoEnderecoSetado = true
+                                
                                 dismiss()
                             }, label: {
-                                Text("\(endereco)")
+                                HStack {
+                                    Image(systemName: "mappin.circle.fill")
+                                    .foregroundColor(CoresApp.corPlatinum.cor())
+                                    
+                                    Text("\(endereco.name ?? "")")
+                                    .lineLimit(1)
                                     .foregroundColor(.black)
+                                }
+                                
                             })
+                            .padding(5)
                         }
                     }
-                    
                 }
                 .padding([.bottom, .leading, .trailing])
                 
@@ -81,23 +99,8 @@ struct InserirNovaLocalizacao: View {
             
         }
         .onChange(of: txtFieldEndereco) { _ in
-            
-            if cont >= 1 {
-                encontraCoordenadasPeloEndereco(endereco: txtFieldEndereco, completion: { localizacao, enderecos, mostraEnderecoFuncao in
-                    DispatchQueue.main.async {
-                        opcoesEndereco = enderecos
-                        localizacaoSetada = localizacao
-                        mostraEndereco = mostraEnderecoFuncao
-                    }
-                })
-                cont = 0
-            } else {
-                cont = cont + 1
-            }
-            
+                mapAPI.getLocation(address: txtFieldEndereco)
         }
-        
-        
     }
 }
 

@@ -41,6 +41,7 @@
 		1603790E28C67C4100A81908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1659781F28D2DE09002E4FF1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaPaginaPrincipal.swift; sourceTree = "<group>"; };
+		167D019328F8D54800697442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCentroEsportivo.swift; sourceTree = "<group>"; };
 		16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalidadeCentroEsportivo.swift; sourceTree = "<group>"; };
 		169C743328EF4C140096A202 /* InserirNovaLocalizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InserirNovaLocalizacao.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		1603790628C67C3E00A81908 /* SPorts */ = {
 			isa = PBXGroup;
 			children = (
+				167D019328F8D54800697442 /* Info.plist */,
 				16C7199028CBBFB800D3684B /* Model */,
 				16C7199128CBBFC300D3684B /* View */,
 				16C7199228CBBFC900D3684B /* ViewModel */,
@@ -491,6 +493,7 @@
 				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SPorts/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso à sua localização para mostrar os centros esportivos próximos a você.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -522,6 +525,7 @@
 				DEVELOPMENT_TEAM = UFS93RKF34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SPorts/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "'SPorts' deseja ter acesso à sua localização para mostrar os centros esportivos próximos a você.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
