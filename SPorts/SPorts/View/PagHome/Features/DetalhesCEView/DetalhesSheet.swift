@@ -11,26 +11,30 @@ struct DetalhesSheet: View {
     
     @Environment(\.dismiss) var dismiss
     
-    var centroEsportivo: CentroEsportivo
+    var centroEsportivoCDistancia: CentroEsportivoCDistancia
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                     
-                Text("\(centroEsportivo.ceNome)")
-                .padding(.bottom, 20)
+                Text("\(centroEsportivoCDistancia.centroEsportivo.ceNome)")
+                
                 .font(.title.bold())
                 .lineLimit(3)
+                
+                Text(String(format: "%.1f Km", centroEsportivoCDistancia.distancia/1000))
+                .foregroundColor(.gray)
+                .padding(.bottom, 20)
                 
                 //EXIBIÇÃO DADOS DO CENTRO ESPORTIVO:
                 Group {
                     HStack {
-                        Text(centroEsportivo.ceEndereco.endereco)
+                        Text(centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(CoresApp.corPrincipal.cor())
                         
                         Button(action: {
-                            botaoAbrirMapas(latitudeJson: centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivo.ceEndereco.longitude)
+                            botaoAbrirMapas(latitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.longitude)
                         }) {
                             Image(systemName: "arrowshape.turn.up.right.circle")
                                 .resizable()
@@ -42,18 +46,18 @@ struct DetalhesSheet: View {
                     
                     
                     Button(action: {
-                        botaoLigar(numeroTelefone: centroEsportivo.ceTelefone[0])
+                        botaoLigar(numeroTelefone: centroEsportivoCDistancia.centroEsportivo.ceTelefone[0])
                     }, label: {
                         Text("**Telefone:** ")
                             .foregroundColor(.black)
-                        Text(centroEsportivo.ceTelefone[0])
+                        Text(centroEsportivoCDistancia.centroEsportivo.ceTelefone[0])
                             .foregroundColor(CoresApp.corPrincipal.cor())
                     })
                     .padding(.bottom, 10)
                     
-                    Text("**Horário de Funcionamento:** \(centroEsportivo.horarioSemana)")
-                    Text("**Finais de Semana / Feriado:** \(centroEsportivo.horarioFinalSemanaFeriado )")
-                    Text("**Piscinas:** \(centroEsportivo.horarioPiscinas)")
+                    Text("**Horário de Funcionamento:** \(centroEsportivoCDistancia.centroEsportivo.horarioSemana)")
+                    Text("**Finais de Semana / Feriado:** \(centroEsportivoCDistancia.centroEsportivo.horarioFinalSemanaFeriado )")
+                    Text("**Piscinas:** \(centroEsportivoCDistancia.centroEsportivo.horarioPiscinas)")
                 }
                 
                 //MARK: - Exibição de MODALIDADES do Centro Esportivo
@@ -63,15 +67,18 @@ struct DetalhesSheet: View {
                     .font(.title2.bold())
                     .padding(.top, 10)
                     
-                    if(centroEsportivo.ceModalidades.isEmpty == true) {
+                    if(centroEsportivoCDistancia.centroEsportivo.ceModalidades.isEmpty == true) {
                         Text("A unidade não possui modalidades disponíveis até o momento.")
                         .padding(.vertical, 5)
                     }
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
+                    LazyVGrid(
+                        columns: [GridItem(.flexible()), GridItem(.flexible())],
+                        alignment: .leading,
+                        content: {
                        
-                        ForEach(centroEsportivo.ceModalidades.indices, id: \.self) { indiceModalidade in
+                        ForEach(centroEsportivoCDistancia.centroEsportivo.ceModalidades.indices, id: \.self) { indiceModalidade in
 
-                            Text(centroEsportivo.ceModalidades[indiceModalidade].modalidade)
+                            Text(centroEsportivoCDistancia.centroEsportivo.ceModalidades[indiceModalidade].modalidade)
                             .font(.system(size: 15))
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
@@ -87,17 +94,20 @@ struct DetalhesSheet: View {
                 Group {
                     Text("Estrutura:")
                         .font(.title2.bold())
-                    if(centroEsportivo.ceEstrutura.isEmpty == true)
+                    if(centroEsportivoCDistancia.centroEsportivo.ceEstrutura.isEmpty == true)
                     {
                         Text("Sem informações para esta unidade. Entre em contato através do número de telefone.")
                         .padding(.vertical, 5)
                     }
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
-                        ForEach(centroEsportivo.ceEstrutura.indices, id: \.self) { item in
+                    LazyVGrid(
+                        columns: [GridItem(.flexible()), GridItem(.flexible())],
+                        alignment: .leading,
+                        content: {
+                        ForEach(centroEsportivoCDistancia.centroEsportivo.ceEstrutura.indices, id: \.self) { item in
                             
                          
-                            Text(centroEsportivo.ceEstrutura[item].nomeEstrutura)
+                            Text(centroEsportivoCDistancia.centroEsportivo.ceEstrutura[item].nomeEstrutura)
                             .font(.system(size: 15))
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
@@ -111,11 +121,11 @@ struct DetalhesSheet: View {
                     
                 }
             }
+            .padding()
         }
         .edgesIgnoringSafeArea(.leading)
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.bottom)
-        .padding()
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -129,11 +139,8 @@ struct DetalhesSheet: View {
                 .foregroundColor(CoresApp.corPrincipal.cor())
             }
         }
-        
-        
-    
-        
     }
+    
     //função que direciona para o celular da pessoa. Não funciona pelo simulator, testar pelo tel de alguem
     func botaoLigar(numeroTelefone: String) {
         

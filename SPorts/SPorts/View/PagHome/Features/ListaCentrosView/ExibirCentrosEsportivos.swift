@@ -21,7 +21,9 @@ struct ExibirCentrosEsportivos: View {
     
     //Variáveis auxiliares das funções dessa struct
     @State var zonasFormatadas: [String] = []
-    @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
+    @State var centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(
+        centroEsportivo: DataLoader().centrosEsportivos[0],
+        distancia: 0.0)
     @State var centroEsportivoMostrando = false
     @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
     
@@ -33,7 +35,7 @@ struct ExibirCentrosEsportivos: View {
         ScrollView{
             VStack {
                 //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-                NavigationLink(destination: DetalhesSheet(centroEsportivo: self.centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
+                NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
                 
                 if !centrosEsportivos.isEmpty {
                     ForEach(centroEsportivoCDistancia, id:\.centroEsportivo.ceId) { centroEsportivoCDistancia in
@@ -41,7 +43,7 @@ struct ExibirCentrosEsportivos: View {
                         //Botão de cada centro esportivo, ao clicar nele abre uma sheet.
                         Button(action: {
                             self.centroEsportivoMostrando = true
-                            self.centroEsportivoAtual = centroEsportivoCDistancia.centroEsportivo
+                            self.centroEsportivoCDistanciaAtual = centroEsportivoCDistancia
                             self.endEditing()
                         }, label: {
                             centroEsportivoDados(
@@ -59,6 +61,8 @@ struct ExibirCentrosEsportivos: View {
                 }
                 
             }
+            .padding(.top, 2)
+            .padding([.leading, .trailing], 15)
             .onChange(of: self.latitude) { _ in
                 selecionaCentrosEsportivos()
             }
@@ -365,7 +369,6 @@ struct ExibirCentrosEsportivos: View {
                         .font(.system(size: 24, weight: .regular, design: .rounded))  //MARK: ALTERACÃO FEITA
                 }
                 .frame(maxWidth: 50)
-                
             }
         }
     

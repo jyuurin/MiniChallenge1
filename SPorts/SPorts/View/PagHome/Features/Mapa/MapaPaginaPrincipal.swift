@@ -32,7 +32,9 @@ struct MapaPaginaPrincipal: View {
     
     //Variável que será utilizada quando clicar em um icone do centro esportivo no mapa
     @State var centroEsportivoMostrando = false
-    @State var centroEsportivoAtual = DataLoader().centrosEsportivos[0]
+    @State var centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(
+        centroEsportivo: DataLoader().centrosEsportivos[0],
+        distancia: 0.0)
     @State var centroEsportivoCNomeImagem = [CentroEsportivoCNomeImagem]()
     
     @State var adicionouPinEnderecoSetado = true
@@ -49,7 +51,7 @@ struct MapaPaginaPrincipal: View {
         
         ZStack(alignment: .topTrailing) {
             //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-            NavigationLink(destination: DetalhesSheet(centroEsportivo: centroEsportivoAtual), isActive: $centroEsportivoMostrando, label: {})
+            NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
             
             if localizacaoEnderecoSetado {
                 Map(coordinateRegion: $region,
@@ -61,7 +63,9 @@ struct MapaPaginaPrincipal: View {
                         if centroEsportivo.nomeImagem == "mapMarker" {
                             Button(action: {
                                 self.centroEsportivoMostrando = true
-                                self.centroEsportivoAtual = centroEsportivo.centroEsportivo
+                                self.centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(
+                                    centroEsportivo: centroEsportivo.centroEsportivo,
+                                    distancia: 0.0)
                             }, label: {
                                 
                                 Image("mapMarker")
@@ -88,7 +92,7 @@ struct MapaPaginaPrincipal: View {
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
                             Button(action: {
                                 self.centroEsportivoMostrando = true
-                                self.centroEsportivoAtual = centroEsportivo
+                                self.centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: 0.0)
                                 
                             }, label: {
                                 Image("mapMarker")

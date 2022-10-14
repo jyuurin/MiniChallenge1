@@ -26,7 +26,6 @@ struct ExibicaoListaCEs: View {
         
         VStack {
             VStack {
-                
                 //MARK: - Search Bar
                 TextField("Nome do Centro Esportivo; Piscina; Futebol", text: $buscaSolictada)
                     .padding(.vertical, 10)
@@ -114,20 +113,19 @@ struct ExibicaoListaCEs: View {
                                 FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
                             })
                     }
-                    
                     Spacer()
                 }
-                .padding(.vertical, 5)
             }
+            .padding(.top, 10)
+            .padding([.leading, .trailing], 15)
             
-                    ScrollView {
-                        ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
-                        
-                        
-                    }
+            ScrollView {
+                ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
+                
+                
+            }
                     
         }
-        .padding([.leading, .trailing, .top])
         
 
         
