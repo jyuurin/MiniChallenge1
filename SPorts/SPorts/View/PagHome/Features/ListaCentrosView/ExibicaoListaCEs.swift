@@ -12,11 +12,9 @@ struct ExibicaoListaCEs: View {
     @State var lastOffset : CGFloat = 0
     @State var mostraFiltroCategoria = false
     @State var mostraFiltroZonas = false
-    
     @State var categoriasSelecionadas: [String] = []
     @State var zonasSelecionadas: [String] = []
-    @State var buscaSolictada: String = ""
-    
+    @State var buscaSolictada: String = ""    
     @Binding var centrosEsportivos: [CentroEsportivo]
     
     @Binding var latitude: Double
@@ -52,7 +50,7 @@ struct ExibicaoListaCEs: View {
                                         .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                         })
                             .sheet(isPresented: $mostraFiltroCategoria, content: {
-                                FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
+                                FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas,zonasSelecionadas: $zonasSelecionadas)
                             })
                         
                     } else {
@@ -72,7 +70,7 @@ struct ExibicaoListaCEs: View {
                         })
                         
                             .sheet(isPresented: $mostraFiltroCategoria, content: {
-                                FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas)
+                                FiltroCategoriaView(arrayCategorias: $categoriasSelecionadas,zonasSelecionadas: $zonasSelecionadas)
                             })
                         
                     }
@@ -93,7 +91,7 @@ struct ExibicaoListaCEs: View {
                             
                         })
                             .sheet(isPresented: $mostraFiltroZonas, content: {
-                                FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                FiltroZonaView(zonasSelecionadas: $zonasSelecionadas, arrayCategorias: $categoriasSelecionadas)
                             })
                         
                     } else {
@@ -111,7 +109,7 @@ struct ExibicaoListaCEs: View {
                                         .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                         })
                             .sheet(isPresented: $mostraFiltroZonas, content: {
-                                FiltroZonaView(zonasSelecionadas: $zonasSelecionadas)
+                                FiltroZonaView(zonasSelecionadas: $zonasSelecionadas, arrayCategorias: $categoriasSelecionadas)
                             })
                     }
                     

@@ -13,8 +13,11 @@ struct FiltroZonaView: View {
     
     @State var zonas: [String] = ["Zona Sul", "Zona Norte", "Zona Leste", "Zona Oeste", "Região Central"]
     
-    @Binding var zonasSelecionadas: [String]
+   // @Binding var idsSelecionadas: FiltroCategoriaView //alteracao
     
+    @Binding var zonasSelecionadas: [String]
+    @Binding var arrayCategorias: [String]
+
     var body: some View {
         
         NavigationView {
@@ -29,6 +32,7 @@ struct FiltroZonaView: View {
                             
                             //Criando variável que vai participar da estrutura condicional pra adicionar um novo item à lista de selecionados
                             var permiteInsercao = true
+                            
                             
                             //Se o id da zona ja estiver dentro da array de selecionados, esse item será removido da lista e a permiçao para inserir um item será negada
                             if self.zonasSelecionadas.count > 0 {
@@ -111,6 +115,6 @@ struct FiltroZonaView: View {
 
 struct FiltroZonaView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltroZonaView(zonasSelecionadas: .constant([String]()))
+        FiltroZonaView(zonasSelecionadas: .constant([String]()), arrayCategorias: .constant([String]()))
     }
 }
