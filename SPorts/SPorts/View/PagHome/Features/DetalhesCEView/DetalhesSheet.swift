@@ -94,7 +94,7 @@ struct DetalhesSheet: View {
                     }
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
-                        ForEach(centroEsportivo.ceEstrutura.indices) { item in
+                        ForEach(centroEsportivo.ceEstrutura.indices, id: \.self) { item in
                             
                          
                             Text(centroEsportivo.ceEstrutura[item].nomeEstrutura)
