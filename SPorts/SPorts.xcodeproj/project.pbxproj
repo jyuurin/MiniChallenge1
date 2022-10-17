@@ -14,6 +14,9 @@
 		1659782328D2E24E002E4FF1 /* MapaPaginaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */; };
 		16832E9728D7C213003D729A /* EnderecoCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */; };
 		16832E9928D7C60E003D729A /* ModalidadeCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */; };
+		1694F27928FDEB820050DCFE /* PrimeiraPaginaTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1694F27828FDEB820050DCFE /* PrimeiraPaginaTutorial.swift */; };
+		1694F27B28FDEBE40050DCFE /* SegundaPaginaTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1694F27A28FDEBE40050DCFE /* SegundaPaginaTutorial.swift */; };
+		1694F27D28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1694F27C28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift */; };
 		169C743428EF4C140096A202 /* InserirNovaLocalizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C743328EF4C140096A202 /* InserirNovaLocalizacao.swift */; };
 		169C743828EF4EE90096A202 /* EncontraLocalizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C743728EF4EE90096A202 /* EncontraLocalizacao.swift */; };
 		16A28E4828DA4935001CCF62 /* FiltroCategoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A28E4728DA4935001CCF62 /* FiltroCategoriaView.swift */; };
@@ -44,6 +47,9 @@
 		167D019328F8D54800697442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCentroEsportivo.swift; sourceTree = "<group>"; };
 		16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalidadeCentroEsportivo.swift; sourceTree = "<group>"; };
+		1694F27828FDEB820050DCFE /* PrimeiraPaginaTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiraPaginaTutorial.swift; sourceTree = "<group>"; };
+		1694F27A28FDEBE40050DCFE /* SegundaPaginaTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaPaginaTutorial.swift; sourceTree = "<group>"; };
+		1694F27C28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiraPaginaTutorial.swift; sourceTree = "<group>"; };
 		169C743328EF4C140096A202 /* InserirNovaLocalizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InserirNovaLocalizacao.swift; sourceTree = "<group>"; };
 		169C743728EF4EE90096A202 /* EncontraLocalizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncontraLocalizacao.swift; sourceTree = "<group>"; };
 		16A28E4728DA4935001CCF62 /* FiltroCategoriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroCategoriaView.swift; sourceTree = "<group>"; };
@@ -134,6 +140,16 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		1694F27728FDEB410050DCFE /* TutorialApp */ = {
+			isa = PBXGroup;
+			children = (
+				1694F27828FDEB820050DCFE /* PrimeiraPaginaTutorial.swift */,
+				1694F27A28FDEBE40050DCFE /* SegundaPaginaTutorial.swift */,
+				1694F27C28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift */,
+			);
+			path = TutorialApp;
+			sourceTree = "<group>";
+		};
 		16A28E4928DC33DD001CCF62 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +231,7 @@
 		16C7199128CBBFC300D3684B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1694F27728FDEB410050DCFE /* TutorialApp */,
 				16A7EAC128E0C2B300907D2F /* SplashScreen */,
 				D40C21F328D2471E00744769 /* PagDInformacoes */,
 				16C7199728CFC26A00D3684B /* PagHome */,
@@ -351,8 +368,11 @@
 				16A7EAC328E0C2C900907D2F /* SplashScreen.swift in Sources */,
 				195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */,
 				16C719A028CFD31400D3684B /* DataLoader.swift in Sources */,
+				1694F27928FDEB820050DCFE /* PrimeiraPaginaTutorial.swift in Sources */,
 				16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */,
 				16A28E4E28DE2428001CCF62 /* DetalhesSheet.swift in Sources */,
+				1694F27B28FDEBE40050DCFE /* SegundaPaginaTutorial.swift in Sources */,
+				1694F27D28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift in Sources */,
 				1659782328D2E24E002E4FF1 /* MapaPaginaPrincipal.swift in Sources */,
 				1659782028D2DE09002E4FF1 /* LocationManager.swift in Sources */,
 				16832E9728D7C213003D729A /* EnderecoCentroEsportivo.swift in Sources */,

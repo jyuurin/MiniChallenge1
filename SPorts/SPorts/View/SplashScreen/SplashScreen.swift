@@ -14,34 +14,37 @@ struct SplashScreen: View {
     @State var opacidade = 0.5
     
     var body: some View {
-        if mostraPaginaPrincipal {
-            TabBarView()
-        } else {
-            ZStack {
+        if(UserDefaults.standard.bool(forKey: "passouTutorial")) {
+            if mostraPaginaPrincipal {
+                TabBarView()
+                    
+            } else {
                 ZStack {
-                    Image("SPorts")
-                }
-                .scaleEffect(self.tamanho)
-                .opacity(self.opacidade)
-                .onAppear {
-                    withAnimation(.easeIn(duration: 1.2)) {
-                        self.tamanho = 0.9
-                        self.opacidade = 1
+                    ZStack {
+                        Image("SPorts")
+                    }
+                    .scaleEffect(self.tamanho)
+                    .opacity(self.opacidade)
+                    .onAppear {
+                        withAnimation(.easeIn(duration: 1.2)) {
+                            self.tamanho = 0.9
+                            self.opacidade = 1
+                        }
                     }
                 }
+                .onAppear {
+//                    UserDefaults.standard.set(
+//                        false,
+//                        forKey: "passouTutorial")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                        self.mostraPaginaPrincipal = true
+                    })
+                }
             }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-                    self.mostraPaginaPrincipal = true
-                })
-            }
+        } else {
+            PrimeiraPaginaTutorial()
         }
         
-    }
-}
-
-struct SplashScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashScreen()
+        
     }
 }

@@ -8,7 +8,8 @@
 import SwiftUI
 import MapKit
 
-struct CentroEsportivoCDistancia {
+struct CentroEsportivoCDistancia: Identifiable {
+    var id = UUID()
     var centroEsportivo: CentroEsportivo
     var distancia: Double
 }
@@ -25,7 +26,7 @@ struct ExibirCentrosEsportivos: View {
         centroEsportivo: DataLoader().centrosEsportivos[0],
         distancia: 0.0)
     @State var centroEsportivoMostrando = false
-    @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     @Binding var latitude: Double

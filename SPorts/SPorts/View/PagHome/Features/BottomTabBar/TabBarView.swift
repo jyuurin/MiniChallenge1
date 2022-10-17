@@ -23,8 +23,6 @@ struct TabBarView: View {
        
         UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().barTintColor = UIColor(CoresApp.corPlatinum.cor())
-
-        
     }
     
     @State var locationManager = LocationManager()
@@ -47,6 +45,8 @@ struct TabBarView: View {
     
     @State var centrosEsportivos = [CentroEsportivo]()
     
+    @State var centroEsportivoCDistancia: [CentroEsportivoCDistancia] = []
+    
     @State var identificaMudancaAbaixarBottomSheet = false
     
     var body: some View {
@@ -55,6 +55,7 @@ struct TabBarView: View {
                 
                 ExibicaoListaCEs(
                     centrosEsportivos: $centrosEsportivos,
+                    centroEsportivoCDistancia: $centroEsportivoCDistancia,
                     latitude: $latitude,
                     longitude: $longitude
                 )
@@ -68,7 +69,9 @@ struct TabBarView: View {
                     tokens: $tokens,
                     region: $region,
                     localizacaoPermitida: $localizacaoPermitida,
-                    primeiraAtualizacaoMapa: $primeiraAtualizacaoMapa, nomeLocalizacao: $nomeLocalizacao,
+                    primeiraAtualizacaoMapa: $primeiraAtualizacaoMapa,
+                    nomeLocalizacao: $nomeLocalizacao,
+                    centroEsportivoCDistancia: $centroEsportivoCDistancia,
                     latitude: $latitude,
                     longitude: $longitude,
                     localizacaoSetada: $coordenadaLocalizacao,
@@ -82,6 +85,7 @@ struct TabBarView: View {
                 }
             }
             .accentColor(CoresApp.corPrincipal.cor())
+            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -178,11 +182,5 @@ struct TabBarView: View {
     
     private func endEditing() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-
-struct TabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView()
     }
 }

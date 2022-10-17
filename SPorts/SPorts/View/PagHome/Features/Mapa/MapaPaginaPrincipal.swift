@@ -12,7 +12,7 @@ import CoreLocation
 
 struct CentroEsportivoCNomeImagem: Identifiable {
     var id: UUID
-    var centroEsportivo: CentroEsportivo
+    var centroEsportivoCDistancia: CentroEsportivoCDistancia
     var nomeImagem: String
 }
 
@@ -36,6 +36,7 @@ struct MapaPaginaPrincipal: View {
         centroEsportivo: DataLoader().centrosEsportivos[0],
         distancia: 0.0)
     @State var centroEsportivoCNomeImagem = [CentroEsportivoCNomeImagem]()
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
     
     @State var adicionouPinEnderecoSetado = true
     
@@ -58,14 +59,12 @@ struct MapaPaginaPrincipal: View {
                     annotationItems: centroEsportivoCNomeImagem,
                     annotationContent: { centroEsportivo in
                     
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.centroEsportivoCDistancia.centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.centroEsportivoCDistancia.centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
                             
                         if centroEsportivo.nomeImagem == "mapMarker" {
                             Button(action: {
                                 self.centroEsportivoMostrando = true
-                                self.centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(
-                                    centroEsportivo: centroEsportivo.centroEsportivo,
-                                    distancia: 0.0)
+                                self.centroEsportivoCDistanciaAtual = centroEsportivo.centroEsportivoCDistancia
                             }, label: {
                                 
                                 Image("mapMarker")
@@ -86,14 +85,13 @@ struct MapaPaginaPrincipal: View {
             } else {
                 Map(coordinateRegion: $region,
                     showsUserLocation: true,
-                    annotationItems: centrosEsportivos,
+                    annotationItems: centroEsportivoCDistancia,
                     annotationContent: { centroEsportivo in
                     
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(centroEsportivo.centroEsportivo.ceEndereco.latitude) ?? 0.0, longitude: Double(centroEsportivo.centroEsportivo.ceEndereco.longitude) ?? 0.0), content: {
                             Button(action: {
                                 self.centroEsportivoMostrando = true
-                                self.centroEsportivoCDistanciaAtual = CentroEsportivoCDistancia(centroEsportivo: centroEsportivo, distancia: 0.0)
-                                
+                                self.centroEsportivoCDistanciaAtual = centroEsportivo
                             }, label: {
                                 Image("mapMarker")
                                 .resizable()
@@ -222,48 +220,31 @@ struct MapaPaginaPrincipal: View {
         //Inicializa array de centroEsportivoCImagem
         self.centroEsportivoCNomeImagem = []
         
-        for centroEsportivo in centrosEsportivos {
-            self.centroEsportivoCNomeImagem.append(CentroEsportivoCNomeImagem(id: UUID(), centroEsportivo: centroEsportivo, nomeImagem: "mapMarker"))
+        for centroEsportivo in centroEsportivoCDistancia {
+            self.centroEsportivoCNomeImagem.append(CentroEsportivoCNomeImagem(id: UUID(), centroEsportivoCDistancia: centroEsportivo, nomeImagem: "mapMarker"))
         }
         
         self.centroEsportivoCNomeImagem.append(
             CentroEsportivoCNomeImagem(
                 id: UUID(),
-                centroEsportivo: CentroEsportivo(
-                            ceId: 0,
-                            ceNome: "",
-                            ceZona: "",
-                            ceEndereco: EnderecoCentroEsportivo(endereco: "", latitude: String(self.latitude), longitude: String(self.longitude)),
-                            ceTelefone: [""],
-                            horarioSemana: "",
-                            horarioFinalSemanaFeriado: "",
-                            horarioPiscinas: "",
-                            ceArea: "",
-                            ceEstrutura: [],
-                            ceModalidades: []),
-                            nomeImagem: "mappin.circle.fill"
-                )
+                centroEsportivoCDistancia: CentroEsportivoCDistancia(
+                    centroEsportivo: CentroEsportivo(
+                        ceId: 0,
+                        ceNome: "",
+                        ceZona: "",
+                        ceEndereco: EnderecoCentroEsportivo(endereco: "", latitude: String(self.latitude), longitude: String(self.longitude)),
+                        ceTelefone: [""],
+                        horarioSemana: "",
+                        horarioFinalSemanaFeriado: "",
+                        horarioPiscinas: "",
+                        ceArea: "",
+                        ceEstrutura: [],
+                        ceModalidades: []),
+                    distancia: 0.0),
+                nomeImagem: "mappin.circle.fill")
         )
     }
     
     
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapaPaginaPrincipal(
-            locationManager: .constant(LocationManager()),
-            tokens: .constant([]),
-            region: .constant(MKCoordinateRegion()),
-            localizacaoPermitida: .constant(false),
-            primeiraAtualizacaoMapa: .constant(false),
-            nomeLocalizacao: .constant(""),
-            latitude: .constant(0.0),
-            longitude: .constant(0.0),
-            localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)),
-            centrosEsportivos: .constant([CentroEsportivo]()),
-            localizacaoEnderecoSetado: .constant(false),
-            identificaMudancaEndereco: .constant(false)
-        )
-    }
-}

@@ -19,6 +19,8 @@ struct ExibicaoListaCEs: View {
     
     @Binding var centrosEsportivos: [CentroEsportivo]
     
+    @Binding var centroEsportivoCDistancia: [CentroEsportivoCDistancia]
+    
     @Binding var latitude: Double
     @Binding var longitude: Double
     
@@ -120,12 +122,13 @@ struct ExibicaoListaCEs: View {
             .padding([.leading, .trailing], 15)
             
             ScrollView {
-                ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
+                ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centroEsportivoCDistancia: $centroEsportivoCDistancia, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
                 
                 
             }
                     
         }
+        
         
 
         
