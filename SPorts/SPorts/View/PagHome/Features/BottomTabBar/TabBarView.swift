@@ -123,6 +123,12 @@ struct TabBarView: View {
                     .foregroundColor(CoresApp.corPlatinum.cor())
                 })
             }
+            .onChange(of: self.identificaMudancaEndereco) { _ in
+                
+                print("setou latitude")
+                self.latitude = coordenadaLocalizacao.coordinate.latitude
+                self.longitude = coordenadaLocalizacao.coordinate.longitude
+            } 
         }
         .onAppear {
             observarAtualizacoesCoordenadas()
@@ -135,10 +141,8 @@ struct TabBarView: View {
                 self.localizacaoPermitida = false
             }
         }
-        .onChange(of: self.identificaMudancaEndereco) { _ in
-            self.latitude = coordenadaLocalizacao.coordinate.latitude
-            self.longitude = coordenadaLocalizacao.coordinate.longitude
-        }
+        
+        
     }
     
     //MARK: - Funções de localização

@@ -134,10 +134,14 @@ struct MapaPaginaPrincipal: View {
         .edgesIgnoringSafeArea(.trailing)
         .edgesIgnoringSafeArea(.leading)
         .onChange(of: self.primeiraAtualizacaoMapa) { _ in
+            
+            print("primeira atualizacao")
             //Esse onChange só vai rodar quando primeiraAtualizacaoMapa for modificado, e isso só acontece uma vez
             region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         }
         .onChange(of: self.identificaMudancaEndereco) { _ in
+            
+            print("identificou mudanca")
             
             if self.localizacaoEnderecoSetado {
                 //Setando essa variável para true novamente para que quando o usuário selecionar Minha localizacao novamente, atualizar automaticamente a regiao do mapa
@@ -191,6 +195,7 @@ struct MapaPaginaPrincipal: View {
             } receiveValue: { coordenada in
                 
                 print(localizacaoEnderecoSetado)
+                print("Blau")
                 if !self.localizacaoEnderecoSetado {
                     self.latitude = coordenada.latitude
                     self.longitude = coordenada.longitude
@@ -223,6 +228,8 @@ struct MapaPaginaPrincipal: View {
         for centroEsportivo in centroEsportivoCDistancia {
             self.centroEsportivoCNomeImagem.append(CentroEsportivoCNomeImagem(id: UUID(), centroEsportivoCDistancia: centroEsportivo, nomeImagem: "mapMarker"))
         }
+        
+        print("oi estou aqui")
         
         self.centroEsportivoCNomeImagem.append(
             CentroEsportivoCNomeImagem(
