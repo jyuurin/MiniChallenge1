@@ -35,6 +35,7 @@ class DataController: ObservableObject {
         let checkin = Check_In(context: context)
         
         checkin.id = UUID()
+        checkin.id_centro_esportivo = id_centro_esportivo
         checkin.titulo_check_in = titulo_check_in
         checkin.data_check_in = data_check_in
         checkin.anotacao_check_in = anotacao_check_in

@@ -51,9 +51,21 @@ struct AdicionandoOuEditando: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.left")
+                    Text("Voltar")
+                })
+                .foregroundColor(CoresApp.corPrincipal.cor())
+            }
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
+                    
                     DataController().addCheckIn(
                         id_centro_esportivo: Int64(id_centro_esportivo),
                         titulo_check_in: titulo_check_in,
@@ -61,6 +73,8 @@ struct AdicionandoOuEditando: View {
                         anotacao_check_in: anotacao_check_in,
                         avaliacao_check_in: avaliacao_check_in,
                         context: managedObjectContext)
+                    
+                    dismiss()
                 }, label: {
                     Text("Salvar")
                         .foregroundColor(CoresApp.corPrincipal.cor())

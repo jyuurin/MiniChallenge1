@@ -15,6 +15,8 @@ struct DetalhesSheet: View {
     
     @Binding var centroEsportivoCDistancia: CentroEsportivoCDistancia
     
+    @State var fezCheckin = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -123,17 +125,44 @@ struct DetalhesSheet: View {
                     
                 }
                 
-                
-                ForEach(checkin, id: \.id) { check in
-                    HStack {
-                        Text(check.anotacao_check_in ?? "")
-                        
+                Group {
+                    Text("Check-ins")
+                        .font(.title2.bold())
+                    
+                    if self.fezCheckin {
+                        ForEach(checkin, id: \.id) { check in
+                            HStack {
+                                if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
+                                    Text(check.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
+                                        .padding()
+                                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                                    .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
+                                        .foregroundColor(CoresApp.corPrincipal.cor())
+                                    Text(check.anotacao_check_in ?? "")
+                                    
+                                    
+                                }
+                                
+                                
+                            }
+                            .padding(.vertical, 5)
+                        }
+                    } else {
+                        Text("Você ainda não fez Check-in nesse Centro Esportivo.")
+                            .padding(.vertical, 5)
                     }
+                    
+                    
                 }
+                
             }
             .padding()
             .onAppear {
-                print(checkin)
+                for check in checkin {
+                    if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
+                        self.fezCheckin = true
+                    }
+                }
             }
         }
         .edgesIgnoringSafeArea(.leading)

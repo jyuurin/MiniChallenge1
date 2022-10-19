@@ -185,7 +185,7 @@
 		16A28E4C28DE2402001CCF62 /* DetalhesCEView */ = {
 			isa = PBXGroup;
 			children = (
-				16D5FCD828FFA70400A068CA /* AdicionarOuAlterarCheckin */,
+				16D5FCD828FFA70400A068CA /* CheckIn */,
 				16A28E4D28DE2428001CCF62 /* DetalhesSheet.swift */,
 			);
 			path = DetalhesCEView;
@@ -285,12 +285,12 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		16D5FCD828FFA70400A068CA /* AdicionarOuAlterarCheckin */ = {
+		16D5FCD828FFA70400A068CA /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
 				16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */,
 			);
-			path = AdicionarOuAlterarCheckin;
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
