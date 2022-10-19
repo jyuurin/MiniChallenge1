@@ -156,6 +156,7 @@ struct MapaPaginaPrincipal: View {
                 observarAtualizacoesCoordenadas()
                 observarLocalizacaoRecusada()
                 locationManager.requisitarAtualizacaoDLocalizacao()
+                
             }
         }
         .onAppear {

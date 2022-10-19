@@ -125,9 +125,16 @@ struct TabBarView: View {
             }
             .onChange(of: self.identificaMudancaEndereco) { _ in
                 
-                print("setou latitude")
-                self.latitude = coordenadaLocalizacao.coordinate.latitude
-                self.longitude = coordenadaLocalizacao.coordinate.longitude
+                if self.localizacaoEnderecoSetado {
+                    self.latitude = coordenadaLocalizacao.coordinate.latitude
+                    self.longitude = coordenadaLocalizacao.coordinate.longitude
+                } else {
+                    locationManager = LocationManager()
+                    observarAtualizacoesCoordenadas()
+                    observarLocalizacaoRecusada()
+                    locationManager.requisitarAtualizacaoDLocalizacao()
+                }
+                
             } 
         }
         .onAppear {
