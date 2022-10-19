@@ -17,9 +17,21 @@ struct DetalhesSheet: View {
     
     @State var fezCheckin = false
     
+    @State var checkinSelecionado: Check_In? = nil
+    
+    @State var salvarCheckin = false
+    @State var editarCheckin = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
+                
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(true)), isActive: $salvarCheckin, label: {
+                    
+                })
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
+                    
+                })
                     
                 Text("\(centroEsportivoCDistancia.centroEsportivo.ceNome)")
                 
@@ -75,24 +87,27 @@ struct DetalhesSheet: View {
                         Text("A unidade não possui modalidades disponíveis até o momento.")
                         .padding(.vertical, 5)
                     }
-                    LazyVGrid(
-                        columns: [GridItem(.flexible()), GridItem(.flexible())],
-                        alignment: .leading,
-                        content: {
-                       
-                        ForEach(centroEsportivoCDistancia.centroEsportivo.ceModalidades.indices, id: \.self) { indiceModalidade in
+                    ScrollView(.horizontal) {
+                        LazyHGrid(
+                            rows: [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))],
+                            alignment: .center,
+                            content: {
+                           
+                            ForEach(centroEsportivoCDistancia.centroEsportivo.ceModalidades.indices, id: \.self) { indiceModalidade in
 
-                            Text(centroEsportivoCDistancia.centroEsportivo.ceModalidades[indiceModalidade].modalidade)
-                            .font(.system(size: 15))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .foregroundColor(CoresApp.corPlatinum.cor())
-                            .overlay(RoundedRectangle(cornerRadius: 10)
-                                .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
+                                Text(centroEsportivoCDistancia.centroEsportivo.ceModalidades[indiceModalidade].modalidade)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(CoresApp.corPlatinum.cor())
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
 
-                        }
-                        
-                    })
+                            }
+                            
+                        })
+                    }
+                    
                 }
                 //MARK: - Exibição de ESTRUTURAS do Centro Esportivo
                 Group {
@@ -104,24 +119,26 @@ struct DetalhesSheet: View {
                         .padding(.vertical, 5)
                     }
                     
-                    LazyVGrid(
-                        columns: [GridItem(.flexible()), GridItem(.flexible())],
-                        alignment: .leading,
-                        content: {
-                        ForEach(centroEsportivoCDistancia.centroEsportivo.ceEstrutura.indices, id: \.self) { item in
-                            
-                         
-                            Text(centroEsportivoCDistancia.centroEsportivo.ceEstrutura[item].nomeEstrutura)
-                            .font(.system(size: 15))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .foregroundColor(CoresApp.corPlatinum.cor())
-                            .overlay(RoundedRectangle(cornerRadius: 10)
-                                .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
+                    ScrollView(.horizontal) {
+                        LazyHGrid(
+                            rows: [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))],
+                            alignment: .center,
+                            content: {
+                            ForEach(centroEsportivoCDistancia.centroEsportivo.ceEstrutura.indices, id: \.self) { item in
                                 
-                           
-                        }
-                    })
+                             
+                                Text(centroEsportivoCDistancia.centroEsportivo.ceEstrutura[item].nomeEstrutura)
+                                .font(.system(size: 15))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 5)
+                                .foregroundColor(CoresApp.corPlatinum.cor())
+                                .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
+                                    
+                               
+                            }
+                        })
+                    }
                     
                 }
                 
@@ -133,12 +150,19 @@ struct DetalhesSheet: View {
                         ForEach(checkin, id: \.id) { check in
                             HStack {
                                 if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
-                                    Text(check.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
-                                        .padding()
-                                        .overlay(RoundedRectangle(cornerRadius: 5)
-                                                    .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
-                                        .foregroundColor(CoresApp.corPrincipal.cor())
-                                    Text(check.anotacao_check_in ?? "")
+                                   
+                                    Button(action: {
+                                        self.editarCheckin = true
+                                        self.checkinSelecionado = check
+                                    }, label: {
+                                        Text(check.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
+                                            .padding()
+                                            .overlay(RoundedRectangle(cornerRadius: 5)
+                                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
+                                            .foregroundColor(CoresApp.corPrincipal.cor())
+                                        Text(check.anotacao_check_in ?? "")
+                                    })
+                                    
                                     
                                     
                                 }
@@ -182,8 +206,12 @@ struct DetalhesSheet: View {
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), titulo_check_in: "", data_check_in: NSDate.now, anotacao_check_in: "", avaliacao_check_in: ""), label: {
+                
+                Button(action: {
+                    self.salvarCheckin = true
+                }, label: {
                     Text("Novo CheckIn")
+                        .foregroundColor(CoresApp.corPrincipal.cor())
                 })
             }
         }

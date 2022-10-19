@@ -31,25 +31,21 @@ class DataController: ObservableObject {
     }        
     
     //Função que adiciona um novo CheckIn
-    func addCheckIn(id_centro_esportivo: Int64, titulo_check_in: String, data_check_in: Date, anotacao_check_in: String, avaliacao_check_in: String, context: NSManagedObjectContext) {
+    func addCheckIn(id_centro_esportivo: Int64, data_check_in: Date, anotacao_check_in: String, context: NSManagedObjectContext) {
         let checkin = Check_In(context: context)
         
         checkin.id = UUID()
         checkin.id_centro_esportivo = id_centro_esportivo
-        checkin.titulo_check_in = titulo_check_in
         checkin.data_check_in = data_check_in
         checkin.anotacao_check_in = anotacao_check_in
-        checkin.avaliacao_check_in = avaliacao_check_in
         
         save(context: context)
     }
     
     //Função que edita um CheckIn em específico
-    func editCheckIn(checkin: Check_In, id_centro_esportivo: Int64, titulo_check_in: String, data_check_in: Date, anotacao_check_in: String, avaliacao_check_in: String, context: NSManagedObjectContext) {
-        checkin.titulo_check_in = titulo_check_in
+    func editCheckIn(checkin: Check_In, id_centro_esportivo: Int64, data_check_in: Date, anotacao_check_in: String, context: NSManagedObjectContext) {
         checkin.data_check_in = data_check_in
         checkin.anotacao_check_in = anotacao_check_in
-        checkin.avaliacao_check_in = avaliacao_check_in
         
         save(context: context)
     }
