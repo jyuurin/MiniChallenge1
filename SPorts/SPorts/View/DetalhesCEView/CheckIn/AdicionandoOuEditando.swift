@@ -28,34 +28,34 @@ struct AdicionandoOuEditando: View {
     
     var body: some View {
         VStack {
-            
-            TextField(anotacao_check_in, text: $anotacao_check_in)
-            
-            
-            
-            
-            HStack {
-                if usuarioGostou {
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Gostei")
-                    })
-                    
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Não Gostei")
-                    })
-                } else {
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Não Gostei")
-                    })
-                    .foregroundColor(CoresApp.corPrincipal.cor())
-                }
+
+            Text("Observações do usuário")
+                .bold()
+                .padding()
+
+                TextEditor(text: $anotacao_check_in)
+                .frame(height: 250)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.white.opacity(1), lineWidth: 1)
+                        .shadow(radius: 5)
+                )
+                .padding()
+
+            if !salvandoCheckin  {
+                Button(action: {
+                    print("\(anotacao_check_in)")
+                }, label: {
+                    Text("Apagar visita")
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                                    .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
+                })
+                .foregroundColor(CoresApp.corPrincipal.cor())
+                .padding(5)
+                
             }
+            Spacer()
+            
         }
         .onDisappear {
             self.checkinSelecionado = nil
@@ -65,6 +65,7 @@ struct AdicionandoOuEditando: View {
                 self.anotacao_check_in = self.checkinSelecionado?.anotacao_check_in ?? ""
             }
         }
+        .navigationTitle("Visita")
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

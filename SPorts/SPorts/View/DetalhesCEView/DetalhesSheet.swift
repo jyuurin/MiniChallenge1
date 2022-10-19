@@ -22,6 +22,10 @@ struct DetalhesSheet: View {
     @State var salvarCheckin = false
     @State var editarCheckin = false
     
+    @State var rowsModalidades: [GridItem] = []
+    @State var rowsEstruturas: [GridItem] = []
+    
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -89,7 +93,7 @@ struct DetalhesSheet: View {
                     }
                     ScrollView(.horizontal) {
                         LazyHGrid(
-                            rows: [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))],
+                            rows: self.rowsModalidades,
                             alignment: .center,
                             content: {
                            
@@ -102,6 +106,7 @@ struct DetalhesSheet: View {
                                 .foregroundColor(CoresApp.corPlatinum.cor())
                                 .overlay(RoundedRectangle(cornerRadius: 10)
                                     .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
+                                .padding(.leading, 5)
 
                             }
                             
@@ -121,7 +126,7 @@ struct DetalhesSheet: View {
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(
-                            rows: [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))],
+                            rows: self.rowsEstruturas,
                             alignment: .center,
                             content: {
                             ForEach(centroEsportivoCDistancia.centroEsportivo.ceEstrutura.indices, id: \.self) { item in
@@ -134,16 +139,18 @@ struct DetalhesSheet: View {
                                 .foregroundColor(CoresApp.corPlatinum.cor())
                                 .overlay(RoundedRectangle(cornerRadius: 10)
                                     .stroke(CoresApp.corPlatinum.cor(), lineWidth: 1))
+                                .padding(.leading, 5)
                                     
                                
                             }
                         })
                     }
                     
+                    
                 }
                 
                 Group {
-                    Text("Check-ins")
+                    Text("Visitas")
                         .font(.title2.bold())
                     
                     if self.fezCheckin {
@@ -155,28 +162,34 @@ struct DetalhesSheet: View {
                                         self.editarCheckin = true
                                         self.checkinSelecionado = check
                                     }, label: {
-                                        Text(check.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
-                                            .padding()
-                                            .overlay(RoundedRectangle(cornerRadius: 5)
-                                                        .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
-                                            .foregroundColor(CoresApp.corPrincipal.cor())
-                                        Text(check.anotacao_check_in ?? "")
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text(check.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
+                                                    .font(Font.headline.weight(.bold))
+                                                    .foregroundColor(CoresApp.corSecundaria.cor())
+                                                    .padding(.bottom, 5)
+                                                
+                                                Text(check.anotacao_check_in ?? "")
+                                                    .foregroundColor(CoresApp.corPlatinum.cor())
+                                            }
+                                            
+                                            Spacer()
+                                            
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(CoresApp.corSecundaria.cor())
+                                            
+                                        }
+                                        .padding(10)
+                                        .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
                                     })
-                                    
-                                    
-                                    
                                 }
-                                
-                                
                             }
-                            .padding(.vertical, 5)
+                            .padding(.bottom, 5)
                         }
                     } else {
                         Text("Você ainda não fez Check-in nesse Centro Esportivo.")
                             .padding(.vertical, 5)
                     }
-                    
-                    
                 }
                 
             }
@@ -186,6 +199,25 @@ struct DetalhesSheet: View {
                     if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                         self.fezCheckin = true
                     }
+                }
+                
+                //Setando quantidade de linhas que terá em cada array dependendo da quantidade de itens em estruturas e modalidades
+                //MODALIDADES
+                if self.centroEsportivoCDistancia.centroEsportivo.ceModalidades.count == 1 {
+                    self.rowsModalidades = [GridItem(.fixed(30))]
+                } else if self.centroEsportivoCDistancia.centroEsportivo.ceModalidades.count == 2 {
+                    self.rowsModalidades = [GridItem(.fixed(30)), GridItem(.fixed(30))]
+                } else if self.centroEsportivoCDistancia.centroEsportivo.ceModalidades.count >= 3 {
+                    self.rowsModalidades = [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))]
+                }
+                
+                //ESTRUTURAS
+                if self.centroEsportivoCDistancia.centroEsportivo.ceEstrutura.count == 1 {
+                    self.rowsEstruturas = [GridItem(.fixed(30))]
+                } else if self.centroEsportivoCDistancia.centroEsportivo.ceEstrutura.count == 2 {
+                    self.rowsEstruturas = [GridItem(.fixed(30)), GridItem(.fixed(30))]
+                } else if self.centroEsportivoCDistancia.centroEsportivo.ceEstrutura.count >= 3 {
+                    self.rowsEstruturas = [GridItem(.fixed(30)), GridItem(.fixed(30)), GridItem(.fixed(30))]
                 }
             }
         }
@@ -210,7 +242,7 @@ struct DetalhesSheet: View {
                 Button(action: {
                     self.salvarCheckin = true
                 }, label: {
-                    Text("Novo CheckIn")
+                    Text("Nova Visita")
                         .foregroundColor(CoresApp.corPrincipal.cor())
                 })
             }
