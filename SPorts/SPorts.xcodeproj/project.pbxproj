@@ -30,6 +30,8 @@
 		16C7199E28CFD2B900D3684B /* CentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */; };
 		16C719A028CFD31400D3684B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C7199F28CFD31400D3684B /* DataLoader.swift */; };
 		16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */; };
+		16D5FCD528FF9C0A00A068CA /* Check_In.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD328FF9C0A00A068CA /* Check_In.xcdatamodeld */; };
+		16D5FCD728FF9CA400A068CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD628FF9CA400A068CA /* DataController.swift */; };
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */; };
@@ -63,6 +65,8 @@
 		16C7199D28CFD2B900D3684B /* CentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentroEsportivo.swift; sourceTree = "<group>"; };
 		16C7199F28CFD31400D3684B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstruturaCentroEsportivo.swift; sourceTree = "<group>"; };
+		16D5FCD428FF9C0A00A068CA /* Check_In.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Check_In.xcdatamodel; sourceTree = "<group>"; };
+		16D5FCD628FF9CA400A068CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibicaoListaCEs.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		16C7199228CBBFC900D3684B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				16D5FCCF28FF9BA000A068CA /* CoreData */,
 				16C0D9B228F4E1EB00DEACEC /* CategoriasCE */,
 				16A7EABE28DFCC1300907D2F /* Cores */,
 				16A28E4928DC33DD001CCF62 /* BottomSheet */,
@@ -266,6 +271,15 @@
 				16C7199F28CFD31400D3684B /* DataLoader.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		16D5FCCF28FF9BA000A068CA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				16D5FCD328FF9C0A00A068CA /* Check_In.xcdatamodeld */,
+				16D5FCD628FF9CA400A068CA /* DataController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
@@ -376,6 +390,8 @@
 				1659782328D2E24E002E4FF1 /* MapaPaginaPrincipal.swift in Sources */,
 				1659782028D2DE09002E4FF1 /* LocationManager.swift in Sources */,
 				16832E9728D7C213003D729A /* EnderecoCentroEsportivo.swift in Sources */,
+				16D5FCD528FF9C0A00A068CA /* Check_In.xcdatamodeld in Sources */,
+				16D5FCD728FF9CA400A068CA /* DataController.swift in Sources */,
 				169C743828EF4EE90096A202 /* EncontraLocalizacao.swift in Sources */,
 				16832E9928D7C60E003D729A /* ModalidadeCentroEsportivo.swift in Sources */,
 				16C0D9B128F490A900DEACEC /* TabBarView.swift in Sources */,
@@ -588,6 +604,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		16D5FCD328FF9C0A00A068CA /* Check_In.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				16D5FCD428FF9C0A00A068CA /* Check_In.xcdatamodel */,
+			);
+			currentVersion = 16D5FCD428FF9C0A00A068CA /* Check_In.xcdatamodel */;
+			path = Check_In.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 160378FC28C67C3E00A81908 /* Project object */;
 }
