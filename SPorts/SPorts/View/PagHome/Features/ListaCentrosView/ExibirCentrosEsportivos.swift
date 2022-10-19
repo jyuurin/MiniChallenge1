@@ -36,7 +36,7 @@ struct ExibirCentrosEsportivos: View {
         ScrollView{
             VStack {
                 //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-                NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
+                NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
                 
                 if !centrosEsportivos.isEmpty {
                     ForEach(centroEsportivoCDistancia, id:\.centroEsportivo.ceId) { centroEsportivoCDistancia in

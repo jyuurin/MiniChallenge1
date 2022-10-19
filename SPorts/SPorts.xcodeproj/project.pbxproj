@@ -32,6 +32,7 @@
 		16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */; };
 		16D5FCD528FF9C0A00A068CA /* Check_In.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD328FF9C0A00A068CA /* Check_In.xcdatamodeld */; };
 		16D5FCD728FF9CA400A068CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD628FF9CA400A068CA /* DataController.swift */; };
+		16D5FCDA28FFA73A00A068CA /* AdicionandoOuEditando.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */; };
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */; };
@@ -67,6 +68,7 @@
 		16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstruturaCentroEsportivo.swift; sourceTree = "<group>"; };
 		16D5FCD428FF9C0A00A068CA /* Check_In.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Check_In.xcdatamodel; sourceTree = "<group>"; };
 		16D5FCD628FF9CA400A068CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionandoOuEditando.swift; sourceTree = "<group>"; };
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibicaoListaCEs.swift; sourceTree = "<group>"; };
@@ -136,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				16C0D9AF28F4906100DEACEC /* BottomTabBar */,
-				16A28E4C28DE2402001CCF62 /* DetalhesCEView */,
 				1967415028F4910C006F35B7 /* ListaCentrosView */,
 				16A28E4B28DC343E001CCF62 /* Mapa */,
 				16A28E4A28DC342F001CCF62 /* Filtros */,
@@ -184,6 +185,7 @@
 		16A28E4C28DE2402001CCF62 /* DetalhesCEView */ = {
 			isa = PBXGroup;
 			children = (
+				16D5FCD828FFA70400A068CA /* AdicionarOuAlterarCheckin */,
 				16A28E4D28DE2428001CCF62 /* DetalhesSheet.swift */,
 			);
 			path = DetalhesCEView;
@@ -235,6 +237,7 @@
 		16C7199128CBBFC300D3684B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16A28E4C28DE2402001CCF62 /* DetalhesCEView */,
 				1694F27728FDEB410050DCFE /* TutorialApp */,
 				16A7EAC128E0C2B300907D2F /* SplashScreen */,
 				D40C21F328D2471E00744769 /* PagDInformacoes */,
@@ -280,6 +283,14 @@
 				16D5FCD628FF9CA400A068CA /* DataController.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		16D5FCD828FFA70400A068CA /* AdicionarOuAlterarCheckin */ = {
+			isa = PBXGroup;
+			children = (
+				16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */,
+			);
+			path = AdicionarOuAlterarCheckin;
 			sourceTree = "<group>";
 		};
 		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
@@ -396,6 +407,7 @@
 				16832E9928D7C60E003D729A /* ModalidadeCentroEsportivo.swift in Sources */,
 				16C0D9B128F490A900DEACEC /* TabBarView.swift in Sources */,
 				D47FE7DD28D907DA00EE89BC /* FiltroZonaView.swift in Sources */,
+				16D5FCDA28FFA73A00A068CA /* AdicionandoOuEditando.swift in Sources */,
 				1603790828C67C3E00A81908 /* SPorts.swift in Sources */,
 				16C7199E28CFD2B900D3684B /* CentroEsportivo.swift in Sources */,
 			);

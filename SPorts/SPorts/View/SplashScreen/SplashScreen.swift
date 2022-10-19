@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SplashScreen: View {
+    
     
     @State var mostraPaginaPrincipal = false
     @State var tamanho = 0.8

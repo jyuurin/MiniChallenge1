@@ -52,7 +52,7 @@ struct MapaPaginaPrincipal: View {
         
         ZStack(alignment: .topTrailing) {
             //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-            NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
+            NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
             
             if localizacaoEnderecoSetado {
                 Map(coordinateRegion: $region,

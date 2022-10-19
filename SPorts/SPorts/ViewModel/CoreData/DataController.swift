@@ -28,7 +28,7 @@ class DataController: ObservableObject {
         } catch {
             print("Nós não conseguimos te ajudar no momento.")
         }
-    }
+    }        
     
     //Função que adiciona um novo CheckIn
     func addCheckIn(id_centro_esportivo: Int64, titulo_check_in: String, data_check_in: Date, anotacao_check_in: String, avaliacao_check_in: String, context: NSManagedObjectContext) {

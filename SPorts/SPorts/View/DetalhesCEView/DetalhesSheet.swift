@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DetalhesSheet: View {
     
     @Environment(\.dismiss) var dismiss
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.data_check_in, order: .reverse)]) var checkin: FetchedResults<Check_In>
     
-    var centroEsportivoCDistancia: CentroEsportivoCDistancia
+    @Binding var centroEsportivoCDistancia: CentroEsportivoCDistancia
     
     var body: some View {
         ScrollView {
@@ -120,8 +122,19 @@ struct DetalhesSheet: View {
                     })
                     
                 }
+                
+                
+                ForEach(checkin, id: \.id) { check in
+                    HStack {
+                        Text(check.anotacao_check_in ?? "")
+                        
+                    }
+                }
             }
             .padding()
+            .onAppear {
+                print(checkin)
+            }
         }
         .edgesIgnoringSafeArea(.leading)
         .edgesIgnoringSafeArea(.trailing)
@@ -137,6 +150,12 @@ struct DetalhesSheet: View {
                     Text("Voltar")
                 })
                 .foregroundColor(CoresApp.corPrincipal.cor())
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), titulo_check_in: "", data_check_in: NSDate.now, anotacao_check_in: "", avaliacao_check_in: ""), label: {
+                    Text("Novo CheckIn")
+                })
             }
         }
     }
