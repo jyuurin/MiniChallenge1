@@ -49,6 +49,8 @@ struct TabBarView: View {
     
     @State var identificaMudancaAbaixarBottomSheet = false
     
+    @State var mostrandoPaginaRelatorio = false
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -83,34 +85,44 @@ struct TabBarView: View {
                     Image(systemName: "map")
                     Text("Mapa")
                 }
+                
+                RelatorioCheckIn(mostrandoPaginaRelatorio: $mostrandoPaginaRelatorio)
+                .tabItem {
+                    Image(systemName: "doc.plaintext.fill")
+                    Text("Relatório")
+                }
             }
             .accentColor(CoresApp.corPrincipal.cor())
             .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
+                    
+                    //Se a página de relatorio não estiver mostrando, então esse botão aparecerá
+                    if !self.mostrandoPaginaRelatorio {
+                        Button {
+                            inserirNovoEnderecoMostrando = true
+                        } label: {
+                            if localizacaoPermitida {
+                                Text(nomeLocalizacao)
+                                .foregroundColor(CoresApp.corPrincipal.cor())
+                            } else {
+                                Text(nomeLocalizacao)
+                                .foregroundColor(CoresApp.corPrincipal.cor())
+                            }
 
-                    Button {
-                        inserirNovoEnderecoMostrando = true
-                    } label: {
-                        if localizacaoPermitida {
-                            Text(nomeLocalizacao)
-                            .foregroundColor(CoresApp.corPrincipal.cor())
-                        } else {
-                            Text(nomeLocalizacao)
-                            .foregroundColor(CoresApp.corPrincipal.cor())
                         }
-
+                        .padding(.bottom, 10)
+                        .buttonStyle(.bordered)
+                        .sheet(isPresented: $inserirNovoEnderecoMostrando, content: {
+                            InserirNovaLocalizacao(
+                                localizacaoSetada: $coordenadaLocalizacao,
+                                nomeLocalizacao: $nomeLocalizacao,
+                                localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
+                                identificaMudancaEndereco: $identificaMudancaEndereco)
+                        })
                     }
-                    .padding(.bottom, 10)
-                    .buttonStyle(.bordered)
-                    .sheet(isPresented: $inserirNovoEnderecoMostrando, content: {
-                        InserirNovaLocalizacao(
-                            localizacaoSetada: $coordenadaLocalizacao,
-                            nomeLocalizacao: $nomeLocalizacao,
-                            localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
-                            identificaMudancaEndereco: $identificaMudancaEndereco)
-                    })
+                    
 
                 }
 
