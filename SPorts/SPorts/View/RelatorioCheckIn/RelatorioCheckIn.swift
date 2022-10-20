@@ -30,8 +30,7 @@ struct RelatorioCheckIn: View {
                     
                     ForEach(checkin, id: \.id) { check in
                         exibirHistoricoVisitas(
-                            nomeCE: achaCentroEsportivoPelaId(
-                                id: Int(check.id_centro_esportivo)).ceNome,
+                            nomeCE: check.nome_centro_esportivo ?? "",
                             anotacaoCE: check.anotacao_check_in,
                             dataVisita: check.data_check_in ?? NSDate.now)
                     }
@@ -88,28 +87,5 @@ struct RelatorioCheckIn: View {
         
         
     }
-    
-    func achaCentroEsportivoPelaId(id: Int) -> CentroEsportivo {
-        for centroEsportivo in DataLoader().centrosEsportivos {
-            if centroEsportivo.id == id {
-                return centroEsportivo
-            }
-        }
-        
-        return CentroEsportivo(
-            ceId: 0,
-            ceNome: "",
-            ceZona: "",
-            ceEndereco: EnderecoCentroEsportivo(
-                endereco: "",
-                latitude: "",
-                longitude: ""),
-            ceTelefone: [],
-            horarioSemana: "",
-            horarioFinalSemanaFeriado: "",
-            horarioPiscinas: "",
-            ceArea: "",
-            ceEstrutura: [],
-            ceModalidades: [])
-    }
+   
 }

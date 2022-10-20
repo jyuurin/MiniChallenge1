@@ -14,6 +14,7 @@ struct AdicionandoOuEditando: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var id_centro_esportivo: Int
+    @Binding var nome_centro_esportivo: String
 
     @State var titulo_check_in: String = ""
     @State var data_check_in: Date = NSDate.now
@@ -84,6 +85,7 @@ struct AdicionandoOuEditando: View {
                 Button(action: {
                     if salvandoCheckin {
                         DataController().addCheckIn(
+                            nome_centro_esportivo: nome_centro_esportivo,
                             id_centro_esportivo: Int64(id_centro_esportivo),
                             data_check_in: data_check_in,
                             anotacao_check_in: anotacao_check_in,

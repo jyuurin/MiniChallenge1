@@ -30,10 +30,10 @@ struct DetalhesSheet: View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(true)), isActive: $salvarCheckin, label: {
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), nome_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceNome, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(true)), isActive: $salvarCheckin, label: {
                     
                 })
-                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), nome_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceNome, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
                     
                 })
                     

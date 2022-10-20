@@ -31,10 +31,11 @@ class DataController: ObservableObject {
     }        
     
     //Função que adiciona um novo CheckIn
-    func addCheckIn(id_centro_esportivo: Int64, data_check_in: Date, anotacao_check_in: String, context: NSManagedObjectContext) {
+    func addCheckIn(nome_centro_esportivo: String, id_centro_esportivo: Int64, data_check_in: Date, anotacao_check_in: String, context: NSManagedObjectContext) {
         let checkin = Check_In(context: context)
         
         checkin.id = UUID()
+        checkin.nome_centro_esportivo = nome_centro_esportivo
         checkin.id_centro_esportivo = id_centro_esportivo
         checkin.data_check_in = data_check_in
         checkin.anotacao_check_in = anotacao_check_in
