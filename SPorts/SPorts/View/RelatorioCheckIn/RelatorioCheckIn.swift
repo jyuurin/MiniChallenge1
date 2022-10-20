@@ -13,32 +13,42 @@ struct RelatorioCheckIn: View {
     
     @Binding var mostrandoPaginaRelatorio: Bool
     
+    
     var body: some View {
+        
         VStack {
+            Text("\(String(checkin.count))")
+                .font(.system(size: 100, weight: .bold, design: .rounded))
+                .foregroundColor(CoresApp.corSecundaria.cor())
+                .padding([.top, .bottom], 30)
+            
+            Text("Visitas aos Centros Esportivos")
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+                .foregroundColor(CoresApp.corSecundaria.cor())
+                .padding(.bottom, 30)
+            
+            HStack {
+                Text("Histórico de visitas")
+                    .font(Font.headline.weight(.bold))
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading)
+                Spacer()
+            }
+            
+            
             ScrollView {
-                VStack {
-                    Text("\(String(checkin.count))")
-                        .font(.system(size: 100, weight: .bold, design: .rounded))
-                        .foregroundColor(CoresApp.corSecundaria.cor())
-                        .padding([.top, .bottom], 40)
-                    Text("Visitas aos Centros Esportivos")
-                        .font(.system(size: 24, weight: .semibold, design: .rounded))
-                        .foregroundColor(CoresApp.corSecundaria.cor())
-                        .padding(.bottom, 40)
-                    Text("Histórico de visitas")
-                        .multilineTextAlignment(.leading)
-                    
+                VStack{
                     ForEach(checkin, id: \.id) { check in
                         exibirHistoricoVisitas(
                             nomeCE: check.nome_centro_esportivo ?? "",
                             anotacaoCE: check.anotacao_check_in,
                             dataVisita: check.data_check_in ?? NSDate.now)
                     }
-                    
-                    
                 }
+                .padding(.vertical, 5)
                 
             }
+            
         }
         .onAppear {
             self.mostrandoPaginaRelatorio = true
