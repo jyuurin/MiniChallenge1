@@ -15,6 +15,7 @@ struct AdicionandoOuEditando: View {
     
     @Binding var id_centro_esportivo: Int
     @Binding var nome_centro_esportivo: String
+    @Binding var zona_centro_esportivo: String
 
     @State var titulo_check_in: String = ""
     @State var data_check_in: Date = NSDate.now
@@ -29,17 +30,41 @@ struct AdicionandoOuEditando: View {
     
     var body: some View {
         VStack {
-
+            
+            if !salvandoCheckin {
+                Text(checkinSelecionado?.data_check_in?.addingTimeInterval(600) ?? NSDate.now, style: .date)
+                    .font(Font.headline.weight(.bold))
+                    .foregroundColor(CoresApp.corSecundaria.cor())
+                    .padding()
+            }
+            
             VStack(alignment: .leading) {
-                    Text("O que você fez nessa visita?")
-                    .bold()
-                    .padding([.top, .leading])
+                
+                if !salvandoCheckin {
+                    
+                    
+                    HStack {
+                        Image(zona_centro_esportivo)
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        Text(nome_centro_esportivo)
+                        Spacer()
+                    }
+                    .padding([.leading, .trailing])
+                    
+                }
+                
+                
+                
+                Text("O que você fez nessa visita?")
+                .bold()
+                .padding([.top, .leading])
 
-                    TextEditor(text: $anotacao_check_in)
-                    .frame(height: 250)
-                    .cornerRadius(10)
-                    .shadow(radius: 4)
-                    .padding(.horizontal)
+                TextEditor(text: $anotacao_check_in)
+                .frame(height: 250)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+                .padding(.horizontal)
             }
             
 

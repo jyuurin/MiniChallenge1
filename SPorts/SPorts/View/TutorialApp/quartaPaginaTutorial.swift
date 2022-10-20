@@ -1,13 +1,13 @@
 //
-//  SegundaPaginaTutorial.swift
+//  quartaPaginaTutorial.swift
 //  SPorts
 //
-//  Created by Pedro Henrique Dias Hemmel de Oliveira Souza on 17/10/22.
+//  Created by Pedro Henrique Dias Hemmel de Oliveira Souza on 20/10/22.
 //
 
 import SwiftUI
 
-struct SegundaPaginaTutorial: View {
+struct quartaPaginaTutorial: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -25,25 +25,16 @@ struct SegundaPaginaTutorial: View {
             
             Spacer()
             
-            Image("SPorts")
+            Image("grupoDeIcones")
                 .resizable()
-                .frame(width: 200, height: 40, alignment: .center)
+                .frame(width: 150, height: 150, alignment: .center)
                 .padding()
             
-            Text("SPorts foi criado para reunir todos os Centros Esportivos de **SÃO PAULO** e exibir a localização de cada um através de um mapa.")
+            Text("Busque o Centro Esportivo ideal para você praticar seu esporte favorito. \n\nFaça a busca do seu jeito!\n\n**Vamos lá?!**")
                 .padding()
                 .multilineTextAlignment(.center)
-                
-            Spacer()
             
-            NavigationLink(
-                destination: TerceiraPaginaTutorial(),
-                label: {
-                    Text("Próximo")
-                    .foregroundColor(CoresApp.corPrincipal.cor())
-                })
-            .padding(.bottom, 10)
-            .buttonStyle(.bordered)
+            Spacer()
             
             Button(
                 action: {
@@ -53,7 +44,7 @@ struct SegundaPaginaTutorial: View {
                     self.sairTutorial = true
                 },
                 label: {
-                    Text("Já entendi!")
+                    Text("Vamos!")
                     .foregroundColor(CoresApp.corPrincipal.cor())
                 })
             .padding(.bottom, 10)
@@ -76,3 +67,4 @@ struct SegundaPaginaTutorial: View {
         }
     }
 }
+

@@ -35,19 +35,23 @@ struct RelatorioCheckIn: View {
                 Spacer()
             }
             
-            
-            ScrollView {
-                VStack{
-                    ForEach(checkin, id: \.id) { check in
-                        exibirHistoricoVisitas(
-                            nomeCE: check.nome_centro_esportivo ?? "",
-                            anotacaoCE: check.anotacao_check_in,
-                            dataVisita: check.data_check_in ?? NSDate.now)
+            if checkin.isEmpty {
+                Text("Sem visitas à Centros Esportivos até agora.")
+            } else {
+                ScrollView {
+                    VStack{
+                        ForEach(checkin, id: \.id) { check in
+                            exibirHistoricoVisitas(
+                                nomeCE: check.nome_centro_esportivo ?? "",
+                                anotacaoCE: check.anotacao_check_in,
+                                dataVisita: check.data_check_in ?? NSDate.now)
+                        }
                     }
+                    .padding(.vertical, 5)
+                    
                 }
-                .padding(.vertical, 5)
-                
             }
+            
             
         }
         .onAppear {

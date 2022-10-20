@@ -60,7 +60,6 @@ struct TerceiraPaginaTutorial: View {
                 Button(action: {
                     dismiss()
                 }, label: {
-                    Image(systemName: "chevron.left")
                     Text("Voltar")
                 })
                 .foregroundColor(CoresApp.corPrincipal.cor())
