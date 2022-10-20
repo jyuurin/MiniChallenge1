@@ -28,7 +28,7 @@ struct PrimeiraPaginaTutorial: View {
                     .frame(width: 150, height: 150, alignment: .center)
                     .padding()
                     
-                Text("**Centros Esportivos (CEs)** são estruturas públicas que oferecem diversas atividades esportivas para a saúde, bem-estar e lazer da população de todas as regiões da cidade de São Paulo.")
+                Text("**Centros Esportivos (CEs) são estruturas públicas que oferecem diversas atividades esportivas para a saúde, bem-estar e lazer da população de todas as regiões da cidade de São Paulo.**")
                     .padding()
                     .multilineTextAlignment(.center)
                 

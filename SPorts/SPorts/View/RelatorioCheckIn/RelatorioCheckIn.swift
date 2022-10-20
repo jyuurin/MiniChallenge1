@@ -27,17 +27,18 @@ struct RelatorioCheckIn: View {
                 .foregroundColor(CoresApp.corSecundaria.cor())
                 .padding(.bottom, 30)
             
-            HStack {
-                Text("Histórico de visitas")
-                    .font(Font.headline.weight(.bold))
-                    .multilineTextAlignment(.leading)
-                    .padding(.leading)
-                Spacer()
-            }
             
-            if checkin.isEmpty {
-                Text("Sem visitas à Centros Esportivos até agora.")
-            } else {
+            
+            if !checkin.isEmpty {
+                
+                HStack {
+                    Text("Histórico de visitas")
+                        .font(Font.headline.weight(.bold))
+                        .multilineTextAlignment(.leading)
+                        .padding(.leading)
+                    Spacer()
+                }
+                
                 ScrollView {
                     VStack{
                         ForEach(checkin, id: \.id) { check in

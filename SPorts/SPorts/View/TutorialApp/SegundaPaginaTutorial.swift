@@ -25,12 +25,12 @@ struct SegundaPaginaTutorial: View {
             
             Spacer()
             
-            Image("SPorts")
+            Image("pagFiltros")
                 .resizable()
-                .frame(width: 200, height: 40, alignment: .center)
+                .frame(width: 260, height: 350, alignment: .center)
                 .padding()
             
-            Text("SPorts foi criado para reunir todos os Centros Esportivos de **SÃO PAULO** e exibir a localização de cada um através de um mapa.")
+            Text("**SPorts foi criado facilitar a busca por Centros Esportivos em São Paulo! Faça uma busca de forma personalizada**!")
                 .padding()
                 .multilineTextAlignment(.center)
                 

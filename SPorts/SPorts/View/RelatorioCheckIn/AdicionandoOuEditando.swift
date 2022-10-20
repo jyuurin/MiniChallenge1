@@ -70,7 +70,8 @@ struct AdicionandoOuEditando: View {
 
             if !salvandoCheckin  {
                 Button(action: {
-                    print("\(anotacao_check_in)")
+                    DataController().deleteCheckIn(checkin: self.checkinSelecionado!, context: managedObjectContext)
+                    dismiss()
                 }, label: {
                     Text("Apagar visita")
                         .padding(5)

@@ -25,16 +25,22 @@ struct TerceiraPaginaTutorial: View {
             
             Spacer()
             
-            Image("grupoDeIcones")
+            Image("pagRelatorio")
                 .resizable()
-                .frame(width: 150, height: 150, alignment: .center)
+                .frame(width: 260, height: 350, alignment: .center)
                 .padding()
             
-            Text("Busque o Centro Esportivo ideal para você praticar seu esporte favorito. \n\nFaça a busca do seu jeito!\n\n**Vamos lá?!**")
-                .padding()
-                .multilineTextAlignment(.center)
-            
+            Text("**Registre suas visitas aos Centros Esportivos relatando sua experiência no local!**")
             Spacer()
+            
+            NavigationLink(
+                destination: quartaPaginaTutorial(),
+                label: {
+                    Text("Próximo")
+                    .foregroundColor(CoresApp.corPrincipal.cor())
+                })
+            .padding(.bottom, 10)
+            .buttonStyle(.bordered)
             
             Button(
                 action: {
@@ -44,7 +50,7 @@ struct TerceiraPaginaTutorial: View {
                     self.sairTutorial = true
                 },
                 label: {
-                    Text("Vamos!")
+                    Text("Já entendi!")
                     .foregroundColor(CoresApp.corPrincipal.cor())
                 })
             .padding(.bottom, 10)

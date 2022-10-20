@@ -50,4 +50,10 @@ class DataController: ObservableObject {
         
         save(context: context)
     }
+    
+    func deleteCheckIn(checkin: Check_In, context: NSManagedObjectContext) {
+        context.delete(checkin)
+        
+        save(context: context)
+    }
 }
