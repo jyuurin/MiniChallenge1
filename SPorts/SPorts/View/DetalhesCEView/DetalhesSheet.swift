@@ -204,8 +204,6 @@ struct DetalhesSheet: View {
             .padding()
             .onAppear {
                 
-                print("oi")
-                
                 self.salvarCheckin = false
                 self.editarCheckin = false
                 

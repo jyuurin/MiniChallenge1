@@ -13,10 +13,18 @@ struct RelatorioCheckIn: View {
     
     @Binding var mostrandoPaginaRelatorio: Bool
     
+    @State var editarCheckin = false
+    @State var checkinSelecionado: Check_In? = nil
+    
     
     var body: some View {
         
         VStack {
+            
+            NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(checkin.id_centro_esportivo), nome_centro_esportivo: .constant(checkin.nome_centro_esportivo), zona_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceZona, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
+                
+            })
+            
             Text("\(String(checkin.count))")
                 .font(.system(size: 100, weight: .bold, design: .rounded))
                 .foregroundColor(CoresApp.corSecundaria.cor())
@@ -30,7 +38,7 @@ struct RelatorioCheckIn: View {
             
             
             if !checkin.isEmpty {
-                
+            
                 HStack {
                     Text("Histórico de visitas")
                         .font(Font.headline.weight(.bold))
@@ -42,10 +50,16 @@ struct RelatorioCheckIn: View {
                 ScrollView {
                     VStack{
                         ForEach(checkin, id: \.id) { check in
-                            exibirHistoricoVisitas(
-                                nomeCE: check.nome_centro_esportivo ?? "",
-                                anotacaoCE: check.anotacao_check_in,
-                                dataVisita: check.data_check_in ?? NSDate.now)
+                            
+                            Button(action: {
+                                self.editarCheckin = true
+                            }, label: {
+                                exibirHistoricoVisitas(
+                                    nomeCE: check.nome_centro_esportivo ?? "",
+                                    anotacaoCE: check.anotacao_check_in,
+                                    dataVisita: check.data_check_in ?? NSDate.now)
+                            })
+                            
                         }
                     }
                     .padding(.vertical, 5)
