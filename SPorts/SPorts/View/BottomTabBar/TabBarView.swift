@@ -61,6 +61,9 @@ struct TabBarView: View {
                     latitude: $latitude,
                     longitude: $longitude
                 )
+                .onAppear {
+                    self.mostrandoPaginaRelatorio = false
+                }
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Centros Esportivos")
@@ -81,6 +84,9 @@ struct TabBarView: View {
                     localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
                     identificaMudancaEndereco: $identificaMudancaEndereco
                 )
+                .onAppear {
+                    self.mostrandoPaginaRelatorio = false
+                }
                 .tabItem {
                     Image(systemName: "map")
                     Text("Mapa")

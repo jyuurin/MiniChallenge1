@@ -30,7 +30,7 @@ struct quartaPaginaTutorial: View {
                 .frame(width: 150, height: 150, alignment: .center)
                 .padding()
             
-            Text("**Busque o Centro Esportivo ideal para você praticar seu esporte favorito. \n\nFaça a busca do seu jeito!\n\nVamos lá?!**")
+            Text("**O Centro Esportivo é o local ideal para você praticar seu esporte favorito. \n\nFaça a busca do seu jeito!\n\nVamos lá?!**")
                 .padding()
                 .multilineTextAlignment(.center)
             

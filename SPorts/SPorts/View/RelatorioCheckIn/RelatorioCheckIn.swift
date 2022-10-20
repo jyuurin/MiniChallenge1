@@ -15,13 +15,14 @@ struct RelatorioCheckIn: View {
     
     @State var editarCheckin = false
     @State var checkinSelecionado: Check_In? = nil
+    @State var centroEsportivoSelecionado: CentroEsportivo? = nil
     
     
     var body: some View {
         
         VStack {
             
-            NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(checkin.id_centro_esportivo), nome_centro_esportivo: .constant(checkin.nome_centro_esportivo), zona_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceZona, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
+            NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoSelecionado?.id ?? 0), nome_centro_esportivo: .constant(centroEsportivoSelecionado?.ceNome ?? ""), zona_centro_esportivo: .constant(centroEsportivoSelecionado?.ceZona ?? ""), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
                 
             })
             
@@ -53,6 +54,8 @@ struct RelatorioCheckIn: View {
                             
                             Button(action: {
                                 self.editarCheckin = true
+                                self.checkinSelecionado = check
+                                self.centroEsportivoSelecionado = achaCentroEsportivoPelaId(id: Int(check.id_centro_esportivo))
                             }, label: {
                                 exibirHistoricoVisitas(
                                     nomeCE: check.nome_centro_esportivo ?? "",
@@ -71,9 +74,6 @@ struct RelatorioCheckIn: View {
         }
         .onAppear {
             self.mostrandoPaginaRelatorio = true
-        }
-        .onDisappear {
-            self.mostrandoPaginaRelatorio = false
         }
         .navigationBarTitleDisplayMode(.inline)
     
@@ -114,7 +114,30 @@ struct RelatorioCheckIn: View {
         .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
         .padding([.leading, .trailing])
         
+    }
+    
+    func achaCentroEsportivoPelaId(id: Int) -> CentroEsportivo {
+        for centroEsportivo in DataLoader().centrosEsportivos {
+            if centroEsportivo.id == id {
+                return centroEsportivo
+            }
+        }
         
+        return CentroEsportivo(
+            ceId: 0,
+            ceNome: "",
+            ceZona: "",
+            ceEndereco: EnderecoCentroEsportivo(
+                endereco: "",
+                latitude: "",
+                longitude: ""),
+            ceTelefone: [],
+            horarioSemana: "",
+            horarioFinalSemanaFeriado: "",
+            horarioPiscinas: "",
+            ceArea: "",
+            ceEstrutura: [],
+            ceModalidades: [])
     }
    
 }

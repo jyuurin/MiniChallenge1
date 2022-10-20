@@ -30,7 +30,9 @@ struct TerceiraPaginaTutorial: View {
                 .frame(width: 260, height: 350, alignment: .center)
                 .padding()
             
-            Text("**Registre suas visitas aos Centros Esportivos relatando sua experiência no local!**")
+            Text("**Você pode registrar suas experiências ao visitar os Centros Esportivos!**")
+            .padding()
+            .multilineTextAlignment(.center)
             Spacer()
             
             NavigationLink(
