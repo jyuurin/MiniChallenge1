@@ -29,29 +29,31 @@ struct AdicionandoOuEditando: View {
     var body: some View {
         VStack {
 
-            Text("Observações do usuário")
-                .bold()
-                .padding()
+            VStack(alignment: .leading) {
+                    Text("O que você fez nessa visita?")
+                    .bold()
+                    .padding([.top, .leading])
 
-                TextEditor(text: $anotacao_check_in)
-                .frame(height: 250)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.white.opacity(1), lineWidth: 1)
-                        .shadow(radius: 5)
-                )
-                .padding()
+                    TextEditor(text: $anotacao_check_in)
+                    .frame(height: 250)
+                    .cornerRadius(10)
+                    .shadow(radius: 4)
+                    .padding(.horizontal)
+            }
+            
 
             if !salvandoCheckin  {
                 Button(action: {
                     print("\(anotacao_check_in)")
                 }, label: {
                     Text("Apagar visita")
+                        .padding(5)
                         .overlay(RoundedRectangle(cornerRadius: 5)
                                     .stroke(CoresApp.corPrincipal.cor(), lineWidth: 1))
                 })
                 .foregroundColor(CoresApp.corPrincipal.cor())
-                .padding(5)
+                .padding(.top)
+                
                 
             }
             Spacer()

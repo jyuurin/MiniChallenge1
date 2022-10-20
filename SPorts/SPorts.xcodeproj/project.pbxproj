@@ -34,7 +34,6 @@
 		16D5FCD728FF9CA400A068CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD628FF9CA400A068CA /* DataController.swift */; };
 		16D5FCDA28FFA73A00A068CA /* AdicionandoOuEditando.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */; };
 		16D5FCDC2900426500A068CA /* RelatorioCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCDB2900426500A068CA /* RelatorioCheckIn.swift */; };
-		16D5FCDE29007F6200A068CA /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5FCDD29007F6200A068CA /* CheckIn.swift */; };
 		195E5A9F28CFD33700CEEF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5A9E28CFD33700CEEF77 /* BlurView.swift */; };
 		195E5AA128CFD3D600CEEF77 /* CantoPersonalizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */; };
 		1967415228F49163006F35B7 /* ExibicaoListaCEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */; };
@@ -72,7 +71,6 @@
 		16D5FCD628FF9CA400A068CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionandoOuEditando.swift; sourceTree = "<group>"; };
 		16D5FCDB2900426500A068CA /* RelatorioCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatorioCheckIn.swift; sourceTree = "<group>"; };
-		16D5FCDD29007F6200A068CA /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		195E5A9E28CFD33700CEEF77 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		195E5AA028CFD3D600CEEF77 /* CantoPersonalizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CantoPersonalizado.swift; sourceTree = "<group>"; };
 		1967415128F49163006F35B7 /* ExibicaoListaCEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibicaoListaCEs.swift; sourceTree = "<group>"; };
@@ -141,9 +139,6 @@
 		1659782128D2E1F4002E4FF1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				16C0D9AF28F4906100DEACEC /* BottomTabBar */,
-				1967415028F4910C006F35B7 /* ListaCentrosView */,
-				16A28E4B28DC343E001CCF62 /* Mapa */,
 				16A28E4A28DC342F001CCF62 /* Filtros */,
 			);
 			path = Features;
@@ -177,19 +172,18 @@
 			path = Filtros;
 			sourceTree = "<group>";
 		};
-		16A28E4B28DC343E001CCF62 /* Mapa */ = {
+		16A28E4B28DC343E001CCF62 /* PagMapa */ = {
 			isa = PBXGroup;
 			children = (
 				1659782228D2E24E002E4FF1 /* MapaPaginaPrincipal.swift */,
 				169C743328EF4C140096A202 /* InserirNovaLocalizacao.swift */,
 			);
-			path = Mapa;
+			path = PagMapa;
 			sourceTree = "<group>";
 		};
 		16A28E4C28DE2402001CCF62 /* DetalhesCEView */ = {
 			isa = PBXGroup;
 			children = (
-				16D5FCD828FFA70400A068CA /* CheckIn */,
 				16A28E4D28DE2428001CCF62 /* DetalhesSheet.swift */,
 			);
 			path = DetalhesCEView;
@@ -209,6 +203,15 @@
 				16A7EAC228E0C2C900907D2F /* SplashScreen.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		16B5CA95290198E100B13646 /* RelatorioCheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */,
+				16D5FCDB2900426500A068CA /* RelatorioCheckIn.swift */,
+			);
+			path = RelatorioCheckIn;
 			sourceTree = "<group>";
 		};
 		16C0D9AF28F4906100DEACEC /* BottomTabBar */ = {
@@ -234,7 +237,6 @@
 				16C719A128CFD60C00D3684B /* EstruturaCentroEsportivo.swift */,
 				16832E9628D7C213003D729A /* EnderecoCentroEsportivo.swift */,
 				16832E9828D7C60E003D729A /* ModalidadeCentroEsportivo.swift */,
-				16D5FCDD29007F6200A068CA /* CheckIn.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +244,9 @@
 		16C7199128CBBFC300D3684B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16A28E4B28DC343E001CCF62 /* PagMapa */,
+				16C0D9AF28F4906100DEACEC /* BottomTabBar */,
+				16B5CA95290198E100B13646 /* RelatorioCheckIn */,
 				16A28E4C28DE2402001CCF62 /* DetalhesCEView */,
 				1694F27728FDEB410050DCFE /* TutorialApp */,
 				16A7EAC128E0C2B300907D2F /* SplashScreen */,
@@ -267,6 +272,7 @@
 		16C7199728CFC26A00D3684B /* PagHome */ = {
 			isa = PBXGroup;
 			children = (
+				1967415028F4910C006F35B7 /* ListaCentrosView */,
 				1659782128D2E1F4002E4FF1 /* Features */,
 			);
 			path = PagHome;
@@ -288,15 +294,6 @@
 				16D5FCD628FF9CA400A068CA /* DataController.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		16D5FCD828FFA70400A068CA /* CheckIn */ = {
-			isa = PBXGroup;
-			children = (
-				16D5FCD928FFA73A00A068CA /* AdicionandoOuEditando.swift */,
-				16D5FCDB2900426500A068CA /* RelatorioCheckIn.swift */,
-			);
-			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		1967415028F4910C006F35B7 /* ListaCentrosView */ = {
@@ -402,7 +399,6 @@
 				1694F27928FDEB820050DCFE /* PrimeiraPaginaTutorial.swift in Sources */,
 				16C719A228CFD60C00D3684B /* EstruturaCentroEsportivo.swift in Sources */,
 				16A28E4E28DE2428001CCF62 /* DetalhesSheet.swift in Sources */,
-				16D5FCDE29007F6200A068CA /* CheckIn.swift in Sources */,
 				16D5FCDC2900426500A068CA /* RelatorioCheckIn.swift in Sources */,
 				1694F27B28FDEBE40050DCFE /* SegundaPaginaTutorial.swift in Sources */,
 				1694F27D28FDEBF10050DCFE /* TerceiraPaginaTutorial.swift in Sources */,

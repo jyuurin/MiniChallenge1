@@ -92,6 +92,9 @@ struct TabBarView: View {
                     Text("Relatório")
                 }
             }
+            .onAppear {
+                
+            }
             .accentColor(CoresApp.corPrincipal.cor())
             .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)

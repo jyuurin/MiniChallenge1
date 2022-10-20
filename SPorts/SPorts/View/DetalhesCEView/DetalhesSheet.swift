@@ -155,8 +155,9 @@ struct DetalhesSheet: View {
                     
                     if self.fezCheckin {
                         ForEach(checkin, id: \.id) { check in
-                            HStack {
-                                if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
+                            if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
+                                HStack {
+                                
                                    
                                     Button(action: {
                                         self.editarCheckin = true
@@ -169,8 +170,14 @@ struct DetalhesSheet: View {
                                                     .foregroundColor(CoresApp.corSecundaria.cor())
                                                     .padding(.bottom, 5)
                                                 
-                                                Text(check.anotacao_check_in ?? "")
+                                                if check.anotacao_check_in != ""{
+                                                    Text(check.anotacao_check_in ?? "Nil")
                                                     .foregroundColor(CoresApp.corPlatinum.cor())
+                                                } else {
+                                                    Text("Sem anotações até o momento.")
+                                                    .foregroundColor(CoresApp.corPlatinum.cor())
+                                                }
+                                                
                                             }
                                             
                                             Spacer()
@@ -183,8 +190,9 @@ struct DetalhesSheet: View {
                                         .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
                                     })
                                 }
+                                .padding(.bottom, 5)
                             }
-                            .padding(.bottom, 5)
+                            
                         }
                     } else {
                         Text("Você ainda não fez Check-in nesse Centro Esportivo.")
@@ -195,6 +203,10 @@ struct DetalhesSheet: View {
             }
             .padding()
             .onAppear {
+                
+                self.salvarCheckin = false
+                self.editarCheckin = false
+                
                 for check in checkin {
                     if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                         self.fezCheckin = true
