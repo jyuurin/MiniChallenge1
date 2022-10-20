@@ -14,28 +14,32 @@ struct RelatorioCheckIn: View {
     @Binding var mostrandoPaginaRelatorio: Bool
     
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("\(String(checkin.count))")
-                    .font(.system(size: 100, weight: .bold, design: .rounded))
-                    .foregroundColor(CoresApp.corSecundaria.cor())
-                    .padding([.top, .bottom], 40)
-                Text("Visitas aos Centros Esportivos")
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
-                    .foregroundColor(CoresApp.corSecundaria.cor())
-                    .padding(.bottom, 40)
-                Text("Histórico de visitas")
-                    .multilineTextAlignment(.leading)
-                
-                ForEach(checkin, id: \.id) { check in
-                    exibirHistoricoVisitas(
-                        nomeCE: achaCentroEsportivoPelaId(
-                            id: Int(check.id_centro_esportivo)).ceNome,
-                        anotacaoCE: check.anotacao_check_in,
-                        dataVisita: check.data_check_in ?? NSDate.now)
+        VStack {
+            ScrollView {
+                VStack {
+                    Text("\(String(checkin.count))")
+                        .font(.system(size: 100, weight: .bold, design: .rounded))
+                        .foregroundColor(CoresApp.corSecundaria.cor())
+                        .padding([.top, .bottom], 40)
+                    Text("Visitas aos Centros Esportivos")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .foregroundColor(CoresApp.corSecundaria.cor())
+                        .padding(.bottom, 40)
+                    Text("Histórico de visitas")
+                        .multilineTextAlignment(.leading)
+                    
+                    ForEach(checkin, id: \.id) { check in
+                        exibirHistoricoVisitas(
+                            nomeCE: achaCentroEsportivoPelaId(
+                                id: Int(check.id_centro_esportivo)).ceNome,
+                            anotacaoCE: check.anotacao_check_in,
+                            dataVisita: check.data_check_in ?? NSDate.now)
+                    }
+                    
+                    
                 }
+                
             }
-            
         }
         .onAppear {
             self.mostrandoPaginaRelatorio = true
