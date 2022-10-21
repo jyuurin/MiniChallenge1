@@ -186,7 +186,6 @@ struct TabBarView: View {
                 }
             } receiveValue: { coordenada in
                 
-                print(localizacaoEnderecoSetado)
                 if !self.localizacaoEnderecoSetado {
                     self.latitude = coordenada.latitude
                     self.longitude = coordenada.longitude

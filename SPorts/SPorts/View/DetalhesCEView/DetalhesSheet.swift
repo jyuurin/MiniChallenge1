@@ -21,7 +21,6 @@ struct DetalhesSheet: View {
     
     @State var salvarCheckin = false
     @State var editarCheckin = false
-    
     @State var rowsModalidades: [GridItem] = []
     @State var rowsEstruturas: [GridItem] = []
     
@@ -157,8 +156,6 @@ struct DetalhesSheet: View {
                         ForEach(checkin, id: \.id) { check in
                             if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                                 HStack {
-                                
-                                   
                                     Button(action: {
                                         self.editarCheckin = true
                                         self.checkinSelecionado = check
@@ -169,7 +166,7 @@ struct DetalhesSheet: View {
                                                     .font(Font.headline.weight(.bold))
                                                     .foregroundColor(CoresApp.corSecundaria.cor())
                                                     .padding(.bottom, 5)
-                                                
+
                                                 if check.anotacao_check_in != ""{
                                                     Text(check.anotacao_check_in ?? "Nil")
                                                     .foregroundColor(CoresApp.corPlatinum.cor())
@@ -177,14 +174,14 @@ struct DetalhesSheet: View {
                                                     Text("Sem anotações até o momento.")
                                                     .foregroundColor(CoresApp.corPlatinum.cor())
                                                 }
-                                                
+
                                             }
-                                            
+
                                             Spacer()
-                                            
+
                                             Image(systemName: "chevron.right")
                                                 .foregroundColor(CoresApp.corSecundaria.cor())
-                                            
+
                                         }
                                         .padding(10)
                                         .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
@@ -203,10 +200,6 @@ struct DetalhesSheet: View {
             }
             .padding()
             .onAppear {
-                
-                self.salvarCheckin = false
-                self.editarCheckin = false
-                
                 for check in checkin {
                     if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                         self.fezCheckin = true
@@ -238,6 +231,13 @@ struct DetalhesSheet: View {
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            
+            print(self.salvarCheckin)
+            print(self.editarCheckin)
+            self.salvarCheckin = false
+            self.editarCheckin = false
+        }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
