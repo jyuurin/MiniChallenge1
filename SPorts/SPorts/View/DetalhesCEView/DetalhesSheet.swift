@@ -19,8 +19,8 @@ struct DetalhesSheet: View {
     
     @State var checkinSelecionado: Check_In? = nil
     
-    @State var salvarCheckin = false
-    @State var editarCheckin = false
+    @State private var salvandoCheckin = false
+    @State private var mostrandoPagCadCheckin = false
     @State var rowsModalidades: [GridItem] = []
     @State var rowsEstruturas: [GridItem] = []
     
@@ -29,13 +29,8 @@ struct DetalhesSheet: View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), nome_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceNome, zona_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceZona, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(true)), isActive: $salvarCheckin, label: {
-                    
-                })
-                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), nome_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceNome, zona_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceZona, checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
-                    
-                })
-                    
+                NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoCDistancia.centroEsportivo.id), nome_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceNome, zona_centro_esportivo: $centroEsportivoCDistancia.centroEsportivo.ceZona, test: $mostrandoPagCadCheckin, checkinSelecionado: $checkinSelecionado, salvandoCheckin: $salvandoCheckin), isActive: $mostrandoPagCadCheckin, label: {})
+                
                 Text("\(centroEsportivoCDistancia.centroEsportivo.ceNome)")
                 
                 .font(.title.bold())
@@ -156,8 +151,9 @@ struct DetalhesSheet: View {
                         ForEach(checkin, id: \.id) { check in
                             if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                                 HStack {
+                                   
                                     Button(action: {
-                                        self.editarCheckin = true
+                                        self.mostrandoPagCadCheckin = true
                                         self.checkinSelecionado = check
                                     }, label: {
                                         HStack {
@@ -166,7 +162,7 @@ struct DetalhesSheet: View {
                                                     .font(Font.headline.weight(.bold))
                                                     .foregroundColor(CoresApp.corSecundaria.cor())
                                                     .padding(.bottom, 5)
-
+                                                
                                                 if check.anotacao_check_in != ""{
                                                     Text(check.anotacao_check_in ?? "Nil")
                                                     .foregroundColor(CoresApp.corPlatinum.cor())
@@ -174,14 +170,14 @@ struct DetalhesSheet: View {
                                                     Text("Sem anotações até o momento.")
                                                     .foregroundColor(CoresApp.corPlatinum.cor())
                                                 }
-
+                                                
                                             }
-
+                                            
                                             Spacer()
-
+                                            
                                             Image(systemName: "chevron.right")
                                                 .foregroundColor(CoresApp.corSecundaria.cor())
-
+                                            
                                         }
                                         .padding(10)
                                         .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
@@ -200,6 +196,7 @@ struct DetalhesSheet: View {
             }
             .padding()
             .onAppear {
+                
                 for check in checkin {
                     if check.id_centro_esportivo == centroEsportivoCDistancia.centroEsportivo.id {
                         self.fezCheckin = true
@@ -231,12 +228,12 @@ struct DetalhesSheet: View {
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        .onChange(of: self.mostrandoPagCadCheckin) { _ in
+            print(self.mostrandoPagCadCheckin)
+        }
         .onAppear {
             
-            print(self.salvarCheckin)
-            print(self.editarCheckin)
-            self.salvarCheckin = false
-            self.editarCheckin = false
+            print(self.mostrandoPagCadCheckin)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -252,7 +249,8 @@ struct DetalhesSheet: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 
                 Button(action: {
-                    self.salvarCheckin = true
+                    self.mostrandoPagCadCheckin = true
+                    self.salvandoCheckin = true
                 }, label: {
                     Text("Nova Visita")
                         .foregroundColor(CoresApp.corPrincipal.cor())

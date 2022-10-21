@@ -22,6 +22,8 @@ struct AdicionandoOuEditando: View {
     @State var anotacao_check_in: String = ""
     @State var avaliacao_check_in: String = ""
     
+    @Binding var test: Bool
+    
     @Binding var checkinSelecionado: Check_In?
     
     @State var usuarioGostou = false
@@ -90,6 +92,9 @@ struct AdicionandoOuEditando: View {
             self.checkinSelecionado = nil
         }
         .onAppear {
+            
+            print(self.test)
+            
             if self.checkinSelecionado != nil {
                 self.anotacao_check_in = self.checkinSelecionado?.anotacao_check_in ?? ""
             }
