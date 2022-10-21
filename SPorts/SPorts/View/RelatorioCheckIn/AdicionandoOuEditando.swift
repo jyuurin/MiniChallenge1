@@ -22,12 +22,9 @@ struct AdicionandoOuEditando: View {
     @State var anotacao_check_in: String = ""
     @State var avaliacao_check_in: String = ""
     
-    @Binding var test: Bool
     
+    @Binding var mostrandoPagCadCheckin: Bool
     @Binding var checkinSelecionado: Check_In?
-    
-    @State var usuarioGostou = false
-    
     @Binding var salvandoCheckin: Bool
     
     var body: some View {
@@ -73,7 +70,12 @@ struct AdicionandoOuEditando: View {
             if !salvandoCheckin  {
                 Button(action: {
                     DataController().deleteCheckIn(checkin: self.checkinSelecionado!, context: managedObjectContext)
-                    dismiss()
+                    
+                    if self.mostrandoPagCadCheckin {
+                        self.mostrandoPagCadCheckin = false
+                    } else {
+                        dismiss()
+                    }
                 }, label: {
                     Text("Apagar visita")
                         .padding(5)
@@ -92,9 +94,7 @@ struct AdicionandoOuEditando: View {
             self.checkinSelecionado = nil
         }
         .onAppear {
-            
-            print(self.test)
-            
+        
             if self.checkinSelecionado != nil {
                 self.anotacao_check_in = self.checkinSelecionado?.anotacao_check_in ?? ""
             }
@@ -104,7 +104,11 @@ struct AdicionandoOuEditando: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    dismiss()
+                    if self.mostrandoPagCadCheckin {
+                        self.mostrandoPagCadCheckin = false
+                    } else {
+                        dismiss()
+                    }
                 }, label: {
                     Image(systemName: "chevron.left")
                     Text("Voltar")
@@ -130,7 +134,12 @@ struct AdicionandoOuEditando: View {
                             context: managedObjectContext)
                     }
                     
-                    dismiss()
+                    if self.mostrandoPagCadCheckin {
+                        self.mostrandoPagCadCheckin = false
+                    } else {
+                        dismiss()
+                    }
+                    
                 }, label: {
                     Text("Salvar")
                         .foregroundColor(CoresApp.corPrincipal.cor())

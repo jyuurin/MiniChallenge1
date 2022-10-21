@@ -22,7 +22,7 @@ struct RelatorioCheckIn: View {
         
         VStack {
             
-            NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoSelecionado?.id ?? 0), nome_centro_esportivo: .constant(centroEsportivoSelecionado?.ceNome ?? ""), zona_centro_esportivo: .constant(centroEsportivoSelecionado?.ceZona ?? ""), test: .constant(false), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
+            NavigationLink(destination: AdicionandoOuEditando(id_centro_esportivo: .constant(centroEsportivoSelecionado?.id ?? 0), nome_centro_esportivo: .constant(centroEsportivoSelecionado?.ceNome ?? ""), zona_centro_esportivo: .constant(centroEsportivoSelecionado?.ceZona ?? ""), mostrandoPagCadCheckin: .constant(false), checkinSelecionado: $checkinSelecionado, salvandoCheckin: .constant(false)), isActive: $editarCheckin,  label: {
                 
             })
             
