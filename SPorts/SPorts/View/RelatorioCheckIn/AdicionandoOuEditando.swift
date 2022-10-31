@@ -107,7 +107,7 @@ struct AdicionandoOuEditando: View {
                     if self.mostrandoPagCadCheckin {
                         self.mostrandoPagCadCheckin = false
                     } else {
-                        dismiss()
+                        self.dismiss()
                     }
                 }, label: {
                     Image(systemName: "chevron.left")

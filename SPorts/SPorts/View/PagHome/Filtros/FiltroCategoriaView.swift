@@ -18,9 +18,6 @@ struct FiltroCategoriaView: View {
     
     //MARK: - Setando todas caategorias contidas no json com seus respectivos icones
     
-    
-    
-    
     var body: some View {
         
         NavigationView {

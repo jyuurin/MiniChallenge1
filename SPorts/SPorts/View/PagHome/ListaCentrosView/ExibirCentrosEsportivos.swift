@@ -254,7 +254,7 @@ struct ExibirCentrosEsportivos: View {
                 }
                 
                 //Verificando pelo nome e endereço do centro esportivo
-                if (centroEsportivo.ceNome.lowercased().contains(self.buscaSolicitada.lowercased())
+                if(centroEsportivo.ceNome.lowercased().contains(self.buscaSolicitada.lowercased())
                     || centroEsportivo.ceEndereco.endereco.lowercased().contains(self.buscaSolicitada.lowercased())) && continuaFiltragem {
                     
                     centrosEsportivosAux.append(centroEsportivo)

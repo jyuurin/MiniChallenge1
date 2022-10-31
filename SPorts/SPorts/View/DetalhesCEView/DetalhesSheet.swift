@@ -11,6 +11,7 @@ import CoreData
 struct DetalhesSheet: View {
     
     @Environment(\.dismiss) var dismiss
+    
     @FetchRequest(sortDescriptors: [SortDescriptor(\.data_check_in, order: .reverse)]) var checkin: FetchedResults<Check_In>
     
     @Binding var centroEsportivoCDistancia: CentroEsportivoCDistancia
