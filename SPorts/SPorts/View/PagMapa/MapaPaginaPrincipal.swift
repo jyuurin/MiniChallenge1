@@ -104,6 +104,7 @@ struct MapaPaginaPrincipal: View {
             //MARK: - Botão para centralizar a localização do usuário no mapa
             Button(action: {
                 
+                
                 if !self.localizacaoEnderecoSetado {
                     locationManager = LocationManager()
                     observarAtualizacoesCoordenadas()
@@ -114,7 +115,12 @@ struct MapaPaginaPrincipal: View {
                     self.mostraAlertaDLocalizacao = locationManager.mostraAlerta
                 }
                 
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                if self.localizacaoPermitida {
+                    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                } else {
+                    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -23.561370844718464, longitude: -46.618687290635606), span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+                }
+                
                 
                 
             }, label: {

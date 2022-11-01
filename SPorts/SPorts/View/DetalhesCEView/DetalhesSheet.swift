@@ -55,15 +55,6 @@ struct DetalhesSheet: View {
                             Text(centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco)
                             .multilineTextAlignment(.leading)
                             .foregroundColor(CoresApp.corPrincipal.cor())
-                            
-                            Button(action: {
-                                botaoAbrirMapas(latitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.longitude)
-                            }) {
-                                Image(systemName: "arrowshape.turn.up.right.circle")
-                                    .resizable()
-                                    .frame(width: 20, height: 20, alignment: .center)
-                                    .foregroundColor(CoresApp.corPrincipal.cor())
-                            }
                         }
                         .padding(.bottom, 5)
                         
