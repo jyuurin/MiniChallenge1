@@ -47,12 +47,21 @@ struct MapaPaginaPrincipal: View {
     @Binding var localizacaoEnderecoSetado: Bool
     @Binding var identificaMudancaEndereco: Bool
     
+    @Binding var centrosEsportivosFavoritados: [CentroEsportivo]
+    @Binding var fezMudanca: Bool
+    
     var body: some View {
         
         
         ZStack(alignment: .topTrailing) {
             //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-            NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
+            NavigationLink(destination:
+                            DetalhesSheet(
+                                centrosEsportivosFavoritados: $centrosEsportivosFavoritados,
+                                fezMudanca: $fezMudanca,
+                                centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual),
+                           isActive: $centroEsportivoMostrando,
+                           label: {})
             
             if localizacaoEnderecoSetado {
                 Map(coordinateRegion: $region,

@@ -103,9 +103,3 @@ struct InserirNovaLocalizacao: View {
         }
     }
 }
-
-struct InserirNovaLocalizacao_Previews: PreviewProvider {
-    static var previews: some View {
-        InserirNovaLocalizacao(localizacaoSetada: .constant(CLLocation(latitude: 0.0, longitude: 0.0)), nomeLocalizacao: .constant(""), localizacaoEnderecoSetado: .constant(false), identificaMudancaEndereco: .constant(false))
-    }
-}

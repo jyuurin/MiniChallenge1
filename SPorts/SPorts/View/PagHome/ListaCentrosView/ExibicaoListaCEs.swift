@@ -24,6 +24,9 @@ struct ExibicaoListaCEs: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
     
+    @Binding var centrosEsportivosFavoritados: [CentroEsportivo]
+    @Binding var fezMudanca: Bool
+    
     var body: some View {
         
         VStack {
@@ -122,7 +125,7 @@ struct ExibicaoListaCEs: View {
             .padding([.leading, .trailing], 15)
             
             ScrollView {
-                ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centroEsportivoCDistancia: $centroEsportivoCDistancia, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude)
+                ExibirCentrosEsportivos(buscaSolicitada: $buscaSolictada, categoriasSelecionadas: $categoriasSelecionadas, zonasSelecionadas: $zonasSelecionadas, centroEsportivoCDistancia: $centroEsportivoCDistancia, centrosEsportivos: $centrosEsportivos, latitude: $latitude, longitude: $longitude, centrosEsportivosFavoritados: $centrosEsportivosFavoritados, fezMudanca: $fezMudanca)
                 
                 
             }

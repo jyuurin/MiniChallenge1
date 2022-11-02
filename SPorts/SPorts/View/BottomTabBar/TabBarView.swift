@@ -51,6 +51,9 @@ struct TabBarView: View {
     
     @State var mostrandoPaginaRelatorio = false
     
+    //Instanciando a classe do UserDefaults para lógica de favoritar centro esportivo
+    @StateObject var centrosEsportivosFavoritados = CentrosEsportivosFavoritos()
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -59,7 +62,9 @@ struct TabBarView: View {
                     centrosEsportivos: $centrosEsportivos,
                     centroEsportivoCDistancia: $centroEsportivoCDistancia,
                     latitude: $latitude,
-                    longitude: $longitude
+                    longitude: $longitude,
+                    centrosEsportivosFavoritados: $centrosEsportivosFavoritados.cesFavoritos,
+                    fezMudanca: $centrosEsportivosFavoritados.fezMudanca
                 )
                 .onAppear {
                     self.mostrandoPaginaRelatorio = false
@@ -82,7 +87,9 @@ struct TabBarView: View {
                     localizacaoSetada: $coordenadaLocalizacao,
                     centrosEsportivos: $centrosEsportivos,
                     localizacaoEnderecoSetado: $localizacaoEnderecoSetado,
-                    identificaMudancaEndereco: $identificaMudancaEndereco
+                    identificaMudancaEndereco: $identificaMudancaEndereco,
+                    centrosEsportivosFavoritados: $centrosEsportivosFavoritados.cesFavoritos,
+                    fezMudanca: $centrosEsportivosFavoritados.fezMudanca
                 )
                 .onAppear {
                     self.mostrandoPaginaRelatorio = false
@@ -97,9 +104,6 @@ struct TabBarView: View {
                     Image(systemName: "doc.plaintext.fill")
                     Text("Relatório")
                 }
-            }
-            .onAppear {
-                
             }
             .accentColor(CoresApp.corPrincipal.cor())
             .navigationBarBackButtonHidden(true)
@@ -156,7 +160,11 @@ struct TabBarView: View {
                     locationManager.requisitarAtualizacaoDLocalizacao()
                 }
                 
-            } 
+            }
+            .onChange(of: self.centrosEsportivosFavoritados.fezMudanca) { _ in
+                self.centrosEsportivosFavoritados.salvarCentroEsportivoFavorito()
+                self.centrosEsportivosFavoritados.fezMudanca = false
+            }
         }
         .onAppear {
             observarAtualizacoesCoordenadas()

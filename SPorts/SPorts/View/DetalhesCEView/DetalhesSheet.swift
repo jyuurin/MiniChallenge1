@@ -12,7 +12,12 @@ struct DetalhesSheet: View {
     
     @Environment(\.dismiss) var dismiss
     
+    //Puxando os dados de visitas do CoreData
     @FetchRequest(sortDescriptors: [SortDescriptor(\.data_check_in, order: .reverse)]) var checkin: FetchedResults<Check_In>
+    
+    //Puxando os dados de centros esportivos favoritados da página de lista de centros esportivos
+    @Binding var centrosEsportivosFavoritados: [CentroEsportivo]
+    @Binding var fezMudanca: Bool
     
     @Binding var centroEsportivoCDistancia: CentroEsportivoCDistancia
     
@@ -55,6 +60,8 @@ struct DetalhesSheet: View {
                             Text(centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco)
                             .multilineTextAlignment(.leading)
                             .foregroundColor(CoresApp.corPrincipal.cor())
+                            
+                            Spacer()
                             
                             Button(action: {
                                 botaoAbrirMapas(latitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.latitude, longitudeJson: centroEsportivoCDistancia.centroEsportivo.ceEndereco.longitude)
@@ -257,7 +264,9 @@ struct DetalhesSheet: View {
                     .foregroundColor(CoresApp.corPrincipal.cor())
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    
+                    
                     
                     Button(action: {
                         self.mostrandoPagCadCheckin = true
@@ -266,11 +275,63 @@ struct DetalhesSheet: View {
                         Text("Nova Visita")
                             .foregroundColor(CoresApp.corPrincipal.cor())
                     })
+                    
+                    
+                    //Estrutura condicional para identificar centro esportivo favorito ou nao e adicionar o botão certo
+                    if(verificaSeEFavorito(centroEsportivo: centroEsportivoCDistancia.centroEsportivo)) {
+                        
+                        Button(action: {
+                            self.centrosEsportivosFavoritados.remove(at: buscaIndiceFavorito(centroEsportivo: centroEsportivoCDistancia.centroEsportivo))
+                            self.fezMudanca = true
+                        }, label: {
+                            Image(systemName:"heart.fill")
+                                .resizable()
+                                .frame(width: 20, height: 18, alignment: .center)
+                        })
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                        
+                    } else {
+                        
+                        Button(action: {
+                            self.centrosEsportivosFavoritados.append(centroEsportivoCDistancia.centroEsportivo)
+                            self.fezMudanca = true
+                        }, label: {
+                            Image(systemName:"heart")
+                            .resizable()
+                            .frame(width: 20, height: 18, alignment: .center)
+                        })
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                        
+                    }
                 }
+
             }
         }
         
         
+    }
+    
+    //Função que busca o indice do centro esportivo na lista de favoritados
+    func buscaIndiceFavorito(centroEsportivo: CentroEsportivo) -> Int {
+        var cont = 0
+        for ce in centrosEsportivosFavoritados {
+            if ce.id == centroEsportivo.id {
+                return cont
+            }
+            cont += 1
+        }
+        
+        return -1
+    }
+    
+    //Função que verifica se o centroEsportivo está dentro dos favoritados
+    func verificaSeEFavorito(centroEsportivo: CentroEsportivo) -> Bool {
+        for ce in centrosEsportivosFavoritados {
+            if ce.id == centroEsportivo.id {
+                return true
+            }
+        }
+        return false
     }
     
     //função que direciona para o celular da pessoa. Não funciona pelo simulator, testar pelo tel de alguem

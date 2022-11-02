@@ -32,11 +32,19 @@ struct ExibirCentrosEsportivos: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
     
+    @Binding var centrosEsportivosFavoritados: [CentroEsportivo]
+    @Binding var fezMudanca: Bool
+    
     var body: some View {
         ScrollView{
             VStack {
                 //NavigationLink que envia o usuário para tela de detalhes do centro esportivo com o centroEsportivoAtual como parâmetro
-                NavigationLink(destination: DetalhesSheet(centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual), isActive: $centroEsportivoMostrando, label: {})
+                NavigationLink(destination:
+                                DetalhesSheet(
+                                    centrosEsportivosFavoritados: $centrosEsportivosFavoritados,
+                                    fezMudanca: $fezMudanca, centroEsportivoCDistancia: $centroEsportivoCDistanciaAtual),
+                               isActive: $centroEsportivoMostrando,
+                               label: {})
                 
                 if !centrosEsportivos.isEmpty {
                     ForEach(centroEsportivoCDistancia, id:\.centroEsportivo.ceId) { centroEsportivoCDistancia in
@@ -47,13 +55,7 @@ struct ExibirCentrosEsportivos: View {
                             self.centroEsportivoCDistanciaAtual = centroEsportivoCDistancia
                             self.endEditing()
                         }, label: {
-                            centroEsportivoDados(
-                                title: centroEsportivoCDistancia.centroEsportivo.ceNome,
-                                subTitle: centroEsportivoCDistancia.centroEsportivo.ceEndereco.endereco,
-                                zona: centroEsportivoCDistancia.centroEsportivo.ceZona,
-                                modalidades: selecionaCategoriasDeposito(modalidades: centroEsportivoCDistancia.centroEsportivo.ceModalidades),
-                                distancia: centroEsportivoCDistancia.distancia / 1000
-                                )
+                            centroEsportivoDados(centroEsportivo: centroEsportivoCDistancia)
                         })
                         
                     }
@@ -327,25 +329,35 @@ struct ExibirCentrosEsportivos: View {
         
     }
     
-    func centroEsportivoDados(title: String, subTitle: String, zona: String, modalidades: [String], distancia: Double) -> some View {
+    //Função que verifica se o centroEsportivo está dentro dos favoritados
+    func verificaSeEFavorito(centroEsportivo: CentroEsportivo) -> Bool {
+        for ce in centrosEsportivosFavoritados {
+            if ce.id == centroEsportivo.id {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func centroEsportivoDados(centroEsportivo: CentroEsportivoCDistancia) -> some View {
             HStack{
-                Image(zona)
+                Image(centroEsportivo.centroEsportivo.ceZona)
                 .resizable()
                 .frame(width: 60, height: 60)
                 
                 VStack(alignment: .leading) {
-                    Text(title)
+                    Text(centroEsportivo.centroEsportivo.ceNome)
                     .foregroundColor(.black)
                     .font(.system(.headline , design: .rounded)) //MARK: ALTERACÃO FEITA
                     
-                    Text(subTitle)
+                    Text(centroEsportivo.centroEsportivo.ceEndereco.endereco)
                         .font(.system(.subheadline, design: .rounded))  //MARK: ALTERACÃO FEITA
                         .foregroundColor(.gray)
                     
                     //Implementando miniaturas de categorias como pré-visualização
                     HStack {
                         ForEach(CategoriasCE.categorias.categoriasCE, id: \.idCategoria) { categoria in
-                            if modalidades.contains(categoria.nomeCategoria) {
+                            if selecionaCategoriasDeposito(modalidades: centroEsportivo.centroEsportivo.ceModalidades).contains(categoria.nomeCategoria) {
                                 Image("\(categoria.nomePriImagem)")
                                     .resizable()
                                     .frame(width: 20, height: 20, alignment: .center)
@@ -362,12 +374,28 @@ struct ExibirCentrosEsportivos: View {
                    .frame(height: 70)
                    .padding(.trailing)
                 VStack {
-                    Text(String(format: "%.1f", distancia))
+                    
+                    //Estrutura para mostrar o tipo de coração dependendo dos centros esportivos favoritados pelo usuário
+                    if(verificaSeEFavorito(centroEsportivo: centroEsportivo.centroEsportivo)) {
+                        Image(systemName: "heart.fill")
+                            .resizable()
+                            .frame(width: 20, height: 18, alignment: .center)
+                            .foregroundColor(CoresApp.corPrincipal.cor())
+                            .padding(5)
+                            
+                    }
+                    else {
+                        Image(systemName: "heart")
+                            .resizable()
+                            .frame(width: 20, height: 18, alignment: .center)
+                            .foregroundColor(CoresApp.corPlatinum.cor())
+                            .padding(5)
+                    }
+                        
+                    
+                    
+                    Text(String(format: "%.1fkm", centroEsportivo.distancia/1000))
                         .foregroundColor(.gray)
-                        .font(.system(size: 23, weight: .regular, design: .rounded))  //MARK: ALTERACÃO FEITA
-                    Text("km")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 24, weight: .regular, design: .rounded))  //MARK: ALTERACÃO FEITA
                 }
                 .frame(maxWidth: 50)
             }
