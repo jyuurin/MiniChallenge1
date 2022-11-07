@@ -48,7 +48,7 @@ struct ExibicaoListaCEs: View {
                         }, label: {
                             HStack {
                                 Text("Categorias")
-                                Image(systemName: "chevron.down")
+                                Image(systemName: "chevron.up")
                             }
                             .foregroundColor(CoresApp.corPrincipal.cor())
                             .padding(5)
@@ -67,7 +67,7 @@ struct ExibicaoListaCEs: View {
                         }, label: {
                             HStack {
                                 Text("Categorias")
-                                Image(systemName: "chevron.down")
+                                Image(systemName: "chevron.up")
                             }
                             .padding(5)
                             .background(CoresApp.corPrincipal.cor())
@@ -88,7 +88,7 @@ struct ExibicaoListaCEs: View {
                         }, label: {
                             HStack {
                                 Text("Local")
-                                Image(systemName: "chevron.down")
+                                Image(systemName: "chevron.up")
                             }
                             .padding(5)
                             .background(CoresApp.corPrincipal.cor())
@@ -107,7 +107,7 @@ struct ExibicaoListaCEs: View {
                         }, label: {
                             HStack {
                                 Text("Zonas")
-                                Image(systemName: "chevron.down")
+                                Image(systemName: "chevron.up")
                             }
                             .foregroundColor(CoresApp.corPrincipal.cor())
                             .padding(5)

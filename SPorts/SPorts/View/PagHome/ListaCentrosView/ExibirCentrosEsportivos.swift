@@ -402,6 +402,7 @@ struct ExibirCentrosEsportivos: View {
                 }
                 .frame(maxWidth: 50)
             }
+            .padding(.horizontal, 5)
         }
     
     //Função utilizada para esconder o keyboard do dispositivo
