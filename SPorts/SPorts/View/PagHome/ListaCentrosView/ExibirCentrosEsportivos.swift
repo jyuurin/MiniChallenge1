@@ -16,6 +16,9 @@ struct CentroEsportivoCDistancia: Identifiable {
 
 struct ExibirCentrosEsportivos: View {
     
+    //Variável criada para identificar o dark mode do iphone
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var buscaSolicitada: String
     @Binding var categoriasSelecionadas: [String]
     @Binding var zonasSelecionadas: [String]
@@ -347,7 +350,7 @@ struct ExibirCentrosEsportivos: View {
                 
                 VStack(alignment: .leading) {
                     Text(centroEsportivo.centroEsportivo.ceNome)
-                    .foregroundColor(.black)
+                        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                     .font(.system(.headline , design: .rounded)) //MARK: ALTERACÃO FEITA
                     
                     Text(centroEsportivo.centroEsportivo.ceEndereco.endereco)

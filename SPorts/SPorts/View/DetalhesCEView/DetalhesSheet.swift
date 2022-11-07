@@ -10,6 +10,9 @@ import CoreData
 
 struct DetalhesSheet: View {
     
+    //Variável criada para identificar o dark mode do iphone
+    @Environment(\.colorScheme) var colorScheme
+    
     @Environment(\.dismiss) var dismiss
     
     //Puxando os dados de visitas do CoreData
@@ -79,7 +82,7 @@ struct DetalhesSheet: View {
                             botaoLigar(numeroTelefone: centroEsportivoCDistancia.centroEsportivo.ceTelefone[0])
                         }, label: {
                             Text("**Telefone:** ")
-                                .foregroundColor(.black)
+                                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             Text(centroEsportivoCDistancia.centroEsportivo.ceTelefone[0])
                                 .foregroundColor(CoresApp.corPrincipal.cor())
                         })
@@ -197,7 +200,7 @@ struct DetalhesSheet: View {
                                                 
                                             }
                                             .padding(10)
-                                            .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
+                                            .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 3))
                                         })
                                     }
                                     .padding(.bottom, 5)

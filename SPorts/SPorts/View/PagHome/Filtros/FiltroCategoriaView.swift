@@ -87,8 +87,7 @@ struct FiltroCategoriaView: View {
                         dismiss()
                     }, label: {
                         HStack {
-                            Image(systemName: "chevron.left")
-                            Text("Voltar")
+                            Image(systemName: "chevron.bottom")
                         }
                     })
                     .foregroundColor(CoresApp.corPrincipal.cor())

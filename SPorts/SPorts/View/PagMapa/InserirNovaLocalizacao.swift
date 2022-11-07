@@ -10,6 +10,9 @@ import MapKit
 
 struct InserirNovaLocalizacao: View {
     
+    //Variável criada para identificar o dark mode do iphone
+    @Environment(\.colorScheme) var colorScheme
+    
     @Environment(\.dismiss) var dismiss
     
     @State var txtFieldEndereco = ""
@@ -60,7 +63,7 @@ struct InserirNovaLocalizacao: View {
                             .foregroundColor(CoresApp.corPrincipal.cor())
                             
                             Text("Minha Localização")
-                            .foregroundColor(.black)
+                                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                         }
                     })
                     
@@ -84,7 +87,7 @@ struct InserirNovaLocalizacao: View {
                                     
                                     Text("\(endereco.name ?? "")")
                                     .lineLimit(1)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                                 }
                                 
                             })
@@ -98,6 +101,7 @@ struct InserirNovaLocalizacao: View {
             
             
         }
+        .background(colorScheme == .dark ? Color.black : Color.white)
         .onChange(of: txtFieldEndereco) { _ in
                 mapAPI.getLocation(address: txtFieldEndereco)
         }

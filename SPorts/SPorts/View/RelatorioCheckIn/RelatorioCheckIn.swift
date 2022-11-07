@@ -111,7 +111,10 @@ struct RelatorioCheckIn: View {
             .foregroundColor(CoresApp.corSecundaria.cor())
         }
         .padding()
-        .background(Rectangle().fill(Color.white).cornerRadius(10).shadow(radius: 5).opacity(0.6))
+        .background(Rectangle()
+            .fill(Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 3))
         .padding([.leading, .trailing])
         
     }

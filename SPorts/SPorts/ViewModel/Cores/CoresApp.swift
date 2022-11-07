@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 //Enum que contem as cores do design do app
 enum CoresApp {
     

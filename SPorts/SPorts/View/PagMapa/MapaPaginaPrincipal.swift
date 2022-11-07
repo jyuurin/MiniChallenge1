@@ -132,7 +132,7 @@ struct MapaPaginaPrincipal: View {
                 .foregroundColor(CoresApp.corPrincipal.cor())
             })
             .padding(5)
-            .background(Color.white)
+            .background(Color(UIColor.systemBackground))
             .cornerRadius(10)
             .padding(.top, 5)
             .padding(.trailing, 5)

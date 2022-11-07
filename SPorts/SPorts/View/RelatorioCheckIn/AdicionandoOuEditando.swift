@@ -62,7 +62,11 @@ struct AdicionandoOuEditando: View {
                 TextEditor(text: $anotacao_check_in)
                 .frame(height: 250)
                 .cornerRadius(10)
-                .shadow(radius: 4)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(.gray)
+                        .opacity(0.5)
+                )
                 .padding(.horizontal)
             }
             

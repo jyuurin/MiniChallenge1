@@ -14,14 +14,14 @@ struct TabBarView: View {
     init() {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = .white
+        coloredAppearance.backgroundColor = UIColor.systemBackground
           
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         
        
-        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().backgroundColor = UIColor.systemBackground
         UITabBar.appearance().barTintColor = UIColor(CoresApp.corPlatinum.cor())
     }
     
