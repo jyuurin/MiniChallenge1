@@ -14,65 +14,68 @@ struct SegundaPaginaTutorial: View {
     @State var sairTutorial = false
     
     var body: some View {
-        VStack {
-            
-            NavigationLink(isActive: $sairTutorial, destination: {
-                SplashScreen()
-                    .navigationBarTitle("")
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarHidden(true)
-            }, label: {})
-            
-            Spacer()
-            
-            Image("pagFiltros")
-                .resizable()
-                .frame(width: 260, height: 350, alignment: .center)
-                .padding()
-            
-            Text("**SPorts foi criado facilitar a busca por Centros Esportivos em São Paulo! Faça uma busca de forma personalizada**!")
-                .padding()
-                .multilineTextAlignment(.center)
+        ScrollView {
+            VStack {
                 
-            Spacer()
-            
-            NavigationLink(
-                destination: TerceiraPaginaTutorial(),
-                label: {
-                    Text("Próximo")
+                NavigationLink(isActive: $sairTutorial, destination: {
+                    SplashScreen()
+                        .navigationBarTitle("")
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true)
+                }, label: {})
+                
+                Spacer()
+                
+                Image("pagFiltros")
+                    .resizable()
+                    .frame(width: 260, height: 350, alignment: .center)
+                    .padding()
+                
+                Text("**SPorts foi criado facilitar a busca por Centros Esportivos em São Paulo! Faça uma busca de forma personalizada**!")
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    
+                Spacer()
+                
+                NavigationLink(
+                    destination: TerceiraPaginaTutorial(),
+                    label: {
+                        Text("Próximo")
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                    })
+                .padding(.bottom, 10)
+                .buttonStyle(.bordered)
+                
+                Button(
+                    action: {
+                        UserDefaults.standard.set(
+                            true,
+                            forKey: "passouTutorial")
+                        self.sairTutorial = true
+                    },
+                    label: {
+                        Text("Já entendi!")
+                        .foregroundColor(CoresApp.corPrincipal.cor())
+                    })
+                .padding(.bottom, 10)
+                .buttonStyle(.bordered)
+                
+                
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Text("Voltar")
+                    })
                     .foregroundColor(CoresApp.corPrincipal.cor())
-                })
-            .padding(.bottom, 10)
-            .buttonStyle(.bordered)
-            
-            Button(
-                action: {
-                    UserDefaults.standard.set(
-                        true,
-                        forKey: "passouTutorial")
-                    self.sairTutorial = true
-                },
-                label: {
-                    Text("Já entendi!")
-                    .foregroundColor(CoresApp.corPrincipal.cor())
-                })
-            .padding(.bottom, 10)
-            .buttonStyle(.bordered)
-            
-            
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Text("Voltar")
-                })
-                .foregroundColor(CoresApp.corPrincipal.cor())
+                }
             }
         }
+        
     }
 }
