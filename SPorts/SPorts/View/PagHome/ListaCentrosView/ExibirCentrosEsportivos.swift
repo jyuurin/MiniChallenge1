@@ -397,7 +397,7 @@ struct ExibirCentrosEsportivos: View {
                         
                     
                     
-                    Text(String(format: "%.1fkm", centroEsportivo.distancia/1000))
+                    Text(String(format: "%.1f km", centroEsportivo.distancia/1000))
                         .foregroundColor(.gray)
                 }
                 .frame(maxWidth: 50)
